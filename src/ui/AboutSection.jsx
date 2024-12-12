@@ -22,7 +22,7 @@ export default function AboutSection() {
             <h5 className="font-semibold text-textPrimary">
               OUR MISSION & VISION
             </h5>
-            <h2 className="text-5xl font-bold text-red-500 my-3">
+            <h2 className="text-6xl font-bold text-red-500 my-3">
               +35 Years of
             </h2>
             <h3 className="text-3xl font-bold text-textPrimary">

@@ -10,15 +10,15 @@ export default function Accordion({ accordion }) {
   }
   return (
     <div className="border-2 border-[#e5eaec] p-5 ">
-      <div className="flex justify-between">
+      <div className="flex justify-between items-center">
         <b>{heading}</b>
         <button onClick={handleToggle} className="text-4xl text-primary">
           {isOpen ? <FaCircleMinus /> : <FaPlusCircle />}
         </button>
       </div>
       <div
-        className={`transition-all overflow-hidden ${
-          isOpen ? "max-h-50 " : "max-h-0 "
+        className={`transition-all duration-300 overflow-hidden ${
+          isOpen ? "max-h-50 mt-5 opacity-100" : "max-h-0 opacity-0"
         }`}
       >
         {content}

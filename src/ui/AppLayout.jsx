@@ -4,7 +4,7 @@ import Footer from "./Footer";
 
 export default function AppLayout() {
   return (
-    <div className="grid grid-rows-[auto_1fr_auto] min-h-screen">
+    <div className="">
       <Header />
       <main>
         <Outlet />

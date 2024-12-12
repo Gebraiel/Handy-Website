@@ -5,7 +5,24 @@ import sector from "../assets/sector1.jpg";
 import sector2 from "../assets/sector2.jpg";
 import sector3 from "../assets/sector3.jpg";
 
+import ContactSection from "../ui/ContactSection";
+import Slider from "../ui/Slider";
+import Products from "../ui/HandyProducts";
+import HandyBackground from "../ui/HadnyBackground";
+import Certificates from "../ui/Certificates";
+import { FaSpinner } from "react-icons/fa";
+import { useState } from "react";
+
 export default function Home() {
+  // const products = [
+  //   {
+  //     id:1,
+  //     title:"Jumbo Rolls",
+  //     category:"Jumbo Rolls",
+  //     image:"",
+  //   }
+  // ]
+  const [loading, setLoading] = useState(true);
   const sustainabilityLength = 14;
   const sustainabilityImagesArray = Array.from(
     { length: sustainabilityLength },
@@ -14,10 +31,44 @@ export default function Home() {
         i + 1 < 10 ? "0" + (i + 1) : i + 1
       }.jpg`
   );
+  const sliderLength = 3;
+  const sliderImagesArray = Array.from(
+    { length: sliderLength },
+    (_, i) => `src/assets/banner/slider-${i + 1}.png`
+  );
   console.log(sustainabilityImagesArray);
+  // if (loading)
+  //   return (
+  //     <div className="h-screen w-screen flex justify-center items-center ">
+  //       <div className="animate-spin">
+  //         <FaSpinner />
+  //       </div>
+  //     </div>
+  //   );
+
   return (
     <>
-      <Section>
+      <Slider
+        images={sliderImagesArray}
+        headings={[
+          {
+            heading:
+              "We offer innovative solutions with sustainability at the heart of our operations",
+            subtitle: "",
+          },
+          {
+            heading:
+              "Proudly producing modern, high-quality products using advanced machinery and a skilled team",
+            subtitle: "",
+          },
+          {
+            heading: "+35 Years of redefining hygiene standards in Egypt",
+            subtitle: "",
+          },
+        ]}
+      />
+      <Section style="relative">
+        <HandyBackground />
         <div className="text-4xl text-center leading-10 font-bold mb-5">
           <h1 className="text-red-500 ">Your Premium Hygiene Partner</h1>
           <h1 className="text-textPrimary">for Everyday Freshness</h1>
@@ -33,7 +84,7 @@ export default function Home() {
       </Section>
       <Section style={"bg-primary"}>
         <div className="text-5xl text-center leading-10 font-bold mb-20">
-          <h1 className="text-white">Your Premium Hygiene Partner</h1>
+          <h1 className="text-white">Why Handy</h1>
         </div>
         <Features />
       </Section>
@@ -128,6 +179,13 @@ export default function Home() {
           ))}
         </div>
       </Section>
+      <Section style="relative">
+        <HandyBackground />
+        <div className="text-5xl text-center leading-10 font-bold mb-20">
+          <h1 className="text-primary">Certificates</h1>
+        </div>
+        <Certificates />
+      </Section>
       <Section
         style={
           "bg-[url(src/assets/slider-4.jpg)] bg-center bg-cover lg:py-[300px] py-[150px] text-center relative"
@@ -144,6 +202,13 @@ export default function Home() {
           sharing our commitment to sustainability with future generations and
           inspiring them to protect our planet.
         </b>
+      </Section>
+
+      <Section>
+        <div className="text-5xl text-center leading-10 font-bold mb-20">
+          <h1 className="text-primary">Contact Us</h1>
+        </div>
+        <ContactSection />
       </Section>
     </>
   );

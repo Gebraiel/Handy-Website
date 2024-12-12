@@ -20,10 +20,10 @@ export default function Header() {
   return (
     <header
       ref={headerRef}
-      className={`transition-all duration-300  ${
+      className={`transition-all duration-300  left-0 top-0 w-full z-50  text-white ${
         isSticky
-          ? "sticky left-0 animate-fadeDown bg-primary text-white z-50"
-          : "relative bg-transparent"
+          ? "fixed animate-fadeDown bg-primary "
+          : "absolute bg-transparent"
       }  `}
     >
       <div className="container flex items-center justify-between m-auto p-5">
