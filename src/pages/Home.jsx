@@ -12,17 +12,10 @@ import HandyBackground from "../ui/HadnyBackground";
 import Certificates from "../ui/Certificates";
 import { FaSpinner } from "react-icons/fa";
 import { useState } from "react";
+import SectionTitle from "../ui/SectionTitle";
+import { Link } from "react-router-dom";
 
 export default function Home() {
-  // const products = [
-  //   {
-  //     id:1,
-  //     title:"Jumbo Rolls",
-  //     category:"Jumbo Rolls",
-  //     image:"",
-  //   }
-  // ]
-  const [loading, setLoading] = useState(true);
   const sustainabilityLength = 14;
   const sustainabilityImagesArray = Array.from(
     { length: sustainabilityLength },
@@ -36,44 +29,41 @@ export default function Home() {
     { length: sliderLength },
     (_, i) => `src/assets/banner/slider-${i + 1}.png`
   );
-  console.log(sustainabilityImagesArray);
-  // if (loading)
-  //   return (
-  //     <div className="h-screen w-screen flex justify-center items-center ">
-  //       <div className="animate-spin">
-  //         <FaSpinner />
-  //       </div>
-  //     </div>
-  //   );
 
   return (
     <>
-      <Slider
-        images={sliderImagesArray}
-        headings={[
-          {
-            heading:
-              "Innovative Solutions",
-            subtitle: "We offer",
-          },
-          {
-            heading:
-              "Modern, high-quality products",
-            subtitle: "Proudly producing",
-          },
-          {
-            heading: "35 Years of redefining hygiene standards in Egypt",
-            subtitle: "Experience more than",
-          },
-        ]}
-      />
+      <Section type="fullscreen">
+        <Slider
+          images={sliderImagesArray}
+          headings={[
+            {
+              heading:
+                "Innovative Solutions",
+              subtitle: "We offer",
+            },
+            {
+              heading:
+                "Modern, high-quality products",
+              subtitle: "Proudly producing",
+            },
+            {
+              heading: "35 Years of redefining hygiene standards in Egypt",
+              subtitle: "Experience more than",
+            },
+          ]}
+        />
+      </Section>
       <Section style="relative">
         <HandyBackground />
-        <div className="text-4xl text-center leading-10 font-bold mb-5">
+        <SectionTitle style="leading-tight">
           <h1 className="text-red-500 ">Your Premium Hygiene Partner</h1>
           <h1 className="text-textPrimary">for Everyday Freshness</h1>
+        </SectionTitle>
+
+        <div className="text-4xl text-center leading-10 font-bold mb-5">
+
         </div>
-        <p className="text-center  ">
+        <p className="text-center text-primary text-xl font-semibold">
           At HANDY, we’ve been redefining hygiene since 1978, bringing you
           products that make everyday life fresher, easier, and more
           comfortable. Whether at home or in business, our high-quality products
@@ -83,16 +73,12 @@ export default function Home() {
         <AboutSection />
       </Section>
       <Section style={"bg-primary"}>
-        <div className="text-5xl text-center leading-10 font-bold mb-20">
-          <h1 className="text-white">Why Handy</h1>
-        </div>
+        <SectionTitle style="text-white">Why Handy</SectionTitle>
         <Features />
       </Section>
 
       <Section style={"bg-[aliceblue]"}>
-        <div className="text-5xl text-center leading-10 font-bold mb-20">
-          <h1 className="text-primary">Sectors</h1>
-        </div>
+        <SectionTitle>Sectors</SectionTitle>
         <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
           <div className="w-full bg-white">
             <div className="relative w-full group">
@@ -104,7 +90,7 @@ export default function Home() {
 
             <div className="p-7 ">
               <b className="text-3xl text-primary">Handy Paper</b>
-              <p className="mt-5">
+              <p className="mt-5 text-lg">
                 Nestled in New Borg El-Arab City, Alexandria, our first factory
                 houses the iconic ‘Recard’ machine from 1989, producing jumbo
                 rolls. In 2016, we supercharged operations with RECARD
@@ -113,6 +99,8 @@ export default function Home() {
                 KSA, Lebanon, Greece, Cyprus, Kuwait, Morocco, Syria, Sudan,
                 Kenya, the Caribbean, and West Africa.
               </p>
+              <Link className="text-primary font-bold">Learn more</Link>
+
             </div>
           </div>
           <div className="w-full bg-white">
@@ -125,13 +113,15 @@ export default function Home() {
 
             <div className="p-7">
               <b className="text-3xl text-primary">Handy FMCG </b>
-              <p className="mt-5">
+              <p className="mt-5 text-lg">
                 In 2018, we expanded with a state-of-the-art facility in 6th of
                 October City, powered by South Korean technology. This facility
                 is where we craft everything from facial tissues to toilet
                 paper, kitchen towels, table napkins, and handkerchiefs, all
                 with a touch of innovation.
               </p>
+              <Link className="text-primary font-bold">Learn more</Link>
+
             </div>
           </div>
           <div className="w-full bg-white">
@@ -144,11 +134,12 @@ export default function Home() {
 
             <div className="p-7 ">
               <b className="text-3xl text-primary">Wet Wipes</b>
-              <p className="mt-5">
+              <p className="mt-5 text-lg">
                 Our Wet Wipes Plant, established in 2018, creates top-tier wipes
                 that meet both local and global standards, delivering the
                 perfect blend of convenience, safety, and hygiene.
               </p>
+              <Link className="text-primary font-bold">Learn more</Link>
             </div>
           </div>
         </div>
@@ -164,10 +155,10 @@ export default function Home() {
         </b>
       </Section>
       <Section>
-        <div className="text-5xl text-center leading-10 font-bold mb-20">
-          <h1 className="text-primary">Sustainability</h1>
-        </div>
-        <p className="text-primary">
+        <SectionTitle>Sustainability</SectionTitle>
+
+        
+        <p className="text-primary text-xl">
           We believe in sustainability at every step of our production. From
           eco-friendly materials to water purification systems meeting WHO
           standards, we strive to protect both the planet and your health. At
@@ -181,9 +172,7 @@ export default function Home() {
       </Section>
       <Section style="relative">
         <HandyBackground />
-        <div className="text-5xl text-center leading-10 font-bold mb-20">
-          <h1 className="text-primary">Certificates</h1>
-        </div>
+        <SectionTitle>Certificates</SectionTitle>
         <Certificates />
       </Section>
       <Section
@@ -205,9 +194,7 @@ export default function Home() {
       </Section>
 
       <Section>
-        <div className="text-5xl text-center leading-10 font-bold mb-20">
-          <h1 className="text-primary">Contact Us</h1>
-        </div>
+        <SectionTitle>Contact Us</SectionTitle>
         <ContactSection />
       </Section>
     </>

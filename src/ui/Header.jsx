@@ -2,8 +2,9 @@ import { useEffect, useRef, useState } from "react";
 import Logo from "../assets/Logo.png";
 import { NavLink, Link } from "react-router-dom";
 import { GiHamburgerMenu } from "react-icons/gi";
+import { IoCloseSharp } from "react-icons/io5";
 
-export default function Header() {
+export default function Header({menu}) {
   const [show, setShow] = useState(false);
   const [isSticky, setIsSticky] = useState(false);
   const headerRef = useRef(null); // Reference for the header element
@@ -32,55 +33,29 @@ export default function Header() {
         </Link>
         <div className="lg:hidden">
           <button onClick={() => setShow(!show)}>
-            <GiHamburgerMenu className="text-2xl" />
+            { !show ? <GiHamburgerMenu className="text-2xl" /> : <IoCloseSharp className="text-2xl" />}
           </button>
           {show && (
             <ul
-              className={`absolute left-0 top-full w-full transition-all duration-300  bg-primary text-white ${
+              className={`absolute left-0 top-full w-full transition-all duration-300 ${
                 show ? "max-h-[395px] opacity-100" : "max-h-0 opacity-0"
               } `}
             >
-              <li className=" border border-l-0 border-r-0 p-5 uppercase font-bold">
-                <NavLink to="about">About Us</NavLink>
-              </li>
-              <li className=" border border-l-0 border-r-0 p-5 uppercase font-bold">
-                <NavLink to="why-handy">Why Handy</NavLink>
-              </li>
-              <li className=" border border-l-0 border-r-0 p-5 uppercase font-bold">
-                <NavLink to="sectors">Sectors</NavLink>
-              </li>
-              <li className=" border border-l-0 border-r-0 p-5 uppercase font-bold">
-                <NavLink to="products">Products</NavLink>
-              </li>
-              <li className=" border border-l-0 border-r-0 p-5 uppercase font-bold">
-                <NavLink to="sustainability">Sustainability</NavLink>
-              </li>
-              <li className=" border border-l-0 border-r-0 p-5 uppercase font-bold">
-                <NavLink to="certificates">Certificates</NavLink>
-              </li>
+              {menu.map((item)=>
+              <li className=" border border-l-0 border-r-0 p-5 bg-primary text-white uppercase font-bold">
+                <NavLink to="about">{item.title}</NavLink>
+              </li>)}
             </ul>
           )}
         </div>
         <div className="hidden lg:block ">
           <ul className="flex gap-5 ">
-            <li className="uppercase font-bold">
-              <NavLink to="about ">About Us</NavLink>
-            </li>
-            <li className="uppercase font-bold">
-              <NavLink to="why-handy">Why Handy</NavLink>
-            </li>
-            <li className="uppercase font-bold">
-              <NavLink to="sectors">Sectors</NavLink>
-            </li>
-            <li className="uppercase font-bold">
-              <NavLink to="products">Products</NavLink>
-            </li>
-            <li className="uppercase font-bold">
-              <NavLink to="sustainability">Sustainability</NavLink>
-            </li>
-            <li className="uppercase font-bold">
-              <NavLink to="certificates">Certificates</NavLink>
-            </li>
+            {menu.map((item)=>
+              <li className="uppercase font-bold">
+                <NavLink to="about ">{item.title}</NavLink>
+              </li>  
+            )}
+            
           </ul>
         </div>
       </div>
