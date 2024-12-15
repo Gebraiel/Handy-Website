@@ -17,14 +17,14 @@ export default function Home() {
   const sustainabilityImagesArray = Array.from(
     { length: sustainabilityLength },
     (_, i) =>
-      `/src/assets/sustainability/sign system-${
+      `${import.meta.env.BASE_URL}sustainability/sign system-${
         i + 1 < 10 ? "0" + (i + 1) : i + 1
       }.jpg`
   );
   const sliderLength = 3;
   const sliderImagesArray = Array.from(
     { length: sliderLength },
-    (_, i) => `/public/banner/slider-${i + 1}.png`
+    (_, i) => `${import.meta.env.BASE_URL}banner/slider-${i + 1}.png`
   );
 
   return (
