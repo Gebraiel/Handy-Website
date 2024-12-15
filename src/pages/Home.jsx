@@ -174,7 +174,7 @@ export default function Home() {
       </Section>
       <Section
         style={
-          "bg-[url(src/assets/slider-4.jpg)] bg-center bg-cover lg:py-[300px] py-[150px] text-center relative"
+          "bg-[url(/slider-4.jpg)] bg-center bg-cover lg:py-[300px] py-[150px] text-center relative"
         }
       >
         <div className="absolute left-0 top-0 w-full h-full bg-[rgba(0,0,0,0.3)] "></div>
