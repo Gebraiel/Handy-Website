@@ -24,7 +24,7 @@ export default function Home() {
   const sliderLength = 3;
   const sliderImagesArray = Array.from(
     { length: sliderLength },
-    (_, i) => `public/banner/slider-${i + 1}.png`
+    (_, i) => `/banner/slider-${i + 1}.png`
   );
 
   return (
