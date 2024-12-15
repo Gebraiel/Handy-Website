@@ -4,14 +4,14 @@ export default function Certificates() {
       <div>
         <img
           className="border shadow-lg"
-          src="src/assets/certificates/certificates1.jpg"
+          src="/certificates/certificates1.jpg"
           alt=""
         />
       </div>
       <div>
         <img
           className="border shadow-lg"
-          src="src/assets/certificates/certificates2.jpg"
+          src="/certificates/certificates2.jpg"
           alt=""
         />
       </div>

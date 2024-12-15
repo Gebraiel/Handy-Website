@@ -143,7 +143,7 @@ export default function Home() {
       </Section>
       <Section
         style={
-          "bg-[url(src/assets/banner.jpg)] bg-center bg-cover lg:py-[300px] py-[150px] text-center"
+          "bg-[url(/banner.jpg)] bg-center bg-cover lg:py-[300px] py-[150px] text-center"
         }
       >
         <b className="text-[35px] lg:text-[40px] xl:text-[60px] leading-none text-white">
