@@ -20,14 +20,14 @@ export default function Home() {
   const sustainabilityImagesArray = Array.from(
     { length: sustainabilityLength },
     (_, i) =>
-      `src/assets/sustainability/sign system-${
+      `/src/assets/sustainability/sign system-${
         i + 1 < 10 ? "0" + (i + 1) : i + 1
       }.jpg`
   );
   const sliderLength = 3;
   const sliderImagesArray = Array.from(
     { length: sliderLength },
-    (_, i) => `src/assets/banner/slider-${i + 1}.png`
+    (_, i) => `/src/assets/banner/slider-${i + 1}.png`
   );
 
   return (
