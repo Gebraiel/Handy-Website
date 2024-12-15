@@ -7,11 +7,8 @@ import sector3 from "../assets/sector3.jpg";
 
 import ContactSection from "../ui/ContactSection";
 import Slider from "../ui/Slider";
-import Products from "../ui/HandyProducts";
 import HandyBackground from "../ui/HadnyBackground";
 import Certificates from "../ui/Certificates";
-import { FaSpinner } from "react-icons/fa";
-import { useState } from "react";
 import SectionTitle from "../ui/SectionTitle";
 import { Link } from "react-router-dom";
 
@@ -27,7 +24,7 @@ export default function Home() {
   const sliderLength = 3;
   const sliderImagesArray = Array.from(
     { length: sliderLength },
-    (_, i) => `/src/assets/banner/slider-${i + 1}.png`
+    (_, i) => `public/banner/slider-${i + 1}.png`
   );
 
   return (

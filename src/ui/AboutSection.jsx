@@ -1,5 +1,4 @@
 import Accordion from "./Accordion";
-import Section from "./Section";
 import handy from "../assets/handy.jpeg";
 const accordions = [
   {
