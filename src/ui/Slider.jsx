@@ -1,6 +1,7 @@
 import { useState } from "react";
 import nextArrow from "../assets/icon-next.svg";
 import prevArrow from "../assets/icon-previous.svg";
+import Typing from "./Typing";
 function Slider({ images, headings }) {
   const [active, setActive] = useState(0);
   function handleNext() {
@@ -27,10 +28,8 @@ function Slider({ images, headings }) {
       </div>
       <div className="text-center w-full h-full  absolute left-0 top-0 flex justify-center items-center z-10 text-white">
         <div className="animate-fadeUp" key={active}>
-          <p className="relative w-fit m-auto z-0 before:content-[''] whitespace-nowrap overflow-hidden before:absolute before:left-0 before:animate- before:top-0 before:w-full before:h-full before:bg-[#7f8789] before:">
-            Hello
-          </p>
-          <h1 className={`w-[80%] m-auto text-3xl font-bold sm:text-5xl  `}>
+          <Typing word={headings[active].subtitle}/>
+          <h1 className={`w-[90%]  m-auto text-5xl font-bold xl:text-8xl  `}>
             {headings[active].heading}
           </h1>
         </div>

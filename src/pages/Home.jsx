@@ -53,17 +53,17 @@ export default function Home() {
         headings={[
           {
             heading:
-              "We offer innovative solutions with sustainability at the heart of our operations",
-            subtitle: "",
+              "Innovative Solutions",
+            subtitle: "We offer",
           },
           {
             heading:
-              "Proudly producing modern, high-quality products using advanced machinery and a skilled team",
-            subtitle: "",
+              "Modern, high-quality products",
+            subtitle: "Proudly producing",
           },
           {
-            heading: "+35 Years of redefining hygiene standards in Egypt",
-            subtitle: "",
+            heading: "35 Years of redefining hygiene standards in Egypt",
+            subtitle: "Experience more than",
           },
         ]}
       />
