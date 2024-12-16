@@ -10,8 +10,8 @@ export default {
       animation: {
         fadeDown: "fadeDown 0.5s ease forwards",
         fadeUp: "fadeUp 0.5s ease forwards",
-        typing:
-          "typing 3s steps(14) infinite  ,flashing 0.5s steps(8) infinite",
+        flashing:
+          "flashing 0.5s steps(4) infinite",
       },
       colors: {
         primary: "#09216d",
@@ -27,11 +27,7 @@ export default {
           "0%": { transform: "translateY(20px)", opacity: "0" },
           "100%": { transform: "translateY(0px)", opacity: "1" },
         },
-        typing: {
-          "0%": { left: "0" },
-          "30%,90%": { left: "100%" },
-          "100%": { left: "0" },
-        },
+
         flashing: {
           "50%": {
             "border-color": "var(--primary-color)",

@@ -36,16 +36,16 @@ export default function Home() {
             {
               heading:
                 "Innovative Solutions",
-              subtitle: "We offer",
+              subtitle: "We offer ",
             },
             {
               heading:
                 "Modern, high-quality products",
-              subtitle: "Proudly producing",
+              subtitle: "Proudly producing ",
             },
             {
               heading: "35 Years of redefining hygiene standards in Egypt",
-              subtitle: "Experience more than",
+              subtitle: "Experience more than ",
             },
           ]}
         />
