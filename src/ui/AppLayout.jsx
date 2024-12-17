@@ -7,7 +7,31 @@ export default function AppLayout() {
     {title:"About Us"},
     {title:"Why Handy"},
     {title:"Sectors"},
-    {title:"Products"},
+    {
+      title:"Products",link:"/products",hasSubMenu:true,submenu:
+      [
+        {
+          title:"Facial Tissues",
+          link:"/products/pacial",
+        },
+        {
+          title:"Jumbo Rolls",
+          link:"/products/jumbo",
+        },
+        {
+          title:"Home Care",
+          link:"/products/home-care",
+        },
+        {
+          title:"Toilet Tissues",
+          link:"/products/toilet",
+        },
+        {
+          title:"Wet Wipes",
+          link:"/products/wipes",
+        },
+      ]
+    },
     {title:"Sustainability"},
     {title:"Media Center"},
     {title:"Contact Us",link:"/contact"},

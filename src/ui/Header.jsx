@@ -3,6 +3,7 @@ import Logo from "../assets/Logo.png";
 import { NavLink, Link } from "react-router-dom";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoCloseSharp } from "react-icons/io5";
+import { FaCaretDown } from "react-icons/fa6";
 
 export default function Header({menu}) {
   const [show, setShow] = useState(false);
@@ -42,8 +43,22 @@ export default function Header({menu}) {
               } `}
             >
               {menu.map((item)=>
-              <li className=" border border-l-0 border-r-0 p-5 bg-primary uppercase font-bold">
-                <NavLink to={`${item.link}`} className={(isActive)=>{isActive ? isSticky ? 'text-secondary' : 'text-primary' : 'text-white'}}>{item.title}</NavLink>
+              <li className=" border border-l-0 border-r-0  bg-primary uppercase font-bold group">
+                <NavLink to={`${item.link}`} className={(isActive)=> `flex gap-1 p-5 items-center ${isActive ? "text-secondary" : "text-white"}`} >
+                  {item.title}
+                  { item.hasSubMenu && <FaCaretDown /> }
+  
+                </NavLink>
+                {
+                  item.hasSubMenu &&
+                   <ul className="bg-primary text-white w-full  group-hover:block group-hover:animate-slideDown max-h-0 hidden">
+                      {
+                        item.submenu.map((child)=>
+                          <li className=" border-y py-4 px-8"><Link to={child.link}>{child.title}</Link></li>
+                        )
+                      }
+                    </ul>
+                } 
               </li>)}
             </ul>
           )}
@@ -51,10 +66,24 @@ export default function Header({menu}) {
         <div className="hidden lg:block ">
           <ul className="flex gap-5 ">
             {menu.map((item)=>
-              <li className="uppercase font-bold">
+              <li className="uppercase font-bold relative group">
                 <NavLink to={`${item.link}`} className={({ isActive }) => 
-        isActive ? (isSticky ? 'text-secondary' : 'text-primary') : 'text-white'
-    }>{item.title}</NavLink>
+                        isActive ? (isSticky ? 'text-secondary' : 'text-primary') : `text-white ${item.hasSubMenu ? 'flex gap-1 items-center' : ""}`
+                }>
+                      {item.title}
+                    { item.hasSubMenu && <FaCaretDown /> }
+
+                </NavLink>
+                {
+                  item.hasSubMenu &&
+                   <ul className="bg-primary text-white w-52 absolute right-0 top-full  group-hover:block group-hover:animate-fadeUp opacity-0 hidden">
+                      {
+                        item.submenu.map((child)=>
+                          <li className="border-b-2 p-4"><Link to={child.link}>{child.title}</Link></li>
+                        )
+                      }
+                    </ul>
+                } 
               </li>  
             )}
             

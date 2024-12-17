@@ -12,6 +12,8 @@ export default {
         fadeUp: "fadeUp 0.5s ease forwards",
         flashing:
           "flashing 0.5s steps(4) infinite",
+        slideDown:"slideDown 0.3s forwards",
+        slideUp:"slideUp 0.3s",
       },
       colors: {
         primary: "#09216d",
@@ -36,6 +38,26 @@ export default {
             "border-color": "transparent",
           },
         },
+        slideDown:{
+          "0%":{
+            "max-height" : "0px",
+            "opacity" : 0
+          },
+          "100%":{
+            "max-height" : "300px",
+            "opacity":1
+          }
+        },
+        slideUp:{
+          "0%":{
+            "max-height" : "300px",
+            "opacity" : 1
+          },
+          "100%":{
+            "max-height" : "0px",
+            "opacity":0
+          }
+        }
       },
     },
   },
