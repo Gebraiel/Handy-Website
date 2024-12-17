@@ -9,7 +9,7 @@ export default function ProductCategories() {
                 <img src="/categories/facial.jpg" alt="" />
             </div>
             <div className='w-full lg:w-1/2'>
-                <b className='text-2xl text-secondary'>Facial Tissues</b>
+                <b className='text-4xl text-secondary'>Facial Tissues</b>
                 <p className=''>
                     Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam doloribus sed aperiam aspernatur quos dolor architecto obcaecati a magnam totam excepturi in molestias veniam ipsum accusantium, qui sapiente officiis voluptatum?
                 </p>
@@ -21,7 +21,7 @@ export default function ProductCategories() {
                 <img src="/categories/kitchen.jpg" alt="" />
             </div>
             <div className='w-full lg:w-1/2'>
-                <b className='text-2xl text-secondary'>Home Care</b>
+                <b className='text-4xl text-secondary'>Home Care</b>
                 <p className=''>
                     Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam doloribus sed aperiam aspernatur quos dolor architecto obcaecati a magnam totam excepturi in molestias veniam ipsum accusantium, qui sapiente officiis voluptatum?
                 </p>
@@ -33,7 +33,7 @@ export default function ProductCategories() {
                 <img src="/categories/jumbo.jpg" alt="" />
             </div>
             <div className='w-full lg:w-1/2'>
-                <b className='text-2xl text-secondary'>Jumbo</b>
+                <b className='text-4xl text-secondary'>Jumbo</b>
                 <p className=''>
                     Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam doloribus sed aperiam aspernatur quos dolor architecto obcaecati a magnam totam excepturi in molestias veniam ipsum accusantium, qui sapiente officiis voluptatum?
                 </p>
@@ -45,7 +45,7 @@ export default function ProductCategories() {
                 <img src="/categories/toilet.jpg" alt="" />
             </div>
             <div className='w-full lg:w-1/2'>
-                <b className='text-2xl text-secondary'>Toilet</b>
+                <b className='text-4xl text-secondary'>Toilet</b>
                 <p className=''>
                     Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam doloribus sed aperiam aspernatur quos dolor architecto obcaecati a magnam totam excepturi in molestias veniam ipsum accusantium, qui sapiente officiis voluptatum?
                 </p>
@@ -57,7 +57,7 @@ export default function ProductCategories() {
                 <img src="/categories/wipes.jpg" alt="" />
             </div>
             <div className='w-full lg:w-1/2'>
-                <b className='text-2xl text-secondary'>Wet Wipes</b>
+                <b className='text-4xl text-secondary'>Wet Wipes</b>
                 <p className=''>
                     Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam doloribus sed aperiam aspernatur quos dolor architecto obcaecati a magnam totam excepturi in molestias veniam ipsum accusantium, qui sapiente officiis voluptatum?
                 </p>
