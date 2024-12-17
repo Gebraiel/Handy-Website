@@ -6,11 +6,23 @@ export default function ProductCategories() {
     <div className='space-y-5'>
         <div className='flex flex-col lg:flex-row lg:odd:flex-row lg:even:flex-row-reverse  justify-between items-center gap-5 '>
             <div className='max-w-[500px]'>
+                <img src="/categories/jumbo.jpg" alt="" />
+            </div>
+            <div className='w-full lg:w-1/2'>
+                <b className='text-4xl text-secondary'>Jumbo</b>
+                <p className='my-5'>
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam doloribus sed aperiam aspernatur quos dolor architecto obcaecati a magnam totam excepturi in molestias veniam ipsum accusantium, qui sapiente officiis voluptatum?
+                </p>
+                <Link to="" className="text-primary font-bold">Learn More</Link>
+            </div>
+        </div>
+        <div className='flex flex-col lg:flex-row lg:odd:flex-row lg:even:flex-row-reverse  justify-between items-center gap-5 '>
+            <div className='max-w-[500px]'>
                 <img src="/categories/facial.jpg" alt="" />
             </div>
             <div className='w-full lg:w-1/2'>
                 <b className='text-4xl text-secondary'>Facial Tissues</b>
-                <p className=''>
+                <p className='my-5'>
                     Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam doloribus sed aperiam aspernatur quos dolor architecto obcaecati a magnam totam excepturi in molestias veniam ipsum accusantium, qui sapiente officiis voluptatum?
                 </p>
                 <Link to="" className="text-primary font-bold">Learn More</Link>
@@ -20,33 +32,22 @@ export default function ProductCategories() {
             <div className='max-w-[500px]'>
                 <img src="/categories/kitchen.jpg" alt="" />
             </div>
-            <div className='w-full lg:w-1/2'>
+            <div className='w-full lg:w-1/2 '>
                 <b className='text-4xl text-secondary'>Home Care</b>
-                <p className=''>
+                <p className='my-5'>
                     Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam doloribus sed aperiam aspernatur quos dolor architecto obcaecati a magnam totam excepturi in molestias veniam ipsum accusantium, qui sapiente officiis voluptatum?
                 </p>
                 <Link to="" className="text-primary font-bold">Learn More</Link>
             </div>
         </div>
-        <div className='flex flex-col lg:flex-row lg:odd:flex-row lg:even:flex-row-reverse  justify-between items-center gap-5 '>
-            <div className='max-w-[500px]'>
-                <img src="/categories/jumbo.jpg" alt="" />
-            </div>
-            <div className='w-full lg:w-1/2'>
-                <b className='text-4xl text-secondary'>Jumbo</b>
-                <p className=''>
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam doloribus sed aperiam aspernatur quos dolor architecto obcaecati a magnam totam excepturi in molestias veniam ipsum accusantium, qui sapiente officiis voluptatum?
-                </p>
-                <Link to="" className="text-primary font-bold">Learn More</Link>
-            </div>
-        </div>
+        
         <div className='flex flex-col lg:flex-row lg:odd:flex-row lg:even:flex-row-reverse  justify-between items-center gap-5 '>
             <div className='max-w-[500px]'>
                 <img src="/categories/toilet.jpg" alt="" />
             </div>
             <div className='w-full lg:w-1/2'>
                 <b className='text-4xl text-secondary'>Toilet</b>
-                <p className=''>
+                <p className='my-5'>
                     Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam doloribus sed aperiam aspernatur quos dolor architecto obcaecati a magnam totam excepturi in molestias veniam ipsum accusantium, qui sapiente officiis voluptatum?
                 </p>
                 <Link to="" className="text-primary font-bold">Learn More</Link>
@@ -58,7 +59,7 @@ export default function ProductCategories() {
             </div>
             <div className='w-full lg:w-1/2'>
                 <b className='text-4xl text-secondary'>Wet Wipes</b>
-                <p className=''>
+                <p className='my-5'>
                     Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam doloribus sed aperiam aspernatur quos dolor architecto obcaecati a magnam totam excepturi in molestias veniam ipsum accusantium, qui sapiente officiis voluptatum?
                 </p>
                 <Link to="" className="text-primary font-bold">Learn More</Link>

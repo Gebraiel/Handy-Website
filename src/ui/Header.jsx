@@ -23,7 +23,7 @@ export default function Header({menu}) {
       ref={headerRef}
       className={`transition-all duration-300  left-0 top-0 w-full z-50  text-white ${
         isSticky
-          ? "fixed animate-fadeDown bg-primary "
+          ? "fixed animate-fadeDown bg-primary bg-[url('/pattern.png')]"
           : "absolute bg-transparent"
       }  `}
     >
