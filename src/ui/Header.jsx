@@ -42,8 +42,8 @@ export default function Header({menu}) {
               } `}
             >
               {menu.map((item)=>
-              <li className=" border border-l-0 border-r-0 p-5 bg-primary text-white uppercase font-bold">
-                <NavLink to="about">{item.title}</NavLink>
+              <li className=" border border-l-0 border-r-0 p-5 bg-primary uppercase font-bold">
+                <NavLink to={`${item.link}`} className={(isActive)=>{isActive ? isSticky ? 'text-secondary' : 'text-primary' : 'text-white'}}>{item.title}</NavLink>
               </li>)}
             </ul>
           )}
@@ -52,7 +52,9 @@ export default function Header({menu}) {
           <ul className="flex gap-5 ">
             {menu.map((item)=>
               <li className="uppercase font-bold">
-                <NavLink to="about ">{item.title}</NavLink>
+                <NavLink to={`${item.link}`} className={({ isActive }) => 
+        isActive ? (isSticky ? 'text-secondary' : 'text-primary') : 'text-white'
+    }>{item.title}</NavLink>
               </li>  
             )}
             

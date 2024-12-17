@@ -28,7 +28,7 @@ export default function Home() {
   );
 
   return (
-    <>
+    <> 
       <Section type="fullscreen">
         <Slider
           images={sliderImagesArray}
@@ -53,8 +53,8 @@ export default function Home() {
       <Section style="relative">
         <HandyBackground />
         <SectionTitle style="leading-tight">
-          <h1 className="text-red-500 ">Your Premium Hygiene Partner</h1>
-          <h1 className="text-textPrimary">for Everyday Freshness</h1>
+          <h1 className="text-secondary ">Your Premium Hygiene Partner</h1>
+          <h1 className="text-primary">for Everyday Freshness</h1>
         </SectionTitle>
 
         <div className="text-4xl text-center leading-10 font-bold mb-5">
@@ -69,7 +69,7 @@ export default function Home() {
         </p>
         <AboutSection />
       </Section>
-      <Section style={"bg-primary"}>
+      <Section style={"bg-primary bg-[url('/pattern.png')]"}>
         <SectionTitle style="text-white">Why Handy</SectionTitle>
         <Features />
       </Section>
@@ -109,7 +109,7 @@ export default function Home() {
             </div>
 
             <div className="p-7">
-              <b className="text-3xl text-primary">Handy FMCG </b>
+              <b className="text-3xl text-primary">Handy Tissue Products </b>
               <p className="mt-5 text-lg">
                 In 2018, we expanded with a state-of-the-art facility in 6th of
                 October City, powered by South Korean technology. This facility

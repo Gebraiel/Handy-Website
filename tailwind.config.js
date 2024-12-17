@@ -15,8 +15,8 @@ export default {
       },
       colors: {
         primary: "#09216d",
-        secondary: "#2c448f",
-        textPrimary: "#09216d",
+        secondary: "#e46a5a",
+        gray:"#2c448f",
       },
       keyframes: {
         fadeDown: {

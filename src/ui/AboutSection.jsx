@@ -18,13 +18,13 @@ export default function AboutSection() {
       <div className="flex lg:flex-row flex-col justify-between gap-14 mt-32">
         <div className="lg:w-2/5">
           <div className="mb-16 mt-20">
-            <h5 className="font-semibold text-textPrimary">
+            <h5 className="font-semibold text-primary">
               OUR MISSION & VISION
             </h5>
-            <h2 className="text-6xl font-bold text-red-500 my-3">
+            <h2 className="text-6xl font-bold text-secondary my-3">
               +35 Years of
             </h2>
-            <h3 className="text-3xl font-bold text-textPrimary">
+            <h3 className="text-3xl font-bold text-primary">
               redefining hygiene standards in Egypt
             </h3>
           </div>

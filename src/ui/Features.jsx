@@ -6,8 +6,8 @@ import { FaGlobe } from "react-icons/fa";
 export default function Features() {
   return (
     <div className="bg-primary grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-4 gap-5 items-stretch text-white">
-      <div className="text-center py-16 px-9 bg-secondary transition-all duration-300 outline outline-8 outline-transparent hover:outline-[#e06c61] ">
-        <div className="pb-5 border-b-2 border-red-500 w-fit m-auto text-3xl">
+      <div className="text-center py-16 px-9 bg-gray transition-all duration-300 outline outline-8 outline-transparent hover:outline-[#e06c61] ">
+        <div className="pb-5 border-b-2 border-secondary w-fit m-auto text-3xl">
           <FaMedal />
         </div>
         <h4 className="text-2xl font-bold my-5">Certified Quality</h4>
@@ -16,8 +16,8 @@ export default function Features() {
           standards.
         </p>
       </div>
-      <div className="text-center py-16 px-9 bg-secondary transition-all duration-300 outline outline-8 outline-transparent hover:outline-[#e06c61] ">
-        <div className="pb-5 border-b-2 border-red-500 w-fit m-auto text-3xl">
+      <div className="text-center py-16 px-9 bg-gray transition-all duration-300 outline outline-8 outline-transparent hover:outline-[#e06c61] ">
+        <div className="pb-5 border-b-2 border-secondary w-fit m-auto text-3xl">
           <FaThumbsUp />
         </div>
         <h4 className="text-2xl font-bold my-5">Trusted</h4>
@@ -26,8 +26,8 @@ export default function Features() {
           hygiene products.
         </p>
       </div>
-      <div className="text-center py-16 px-9 bg-secondary transition-all duration-300 outline outline-8 outline-transparent hover:outline-[#e06c61] ">
-        <div className="pb-5 border-b-2 border-red-500 w-fit m-auto text-3xl">
+      <div className="text-center py-16 px-9 bg-gray transition-all duration-300 outline outline-8 outline-transparent hover:outline-[#e06c61] ">
+        <div className="pb-5 border-b-2 border-secondary w-fit m-auto text-3xl">
           <RiLeafFill />
         </div>
         <h4 className="text-2xl font-bold my-5">Eco Friendly</h4>
@@ -36,8 +36,8 @@ export default function Features() {
           the planet as they are to you.
         </p>
       </div>
-      <div className="text-center py-16 px-9 bg-secondary transition-all duration-300 outline outline-8 outline-transparent hover:outline-[#e06c61] ">
-        <div className="pb-5 border-b-2 border-red-500 w-fit m-auto text-3xl">
+      <div className="text-center py-16 px-9 bg-gray transition-all duration-300 outline outline-8 outline-transparent hover:outline-[#e06c61] ">
+        <div className="pb-5 border-b-2 border-secondary w-fit m-auto text-3xl">
           <FaGlobe />
         </div>
         <h4 className="text-2xl font-bold my-5">Global Reach</h4>

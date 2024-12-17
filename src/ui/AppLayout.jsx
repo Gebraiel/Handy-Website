@@ -10,7 +10,7 @@ export default function AppLayout() {
     {title:"Products"},
     {title:"Sustainability"},
     {title:"Media Center"},
-    {title:"Contact Us"},
+    {title:"Contact Us",link:"/contact"},
     
   ]
   return (
