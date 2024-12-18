@@ -4,9 +4,9 @@ import Footer from "./Footer";
 
 export default function AppLayout() {
   const menu = [
-    {title:"About Us"},
-    {title:"Why Handy"},
-    {title:"Sectors"},
+    {title:"About Us",link:"/about"},
+    {title:"Why Handy",link:"/why-handy"},
+    {title:"Sectors",link:"/sectors"},
     {
       title:"Products",link:"/products",hasSubMenu:true,submenu:
       [
@@ -32,8 +32,8 @@ export default function AppLayout() {
         },
       ]
     },
-    {title:"Sustainability"},
-    {title:"Media Center"},
+    {title:"Sustainability",link:"/sustainability"},
+    {title:"Media Center",link:"/media-center"},
     {title:"Contact Us",link:"/contact"},
     
   ]

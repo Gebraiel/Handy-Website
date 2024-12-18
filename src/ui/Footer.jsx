@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import Logo from "../assets/Logo.png";
+import Logo from "/Logo.png";
 import { FaMapMarkerAlt } from "react-icons/fa";
 import { FaEnvelopeOpen } from "react-icons/fa";
 

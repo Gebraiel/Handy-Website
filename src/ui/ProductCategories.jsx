@@ -30,7 +30,7 @@ export default function ProductCategories() {
         </div>
         <div className='flex flex-col lg:flex-row lg:odd:flex-row lg:even:flex-row-reverse  justify-between items-center gap-5 '>
             <div className='max-w-[500px]'>
-                <img src="/categories/kitchen.jpg" alt="" />
+                <img src="/categories/home.jpg" alt="" />
             </div>
             <div className='w-full lg:w-1/2 '>
                 <b className='text-4xl text-secondary'>Home Care</b>

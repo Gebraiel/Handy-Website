@@ -18,14 +18,14 @@ export default function Home() {
   const sustainabilityImagesArray = Array.from(
     { length: sustainabilityLength },
     (_, i) =>
-      `${import.meta.env.BASE_URL}sustainability/sign system-${
+      `/sustainability/sign system-${
         i + 1 < 10 ? "0" + (i + 1) : i + 1
       }.jpg`
   );
   const sliderLength = 3;
   const sliderImagesArray = Array.from(
     { length: sliderLength },
-    (_, i) => `${import.meta.env.BASE_URL}banner/slider-${i + 1}.png`
+    (_, i) => `/banner/slider-${i + 1}.png`
   );
 
   return (
@@ -51,7 +51,7 @@ export default function Home() {
           ]}
         />
       </Section>
-      <Section style="relative">
+      <Section className="relative">
         <HandyBackground />
         <SectionTitle style="leading-tight">
           <h1 className="text-secondary ">Your Premium Hygiene Partner</h1>
@@ -70,12 +70,12 @@ export default function Home() {
         </p>
         <AboutSection />
       </Section>
-      <Section style={"bg-primary bg-[url('/pattern.png')]"}>
+      <Section className={"bg-primary bg-[url('/pattern.png')]"}>
         <SectionTitle style="text-white">Why Handy</SectionTitle>
         <Features />
       </Section>
 
-      <Section style={"bg-[aliceblue]"}>
+      <Section className={"bg-[aliceblue]"}>
         <SectionTitle>Sectors</SectionTitle>
         <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
           <div className="w-full bg-white">
@@ -143,7 +143,7 @@ export default function Home() {
         </div>
       </Section>
       <Section
-        style={
+        className={
           "bg-[url(/banner.jpg)] bg-center bg-cover lg:py-[300px] py-[150px] text-center"
         }
       >
@@ -176,13 +176,13 @@ export default function Home() {
         </div>
       </Section>
      
-      <Section style="relative">
+      <Section className="relative">
         <HandyBackground />
         <SectionTitle>Certificates</SectionTitle>
         <Certificates />
       </Section>
       <Section
-        style={
+        className={
           "bg-[url(/slider-4.jpg)] bg-center bg-cover lg:py-[300px] py-[150px] text-center relative"
         }
       >

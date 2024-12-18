@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import Logo from "../assets/Logo.png";
+import Logo from "/Logo.png";
 import { NavLink, Link } from "react-router-dom";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoCloseSharp } from "react-icons/io5";
@@ -67,8 +67,8 @@ export default function Header({menu}) {
           <ul className="flex gap-5 ">
             {menu.map((item)=>
               <li className="uppercase font-bold relative group">
-                <NavLink to={`${item.link}`} className={({ isActive }) => 
-                        isActive ? (isSticky ? 'text-secondary' : 'text-primary') : `text-white ${item.hasSubMenu ? 'flex gap-1 items-center' : ""}`
+                <NavLink to={`${item.link}`} className={({ isActive }) => `${item.hasSubMenu ? 'flex gap-1 items-center ' : ""} ${isActive ? (isSticky ? 'text-secondary' : 'text-primary') : 'text-white'}`
+                        
                 }>
                       {item.title}
                     { item.hasSubMenu && <FaCaretDown /> }
