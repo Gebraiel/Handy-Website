@@ -9,6 +9,8 @@ import MediaCenter from "./pages/MediaCenter";
 import Sectors from "./pages/Sectors";
 import Sustainability from "./pages/Sustainability";
 import WhyHandy from "./pages/WhyHandy";
+import Category from "./pages/Category";
+import {loader as productsLoader} from './pages/Category';
 const router = createBrowserRouter([
   {
     element: <AppLayout />,
@@ -47,6 +49,11 @@ const router = createBrowserRouter([
       ,{
         path:"/why-handy",
         element:<WhyHandy />
+      }
+      ,{
+        path:"/category/:categoryName",
+        element:<Category />,
+        loader:loader()
       }
     ],
   },
