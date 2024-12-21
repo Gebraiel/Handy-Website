@@ -10,7 +10,7 @@ export default {
       },
       animation: {
         fadeDown: "fadeDown 0.5s ease forwards",
-        fadeUp: "fadeUp 0.5s linear 0.3s",
+        fadeUp: "fadeUp 0.5s ease forwards",
         flashing:
           "flashing 0.5s steps(4) infinite",
         slideDown:"slideDown 0.3s forwards",
