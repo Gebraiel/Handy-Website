@@ -52,28 +52,28 @@
         {
             "id": 8,
             "title": "2 Kitchen Rolls",
-            "category":"home",
+            "category":"home-care",
             "details": "2 Rolls",
             "image":"/products/home/2 Kitchen Rolls.jpg" 
         },
         {
             "id": 9,
             "title": "6 Kitchen Rolls",
-            "category":"home",
+            "category":"home-care",
             "details": "6 Rolls",
             "image":"/products/home/6 Kitchen Rolls.jpg" 
         },
         {
             "id": 10,
             "title": "C-Fold 60",
-            "category":"home",
+            "category":"home-care",
             "details": "60 Tissues",
             "image":"/products/home/C-Fold 60.jpg" 
         },
         {
             "id": 11,
             "title": "Jumbo Roll",
-            "category":"home",
+            "category":"home-care",
             "details": "",
             "image":"/products/home/Jumbo Roll.jpg" 
         },
@@ -117,31 +117,50 @@
             "title": "Anti Bacterial Wet Wipes",
             "category":"wipes",
             "details": "40 Pcs",
-            "image":"/products/wipes/Anti Bacterial Wet Wipes 40Pcs.jpg" 
-        },
-        {
-            "id": 18,
-            "title": "Anti Bacterial Wet Wipes",
-            "category":"wipes",
-            "details": "40 Pcs",
             "image":"/products/wipes/1-Anti Bacterial Wet Wipes 40Pcs.jpg" 
         },
+
         {
-            "id": 19,
+            "id": 18,
             "title": "Baby Wipes",
             "category":"wipes",
             "details": "20 Pcs",
             "image":"/products/wipes/1-Baby Wipes 20Pcs.jpg" 
         },
         {
-            "id": 20,
+            "id": 19,
             "title": "Baby Wipes",
             "category":"wipes",
             "details": "72 Pcs",
             "image":"/products/wipes/1-Baby Wipes 72Pcs.jpg" 
         }
-
-        
+    ],
+    "categories":[
+        {
+            "id":1,
+            "name":"facial tissues",
+            "image":"/categories/facial.jpg"
+        },
+        {
+            "id":2,
+            "name":"jumbo rolls",
+            "image":"/categories/jumbo.jpg"
+        },
+        {
+            "id":3,
+            "name":"home care",
+            "image":"/categories/home.jpg"
+        },
+        {
+            "id":4,
+            "name":"toliet tissues",
+            "image":"/categories/toilet.jpg"
+        },
+        {
+            "id":5,
+            "name":"wet wipes",
+            "image":"/categories/wipes.jpg"
+        }
     ]
   }
   

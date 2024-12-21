@@ -27,7 +27,7 @@ function Slider({ images, headings }) {
         ))}
       </div>
       <div className="text-center w-full h-full  absolute left-0 top-0 flex justify-center items-center z-10 text-white">
-        <div className="animate-fadeUp" key={active}>
+        <div className="opacity-0 animate-fadeUp " key={active}>
           <Typing word={headings[active].subtitle}/>
           <h1 className={`w-[90%]  m-auto text-5xl font-bold xl:text-8xl  `}>
             {headings[active].heading}

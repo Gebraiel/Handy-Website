@@ -1,3 +1,4 @@
+// @ts-nocheck
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
@@ -9,7 +10,7 @@ export default {
       },
       animation: {
         fadeDown: "fadeDown 0.5s ease forwards",
-        fadeUp: "fadeUp 0.5s ease forwards",
+        fadeUp: "fadeUp 0.5s linear 0.3s",
         flashing:
           "flashing 0.5s steps(4) infinite",
         slideDown:"slideDown 0.3s forwards",
@@ -26,8 +27,8 @@ export default {
           "100%": { top: "0" },
         },
         fadeUp: {
-          "0%": { transform: "translateY(20px)", opacity: "0" },
-          "100%": { transform: "translateY(0px)", opacity: "1" },
+          "0%": { "transform": "translateY(20px)", "opacity": 0 },
+          "100%": { "transform": "translateY(0px)", "opacity": 1 },
         },
 
         flashing: {

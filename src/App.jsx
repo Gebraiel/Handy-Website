@@ -11,6 +11,7 @@ import Sustainability from "./pages/Sustainability";
 import WhyHandy from "./pages/WhyHandy";
 import Category from "./pages/Category";
 import {loader as productsLoader} from './pages/Category';
+// import {loader as categoriesLoader} from "./pages/Products";
 const router = createBrowserRouter([
   {
     element: <AppLayout />,
@@ -24,7 +25,7 @@ const router = createBrowserRouter([
         element:<Contact />
       },{
         path:"/products",
-        element:<Products />
+        element:<Products />,
       }
       ,{
         path:"/about",
@@ -53,7 +54,7 @@ const router = createBrowserRouter([
       ,{
         path:"/category/:categoryName",
         element:<Category />,
-        loader:loader()
+        loader:productsLoader
       }
     ],
   },

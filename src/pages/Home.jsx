@@ -12,6 +12,7 @@ import Certificates from "../ui/Certificates";
 import SectionTitle from "../ui/SectionTitle";
 import { Link } from "react-router-dom";
 import ProductCategories from "../ui/ProductCategories";
+import Banner from "../ui/Banner";
 
 export default function Home() {
   const sustainabilityLength = 14;
@@ -53,14 +54,12 @@ export default function Home() {
       </Section>
       <Section className="relative">
         <HandyBackground />
-        <SectionTitle style="leading-tight">
-          <h1 className="text-secondary ">Your Premium Hygiene Partner</h1>
-          <h1 className="text-primary">for Everyday Freshness</h1>
+        <SectionTitle className="leading-tight">
+          <p className="text-secondary ">Your Premium Hygiene Partner</p>
+          <p className="text-primary">for Everyday Freshness</p>
         </SectionTitle>
 
-        <div className="text-4xl text-center leading-10 font-bold mb-5">
-
-        </div>
+  
         <p className="text-center text-primary text-xl font-semibold">
           At HANDY, we’ve been redefining hygiene since 1978, bringing you
           products that make everyday life fresher, easier, and more
@@ -71,7 +70,7 @@ export default function Home() {
         <AboutSection />
       </Section>
       <Section className={"bg-primary bg-[url('/pattern.png')]"}>
-        <SectionTitle style="text-white">Why Handy</SectionTitle>
+        <SectionTitle className="text-white">Why Handy</SectionTitle>
         <Features />
       </Section>
 
@@ -142,20 +141,19 @@ export default function Home() {
           </div>
         </div>
       </Section>
-      <Section
-        className={
-          "bg-[url(/banner.jpg)] bg-center bg-cover lg:py-[300px] py-[150px] text-center"
-        }
-      >
+     
+      <Banner image="/banner.jpg" className=" text-center">
         <b className="text-[35px] lg:text-[40px] xl:text-[60px] leading-none text-white">
           Proudly producing modern and high-quality products, using advanced
           machinery under the guidance of a skilled team
         </b>
-      </Section>
+      </Banner>
       <Section>
-        <SectionTitle style="leading-tight">
-          <h1 className="text-secondary ">Handy Products</h1>
-          <h1 className="text-primary">Clean, fresh, and on-the-go Quality That Speaks for Itself</h1>
+        <SectionTitle className="leading-tight">
+          <>
+            <p className="text-secondary ">Handy Products</p>
+            <p className="text-primary">Clean, fresh, and on-the-go Quality That Speaks for Itself</p>
+          </>
         </SectionTitle>
         <ProductCategories />
       </Section>
@@ -170,8 +168,8 @@ export default function Home() {
           HANDY, we create products that support a cleaner, greener future.
         </p>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-5 mt-10">
-          {sustainabilityImagesArray.map((e) => (
-            <img src={e} />
+          {sustainabilityImagesArray.map((e,index) => (
+            <img src={e} key={index}/>
           ))}
         </div>
       </Section>

@@ -1,4 +1,4 @@
-export default function Section({ children={}, className = "" ,type="",style={}}) {
+export default function Section({ children, className = "" ,type="",style={}}) {
    
   return (
     <section className={`${type != 'fullscreen' ? 'py-36' : ""} ${className}`} style={style}>

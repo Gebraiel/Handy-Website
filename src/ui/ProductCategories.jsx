@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import axios from '../../node_modules/axios/index';
 
 export default function ProductCategories() {
   return (
@@ -13,7 +14,7 @@ export default function ProductCategories() {
                 <p className='my-5'>
                     Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam doloribus sed aperiam aspernatur quos dolor architecto obcaecati a magnam totam excepturi in molestias veniam ipsum accusantium, qui sapiente officiis voluptatum?
                 </p>
-                <Link to="" className="text-primary font-bold">Learn More</Link>
+                <Link to="/category/" className="text-primary font-bold">Learn More</Link>
             </div>
         </div>
         <div className='flex flex-col lg:flex-row lg:odd:flex-row lg:even:flex-row-reverse  justify-between items-center gap-5 '>
@@ -70,3 +71,14 @@ export default function ProductCategories() {
     </div>
   )
 }
+
+export async function loader() {
+    
+    return axios('http://localhost:3000/categories').then((data)=>{
+      return data.data;
+    }).catch((error)=>{
+      console.log(error);
+      return {};
+    })
+  }
+  

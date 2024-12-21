@@ -65,8 +65,8 @@ export default function Header({menu}) {
         </div>
         <div className="hidden lg:block ">
           <ul className="flex gap-5 ">
-            {menu.map((item)=>
-              <li className="uppercase font-bold relative group">
+            {menu.map((item,index)=>
+              <li className="uppercase font-bold relative group" key={index}>
                 <NavLink to={`${item.link}`} className={({ isActive }) => `${item.hasSubMenu ? 'flex gap-1 items-center ' : ""} ${isActive ? (isSticky ? 'text-secondary' : 'text-primary') : 'text-white'}`
                         
                 }>
@@ -78,8 +78,8 @@ export default function Header({menu}) {
                   item.hasSubMenu &&
                    <ul className="bg-primary text-white w-52 absolute right-0 top-full  group-hover:block group-hover:animate-fadeUp opacity-0 hidden">
                       {
-                        item.submenu.map((child)=>
-                          <li className="border-b-2 p-4"><Link to={child.link}>{child.title}</Link></li>
+                        item.submenu.map((child,index)=>
+                          <li className="border-b-2 p-4" key={index}><Link to={child.link}>{child.title}</Link></li>
                         )
                       }
                     </ul>
