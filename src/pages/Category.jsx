@@ -5,20 +5,22 @@ import Section from '../ui/Section';
 import Loader from '../ui/Loader';
 import Banner from '../ui/Banner';
 import SectionTitle from '../ui/SectionTitle';
+import { Link } from 'react-router-dom';
+import { getCategoryProducts } from '../services/products';
 
 export default function Category() {
-  const {categoryName} = useParams();
   const products = useLoaderData();
+  const categoryName = products[0].category.name;
   const navigation = useNavigation();
   const isLoading = navigation.state ==='loading' ;
-  console.log(isLoading);
+  // console.log(isLoading);
   console.log(products);
   if(isLoading)
     return <Loader />
   return (
     <>
         <Banner image="/banner/slider-1.png" className='flex justify-center items-center '>
-          <h1 className='text-primary text-5xl font-bold text-center'>{categoryName}</h1>
+          <h1 className='text-primary text-5xl font-bold text-center capitalize'>{categoryName}</h1>
         </Banner>  
         <Section>
             <div className='space-y-5'>
@@ -36,7 +38,7 @@ export default function Category() {
                                   </p> 
                               </div>   
                               <div className='mt-5'>
-                                  <button className='py-2 px-3 bg-primary text-white font-bold'>Details</button>
+                                  <Link to={`/product/${product.id}`} className='py-2 px-3 bg-primary text-white font-bold'>Details</Link>
                               </div>   
                           </div>
                       </div>
@@ -49,13 +51,8 @@ export default function Category() {
 }
 
 export async function loader({params}) {
-  console.log("params",params);
-  return axios('http://localhost:3000/products').then((data)=>{
-    let products = data.data;
-    const {categoryName} = params;
-    return products.filter((product)=>product.category.toLowerCase() == categoryName.toLowerCase() )
-  }).catch((error)=>{
-    console.log(error);
-    return {};
-  })
+  const {categoryId} = params;
+
+  const products = getCategoryProducts(Number(categoryId));
+  return products;
 }

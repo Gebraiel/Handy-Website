@@ -12,23 +12,23 @@ export default function AppLayout() {
       [
         {
           title:"Facial Tissues",
-          link:"/category/facial",
+          link:"/category/1",
         },
         {
           title:"Jumbo Rolls",
-          link:"/category/jumbo",
+          link:"/category/2",
         },
         {
           title:"Home Care",
-          link:"/category/home-care",
+          link:"/category/3",
         },
         {
           title:"Toilet Tissues",
-          link:"/category/toilet",
+          link:"/category/4",
         },
         {
           title:"Wet Wipes",
-          link:"/category/wipes",
+          link:"/category/5",
         },
       ]
     },

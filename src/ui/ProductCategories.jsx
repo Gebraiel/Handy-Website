@@ -73,12 +73,6 @@ export default function ProductCategories() {
 }
 
 export async function loader() {
-    
-    return axios('http://localhost:3000/categories').then((data)=>{
-      return data.data;
-    }).catch((error)=>{
-      console.log(error);
-      return {};
-    })
-  }
+        
+}
   

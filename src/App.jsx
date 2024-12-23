@@ -11,6 +11,8 @@ import Sustainability from "./pages/Sustainability";
 import WhyHandy from "./pages/WhyHandy";
 import Category from "./pages/Category";
 import {loader as productsLoader} from './pages/Category';
+import {loader as productLoader} from './pages/Product';
+import Product from "./pages/Product";
 // import {loader as categoriesLoader} from "./pages/Products";
 const router = createBrowserRouter([
   {
@@ -52,9 +54,14 @@ const router = createBrowserRouter([
         element:<WhyHandy />
       }
       ,{
-        path:"/category/:categoryName",
+        path:"/category/:categoryId",
         element:<Category />,
         loader:productsLoader
+      },
+      {
+        path:"/product/:productId",
+        element:<Product />,
+        loader:productLoader
       }
     ],
   },
