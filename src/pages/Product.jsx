@@ -7,7 +7,7 @@ import SectionTitle from '../ui/SectionTitle';
 import { getProduct } from '../services/products';
 
 export default function Product() {
-    const {title,image,details,category:{name:categoryName}} = useLoaderData();
+    const {title,subtitle,image,details,category:{name:categoryName}} = useLoaderData();
   return (
         <>
             <Banner image='/banner/slider-1.png' className='flex items-center justify-center'>
@@ -27,7 +27,7 @@ export default function Product() {
                             <h2 className='text-primary text-4xl font-bold'>{title}</h2>
                             <h3 className='text-secondary text-2xl font-semibold'>{categoryName}</h3>
                         </div>
-                        <p>{details}</p>
+                        <ul className='list-disc pl-5'>{details.split(',').map((item,index)=><li key={index}>{item}</li>)}</ul>
                         <button className='w-full bg-primary text-white py-3 font-bold'>Share</button>
                     </div>
                 </div>
