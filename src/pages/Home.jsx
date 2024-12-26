@@ -54,7 +54,7 @@ export default function Home() {
       </Section>
       <Section className="relative">
         <HandyBackground />
-        <SectionTitle className="leading-tight">
+        <SectionTitle className="!leading-tight">
           <p className="text-secondary ">Your Premium Hygiene Partner</p>
           <p className="text-primary">for Everyday Freshness</p>
         </SectionTitle>
@@ -149,7 +149,7 @@ export default function Home() {
         </b>
       </Banner>
       <Section>
-        <SectionTitle className="leading-tight">
+        <SectionTitle className="!leading-tight">
           <>
             <p className="text-secondary ">Handy Products</p>
             <p className="text-primary">Clean, fresh, and on-the-go Quality That Speaks for Itself</p>
