@@ -5,8 +5,8 @@ import { FaGlobe } from "react-icons/fa";
 
 export default function Features() {
   return (
-    <div className="bg-primary grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-4 gap-5 items-stretch text-white">
-      <div className="text-center py-16 px-9 bg-gray transition-all duration-300 outline outline-8 outline-transparent hover:outline-[#e06c61] ">
+    <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-4 gap-5 items-stretch text-white">
+      <div className="bg-contain bg-[url('/pattern.png')] text-center py-16 px-9 bg-gray transition-all duration-300 outline outline-8 outline-transparent hover:outline-[#e06c61] ">
         <div className="pb-5 border-b-2 border-secondary w-fit m-auto text-3xl">
           <FaMedal />
         </div>
@@ -16,7 +16,7 @@ export default function Features() {
           standards.
         </p>
       </div>
-      <div className="text-center py-16 px-9 bg-gray transition-all duration-300 outline outline-8 outline-transparent hover:outline-[#e06c61] ">
+      <div className="bg-contain bg-[url('/pattern.png')] text-center py-16 px-9 bg-gray transition-all duration-300 outline outline-8 outline-transparent hover:outline-[#e06c61] ">
         <div className="pb-5 border-b-2 border-secondary w-fit m-auto text-3xl">
           <FaThumbsUp />
         </div>
@@ -26,7 +26,7 @@ export default function Features() {
           hygiene products.
         </p>
       </div>
-      <div className="text-center py-16 px-9 bg-gray transition-all duration-300 outline outline-8 outline-transparent hover:outline-[#e06c61] ">
+      <div className="bg-contain bg-[url('/pattern.png')] text-center py-16 px-9 bg-gray transition-all duration-300 outline outline-8 outline-transparent hover:outline-[#e06c61] ">
         <div className="pb-5 border-b-2 border-secondary w-fit m-auto text-3xl">
           <RiLeafFill />
         </div>
@@ -36,7 +36,7 @@ export default function Features() {
           the planet as they are to you.
         </p>
       </div>
-      <div className="text-center py-16 px-9 bg-gray transition-all duration-300 outline outline-8 outline-transparent hover:outline-[#e06c61] ">
+      <div className="bg-contain bg-[url('/pattern.png')] text-center py-16 px-9 bg-gray transition-all duration-300 outline outline-8 outline-transparent hover:outline-[#e06c61] ">
         <div className="pb-5 border-b-2 border-secondary w-fit m-auto text-3xl">
           <FaGlobe />
         </div>

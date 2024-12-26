@@ -69,7 +69,7 @@ export default function Home() {
         </p>
         <AboutSection />
       </Section>
-      <Section className={"bg-primary bg-[url('/pattern.png')]"}>
+      <Section className={"bg-primary"}>
         <SectionTitle className="text-white">Why Handy</SectionTitle>
         <Features />
       </Section>

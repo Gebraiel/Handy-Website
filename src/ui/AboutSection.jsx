@@ -1,5 +1,6 @@
 import Accordion from "./Accordion";
 import handy from "../assets/handy.jpeg";
+import SectionTitle from "./SectionTitle";
 const accordions = [
   {
     heading: "Our Mission",
@@ -16,19 +17,20 @@ export default function AboutSection() {
   return (
     <>
       <div className="flex lg:flex-row flex-col justify-between gap-14 mt-32">
-        <div className="lg:w-2/5">
+        <div className="lg:w-2/3">
           <div className="mb-16 mt-20">
             <h5 className="font-semibold text-primary">
               OUR MISSION & VISION
             </h5>
-            <h2 className="text-6xl font-bold text-secondary my-3">
-              +35 Years of
-            </h2>
-            <h3 className="text-3xl font-bold text-primary">
-              redefining hygiene standards in Egypt
-            </h3>
+            <SectionTitle className="!text-left">
+                      <p className="text-secondary my-3">              +35 Years of
+                      </p>
+                      <p className="text-primary">              redefining hygiene standards in Egypt
+                      </p>
+            </SectionTitle>
+
           </div>
-          <div className="flex flex-col gap-5 justify-center mt-5">
+          <div className="flex flex-col gap-5 justify-center mt-5 xl:w-1/2">
             {accordions.map((accordion, index) => (
               <Accordion accordion={accordion} key={index} />
             ))}

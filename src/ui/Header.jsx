@@ -22,17 +22,18 @@ export default function Header({menu}) {
   return (
     <header
       ref={headerRef}
-      className={`transition-all duration-300  left-0 top-0 w-full z-50  text-white ${
-        isSticky
-          ? "fixed animate-fadeDown bg-primary bg-[url('/pattern.png')]"
-          : "absolute bg-transparent"
-      }  `}
+      className={`transition-all duration-300 absolute left-0 top-0 w-full z-50  text-white `}
+      // className={`transition-all duration-300  left-0 top-0 w-full z-50  text-white ${
+      //   isSticky
+      //     ? "fixed animate-fadeDown bg-primary bg-contain bg-[url('/pattern.png')]"
+      //     : "absolute bg-transparent"
+      // }  `}
     >
       <div className="container flex items-center justify-between m-auto p-5">
         <Link to="/" className="w-52">
           <img src={Logo} alt="Logo" />
         </Link>
-        <div className="lg:hidden">
+        <div className="xl:hidden">
           <button onClick={() => setShow(!show)}>
             { !show ? <GiHamburgerMenu className="text-2xl" /> : <IoCloseSharp className="text-2xl" />}
           </button>
@@ -63,7 +64,7 @@ export default function Header({menu}) {
             </ul>
           )}
         </div>
-        <div className="hidden lg:block ">
+        <div className="hidden xl:block ">
           <ul className="flex gap-5 ">
             {menu.map((item,index)=>
               <li className="uppercase font-bold relative group" key={index}>

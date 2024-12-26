@@ -1,4 +1,3 @@
-import axios from "../../node_modules/axios/index";
 import supabase from "./supabase";
 
 export async function getCategories(){

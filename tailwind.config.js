@@ -6,7 +6,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["Rajdhani"],
+        sans: ["Poppins"],
       },
       animation: {
         fadeDown: "fadeDown 0.5s ease forwards",
