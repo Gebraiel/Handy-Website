@@ -16,7 +16,7 @@ const accordions = [
 export default function AboutSection() {
   return (
     <>
-      <div className="flex lg:flex-row flex-col justify-between gap-14 mt-32">
+      <div className="flex lg:flex-row flex-col justify-between gap-14 lg:mt-32">
         <div className="lg:w-2/3">
           <div className="mb-16 mt-20">
             <h5 className="font-semibold text-primary">

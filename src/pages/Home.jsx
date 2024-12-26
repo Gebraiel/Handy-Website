@@ -60,7 +60,7 @@ export default function Home() {
         </SectionTitle>
 
   
-        <p className="text-center text-primary text-xl font-semibold">
+        <p className="text-center text-primary text-base font-semibold">
           At HANDY, we’ve been redefining hygiene since 1978, bringing you
           products that make everyday life fresher, easier, and more
           comfortable. Whether at home or in business, our high-quality products

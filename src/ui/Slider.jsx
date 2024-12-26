@@ -29,7 +29,7 @@ function Slider({ images, headings }) {
       <div className="text-center w-full h-full  absolute left-0 top-0 flex justify-center items-center z-10 text-white">
         <div className="opacity-0 animate-fadeUp w-[90%]" key={active}>
           <Typing word={headings[active].subtitle}/>
-          <h1 className={` text-3xl lg:text-4xl font-bold xl:text-6xl  `}>
+          <h1 className={`text-4xl lg:text-5xl font-bold xl:text-6xl`}>
             {headings[active].heading}
           </h1>
         </div>
