@@ -54,14 +54,17 @@ export default function ProductList({ products, view ,filter}) {
                
             }
             </div>
-            <div className="mt-5">
-              <Link
-                to={`/product/${product.id}`}
-                className="py-2 px-3 bg-primary text-white font-bold"
-              >
-                Details
-              </Link>
-            </div>
+            {
+                !categoryName.toLowerCase().includes('jumbo') &&
+                <div className="mt-5">
+                <Link
+                    to={`/product/${product.id}`}
+                    className="py-2 px-3 bg-primary text-white font-bold"
+                >
+                    Details
+                </Link>
+                </div>
+            }
           </div>
         </div>
       ))
