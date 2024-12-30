@@ -15,6 +15,7 @@ export default function Category() {
   const products = useLoaderData();
   
   const categoryName = products[0]?.category?.name;
+  console.log(categoryName.toLowerCase().includes('jumbo'));
   const categoryId = products[0]?.category?.id;
   const navigation = useNavigation();
   const isLoading = navigation.state ==='loading' ;
@@ -39,7 +40,27 @@ export default function Category() {
            <div>
            {
               products.length > 0 ? 
-              <div className={`${view =='list' ? "space-y-5" :"grid gap-5 grid-cols-1 md:grid-cols-2 lg:grid-cols-3"}`}>
+              categoryName.toLowerCase().includes('jumbo') ? 
+                  <div className={`${view =='list' ? "space-y-5" :"grid gap-5 grid-cols-1 md:grid-cols-2 lg:grid-cols-3"}`}>
+                  {products.map((product,index)=>
+                      
+                        <div className={`${view =='list' ? "flex flex-col md:flex-row items-center": "flex flex-col items-center"} bg-white shadow-md`} key={index}>
+                            <div className={`w-full ${view =='list' ? " lg:w-1/4" : ""}`}>
+                                <img className='m-auto' src={product.image} alt="Product Image" />
+                            </div>
+                            <div className={`flex flex-col ${view == 'list'? "lg:flex-row" : "items-center"} justify-between p-5 flex-grow w-full`}>
+                                <div>
+                                    <h1 className='text-primary text-3xl font-bold'>{product.title}</h1>
+                                    <ul className='list-disc pl-5 mt-5'>{product.details.split(',').map((item,index)=><li key={index}>{item}</li>)}</ul>
+                                </div>   
+                              
+                            </div>
+                        </div>
+                      
+                  )}
+                  </div>
+                  : 
+                  <div className={`${view =='list' ? "space-y-5" :"grid gap-5 grid-cols-1 md:grid-cols-2 lg:grid-cols-3"}`}>
                   {products.map((product,index)=>
                       
                         <div className={`${view =='list' ? "flex flex-col md:flex-row items-center": "flex flex-col items-center"} bg-white shadow-md`} key={index}>
@@ -60,7 +81,7 @@ export default function Category() {
                         </div>
                       
                   )}
-              </div>
+                  </div>
               : 
               <SectionTitle className="mb-1">No Products Found</SectionTitle>
             }
