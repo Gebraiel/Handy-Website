@@ -39,6 +39,5 @@ export default function Product() {
 export async function loader({params}){
     const {productId} = params
     const product = (await getProduct(Number(productId)))[0];
-    console.log(product);
     return product;
 }

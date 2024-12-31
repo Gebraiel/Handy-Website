@@ -19,6 +19,8 @@ export default function Category() {
   const isLoading = navigation.state === "loading";
 
   const categoryName = products[0]?.category?.name;
+  const isJumbo = categoryName.toLowerCase().includes("jumbo");
+
   const categoryId = products[0]?.category?.id;
   useEffect(() => {
     let set = new Set();
@@ -26,8 +28,7 @@ export default function Category() {
     setPackagesList(Array.from(set));
     setProductPackage('all')
   }, [products]);
-  console.log(products);
-  console.log(packagesList);
+
   if (isLoading) return <Loader />;
   return (
     <>
@@ -44,48 +45,42 @@ export default function Category() {
           <CategoryNavigation id={categoryId} />
        
         </div>
-        <div className="flex justify-end mb-5 gap-5">
+        {
           
-          <select
-            defaultValue="all"
-            className="border-b py-3 focus:outline-none"
-            onChange={(e) => setProductPackage(e.target.value)}
-          >
-            <option value="all">All Packages</option>
-            {packagesList.map((item, index) => (
-              <option key={index}> {item} </option>
-            ))}
-          </select>
-          <div className="hidden md:flex gap-2 text-3xl">
-              <button
-                className={`${view == "list" ? "text-primary font-bold" : ""}`}
-                onClick={() => setView("list")}
-              >
-                <CiBoxList />
-              </button>
-              <button
-                className={`${view == "gallery" ? "text-primary font-bold" : ""}`}
-                onClick={() => setView("gallery")}
-              >
-                <RiGalleryView2 />
-              </button>
-            </div>
-        </div>
+              <div className="flex justify-end mb-5 gap-5">
+                
+                <select
+                  defaultValue="all"
+                  className="border-b py-3 focus:outline-none"
+                  onChange={(e) => setProductPackage(e.target.value)}
+                >
+                  <option value="all">All Packages</option>
+                  {packagesList.map((item, index) => (
+                    <option key={index}> {item} </option>
+                  ))}
+                </select>
+                <div className="hidden md:flex gap-2 text-3xl">
+                    <button
+                      className={`${view == "list" ? "text-primary font-bold" : ""}`}
+                      onClick={() => setView("list")}
+                    >
+                      <CiBoxList />
+                    </button>
+                    <button
+                      className={`${view == "gallery" ? "text-primary font-bold" : ""}`}
+                      onClick={() => setView("gallery")}
+                    >
+                      <RiGalleryView2 />
+                    </button>
+                  </div>
+              </div>
+            
+        }
+
+
         <div>
           {products.length > 0 ? (
-            
-              
-              <div
-                className={`${
-                  view == "list"
-                    ? "space-y-5"
-                    : "grid gap-5 grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
-                }`}
-              >
-                <ProductList products={products} view={view} filter={productPackage} />
-
-               
-              </div>
+              <ProductList products={products} view={view} filter={productPackage}/>
             )
           : (
             <SectionTitle className="mb-1">No Products Found</SectionTitle>
@@ -98,7 +93,6 @@ export default function Category() {
 
 export async function loader({ params }) {
   const { categoryId } = params;
-
   const products = getCategoryProducts(Number(categoryId));
   return products;
 }
