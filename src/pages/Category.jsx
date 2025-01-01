@@ -4,10 +4,10 @@ import Section from "../ui/Section";
 import Loader from "../ui/Loader";
 import Banner from "../ui/Banner";
 import { getCategoryProducts } from "../services/products";
-import CategoryNavigation from "../ui/CategoryNavigation";
+import CategoryNavigation from "../ui/Categories/CategoryNavigation";
 import { CiBoxList } from "react-icons/ci";
 import { RiGalleryView2 } from "react-icons/ri";
-import ProductList from "../ui/ProductList";
+import ProductList from "../ui/Products/ProductList";
 import SectionTitle from "../ui/SectionTitle";
 
 export default function Category() {
@@ -19,7 +19,6 @@ export default function Category() {
   const isLoading = navigation.state === "loading";
 
   const categoryName = products[0]?.category?.name;
-  const isJumbo = categoryName.toLowerCase().includes("jumbo");
 
   const categoryId = products[0]?.category?.id;
   useEffect(() => {

@@ -1,36 +1,23 @@
 import { Outlet } from "react-router-dom";
 import Header from "./Header";
 import Footer from "./Footer";
+import { getCategories } from "../services/categories";
+import { useLoaderData } from "react-router-dom";
+import CategoriesContext from "../context/CategoriesContext";
 
 export default function AppLayout() {
+  const categories=useLoaderData();
+  console.log(categories);
+  const categoriesMenu = categories.map((category) => ({
+    title: category.name,
+    link: `/category/${category.id}`,
+  }));  
   const menu = [
     {title:"About Us",link:"/about"},
     {title:"Why Handy",link:"/why-handy"},
     {title:"Sectors",link:"/sectors"},
     {
-      title:"Products",link:"/products",hasSubMenu:true,submenu:
-      [
-        {
-          title:"Facial Tissues",
-          link:"/category/1",
-        },
-        {
-          title:"Jumbo Rolls",
-          link:"/category/2",
-        },
-        {
-          title:"Home Care",
-          link:"/category/3",
-        },
-        {
-          title:"Toilet Tissues",
-          link:"/category/4",
-        },
-        {
-          title:"Wet Wipes",
-          link:"/category/5",
-        },
-      ]
+      title:"Products",link:"/products",hasSubMenu:true,submenu:categoriesMenu
     },
     {title:"Sustainability",link:"/sustainability"},
     {title:"Media Center",link:"/media-center"},
@@ -38,12 +25,15 @@ export default function AppLayout() {
     
   ]
   return (
-    <div className="">
+    <CategoriesContext.Provider value={categories}>
       <Header menu={menu}/>
       <main>
         <Outlet />
       </main>
       <Footer />
-    </div>
+    </CategoriesContext.Provider>
   );
+}
+export async function loader(){
+  return await getCategories();
 }

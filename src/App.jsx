@@ -12,11 +12,13 @@ import WhyHandy from "./pages/WhyHandy";
 import Category from "./pages/Category";
 import {loader as productsLoader} from './pages/Category';
 import {loader as productLoader} from './pages/Product';
+import {loader as categoriesLoader} from './ui/AppLayout';
 import Product from "./pages/Product";
 // import {loader as categoriesLoader} from "./pages/Products";
 const router = createBrowserRouter([
   {
     element: <AppLayout />,
+    loader: categoriesLoader,
     children: [
       {
         path: "/",

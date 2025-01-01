@@ -1,6 +1,6 @@
 import Accordion from "./Accordion";
-import handy from "../assets/handy.jpeg";
-import SectionTitle from "./SectionTitle";
+import handy from "../../assets/handy.jpeg";
+import SectionTitle from "../SectionTitle";
 const accordions = [
   {
     heading: "Our Mission",

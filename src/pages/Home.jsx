@@ -1,34 +1,37 @@
-import AboutSection from "../ui/AboutSection";
-import Features from "../ui/Features";
+import AboutSection from "../ui/Home/AboutSection";
+import Features from "../ui/Home/Features";
 import Section from "../ui/Section";
 import sector from "../assets/sector1.jpg";
 import sector2 from "../assets/sector2.jpg";
 import sector3 from "../assets/sector3.jpg";
 
 import ContactSection from "../ui/ContactSection";
-import Slider from "../ui/Slider";
-import HandyBackground from "../ui/HadnyBackground";
-import Certificates from "../ui/Certificates";
+import Slider from "../ui/Home/Slider";
+import HandyBackground from "../ui/Home/HadnyBackground";
+import Certificates from "../ui/Home/Certificates";
 import SectionTitle from "../ui/SectionTitle";
 import { Link } from "react-router-dom";
-import ProductCategories from "../ui/ProductCategories";
+import ProductCategories from "../ui/Categories/ProductCategories";
 import Banner from "../ui/Banner";
+import { useContext } from "react";
+import CategoriesContext from "../context/CategoriesContext";
+
+const sustainabilityLength = 14;
+const sustainabilityImagesArray = Array.from(
+  { length: sustainabilityLength },
+  (_, i) =>
+    `/sustainability/sign system-${
+      i + 1 < 10 ? "0" + (i + 1) : i + 1
+    }.jpg`
+);
+const sliderLength = 3;
+const sliderImagesArray = Array.from(
+  { length: sliderLength },
+  (_, i) => `/banner/slider-${i + 1}.png`
+);
+
 
 export default function Home() {
-  const sustainabilityLength = 14;
-  const sustainabilityImagesArray = Array.from(
-    { length: sustainabilityLength },
-    (_, i) =>
-      `/sustainability/sign system-${
-        i + 1 < 10 ? "0" + (i + 1) : i + 1
-      }.jpg`
-  );
-  const sliderLength = 3;
-  const sliderImagesArray = Array.from(
-    { length: sliderLength },
-    (_, i) => `/banner/slider-${i + 1}.png`
-  );
-
   return (
     <> 
       <Section type="fullscreen">

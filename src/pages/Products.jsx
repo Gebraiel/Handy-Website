@@ -1,7 +1,7 @@
 import React from 'react'
 import Section from '../ui/Section'
 import SectionTitle from '../ui/SectionTitle'
-import ProductCategories from '../ui/ProductCategories'
+import ProductCategories from '../ui/Categories/ProductCategories'
 import Banner from '../ui/Banner'
 export default function Products() {
   return (
