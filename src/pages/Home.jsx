@@ -158,7 +158,7 @@ export default function Home() {
         </SectionTitle>
         <ProductCategories />
       </Section>
-      <Section>
+      <Section className="py-0">
         <SectionTitle>Sustainability</SectionTitle>
 
         
