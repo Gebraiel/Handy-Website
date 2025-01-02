@@ -29,8 +29,8 @@ export default function Header({menu}) {
       //     : "absolute bg-transparent"
       // }  `}
     >
-      <div className="container flex items-center justify-between m-auto p-5">
-        <Link to="/" className="w-52">
+      <div className="container w-[80%] flex items-center justify-between m-auto p-5">
+        <Link to="/" className="max-w-40">
           <img src={Logo} alt="Logo" />
         </Link>
         <div className="xl:hidden">

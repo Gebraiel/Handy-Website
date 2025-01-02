@@ -6,8 +6,8 @@ import { FaEnvelopeOpen } from "react-icons/fa";
 export default function Footer() {
   const year = new Date().getFullYear();
   return (
-    <footer className="bg-primary text-white bg-contain bg-[url('/pattern.png')]">
-      <div className="container border-t-0 py-24 m-auto grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-5 p-5">
+    <footer className="bg-primary text-white bg-[length:60%] bg-[url('/pattern.png')]">
+      <div className="container w-[80%] border-t-0 py-24 m-auto grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-5 p-5">
         <div className="">
           <Link to="/" className="block w-52">
             <img src={Logo} alt="Logo" />
