@@ -42,7 +42,7 @@ We lead with purpose, prioritizing responsible sourcing, efficient production pr
           </Paragraph>
 
           </div>
-          <div className="lg:max-w-[500px] m-auto grid grid-cols-3 lg:grid-cols-4  gap-5">
+          <div className="lg:max-w-[500px] m-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 lg:grid-cols-3 xl:grid-cols-4  gap-5">
             {sustainabilityImagesArray.map((e) => (
               <img src={e} />
             ))}
@@ -50,7 +50,7 @@ We lead with purpose, prioritizing responsible sourcing, efficient production pr
         </div>
       </Section>
 
-      <Section>
+      <Section className="pt-0">
         <SectionTitle>
           School Visit Gallery
         </SectionTitle>

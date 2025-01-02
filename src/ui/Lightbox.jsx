@@ -6,7 +6,7 @@ export default function Lightbox({
 
     return (
       <div className="fixed h-full w-full top-0 left-0 bg-[rgba(0,0,0,0.5)] z-50">
-        <div className="flex flex-col items-end gap-5 absolute left-1/2 top-1/2 w-full px-10 md:max-w-[500px] -translate-x-1/2 -translate-y-1/2 ">
+        <div className="flex flex-col items-end gap-5 absolute left-1/2 top-1/2 w-full px-10 md:max-w-[800px] -translate-x-1/2 -translate-y-1/2 ">
           <button onClick={()=>hideLightBox(false)}>
             <svg
               width="30"
