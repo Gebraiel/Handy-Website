@@ -17,7 +17,7 @@ export default function Accordion({ accordion }) {
         </button>
       </div>
       <div
-        className={`transition-all duration-300 overflow-hidden text-lg ${
+        className={`transition-all duration-300 overflow-hidden text-sm ${
           isOpen ? "max-h-50 mt-5 opacity-100" : "max-h-0 opacity-0"
         }`}
       >

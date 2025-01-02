@@ -11,7 +11,7 @@ export default function Features() {
           <FaMedal />
         </div>
         <h4 className="text-2xl font-bold my-5">Certified Quality</h4>
-        <p className="text-lg text-[#b0cbd3]">
+        <p className="text-sm text-[#b0cbd3]">
           Our products are ISO 9001 & ISO 14001 certified, ensuring the highest
           standards.
         </p>
@@ -21,7 +21,7 @@ export default function Features() {
           <FaThumbsUp />
         </div>
         <h4 className="text-2xl font-bold my-5">Trusted</h4>
-        <p className="text-lg text-[#b0cbd3]">
+        <p className="text-sm text-[#b0cbd3]">
           Years of experience with advanced technology to deliver top-tier
           hygiene products.
         </p>
@@ -31,7 +31,7 @@ export default function Features() {
           <RiLeafFill />
         </div>
         <h4 className="text-2xl font-bold my-5">Eco Friendly</h4>
-        <p className="text-lg text-[#b0cbd3]">
+        <p className="text-sm text-[#b0cbd3]">
           We prioritize sustainability, crafting products that are as kind to
           the planet as they are to you.
         </p>
@@ -41,7 +41,7 @@ export default function Features() {
           <FaGlobe />
         </div>
         <h4 className="text-2xl font-bold my-5">Global Reach</h4>
-        <p className="text-lg text-[#b0cbd3]">
+        <p className="text-sm text-[#b0cbd3]">
           Exporting to over 10 countries, HANDY products are trusted worldwide.
         </p>
       </div>

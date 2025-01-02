@@ -9,8 +9,8 @@ export default function Category({category}) {
         <img src={category.image}alt="Category Image" />
       </div>
       <div className="w-full lg:w-1/2">
-        <b className="text-4xl text-secondary">{category.name}</b>
-        <p className="my-5">
+        <b className="text-4xl text-secondary capitalize">{category.name}</b>
+        <p className="my-5 text-md">
         {
           !category.description ? `Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam
           doloribus sed aperiam aspernatur quos dolor architecto obcaecati a
