@@ -24,7 +24,7 @@ export default function Product({product,view,categoryName}) {
         } justify-between p-5 flex-grow w-full`}
       >
         <div>
-          <h1 className="text-primary text-3xl font-bold">{product.title}</h1>
+          <h1 className="text-primary text-xl font-bold">{product.title}</h1>
           {isJumbo ? (
             <ul className="list-disc pl-5 mt-5">
               {product.details.split(",").map((item, index) => (

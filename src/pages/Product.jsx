@@ -5,9 +5,10 @@ import Section from '../ui/Section';
 import Banner from '../ui/Banner';
 import SectionTitle from '../ui/SectionTitle';
 import { getProduct } from '../services/products';
+import Paragraph from '../ui/Paragraph';
 
 export default function Product() {
-    const {title,subtitle,image,details,category:{name:categoryName}} = useLoaderData();
+    const {title,image,details,category:{name:categoryName}} = useLoaderData();
   return (
         <>
             <Banner image='/banner/slider-1.png' className='flex items-center justify-center'>
@@ -17,15 +18,15 @@ export default function Product() {
 
                 </SectionTitle>
             </Banner>
-            <Section className='py-0'>
+            <Section className='!py-[50px]'>
                 <div className='flex flex-col lg:flex-row items-center justify-center gap-5'>
                     <div className='w-full lg:w-1/2'>
                         <img src={image} alt="product image" />
                     </div>
-                    <div className='space-y-5 w-full sm:w-1/2 '>
-                        <div >
-                            <h2 className='text-primary text-4xl font-bold'>{title}</h2>
-                            <h3 className='text-secondary text-2xl font-semibold'>{categoryName}</h3>
+                    <div className='space-y-5 w-full lg:w-1/2 '>
+                        <div>
+                            <h2 className='text-primary text-xl lg:text-3xl font-bold'>{title}</h2>
+                            <Paragraph className='text-secondary font-semibold' size="lg">{categoryName}</Paragraph>
                         </div>
                         <ul className='list-disc pl-5'>{details.split(',').map((item,index)=><li key={index}>{item}</li>)}</ul>
                         <button className='w-full bg-primary text-white py-3 font-bold'>Share</button>

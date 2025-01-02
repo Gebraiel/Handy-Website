@@ -35,9 +35,9 @@ export default function Category() {
         image="/banner/slider-1.png"
         className="flex justify-center items-center "
       >
-        <h1 className="text-primary text-5xl font-bold text-center capitalize">
+        <SectionTitle className="text-primary font-bold text-center capitalize">
           {categoryName || "Products"}
-        </h1>
+        </SectionTitle>
       </Banner>
       <Section>
         <div className="flex justify-center flex-wrap items-center mb-5">

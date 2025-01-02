@@ -169,7 +169,7 @@ export default function Home() {
           standards, we strive to protect both the planet and your health. At
           HANDY, we create products that support a cleaner, greener future.
         </Paragraph>
-        <div className="lg:max-w-[1000px] grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-5 mt-10 m-auto">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-5 mt-10 m-auto">
           {sustainabilityImagesArray.map((e,index) => (
             <img src={e} key={index}/>
           ))}

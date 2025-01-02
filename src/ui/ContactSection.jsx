@@ -17,7 +17,7 @@ export default function ContactSection() {
         <ul className="py-8 space-y-5">
           <li className="flex items-center gap-5 text-primary">
             <FaMapMarkerAlt className="text-2xl" />
-            <Paragraph className="font-medium">
+            <Paragraph className="font-medium" size="sm">
               Block No.13, Second Industrial Zone, New Borg El Arab City,
               Alexandria, Egypt.
             </Paragraph>
@@ -51,7 +51,7 @@ export default function ContactSection() {
         <ul className="py-8 space-y-5">
           <li className="flex items-center gap-5 text-primary">
             <FaMapMarkerAlt className="text-2xl" />
-            <Paragraph className="font-medium">
+            <Paragraph className="font-medium" size="sm">
               Block No. (86,87,88), Fourth Industrial Zone, October 6th City,
               Giza, Egypt.
             </Paragraph>
