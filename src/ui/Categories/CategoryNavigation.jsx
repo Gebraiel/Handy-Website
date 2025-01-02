@@ -10,7 +10,7 @@ export default function CategoryNavigation({id}) {
             categories.length > 0 && 
             categories.map((category)=>{
                 return( 
-                    <Link to={`/category/${category.id}`} key={category.id} className={`capitalize p-5 transition-colors duration-300 rounded hover:bg-primary hover:text-white  text-2xl  ${id === category.id ? "bg-primary text-white font-bold" :""}`}>{category.name}</Link>
+                    <Link to={`/category/${category.id}`} key={category.id} className={`capitalize p-5 transition-colors duration-300 rounded hover:bg-primary hover:text-white  text-xl  ${id === category.id ? "bg-primary text-white font-bold" :""}`}>{category.name}</Link>
                 )
             })
         }

@@ -65,9 +65,9 @@ export default function Header({menu}) {
           )}
         </div>
         <div className="hidden xl:block ">
-          <ul className="flex gap-5 ">
+          <ul className="flex gap-10 ">
             {menu.map((item,index)=>
-              <li className="uppercase font-bold relative group" key={index}>
+              <li className="uppercase font-bold relative group text-xs" key={index}>
                 <NavLink to={`${item.link}`} className={({ isActive }) => `${item.hasSubMenu ? 'flex gap-1 items-center ' : ""} ${isActive ? (isSticky ? 'text-secondary' : 'text-primary') : 'text-white'}`
                         
                 }>

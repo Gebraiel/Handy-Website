@@ -1,16 +1,16 @@
 export default function Certificates() {
   return (
     <div className="flex flex-col md:flex-row justify-center gap-5">
-      <div>
+      <div className="">
         <img
-          className="border shadow-lg"
+          className="border shadow-lg max-w-[350px] m-auto"
           src="/certificates/certificates1.jpg"
           alt=""
         />
       </div>
-      <div>
+      <div className="">
         <img
-          className="border shadow-lg"
+          className="border shadow-lg max-w-[350px] m-auto"
           src="/certificates/certificates2.jpg"
           alt=""
         />
