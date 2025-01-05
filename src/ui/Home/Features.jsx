@@ -2,11 +2,27 @@ import { FaMedal } from "react-icons/fa6";
 import { FaThumbsUp } from "react-icons/fa";
 import { RiLeafFill } from "react-icons/ri";
 import { FaGlobe } from "react-icons/fa";
+import Paragraph from "../Paragraph";
 
-export default function Features() {
+export default function Features({features}) {
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-4 gap-5 items-stretch text-white">
-      <div className="bg-contain bg-[url('/pattern.png')] text-center py-16 px-9 bg-gray transition-all duration-300 outline outline-8 outline-transparent hover:outline-[#e06c61] ">
+    <div className="flex flex-wrap justify-center gap-5 items-stretch text-white">
+      {
+        features.map((feature,index)=>{
+          return(
+            <div key={index} className={`lg:basis-[300px] basis-[500px] bg-contain bg-[url('/pattern.png')] text-center py-16 px-9 bg-gray transition-all duration-300 outline outline-8 outline-transparent hover:outline-[#e06c61]`}>
+              <div className="pb-5 border-b-2 border-secondary w-fit m-auto text-3xl">
+                {feature.icon}
+              </div>
+              <h4 className="text-2xl font-bold my-5">{feature.title}</h4>
+              <Paragraph className="text-[#b0cbd3]" size="sm">
+                {feature.description}
+              </Paragraph>
+            </div>
+          )
+        })  
+      }
+      {/* <div className="bg-contain bg-[url('/pattern.png')] text-center py-16 px-9 bg-gray transition-all duration-300 outline outline-8 outline-transparent hover:outline-[#e06c61] ">
         <div className="pb-5 border-b-2 border-secondary w-fit m-auto text-3xl">
           <FaMedal />
         </div>
@@ -44,7 +60,7 @@ export default function Features() {
         <p className="text-sm text-[#b0cbd3]">
           Exporting to over 10 countries, HANDY products are trusted worldwide.
         </p>
-      </div>
+      </div> */}
     </div>
   );
 }

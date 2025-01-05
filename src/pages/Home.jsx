@@ -1,9 +1,7 @@
 import AboutSection from "../ui/Home/AboutSection";
 import Features from "../ui/Home/Features";
 import Section from "../ui/Section";
-import sector from "../assets/sector1.jpg";
-import sector2 from "../assets/sector2.jpg";
-import sector3 from "../assets/sector3.jpg";
+
 import ContactSection from "../ui/ContactSection";
 import Slider from "../ui/Home/Slider";
 import HandyBackground from "../ui/Home/HadnyBackground";
@@ -13,6 +11,10 @@ import { Link } from "react-router-dom";
 import ProductCategories from "../ui/Categories/ProductCategories";
 import Banner from "../ui/Banner";
 import Paragraph from "../ui/Paragraph";
+import { FaMedal } from "react-icons/fa6";
+import { FaThumbsUp } from "react-icons/fa";
+import { RiLeafFill } from "react-icons/ri";
+import { FaGlobe } from "react-icons/fa";
 
 
 const sustainabilityLength = 14;
@@ -72,8 +74,21 @@ export default function Home() {
         <AboutSection />
       </Section>
       <Section className={"bg-primary"}>
-        <SectionTitle className="text-white">Why Handy</SectionTitle>
-        <Features />
+        <SectionTitle className="text-white mb-10">Why Handy</SectionTitle>
+        <Features features={
+          [
+              {icon: <FaMedal />,title:"Certified Quality",description:`Our products are ISO 9001 & ISO 14001 certified, ensuring the highest
+              standards.`},
+              
+              {icon:<FaThumbsUp />,title:"Trusted",description:`Years of experience with advanced technology to deliver top-tier
+          hygiene products.`},
+              
+              {icon: <RiLeafFill />,title:"Eco Friendly",description:`We prioritize sustainability, crafting products that are as kind to
+          the planet as they are to you.`},
+              
+              {icon: <FaGlobe />,title:"Global Reach",description:`Exporting to over 10 countries, HANDY products are trusted worldwide.`}
+          ]
+        }/>
       </Section>
 
       <Section className={"bg-[aliceblue]"}>
@@ -84,7 +99,7 @@ export default function Home() {
               <p className="absolute right-5 bottom-5 text-8xl font-bold text-white opacity-50 transition-all group-hover:opacity-100 group-hover:-translate-y-2">
                 01
               </p>
-              <img src={sector2} alt="" />
+              <img src='/sectors/sector1.jpg' alt="" />
             </div>
 
             <div className="p-7 ">
@@ -107,7 +122,7 @@ export default function Home() {
               <p className="absolute right-5 bottom-5 text-8xl font-bold text-white opacity-50 transition-all group-hover:opacity-100 group-hover:-translate-y-2">
                 02
               </p>
-              <img src={sector} alt="" />
+              <img src='/sectors/sector2.jpg' alt="" />
             </div>
 
             <div className="p-7">
@@ -128,7 +143,7 @@ export default function Home() {
               <p className="absolute right-5 bottom-5 text-8xl font-bold text-white opacity-50 transition-all group-hover:opacity-100 group-hover:-translate-y-2">
                 03
               </p>
-              <img src={sector3} alt="" />
+              <img src='/sectors/sector3.jpg' alt="" />
             </div>
 
             <div className="p-7 ">
