@@ -5,6 +5,8 @@ import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
 import L from "leaflet";
 import 'leaflet/dist/leaflet.css';
 import SectionTitle from './SectionTitle';
+import markerIconPng from "leaflet/dist/images/marker-icon.png"
+import {Icon} from 'leaflet'
 export default function HandyPaperSector() {
   return (
     <>
@@ -55,7 +57,7 @@ export default function HandyPaperSector() {
     attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
   />
-            <Marker position={[33.854721, 35.862285]}>
+            <Marker position={[33.854721, 35.862285]} icon={new Icon({iconUrl: markerIconPng, iconSize: [25, 41], iconAnchor: [12, 41]})}>
               <Popup>
                 Lebanon
               </Popup>
