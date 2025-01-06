@@ -58,7 +58,7 @@ export default function Home() {
       </Section>
       <Section className="relative">
         <HandyBackground />
-        <SectionTitle className="!leading-tight">
+        <SectionTitle className="!leading-tight mb-10">
           <p className="text-secondary ">Your Premium Hygiene Partner</p>
           <p className="text-primary">for Everyday Freshness</p>
         </SectionTitle>
@@ -92,7 +92,7 @@ export default function Home() {
       </Section>
 
       <Section className={"bg-[aliceblue]"}>
-        <SectionTitle>Sectors</SectionTitle>
+        <SectionTitle className="mb-10">Sectors</SectionTitle>
         <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
           <div className="w-full bg-white">
             <div className="relative w-full group">
@@ -166,7 +166,7 @@ export default function Home() {
         </b>
       </Banner>
       <Section>
-        <SectionTitle className="!leading-tight">
+        <SectionTitle className="!leading-tight mb-10">
           <>
             <p className="text-secondary ">Handy Products</p>
             <p className="text-primary">Clean, fresh, and on-the-go Quality That Speaks for Itself</p>
@@ -175,7 +175,7 @@ export default function Home() {
         <ProductCategories />
       </Section>
       <Section className="!py-0">
-        <SectionTitle>Sustainability</SectionTitle>
+        <SectionTitle className="mb-10">Sustainability</SectionTitle>
 
         
         <Paragraph className="text-primary">
@@ -193,7 +193,7 @@ export default function Home() {
      
       <Section className="relative">
         <HandyBackground />
-        <SectionTitle>Certificates</SectionTitle>
+        <SectionTitle className="mb-10">Certificates</SectionTitle>
         <Certificates />
       </Section>
       <Section
@@ -215,7 +215,7 @@ export default function Home() {
       </Section>
 
       <Section>
-        <SectionTitle>Contact Us</SectionTitle>
+        <SectionTitle className="mb-10">Contact Us</SectionTitle>
         <ContactSection />
       </Section>
     </>
