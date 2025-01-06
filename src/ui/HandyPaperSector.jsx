@@ -44,10 +44,10 @@ export default function HandyPaperSector() {
 
         </div>
       </Section>
-      <Section type="fullscreen">
+      <Section className='my-7' type="fullscreen">
           <MapContainer
             center={[33.854721, 35.862285]}
-            className='h-96'
+            className='h-96 '
             zoom={4}
             scrollWheelZoom={true}
           >
@@ -99,7 +99,7 @@ export default function HandyPaperSector() {
           </MapContainer>
       </Section>
       <Section className="!pt-0">
-      <div className="max-w-[600px] m-auto mt-5">
+      <div className="max-w-[600px] m-auto">
 
           <SectionTitle className="my-5 !text-left">
             Paper Making Process

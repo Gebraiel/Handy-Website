@@ -34,7 +34,7 @@ export default function Sectors() {
           </Paragraph>
           <div className="flex flex-wrap justify-center gap-5">
             <div className="p-5 bg-white shadow-lg text-center basis-80">
-              <b>Capacity</b>
+              <b className="text-xl">Capacity</b>
               <p>
                 <Counter counter="25000" duration={1000} countBy={10} />
                 <br/>
@@ -42,7 +42,7 @@ export default function Sectors() {
               </p>
             </div>
             <div className="p-5 bg-white shadow-lg text-center basis-80">
-              <b>Capacity</b>
+              <b className="text-xl">Capacity</b>
               <p>
                 <Counter counter="800" duration={1000} countBy={1} />
                 <br/>
@@ -76,8 +76,10 @@ export default function Sectors() {
 `,
             },
           ]}
+          basis="lg:basis-[400px] basis-[500px]"
         />
       </Section>
+
       <SectorsNavigation>
         <HandyPaperSector />
         <HandyTissueProductsSector />

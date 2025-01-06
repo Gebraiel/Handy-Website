@@ -1,11 +1,14 @@
 import React, { useState } from 'react'
 import Section from './Section';
+import SectionTitle from './SectionTitle';
 
 export default function SectorsNavigation({children}) {
   const [active,setActive] = useState(0);
   return (
    <>
-    <Section>
+    <Section className='!pb-0'>
+      <SectionTitle className="mb-10">Our Sectors</SectionTitle>
+
       <div className='flex flex-col lg:flex-row gap-3 mb-5'>
           <button onClick={()=> setActive(0)} className=
           {`border-t-2 ${active == 0 ? "border-primary":"border-transparent"} hover:border-primary transition-all  flex-grow text-md capitalize text-primary font-semibold bg-white shadow-lg py-3 px-5 w-full`}>

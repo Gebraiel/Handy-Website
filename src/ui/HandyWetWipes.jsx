@@ -5,7 +5,7 @@ import SectionTitle from "./SectionTitle";
 export default function HandyWetWipes() {
   return (
     <>
-      <Section className="!pb-5">
+      <Section className="!py-0">
         {/* <SectorsNavigation /> */}
 
         <div className="m-auto max-w-[700px]">
