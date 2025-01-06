@@ -36,7 +36,7 @@ export default function Sectors() {
             <div className="p-5 bg-white shadow-lg text-center basis-80">
               <b className="text-xl">Capacity</b>
               <p>
-                <Counter counter="25000" duration={1000} countBy={20} />
+                <Counter counter="25000" duration={2000} countBy={10} />
                 <br/>
                 Mtons / Year
               </p>
