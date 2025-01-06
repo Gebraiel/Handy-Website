@@ -6,10 +6,10 @@ export default function SectorsNavigation({children}) {
   const [active,setActive] = useState(0);
   return (
    <>
-    <Section className='!pb-0'>
+    <Section className='py-20'>
       <SectionTitle className="mb-10">Our Sectors</SectionTitle>
 
-      <div className='flex flex-col lg:flex-row gap-3 mb-5'>
+      <div className='flex flex-col lg:flex-row gap-3'>
           <button onClick={()=> setActive(0)} className=
           {`border-t-2 ${active == 0 ? "border-primary":"border-transparent"} hover:border-primary transition-all  flex-grow text-md capitalize text-primary font-semibold bg-white shadow-lg py-3 px-5 w-full`}>
               Handy Paper

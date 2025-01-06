@@ -8,13 +8,13 @@ export default function HandyTissueProductsSector() {
              <Section className="!py-0">
                 {/* <SectorsNavigation /> */}
                 
-                <div className="m-auto max-w-[700px]">
+                <div >
                   <img src="/sectors/sector2.jpg" alt="" />
                 </div>
                 
-                <div className="max-w-[600px] m-auto mt-5">
+                <div className="mt-5">
                   <div>
-                    <SectionTitle className="!text-left mb-5 !max-w-[66ch] !mx-auto">
+                    <SectionTitle className="!text-left mb-5">
                       Handy Tissue Products 
                     </SectionTitle>
                     <Paragraph size="md" className="text-justify m-auto">
@@ -33,7 +33,7 @@ export default function HandyTissueProductsSector() {
               </Section>
               
               <Section className="!pt-0">
-              <div className="max-w-[600px] m-auto mt-5">
+              <div className="mt-5">
         
                   <SectionTitle className="my-5 !text-left">
                   The Transformation Process :  From Jumbo Rolls to Everyday Essentials
@@ -89,7 +89,7 @@ export default function HandyTissueProductsSector() {
                         </li>
                     </ul>
                 </div>
-                <div className="max-w-[600px] m-auto mt-5">
+                <div className="mt-5">
         
                   <SectionTitle className="my-5 !text-left">
                   Key Drivers of Excellence

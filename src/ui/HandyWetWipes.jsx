@@ -8,13 +8,13 @@ export default function HandyWetWipes() {
       <Section className="!py-0">
         {/* <SectorsNavigation /> */}
 
-        <div className="m-auto max-w-[700px]">
+        <div>
           <img src="/sectors/sector3.jpg" alt="" />
         </div>
 
-        <div className="max-w-[600px] m-auto mt-5">
+        <div className="mt-5">
           <div>
-            <SectionTitle className="!text-left mb-5 !max-w-[66ch] !mx-auto">
+            <SectionTitle className="!text-left mb-5">
               Handy Wet Wipes
             </SectionTitle>
             <div className="space-y-3">
@@ -52,7 +52,7 @@ export default function HandyWetWipes() {
       </Section>
 
       <Section className="!pt-0">
-        <div className="max-w-[600px] m-auto mt-5">
+        <div className="mt-5">
           <SectionTitle className="my-5 !text-left">
             Production Process
           </SectionTitle>
@@ -112,7 +112,7 @@ export default function HandyWetWipes() {
             </li>
           </ol>
         </div>
-        <div className="max-w-[600px] m-auto mt-5">
+        <div className="mt-5">
           <SectionTitle className="my-5 !text-left">
             Key Drivers of Excellence
           </SectionTitle>

@@ -13,11 +13,11 @@ export default function HandyPaperSector() {
      <Section className="!py-0">
         {/* <SectorsNavigation /> */}
         
-        <div className="m-auto max-w-[700px]">
+        <div>
           <img src="/sectors/sector1.jpg" alt="" />
         </div>
         
-        <div className="max-w-[600px] m-auto mt-5">
+        <div className=" m-auto mt-5">
           <div>
             <SectionTitle className="!text-left mb-5 !max-w-[66ch] !mx-auto">
               Handy Paper
@@ -85,7 +85,7 @@ export default function HandyPaperSector() {
           </MapContainer>
       </Section>
       <Section className="!pt-0">
-      <div className="max-w-[600px] m-auto">
+      <div >
 
           <SectionTitle className="my-5 !text-left">
             Paper Making Process

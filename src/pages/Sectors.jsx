@@ -26,14 +26,14 @@ export default function Sectors() {
         </SectionTitle>
       </Banner>
       <Section>
-        <div className="flex flex-col  gap-5">
-          <Paragraph size="md" className="text-justify">
+        <div className="flex flex-col-reverse lg:flex-row gap-10">
+          <Paragraph size="md" className="text-justify w-full">
             We take immense pride in the machinery and equipment that
             distinguish Handy from other factories, showcasing our commitment to
             innovation, efficiency, and sustainability.
           </Paragraph>
-          <div className="flex flex-wrap justify-center gap-5">
-            <div className="p-5 bg-white shadow-lg text-center basis-80">
+          <div className="flex flex-col md:flex-row justify-center gap-5 w-full">
+            <div className="p-5 bg-white shadow-lg text-center w-full">
               <b className="text-xl">Capacity</b>
               <p>
                 <Counter counter="25000" duration={2000} countBy={100} />
@@ -41,7 +41,7 @@ export default function Sectors() {
                 Mtons / Year
               </p>
             </div>
-            <div className="p-5 bg-white shadow-lg text-center basis-80">
+            <div className="p-5 bg-white shadow-lg text-center w-full">
               <b className="text-xl">Capacity</b>
               <p>
                 <Counter counter="800" duration={2000} countBy={10} />
