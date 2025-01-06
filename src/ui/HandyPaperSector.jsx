@@ -58,44 +58,28 @@ export default function HandyPaperSector() {
     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
   />
             <Marker position={[33.854721, 35.862285]} icon={new Icon({iconUrl: markerIconPng, iconSize: [25, 41], iconAnchor: [12, 41]})}>
-              <Popup>
-                Lebanon
-              </Popup>
+  
             </Marker>
-            <Marker position={[39.074208, 21.824312]}>
-              <Popup>
-                Greece
-              </Popup>
+            <Marker position={[39.074208, 21.824312]}  icon={new Icon({iconUrl: markerIconPng, iconSize: [25, 41], iconAnchor: [12, 41]})}>
+
             </Marker>
-            <Marker position={[35.126413, 33.429859]}>
-              <Popup>
-                Cyprus
-              </Popup>
+            <Marker position={[35.126413, 33.429859]}  icon={new Icon({iconUrl: markerIconPng, iconSize: [25, 41], iconAnchor: [12, 41]})}>
+
             </Marker>
-            <Marker position={[23.885942	, 45.079162]}>
-              <Popup>
-                KSA
-              </Popup>
+            <Marker position={[23.885942	, 45.079162]}  icon={new Icon({iconUrl: markerIconPng, iconSize: [25, 41], iconAnchor: [12, 41]})}>
+
             </Marker>
-            <Marker position={[29.31166	,47.481766]}>
-              <Popup>
-                Kuwait
-              </Popup>
+            <Marker position={[29.31166	,47.481766]}  icon={new Icon({iconUrl: markerIconPng, iconSize: [25, 41], iconAnchor: [12, 41]})}>
+
             </Marker>
-            <Marker position={[31.791702	,-7.09262]}>
-              <Popup>
-                Morocco
-              </Popup>
+            <Marker position={[31.791702	,-7.09262]} icon={new Icon({iconUrl: markerIconPng, iconSize: [25, 41], iconAnchor: [12, 41]})}>
+
             </Marker>
-            <Marker position={[34.802075	,38.996815]}>
-              <Popup>
-                Syria
-              </Popup>
+            <Marker position={[34.802075	,38.996815]} icon={new Icon({iconUrl: markerIconPng, iconSize: [25, 41], iconAnchor: [12, 41]})}>
+
             </Marker>
-            <Marker position={[12.862807	,38.996815]}>
-              <Popup>
-                Sudan
-              </Popup>
+            <Marker position={[12.862807	,38.996815]} icon={new Icon({iconUrl: markerIconPng, iconSize: [25, 41], iconAnchor: [12, 41]})}>
+ 
             </Marker>
        
           </MapContainer>
