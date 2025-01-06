@@ -26,30 +26,30 @@ export default function Sectors() {
         </SectionTitle>
       </Banner>
       <Section>
-        <div className="flex flex-col-reverse lg:flex-row gap-10">
-          <Paragraph size="md" className="text-justify w-full">
-            We take immense pride in the machinery and equipment that
-            distinguish Handy from other factories, showcasing our commitment to
-            innovation, efficiency, and sustainability.
-          </Paragraph>
-          <div className="flex flex-col md:flex-row justify-center gap-5 w-full">
-            <div className="p-5 bg-white shadow-lg text-center w-full">
-              <b className="text-xl">Capacity</b>
+        <div className="flex flex-col lg:flex-row gap-10">
+         
+          <div className="flex flex-col md:flex-row justify-center lg:justify-start gap-5 w-full">
+            <div className="p-5 bg-white  text-center text-xl space-y-2">
+              <b className="text-2xl">Capacity</b>
+              <Counter counter="25000" duration={2000} countBy={100} />
+
               <p>
-                <Counter counter="25000" duration={2000} countBy={100} />
-                <br/>
                 Mtons / Year
               </p>
             </div>
-            <div className="p-5 bg-white shadow-lg text-center w-full">
-              <b className="text-xl">Capacity</b>
+            <div className="p-5 bg-white text-center text-xl space-y-2">
+              <b className="text-2xl">Capacity</b>
+              <Counter counter="800" duration={2000} countBy={10} />
               <p>
-                <Counter counter="800" duration={2000} countBy={10} />
-                <br/>
                 Mtons / Year
               </p>
             </div>
           </div>
+          <Paragraph size="md" className="text-justify w-full py-5">
+            We take immense pride in the machinery and equipment that
+            distinguish Handy from other factories, showcasing our commitment to
+            innovation, efficiency, and sustainability.
+          </Paragraph>
         </div>
       </Section>
       <Section className="bg-primary">

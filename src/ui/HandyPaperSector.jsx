@@ -51,7 +51,7 @@ export default function HandyPaperSector() {
             center={[33.854721, 35.862285]}
             className='h-96 '
             zoom={4}
-            scrollWheelZoom={true}
+            scrollWheelZoom={false}
           >
               <TileLayer
     attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'

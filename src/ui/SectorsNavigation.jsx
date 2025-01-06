@@ -11,15 +11,15 @@ export default function SectorsNavigation({children}) {
 
       <div className='flex flex-col lg:flex-row gap-3'>
           <button onClick={()=> setActive(0)} className=
-          {`border-t-2 ${active == 0 ? "border-primary":"border-transparent"} hover:border-primary transition-all  flex-grow text-md capitalize text-primary font-semibold bg-white shadow-lg py-3 px-5 w-full`}>
+          {`border-t-2 ${active == 0 ? "border-primary":"border-transparent"} hover:border-primary transition-all text-xl flex-grow text-md capitalize text-primary font-semibold bg-white shadow-lg py-3 px-5 w-full`}>
               Handy Paper
           </button>
           <button onClick={()=> setActive(1)} className=
-          {`border-t-2 ${active == 1 ? "border-primary":"border-transparent"} hover:border-primary transition-all  flex-grow text-md capitalize text-primary font-semibold bg-white shadow-lg py-3 px-5 w-full`} >
+          {`border-t-2 ${active == 1 ? "border-primary":"border-transparent"} hover:border-primary transition-all text-xl flex-grow text-md capitalize text-primary font-semibold bg-white shadow-lg py-3 px-5 w-full`} >
               Handy Tissue Products
           </button>
           <button onClick={()=> setActive(2)} className=
-          {`border-t-2 ${active == 2 ? "border-primary":"border-transparent"} hover:border-primary transition-all  flex-grow text-md capitalize text-primary font-semibold bg-white shadow-lg py-3 px-5 w-full`}>
+          {`border-t-2 ${active == 2 ? "border-primary":"border-transparent"} hover:border-primary transition-all text-xl flex-grow text-md capitalize text-primary font-semibold bg-white shadow-lg py-3 px-5 w-full`}>
               Handy Wet Wipes
           </button>
         
