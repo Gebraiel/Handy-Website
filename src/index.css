@@ -14,12 +14,41 @@ button:focus-visible,a:focus-visible,select:focus-visible{
     outline:2px solid #e46a5a;
     outline-offset: 5px;
 }
-.processes-parent{
-    counter-reset: css-counter 0
+
+/* .process::after{
+    content:"";
+    display: block;
+    position: absolute;
+    width:2.5rem;
+    height:2px;
+    right:100%;
+    top:50%;
+    background-color: #09216d;
 }
-.processes-parent .process{
-    counter-increment: css-counter 1
+@media(max-width:639px){
+    .process:last-child::after{
+        visibility: hidden;
+    }
+    .process:not(:last-child)::after{
+        width:2px;
+        height: 2.5rem;
+        top:100%;
+        right: 50%;
+    }
 }
-.processes-parent .process .icon::after{
-    content: counter(css-counter);
+@media(min-width:640px) and (max-width:767px){
+    .process:nth-child(2n+1)::after{
+        visibility: hidden;
+    }
 }
+@media(min-width:768px ) and (max-width:1023px){
+.process:nth-child(3n+1)::after{
+    visibility: hidden;
+}
+}
+@media(min-width:1024px)
+{
+    .process:nth-child(4n+1)::after{
+        visibility: hidden;
+    }
+} */
