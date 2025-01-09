@@ -29,7 +29,7 @@ export default function Sectors() {
         <div className="flex flex-col lg:flex-row items-center gap-10">
          
           <div className="flex flex-col md:flex-row justify-center lg:justify-start  gap-5 ">
-            <div className="p-5 bg-white  text-center space-y-5 lg:w-1/2">
+            <div className="p-5 bg-white  text-center space-y-5 lg:w-1/2 w-full">
               <b className="xl:text-2xl md:text-md">Capacity</b>
               <Counter counter="25000" duration={2000} countBy={100} />
 
@@ -37,7 +37,7 @@ export default function Sectors() {
                 Mtons / Year of Tissue Paper
               </Paragraph>
             </div>
-            <div className="p-5 bg-white text-center  space-y-5 lg:w-1/2">
+            <div className="p-5 bg-white text-center  space-y-5 lg:w-1/2 w-full">
               <b className="xl:text-2xl md:text-md">Eco Friendly</b>
               <Counter counter="800" duration={2000} countBy={10} />
               <Paragraph size="sm">

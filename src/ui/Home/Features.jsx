@@ -6,7 +6,7 @@ import Paragraph from "../Paragraph";
 
 export default function Features({features,basis=""}) {
   return (
-    <div className="flex flex-wrap justify-center gap-5 items-stretch text-white">
+    <div className="flex flex-wrap xl:justify-start justify-center gap-5 items-stretch text-white">
       {
         features.map((feature,index)=>{
           return(
