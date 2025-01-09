@@ -46,7 +46,7 @@ export default function HandyTissueProductsSector() {
           </Paragraph>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 items-stretch my-16">
             <div className={`text-center`}>
-              <div className="pb-5 border-b-2 border-secondary w-fit m-auto text-3xl text-primary">
+              <div className="pb-5 border-b-2 border-secondary w-fit m-auto text-3xl text-[#b0cbd3] font-extrabold">
                 1
               </div>
               <h4 className="text-2xl font-bold my-5 text-primary">
@@ -58,7 +58,7 @@ export default function HandyTissueProductsSector() {
               </Paragraph>
             </div>
             <div className={` text-center `}>
-              <div className="pb-5 border-b-2 border-secondary w-fit m-auto text-3xl text-primary">
+              <div className="pb-5 border-b-2 border-secondary w-fit m-auto text-3xl text-[#b0cbd3] font-extrabold">
                 2
               </div>
               <h4 className="text-2xl font-bold my-5 text-primary">
@@ -70,7 +70,7 @@ export default function HandyTissueProductsSector() {
               </Paragraph>
             </div>
             <div className={` text-center `}>
-              <div className="pb-5 border-b-2 border-secondary w-fit m-auto text-3xl text-primary">
+              <div className="pb-5 border-b-2 border-secondary w-fit m-auto text-3xl text-[#b0cbd3] font-extrabold">
                 3
               </div>
               <h4 className="text-2xl font-bold my-5 text-primary">
@@ -82,7 +82,7 @@ export default function HandyTissueProductsSector() {
               </Paragraph>
             </div>
             <div className={` text-center `}>
-              <div className="pb-5 border-b-2 border-secondary w-fit m-auto text-3xl text-primary">
+              <div className="pb-5 border-b-2 border-secondary w-fit m-auto text-3xl text-[#b0cbd3] font-extrabold">
                 4
               </div>
               <h4 className="text-2xl font-bold my-5 text-primary">Folding</h4>
@@ -92,7 +92,7 @@ export default function HandyTissueProductsSector() {
               </Paragraph>
             </div>
             <div className={` text-center `}>
-              <div className="pb-5 border-b-2 border-secondary w-fit m-auto text-3xl text-primary">
+              <div className="pb-5 border-b-2 border-secondary w-fit m-auto text-3xl text-[#b0cbd3] font-extrabold">
                 5
               </div>
               <h4 className="text-2xl font-bold my-5 text-primary">Cutting</h4>
@@ -102,7 +102,7 @@ export default function HandyTissueProductsSector() {
               </Paragraph>
             </div>
             <div className={`text-center `}>
-              <div className="pb-5 border-b-2 border-secondary w-fit m-auto text-3xl text-primary">
+              <div className="pb-5 border-b-2 border-secondary w-fit m-auto text-3xl text-[#b0cbd3] font-extrabold">
                 6
               </div>
               <h4 className="text-2xl font-bold my-5 text-primary">Winding</h4>
@@ -112,7 +112,7 @@ export default function HandyTissueProductsSector() {
               </Paragraph>
             </div>
             <div className={` text-center `}>
-              <div className="pb-5 border-b-2 border-secondary w-fit m-auto text-3xl text-primary">
+              <div className="pb-5 border-b-2 border-secondary w-fit m-auto text-3xl text-[#b0cbd3] font-extrabold">
                 7
               </div>
               <h4 className="text-2xl font-bold my-5 text-primary">
@@ -124,7 +124,7 @@ export default function HandyTissueProductsSector() {
               </Paragraph>
             </div>
             <div className={` text-center `}>
-              <div className="pb-5 border-b-2 border-secondary w-fit m-auto text-3xl text-primary">
+              <div className="pb-5 border-b-2 border-secondary w-fit m-auto text-3xl text-[#b0cbd3] font-extrabold">
                 8
               </div>
               <h4 className="text-2xl font-bold my-5 text-primary">

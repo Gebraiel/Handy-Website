@@ -34,14 +34,14 @@ export default function Sectors() {
               <Counter counter="25000" duration={2000} countBy={100} />
 
               <p>
-                Mtons / Year
+                Mtons / Year of Tissue Paper
               </p>
             </div>
             <div className="p-5 bg-white text-center text-xl space-y-5">
-              <b className="text-2xl">Capacity</b>
+              <b className="text-2xl">Eco Friendly</b>
               <Counter counter="800" duration={2000} countBy={10} />
               <p>
-                Mtons / Year
+                Mtons / Year of Converted Tissue Paper Products
               </p>
             </div>
           </div>
