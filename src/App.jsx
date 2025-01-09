@@ -44,7 +44,10 @@ const router = createBrowserRouter([
         element:<MediaCenter />
       }
       ,{
-        path:"/sectors",
+        path:"/sectors/",
+        element:<Sectors />
+      },{
+        path:"/sectors/:sectorName",
         element:<Sectors />
       }
       ,{

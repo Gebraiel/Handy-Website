@@ -9,12 +9,12 @@ export default function HandyTissueProductsSector() {
         {/* <SectorsNavigation /> */}
 
         <div>
-          <img src="/sectors/sector2.jpg" alt="" />
+          <img src="/sectors/sector2.webp" alt="" />
         </div>
 
         <div className="mt-5">
           <div>
-            <SectionTitle className="!text-left mb-5">
+            <SectionTitle className="mb-5">
               Handy Tissue Products
             </SectionTitle>
             <Paragraph size="md" className="text-justify m-auto">
@@ -36,8 +36,10 @@ export default function HandyTissueProductsSector() {
 
       <Section className="!pt-0">
         <div className="mt-5">
-          <SectionTitle className="my-5 !text-left">
-            The Transformation Process : From Jumbo Rolls to Everyday Essentials
+          <SectionTitle className="my-5 !leading-tight">
+          <p className=" text-primary">The Transformation Process</p>
+          <p className="text-secondary">From Jumbo Rolls to Everyday Essentials</p>
+             
           </SectionTitle>
           <Paragraph size="md">
             Using state-of-the-art converting machinery, our production process

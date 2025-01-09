@@ -21,12 +21,12 @@ export default function HandyPaperSector() {
         {/* <SectorsNavigation /> */}
         
         <div>
-          <img src="/sectors/sector1.jpg" alt="" />
+          <img src="/sectors/sector1.webp" alt="" />
         </div>
         
         <div className=" m-auto mt-5">
           <div>
-            <SectionTitle className="!text-left mb-5 !max-w-[66ch] !mx-auto">
+            <SectionTitle className="mb-5 !max-w-[66ch] !mx-auto">
               Handy Paper
             </SectionTitle>
             <Paragraph size="md" className="text-justify m-auto">

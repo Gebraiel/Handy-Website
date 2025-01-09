@@ -113,7 +113,7 @@ export default function Home() {
                 KSA, Lebanon, Greece, Cyprus, Kuwait, Morocco, Syria, Sudan,
                 Kenya, the Caribbean, and West Africa.
               </Paragraph>
-              <Link className="text-primary font-bold">Learn more</Link>
+              <Link className="text-primary font-bold" to="/sectors/handy-paper">Learn more</Link>
 
             </div>
           </div>
@@ -134,7 +134,7 @@ export default function Home() {
                 paper, kitchen towels, table napkins, and handkerchiefs, all
                 with a touch of innovation.
               </Paragraph>
-              <Link className="text-primary font-bold">Learn more</Link>
+              <Link className="text-primary font-bold" to="/sectors/handy-tissue-products">Learn more</Link>
 
             </div>
           </div>
@@ -153,7 +153,7 @@ export default function Home() {
                 that meet both local and global standards, delivering the
                 perfect blend of convenience, safety, and hygiene.
               </Paragraph>
-              <Link className="text-primary font-bold">Learn more</Link>
+              <Link className="text-primary font-bold" to="/sectors/handy-wet-wipes">Learn more</Link>
             </div>
           </div>
         </div>

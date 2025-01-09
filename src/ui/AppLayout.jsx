@@ -4,6 +4,7 @@ import Footer from "./Footer";
 import { getCategories } from "../services/categories";
 import { useLoaderData } from "react-router-dom";
 import CategoriesContext from "../context/CategoriesContext";
+import ScrollToTop from "./ScrollToTop";
 
 export default function AppLayout() {
   const categories=useLoaderData();
@@ -26,6 +27,7 @@ export default function AppLayout() {
   ]
   return (
     <CategoriesContext.Provider value={categories}>
+      <ScrollToTop />
       <Header menu={menu}/>
       <main>
         <Outlet />

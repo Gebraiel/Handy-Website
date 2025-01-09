@@ -28,24 +28,25 @@ export default function Sectors() {
       <Section>
         <div className="flex flex-col lg:flex-row items-center gap-10">
          
-          <div className="flex flex-col md:flex-row justify-center lg:justify-start  gap-5 w-full">
-            <div className="p-5 bg-white  text-center text-xl space-y-5">
-              <b className="text-2xl">Capacity</b>
+          <div className="flex flex-col md:flex-row justify-center lg:justify-start  gap-5 ">
+            <div className="p-5 bg-white  text-center space-y-5 lg:w-1/2">
+              <b className="xl:text-2xl md:text-md">Capacity</b>
               <Counter counter="25000" duration={2000} countBy={100} />
 
-              <p>
+              <Paragraph size="sm">
                 Mtons / Year of Tissue Paper
-              </p>
+              </Paragraph>
             </div>
-            <div className="p-5 bg-white text-center text-xl space-y-5">
-              <b className="text-2xl">Eco Friendly</b>
+            <div className="p-5 bg-white text-center  space-y-5 lg:w-1/2">
+              <b className="xl:text-2xl md:text-md">Eco Friendly</b>
               <Counter counter="800" duration={2000} countBy={10} />
-              <p>
+              <Paragraph size="sm">
                 Mtons / Year of Converted Tissue Paper Products
-              </p>
+              </Paragraph>
             </div>
+            
           </div>
-          <Paragraph size="md" className="text-justify w-full py-5">
+          <Paragraph size="md" className="text-justify py-5 max-w-[66ch]">
             We take immense pride in the machinery and equipment that
             distinguish Handy from other factories, showcasing our commitment to
             innovation, efficiency, and sustainability.

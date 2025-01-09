@@ -14,7 +14,7 @@ export default function Features({features,basis=""}) {
               <div className="pb-5 border-b-2 border-secondary w-fit m-auto text-3xl">
                 {feature.icon}
               </div>
-              <h4 className="text-2xl font-bold my-5">{feature.title}</h4>
+              <h4 className="sm:text-2xl text-xl font-bold my-5">{feature.title}</h4>
               <Paragraph className="text-[#b0cbd3]" size="sm">
                 {feature.description}
               </Paragraph>
