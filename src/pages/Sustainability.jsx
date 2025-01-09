@@ -37,10 +37,7 @@ We lead with purpose, prioritizing responsible sourcing, efficient production pr
           <Paragraph className="text-justify" size="md">
           Since our founding, we have focused on creating lasting value for society, nature, and humanity. Our commitment is reflected in the use of Recard to recycle high-quality waste paper and the integration of virgin pulp with selected recycled materials, reducing waste and promoting circularity.
           </Paragraph>
-          <Paragraph className="text-justify" size="md">
-          Guided by the United Nations Global Compact and Sustainable Development Goals, we ensure that all our activities are aligned with these principles. With a shared mission to leave a better world for future generations, we are proud of the positive contributions we make to both the environment and the communities we serve.
-          </Paragraph>
-
+          
           </div>
           <div className="lg:max-w-[500px] m-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 lg:grid-cols-3 xl:grid-cols-4  gap-5">
             {sustainabilityImagesArray.map((e) => (
@@ -51,9 +48,10 @@ We lead with purpose, prioritizing responsible sourcing, efficient production pr
       </Section>
 
       <Section className="pt-0">
-        <SectionTitle>
-          School Visit Gallery
-        </SectionTitle>
+       
+        <Paragraph className="text-justify mb-10" size="md">
+          Guided by the United Nations Global Compact and Sustainable Development Goals, we ensure that all our activities are aligned with these principles. With a shared mission to leave a better world for future generations, we are proud of the positive contributions we make to both the environment and the communities we serve.
+          </Paragraph>
 
         <Gallery handleClick={handleLightBox} images={lightBoxImages}/>
         {showLightBox &&<Lightbox large={lightBoxImage} hideLightBox={setShowLightBox}/>}

@@ -61,56 +61,95 @@ export default function HandyWetWipes() {
             transforms jumbo rolls into high-quality tissue products through the
             following precise steps:
           </Paragraph>
-
-          <ol className="list-decimal pl-5 space-y-3">
-            <li>
-              <b>Non-Woven Fabric Production</b>
-              <ul className="list-[circle] pl-5">
-                <li>
-                  <Paragraph size="sm">
-                    <b>Fiber Preparation</b> : Raw materials like wood pulp or
-                    polyester are processed into fibers.
-                  </Paragraph>
-                </li>
-                <li>
-                  <Paragraph size="sm">
-                    <b>Web Formation</b> : Fibers are transformed into a web
+<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 items-stretch my-16">
+            <div className={`text-center`}>
+              <div className="pb-5 border-b-2 border-secondary w-fit m-auto text-3xl text-primary">
+                1
+              </div>
+              <h4 className="text-2xl font-bold my-5 text-primary">
+              Non-Woven Fabric Production
+              </h4>
+              <Paragraph size="sm" className="sm:text-left">
+              <b>Fiber Preparation</b> : Raw materials like wood pulp or
+              polyester are processed into fibers.
+              </Paragraph>
+              <Paragraph size="sm" className="sm:text-left">
+              <b>Web Formation</b> : Fibers are transformed into a web
                     using spun lace or air-laid techniques.
-                  </Paragraph>
-                </li>
-                <li>
-                  <Paragraph size="sm">
-                    <b>Roll Formation</b> : The web is rolled into master rolls.
-                  </Paragraph>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <b>Slitting and Rewinding</b> : Master rolls are cut into narrower
-              rolls and rewound for processing.
-            </li>
-            <li>
-              <b>Solution Formulation</b> : Ingredients like water, surfactants,
-              and emollients are mixed to create the cleaning solution.
-            </li>
-            <li>
-              <b>Impregnation</b> : Fabric is impregnated with the solution,
-              ensuring precise saturation for performance.
-            </li>
-            <li>
-              <b>Folding and Cutting</b> : The fabric is folded and cut into
+              </Paragraph>
+              <Paragraph size="sm" className="sm:text-left">
+              <b>Roll Formation</b> : The web is rolled into master rolls.
+              </Paragraph>
+            </div>
+            <div className={` text-center `}>
+              <div className="pb-5 border-b-2 border-secondary w-fit m-auto text-3xl text-primary">
+                2
+              </div>
+              <h4 className="text-2xl font-bold my-5 text-primary">
+                Slitting and Rewinding
+              </h4>
+              <Paragraph size="sm" className="sm:text-left">
+                Master rolls are cut into narrower
+                rolls and rewound for processing.
+              </Paragraph>
+            </div>
+            <div className={` text-center `}>
+              <div className="pb-5 border-b-2 border-secondary w-fit m-auto text-3xl text-primary">
+                3
+              </div>
+              <h4 className="text-2xl font-bold my-5 text-primary">
+              Solution Formulation
+              </h4>
+              <Paragraph size="sm" className="sm:text-left">
+                Ingredients like water, surfactants,
+                and emollients are mixed to create the cleaning solution.
+              </Paragraph>
+            </div>
+            <div className={` text-center `}>
+              <div className="pb-5 border-b-2 border-secondary w-fit m-auto text-3xl text-primary">
+                4
+              </div>
+              <h4 className="text-2xl font-bold my-5 text-primary">Impregnation</h4>
+              <Paragraph size="sm" className="sm:text-left">
+                Fabric is impregnated with the solution,
+                ensuring precise saturation for performance.
+              </Paragraph>
+            </div>
+            <div className={` text-center `}>
+              <div className="pb-5 border-b-2 border-secondary w-fit m-auto text-3xl text-primary">
+                5
+              </div>
+              <h4 className="text-2xl font-bold my-5 text-primary">Folding and Cutting</h4>
+              <Paragraph size="sm" className="sm:text-left group-[]:">
+              The fabric is folded and cut into
               individual wipes or sheets.
-            </li>
-            <li>
-              <b>Packaging</b> : Wipes are sealed in containers, pouches, or
+              </Paragraph>
+            </div>
+            <div className={`text-center `}>
+              <div className="pb-5 border-b-2 border-secondary w-fit m-auto text-3xl text-primary">
+                6
+              </div>
+              <h4 className="text-2xl font-bold my-5 text-primary">Packaging</h4>
+              <Paragraph size="sm" className="sm:text-left">
+              Wipes are sealed in containers, pouches, or
               canisters to maintain quality.
-            </li>
-            <li>
-              <b>Labelling and Secondary Packaging</b> : Labels with product
+              </Paragraph>
+            </div>
+            <div className={` text-center `}>
+              <div className="pb-5 border-b-2 border-secondary w-fit m-auto text-3xl text-primary">
+                7
+              </div>
+              <h4 className="text-2xl font-bold my-5 text-primary">
+              Labelling and Secondary Packaging
+              </h4>
+              <Paragraph size="sm" className="sm:text-left">
+              Labels with product
               details are applied, and wipes are packed into cartons for
               shipment.
-            </li>
-          </ol>
+              </Paragraph>
+            </div>
+ 
+          </div>
         </div>
         <div className="mt-5">
           <SectionTitle className="my-5 !text-left">
