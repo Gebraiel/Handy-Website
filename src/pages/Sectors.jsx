@@ -26,10 +26,10 @@ export default function Sectors() {
         </SectionTitle>
       </Banner>
       <Section>
-        <div className="flex flex-col lg:flex-row gap-10">
+        <div className="flex flex-col lg:flex-row items-center gap-10">
          
-          <div className="flex flex-col md:flex-row justify-center lg:justify-start gap-5 w-full">
-            <div className="p-5 bg-white  text-center text-xl space-y-2">
+          <div className="flex flex-col md:flex-row justify-center lg:justify-start  gap-5 w-full">
+            <div className="p-5 bg-white  text-center text-xl space-y-5">
               <b className="text-2xl">Capacity</b>
               <Counter counter="25000" duration={2000} countBy={100} />
 
@@ -37,7 +37,7 @@ export default function Sectors() {
                 Mtons / Year
               </p>
             </div>
-            <div className="p-5 bg-white text-center text-xl space-y-2">
+            <div className="p-5 bg-white text-center text-xl space-y-5">
               <b className="text-2xl">Capacity</b>
               <Counter counter="800" duration={2000} countBy={10} />
               <p>

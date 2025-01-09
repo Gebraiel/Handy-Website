@@ -77,10 +77,10 @@ export default function Header({menu}) {
                 </NavLink>
                 {
                   item.hasSubMenu &&
-                   <ul className="bg-primary text-white w-52 absolute right-0 top-full  group-hover:block group-hover:animate-fadeUp opacity-0 hidden">
+                   <ul className=" text-white w-52 pt-5 absolute right-0 top-full  group-hover:block group-hover:animate-fadeUp opacity-0 hidden">
                       {
                         item.submenu.map((child,index)=>
-                          <li className="border-b-2 p-4" key={index}><Link to={child.link}>{child.title}</Link></li>
+                          <li className="border-b-2 p-4 bg-primary" key={index}><Link to={child.link}>{child.title}</Link></li>
                         )
                       }
                     </ul>
