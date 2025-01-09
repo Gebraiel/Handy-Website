@@ -14,3 +14,12 @@ button:focus-visible,a:focus-visible,select:focus-visible{
     outline:2px solid #e46a5a;
     outline-offset: 5px;
 }
+.processes-parent{
+    counter-reset: css-counter 0
+}
+.processes-parent .process{
+    counter-increment: css-counter 1
+}
+.processes-parent .process .icon::after{
+    content: counter(css-counter);
+}
