@@ -7,6 +7,12 @@ import 'leaflet/dist/leaflet.css';
 import SectionTitle from './SectionTitle';
 import markerIconPng from "leaflet/dist/images/marker-icon.png"
 import {Icon} from 'leaflet'
+import Process from './Process';
+import { FaMedal } from "react-icons/fa6";
+import { FaThumbsUp } from "react-icons/fa";
+import { RiLeafFill } from "react-icons/ri";
+import { FaGlobe } from "react-icons/fa";
+
 export default function HandyPaperSector() {
   return (
     <>
@@ -93,6 +99,81 @@ export default function HandyPaperSector() {
           <Paragraph size="md">
             The production of tissue paper involves several key steps:
           </Paragraph>
+          <div className="flex flex-wrap  gap-5 items-stretch ">
+                <div className="lg:basis-[300px] basis-[500px] text-center py-16 px-9 transition-all duration-300 even:mt-10">
+                  <div className="w-fit m-auto text-3xl text-primary p-10 rounded-full border-2 border-secondary">
+                    <FaMedal />
+                  </div>
+                  <h4 className="text-2xl font-bold my-5">Pulping</h4>
+                  <Paragraph size="sm" className='text-left'>
+                      <b>Raw Material</b> : Virgin wood pulp or recycled paper.
+                  </Paragraph>
+                  <Paragraph size="sm" className='text-left'>
+                      <b>Pulping Process</b> : The raw material is processed into
+                      a fibrous slurry.
+                  </Paragraph>
+                </div>
+                <div className="lg:basis-[300px] basis-[500px] text-center py-16 px-9 transition-all duration-300 even:mt-10">
+                  <div className="w-fit m-auto text-3xl text-primary p-10 rounded-full border-2 border-secondary">
+                    <FaThumbsUp />
+                  </div>
+                  <h4 className="text-2xl font-bold my-5 ">Refining</h4>
+                  <Paragraph size="sm" className='text-left'>
+                    <b>Fiber Modification</b> : Adjusts fiber length and
+                    strength, influencing softness and absorbency.
+                  </Paragraph>
+                </div>
+                <div className="lg:basis-[300px] basis-[500px] text-center py-16 px-9 transition-all duration-300 even:mt-10">
+                  <div className="w-fit m-auto text-3xl text-primary p-10 rounded-full border-2 border-secondary">
+                    <RiLeafFill />
+                  </div>
+                  <h4 className="text-2xl font-bold my-5 ">Screening</h4>
+                  <Paragraph size="sm" className='text-left'>
+                    <b>Impurity Removal</b> : The pulp is screened to remove
+                    dirt or knots.
+                  </Paragraph>
+                </div>
+                <div className="lg:basis-[300px] basis-[500px] text-center py-16 px-9 transition-all duration-300 even:mt-10">
+                  <div className="w-fit m-auto text-3xl text-primary  p-10 rounded-full border-2 border-secondary">
+                    <FaGlobe />
+                  </div>
+                  <h4 className="text-2xl font-bold my-5 ">Forming</h4>
+                  <Paragraph size="sm" className='text-left'>
+                    <b>Sheet Formation</b> : The pulp is spread onto a moving
+                    mesh, forming a wet sheet.
+                  </Paragraph>
+                </div>
+                <div className="lg:basis-[300px] basis-[500px] text-center py-16 px-9 transition-all duration-300 even:mt-10">
+                  <div className="w-fit m-auto text-3xl text-primary  p-10 rounded-full border-2 border-secondary">
+                    <FaGlobe />
+                  </div>
+                  <h4 className="text-2xl font-bold my-5 ">Pressing</h4>
+                  <Paragraph size="sm" className='text-left'>
+                    <b>Water Removal</b> : The wet sheet is pressed to remove
+                    excess water.
+                  </Paragraph>
+                </div>
+                <div className="lg:basis-[300px] basis-[500px] text-center py-16 px-9 transition-all duration-300 even:mt-10">
+                  <div className="w-fit m-auto text-3xl text-primary  p-10 rounded-full border-2 border-secondary">
+                    <FaGlobe />
+                  </div>
+                  <h4 className="text-2xl font-bold my-5 ">Drying</h4>
+                  <Paragraph size="sm" className='text-left'>
+                    <b>Moisture Removal</b> : The pressed sheet is dried by
+                    heated cylinders.
+                  </Paragraph>
+                </div>
+                <div className="lg:basis-[300px] basis-[500px] text-center py-16 px-9 transition-all duration-300 even:mt-10">
+                  <div className="w-fit m-auto text-3xl text-primary  p-10 rounded-full border-2 border-secondary">
+                    <FaGlobe />
+                  </div>
+                  <h4 className="text-2xl font-bold my-5 ">Creping</h4>
+                  <Paragraph size="sm" className='text-left'>
+                    <b>Surface Embossing</b> : The dried paper is embossed to
+                    create a soft, textured surface.
+                  </Paragraph>
+                </div>
+          </div>
           <ol className="list-decimal pl-5 space-y-3">
             <li>
               <b>Pulping</b>
