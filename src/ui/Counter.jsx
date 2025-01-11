@@ -20,5 +20,5 @@ export default function Counter({ counter, duration, countBy }) {
     return () => clearInterval(interval); // Cleanup interval on unmount
   }, [counter, duration, countBy]);
 
-  return <p className="font-bold text-primary xl:text-7xl text-5xl ">{num}</p>;
+  return <p className="font-bold text-primary xl:text-7xl text-5xl w-52 m-auto">{num}</p>;
 }

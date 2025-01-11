@@ -1,16 +1,13 @@
-import { FaMedal } from "react-icons/fa6";
-import { FaThumbsUp } from "react-icons/fa";
-import { RiLeafFill } from "react-icons/ri";
-import { FaGlobe } from "react-icons/fa";
 import Paragraph from "../Paragraph";
 
-export default function Features({features,basis=""}) {
+export default function Features({features,minWidth="350px"}) {
+
   return (
-    <div className="flex flex-wrap xl:justify-start justify-center gap-5 items-stretch text-white">
+    <div style={{gridTemplateColumns : `repeat(auto-fill,minmax(${minWidth},1fr))`}} className={`grid xl:justify-start justify-center gap-5 items-stretch text-white`}>
       {
         features.map((feature,index)=>{
           return(
-            <div key={index} className={`${basis == '' ? "lg:basis-[300px] basis-[500px]":basis} bg-contain bg-[url('/pattern.png')] text-center py-16 px-9 bg-gray transition-all duration-300 outline outline-8 outline-transparent hover:outline-[#e06c61]`}>
+            <div key={index} className={`bg-contain bg-[url('/pattern.png')] text-center py-16 px-9 bg-gray transition-all duration-300 outline outline-8 outline-transparent hover:outline-[#e06c61]`}>
               <div className="pb-5 border-b-2 border-secondary w-fit m-auto text-3xl">
                 {feature.icon}
               </div>

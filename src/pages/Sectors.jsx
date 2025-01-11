@@ -44,7 +44,6 @@ export default function Sectors() {
                 Mtons / Year of Converted Tissue Paper Products
               </Paragraph>
             </div>
-            
           </div>
           <Paragraph size="md" className="text-justify py-5 max-w-[66ch]">
             We take immense pride in the machinery and equipment that
@@ -56,6 +55,7 @@ export default function Sectors() {
       <Section className="bg-primary">
         <SectionTitle className="text-white mb-10">Machinery</SectionTitle>
         <Features
+          minWidth="300px"
           features={[
             {
               icon: <MdOutlineSpeed />,
@@ -77,7 +77,6 @@ export default function Sectors() {
 `,
             },
           ]}
-          basis="lg:basis-[400px] basis-[500px]"
         />
       </Section>
 

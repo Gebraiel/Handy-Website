@@ -13,6 +13,7 @@ import { FaThumbsUp } from "react-icons/fa";
 import { RiLeafFill } from "react-icons/ri";
 import { FaGlobe } from "react-icons/fa";
 import Features from './Home/Features';
+import { motion } from "motion/react"
 
 export default function HandyPaperSector() {
   return (
@@ -20,8 +21,11 @@ export default function HandyPaperSector() {
      <Section className="!py-0">
         {/* <SectorsNavigation /> */}
         
-        <div>
+        <div className='lg:block hidden'>
           <img src="/sectors/sector1.webp" alt="" />
+        </div>
+        <div className='lg:hidden'>
+          <img src="/sectors/sector1.jpg" alt="" />
         </div>
         
         <div className=" m-auto mt-5">
@@ -101,9 +105,9 @@ export default function HandyPaperSector() {
             <Paragraph size="md" className='text-center'>
               The production of tissue paper involves several key steps:
             </Paragraph>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 items-stretch my-16">
+          <motion.div layout className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 items-stretch my-16">
                 
-                <div className={`text-center`}>
+                <motion.div transition={{delay:0 ,duration:0.6}} className={`text-center opacity-0`} whileInView={{opacity:1}}>
                   <div className="pb-5 border-b-2 border-secondary w-fit m-auto text-3xl text-[#b0cbd3] font-extrabold">
                     1
                   </div>
@@ -115,8 +119,8 @@ export default function HandyPaperSector() {
                     <b>Pulping Process</b> : The raw material is processed into
                     a fibrous slurry.
                   </Paragraph>
-                </div>
-                <div className={` text-center `}>
+                </motion.div>
+                <motion.div transition={{delay:0.1,duration:0.6}} className={` text-center opacity-0 `} whileInView={{opacity:1}}>
                   <div className="pb-5 border-b-2 border-secondary w-fit m-auto text-3xl text-[#b0cbd3] font-extrabold">
                     2
                   </div>
@@ -125,8 +129,8 @@ export default function HandyPaperSector() {
                     <b>Fiber Modification</b> : Adjusts fiber length and
                     strength, influencing softness and absorbency.
                   </Paragraph>
-                </div>
-                <div className={` text-center `}>
+                </motion.div>
+                <motion.div transition={{delay:0.2,duration:0.6}} whileInView={{opacity:1}} className={`opacity-0 text-center `}>
                   <div className="pb-5 border-b-2 border-secondary w-fit m-auto text-3xl text-[#b0cbd3] font-extrabold">
                    3
                   </div>
@@ -135,8 +139,8 @@ export default function HandyPaperSector() {
                     <b>Impurity Removal</b> : The pulp is screened to remove
                     dirt or knots.
                   </Paragraph>
-                </div>
-                <div className={` text-center `}>
+                </motion.div>
+                <motion.div transition={{delay:0.3,duration:0.6}} whileInView={{opacity:1}} className={`opacity-0 text-center `}>
                   <div className="pb-5 border-b-2 border-secondary w-fit m-auto text-3xl text-[#b0cbd3] font-extrabold">
                     4
                   </div>
@@ -145,8 +149,8 @@ export default function HandyPaperSector() {
                   <b>Sheet Formation</b> : The pulp is spread onto a moving
                   mesh, forming a wet sheet.
                   </Paragraph>
-                </div>
-                <div className={` text-center `}>
+                </motion.div>
+                <motion.div transition={{delay:0.4,duration:0.6}} whileInView={{opacity:1}} className={`opacity-0 text-center `}>
                   <div className="pb-5 border-b-2 border-secondary w-fit m-auto text-3xl text-[#b0cbd3] font-extrabold">
                     5
                   </div>
@@ -155,8 +159,8 @@ export default function HandyPaperSector() {
                     <b>Water Removal</b> : The wet sheet is pressed to remove
                     excess water.
                   </Paragraph>
-                </div>
-                <div className={`text-center `}>
+                </motion.div>
+                <motion.div transition={{delay:0.5,duration:0.6}} whileInView={{opacity:1}} className={`opacity-0 text-center `}>
                   <div className="pb-5 border-b-2 border-secondary w-fit m-auto text-3xl text-[#b0cbd3] font-extrabold">
                     6
                   </div>
@@ -165,8 +169,8 @@ export default function HandyPaperSector() {
                     <b>Moisture Removal</b> : The pressed sheet is dried by
                     heated cylinders.
                   </Paragraph>
-                </div>
-                <div className={` text-center `}>
+                </motion.div>
+                <motion.div transition={{delay:0.6,duration:0.6}} whileInView={{opacity:1}} className={`opacity-0 text-center `}>
                   <div className="pb-5 border-b-2 border-secondary w-fit m-auto text-3xl text-[#b0cbd3] font-extrabold">
                     7
                   </div>
@@ -175,8 +179,8 @@ export default function HandyPaperSector() {
                   <b>Surface Embossing</b> : The dried paper is embossed to
                   create a soft, textured surface.
                   </Paragraph>
-                </div>
-          </div>
+                </motion.div>
+          </motion.div>
         </div>
       </Section>
       </>

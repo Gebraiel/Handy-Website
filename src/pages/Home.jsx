@@ -75,7 +75,7 @@ export default function Home() {
       </Section>
       <Section className={"bg-primary"}>
         <SectionTitle className="text-white mb-10">Why Handy</SectionTitle>
-        <Features features={
+        <Features minWidth="400px" features={
           [
               {icon: <FaMedal />,title:"Certified Quality",description:`Our products are ISO 9001 & ISO 14001 certified, ensuring the highest
               standards.`},
