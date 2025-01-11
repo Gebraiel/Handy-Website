@@ -14,8 +14,26 @@ import { RiLeafFill } from "react-icons/ri";
 import { FaGlobe } from "react-icons/fa";
 import Features from './Home/Features';
 import { motion } from "motion/react"
+const parentVarient = {
+
+  visible:{
+    transition:{
+      staggerChildren:0.3
+    }
+  }
+}
+const childrenVairent={
+  hidden:{
+    opacity:0
+  },
+  visible:{
+    opacity:1
+  }
+}
+
 
 export default function HandyPaperSector() {
+
   return (
     <>
      <Section className="!py-0">
@@ -105,9 +123,9 @@ export default function HandyPaperSector() {
             <Paragraph size="md" className='text-center'>
               The production of tissue paper involves several key steps:
             </Paragraph>
-          <motion.div layout className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 items-stretch my-16">
+          <motion.div variants={parentVarient} initial="hidden" whileInView="visible" className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 items-stretch my-16">
                 
-                <motion.div transition={{delay:0 ,duration:0.6}} className={`text-center opacity-0`} whileInView={{opacity:1}}>
+                <motion.div variants={childrenVairent} className={`text-center `} >
                   <div className="pb-5 border-b-2 border-secondary w-fit m-auto text-3xl text-[#b0cbd3] font-extrabold">
                     1
                   </div>
@@ -120,7 +138,7 @@ export default function HandyPaperSector() {
                     a fibrous slurry.
                   </Paragraph>
                 </motion.div>
-                <motion.div transition={{delay:0.1,duration:0.6}} className={` text-center opacity-0 `} whileInView={{opacity:1}}>
+                <motion.div variants={childrenVairent} className={` text-center  `} >
                   <div className="pb-5 border-b-2 border-secondary w-fit m-auto text-3xl text-[#b0cbd3] font-extrabold">
                     2
                   </div>
@@ -130,7 +148,7 @@ export default function HandyPaperSector() {
                     strength, influencing softness and absorbency.
                   </Paragraph>
                 </motion.div>
-                <motion.div transition={{delay:0.2,duration:0.6}} whileInView={{opacity:1}} className={`opacity-0 text-center `}>
+                <motion.div variants={childrenVairent}  className={` text-center `}>
                   <div className="pb-5 border-b-2 border-secondary w-fit m-auto text-3xl text-[#b0cbd3] font-extrabold">
                    3
                   </div>
@@ -140,7 +158,7 @@ export default function HandyPaperSector() {
                     dirt or knots.
                   </Paragraph>
                 </motion.div>
-                <motion.div transition={{delay:0.3,duration:0.6}} whileInView={{opacity:1}} className={`opacity-0 text-center `}>
+                <motion.div variants={childrenVairent}  className={` text-center `}>
                   <div className="pb-5 border-b-2 border-secondary w-fit m-auto text-3xl text-[#b0cbd3] font-extrabold">
                     4
                   </div>
@@ -150,7 +168,7 @@ export default function HandyPaperSector() {
                   mesh, forming a wet sheet.
                   </Paragraph>
                 </motion.div>
-                <motion.div transition={{delay:0.4,duration:0.6}} whileInView={{opacity:1}} className={`opacity-0 text-center `}>
+                <motion.div variants={childrenVairent}  className={` text-center `}>
                   <div className="pb-5 border-b-2 border-secondary w-fit m-auto text-3xl text-[#b0cbd3] font-extrabold">
                     5
                   </div>
@@ -160,7 +178,7 @@ export default function HandyPaperSector() {
                     excess water.
                   </Paragraph>
                 </motion.div>
-                <motion.div transition={{delay:0.5,duration:0.6}} whileInView={{opacity:1}} className={`opacity-0 text-center `}>
+                <motion.div variants={childrenVairent}  className={` text-center `}>
                   <div className="pb-5 border-b-2 border-secondary w-fit m-auto text-3xl text-[#b0cbd3] font-extrabold">
                     6
                   </div>
@@ -170,7 +188,7 @@ export default function HandyPaperSector() {
                     heated cylinders.
                   </Paragraph>
                 </motion.div>
-                <motion.div transition={{delay:0.6,duration:0.6}} whileInView={{opacity:1}} className={`opacity-0 text-center `}>
+                <motion.div variants={childrenVairent}  className={` text-center `}>
                   <div className="pb-5 border-b-2 border-secondary w-fit m-auto text-3xl text-[#b0cbd3] font-extrabold">
                     7
                   </div>
