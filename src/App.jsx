@@ -8,12 +8,12 @@ import About from "./pages/About";
 import MediaCenter from "./pages/MediaCenter";
 import Sectors from "./pages/Sectors";
 import Sustainability from "./pages/Sustainability";
-import WhyHandy from "./pages/WhyHandy";
 import Category from "./pages/Category";
 import {loader as productsLoader} from './pages/Category';
 import {loader as productLoader} from './pages/Product';
 import {loader as categoriesLoader} from './ui/AppLayout';
 import Product from "./pages/Product";
+import Certificates from "./pages/Certificates";
 // import {loader as categoriesLoader} from "./pages/Products";
 const router = createBrowserRouter([
   {
@@ -55,8 +55,8 @@ const router = createBrowserRouter([
         element:<Sustainability />
       }
       ,{
-        path:"/why-handy",
-        element:<WhyHandy />
+        path:"/certificates",
+        element:<Certificates />
       }
       ,{
         path:"/category/:categoryId",

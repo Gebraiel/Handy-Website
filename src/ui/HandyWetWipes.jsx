@@ -7,11 +7,12 @@ export default function HandyWetWipes() {
     <>
       <Section className="!py-0">
         {/* <SectorsNavigation /> */}
-
-        <div>
+        <div className='lg:block hidden'>
           <img src="/sectors/sector3.webp" alt="" />
         </div>
-
+        <div className='lg:hidden'>
+          <img src="/sectors/sector3.jpg" alt="" />
+        </div>
         <div className="mt-5">
           <div>
             <SectionTitle className="mb-5">

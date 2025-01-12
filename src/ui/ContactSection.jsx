@@ -8,8 +8,8 @@ import Paragraph from "./Paragraph";
 
 export default function ContactSection() {
   return (
-    <div className="flex justify-between gap-16 flex-col md:flex-row  m-auto">
-      <div className="w-full">
+    <div className="flex justify-between flex-wrap gap-16 flex-col md:flex-row  m-auto">
+      <div className="">
         <div className="flex relative gap-3 items-center text-xl text-primary font-semibold border-b-2 border-[#ececec] pb-5 before:content-[''] before:w-14 before:h-1 before:bg-[rgba(9,33,109,0.7)] before:absolute before:left-0 before:-bottom-1 before:-translate-y-1/2">
           <FaMapMarkedAlt className="text-3xl text-[rgba(9,33,109,0.7)]" />{" "}
           HANDY TISSUE MILL
@@ -43,7 +43,7 @@ export default function ContactSection() {
           </li>
         </ul>
       </div>
-      <div className="w-full">
+      <div className="">
         <div className="flex relative gap-3 items-center text-xl text-primary font-semibold border-b-2  border-[#ececec] pb-5 before:content-[''] before:w-14 before:h-1 before:bg-[rgba(9,33,109,0.7)] before:absolute before:left-0 before:-bottom-1 before:-translate-y-1/2">
           <FaMapMarkedAlt className="text-3xl text-[rgba(9,33,109,0.7)]" />{" "}
           HANDY CONVERTING PLANT

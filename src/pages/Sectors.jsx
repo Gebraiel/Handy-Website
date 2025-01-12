@@ -55,7 +55,7 @@ export default function Sectors() {
       <Section className="bg-primary">
         <SectionTitle className="text-white mb-10">Machinery</SectionTitle>
         <Features
-          minWidth="300px"
+          minWidth="300"
           features={[
             {
               icon: <MdOutlineSpeed />,

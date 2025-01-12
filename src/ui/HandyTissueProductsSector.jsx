@@ -8,10 +8,12 @@ export default function HandyTissueProductsSector() {
       <Section className="!py-0">
         {/* <SectorsNavigation /> */}
 
-        <div>
+        <div className='lg:block hidden'>
           <img src="/sectors/sector2.webp" alt="" />
         </div>
-
+        <div className='lg:hidden'>
+          <img src="/sectors/sector2.jpg" alt="" />
+        </div>
         <div className="mt-5">
           <div>
             <SectionTitle className="mb-5">

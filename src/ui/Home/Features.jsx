@@ -1,9 +1,17 @@
+import { useEffect, useState } from "react";
 import Paragraph from "../Paragraph";
 
-export default function Features({features,minWidth="350px"}) {
-
+export default function Features({features,minWidth="350"}) {
+  const[isBreakOut,setIsBreakOut] = useState(false);
+  useEffect(() => {
+    const handleResize = () => {
+      setIsBreakOut(Number(window.innerWidth) <= Number(minWidth));
+    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
   return (
-    <div style={{gridTemplateColumns : `repeat(auto-fill,minmax(${minWidth},1fr))`}} className={`grid xl:justify-start justify-center gap-5 items-stretch text-white`}>
+    <div style={{gridTemplateColumns : `${!isBreakOut ? `repeat(auto-fit,minmax(${minWidth}px,1fr))` : '1fr'}`}} className={`grid xl:justify-start justify-center gap-5 items-stretch text-white`}>
       {
         features.map((feature,index)=>{
           return(

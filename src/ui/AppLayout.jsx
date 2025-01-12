@@ -15,12 +15,12 @@ export default function AppLayout() {
   }));  
   const menu = [
     {title:"About Us",link:"/about"},
-    {title:"Why Handy",link:"/why-handy"},
     {title:"Sectors",link:"/sectors"},
     {
       title:"Products",link:"/products",hasSubMenu:true,submenu:categoriesMenu
     },
     {title:"Sustainability",link:"/sustainability"},
+    {title:"Certificates",link:"/certificates"},
     {title:"Media Center",link:"/media-center"},
     {title:"Contact Us",link:"/contact"},
     
