@@ -9,9 +9,6 @@ import { SlEnergy } from "react-icons/sl";
 import Features from "../ui/Home/Features";
 import { FaTools } from "react-icons/fa";
 import SectorsNavigation from "../ui/SectorsNavigation";
-import HandyPaperSector from "../ui/HandyPaperSector";
-import HandyTissueProductsSector from "../ui/HandyTissueProductsSector";
-import HandyWetWipes from "../ui/HandyWetWipes";
 
 
 export default function Sectors() {
@@ -80,11 +77,9 @@ export default function Sectors() {
         />
       </Section>
 
-      <SectorsNavigation>
-        <HandyPaperSector />
-        <HandyTissueProductsSector />
-        <HandyWetWipes />
-      </SectorsNavigation>
+      <SectorsNavigation links={["Hadny Paper" ,"Hadny Tissue Products","Handy Wet Wipes"]} />
+ 
+     
     </>
   );
 }

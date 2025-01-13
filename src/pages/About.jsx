@@ -4,6 +4,10 @@ import Banner from '../ui/Banner'
 import Section from '../ui/Section'
 import Paragraph from '../ui/Paragraph'
 import Timeline from '../ui/Timeline'
+import Tabs from '../ui/Tabs'
+import ProductDifferentiationTab from '../ui/ProductDifferentiationTab'
+import BrandDifferentiationTab from '../ui/BrandDifferentiationTab'
+import AdditionalStrengthsTab from '../ui/AdditionalStrengthsTab'
 
 export default function About() {
   return (
@@ -22,9 +26,18 @@ export default function About() {
 
           </Paragraph>
       </Section>
-      <Section className='!pt-0'>
+      <Section className='!py-0'>
         <SectionTitle className='mb-10'>Our Journey</SectionTitle>
         <Timeline/>
+      </Section>
+
+      <Section>
+        <SectionTitle className='mb-10'>What Makes Handy Stand Out ?</SectionTitle>
+        <Tabs links={["Product Differentiation","Brand Differentiation","Additional Strengths"]}>
+          <ProductDifferentiationTab/>
+          <BrandDifferentiationTab />
+          <AdditionalStrengthsTab/>
+        </Tabs>
       </Section>
     </>
 
