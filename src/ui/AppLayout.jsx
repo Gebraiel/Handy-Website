@@ -23,7 +23,11 @@ export default function AppLayout() {
     {title:"Certificates",link:"/certificates"},
     {title:"Media Center",link:"/media-center"},
     {title:"Contact Us",link:"/contact"},
-    
+  ]
+  const otherLinks=[
+    {title:"Health & Safety Measures",link:"/health"},
+    {title:"Customer Support",link:"/support"},
+    {title:"Our Branches",link:"/branches"},
   ]
   return (
     <CategoriesContext.Provider value={categories}>
@@ -32,7 +36,7 @@ export default function AppLayout() {
       <main>
         <Outlet />
       </main>
-      <Footer />
+      <Footer mainLinks={menu} otherLinks={otherLinks}/>
     </CategoriesContext.Provider>
   );
 }

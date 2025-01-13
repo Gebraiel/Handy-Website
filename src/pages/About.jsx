@@ -13,9 +13,7 @@ export default function About() {
   return (
     <>
       <Banner image={'/banner/slider-1.png'} >
-        <SectionTitle className="!leading-tight !mb-0">
           About Us
-        </SectionTitle>
       </Banner>
       <Section>
         <SectionTitle className='mb-10'>About Alex Converta</SectionTitle>

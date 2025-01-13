@@ -15,6 +15,7 @@ import {loader as categoriesLoader} from './ui/AppLayout';
 import Product from "./pages/Product";
 import Certificates from "./pages/Certificates";
 import CustomerSupport from "./pages/CustomerSupport";
+import Health from "./pages/Health";
 // import {loader as categoriesLoader} from "./pages/Products";
 const router = createBrowserRouter([
   {
@@ -72,6 +73,10 @@ const router = createBrowserRouter([
       {
         path:"/support",
         element:<CustomerSupport />
+      },
+      {
+        path:"/health",
+        element:<Health/>
       }
     ],
   },

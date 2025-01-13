@@ -27,13 +27,13 @@ export default function SectorsNavigation({links}) {
     }
   },[])
   return (
-      <Section>
-        <SectionTitle className='mb-10'>Our Sectors</SectionTitle>
+        <>
+        <SectionTitle className='my-10'>Our Sectors</SectionTitle>
         <Tabs links={links} active={active}>
           <HandyPaperSector />
           <HandyTissueProductsSector />
           <HandyWetWipes />
         </Tabs>
-      </Section>
+        </>
   )
 }

@@ -3,7 +3,7 @@ import Logo from "/Logo.png";
 import { FaMapMarkerAlt } from "react-icons/fa";
 import { FaEnvelopeOpen } from "react-icons/fa";
 
-export default function Footer() {
+export default function Footer({mainLinks,otherLinks}) {
   const year = new Date().getFullYear();
   return (
     <footer className="bg-primary text-white bg-[length:60%] bg-[url('/pattern.png')]">
@@ -18,19 +18,16 @@ export default function Footer() {
             <h5 className="text-secondary font-bold text-3xl">Pages</h5>
             <div className="flex gap-10 flex-wrap">
               <ul className="uppercase">
-                <li><Link>About</Link></li>
-                <li><Link>Why Handy</Link></li>
-                <li><Link>Sectors</Link></li>
-                <li><Link>Products</Link></li>
-                <li><Link>Sustainability</Link></li>
-                <li><Link>Media Center</Link></li>
+                {
+                  mainLinks.map((link,index) => <li><Link key={index} to={link.link}>{link.title}</Link></li>)
+                }
+                
               </ul>
               <ul className="uppercase">
-                <li><Link>CORPORATE</Link></li>
-                <li><Link>Customer Support</Link></li>
-                <li><Link>Health and Safety measures</Link></li>
-                <li><Link>Our Branches</Link></li>
-                <li><Link>Contact Us</Link></li>
+                {
+                  otherLinks.map((link,index) => <li><Link key={index} to={link.link}>{link.title}</Link></li>)
+                }
+                
                 
               </ul>
             </div>
