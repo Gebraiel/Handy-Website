@@ -5,7 +5,7 @@ export default function JumboProductsList({products,view}) {
   const [filter,setFilter] = useState('virgin pulp');
   return (
     <>
-      <div className="flex gap-10 mb-10">
+      <div className="flex flex-col md:flex-row gap-10 mb-10">
         
             <button className={`flex-grow text-center text-2xl font-bold bg-white text-primary shadow-md p-5 ${filter =='virgin pulp' ?"border-t-2" : ""}`} onClick={()=>setFilter('virgin pulp')}>
               Virgin Pulp

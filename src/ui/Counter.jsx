@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-
 export default function Counter({ counter, duration, countBy }) {
   const [num, setNum] = useState(0);
 
@@ -21,4 +20,6 @@ export default function Counter({ counter, duration, countBy }) {
   }, [counter, duration, countBy]);
 
   return <p className="font-bold text-primary xl:text-7xl text-5xl w-52 m-auto">{num}</p>;
+
+
 }
