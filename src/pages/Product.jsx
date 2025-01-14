@@ -20,9 +20,12 @@ export default function Product() {
             </Banner>
             <Section className='!py-[50px]'>
                 <div className='flex flex-col lg:flex-row items-center justify-center gap-5'>
-                    <div className='w-full lg:w-1/2'>
-                        <img src={image} alt="product image" />
-                    </div>
+                    {
+                        image &&
+                        <div className='w-full lg:w-1/2'>
+                            <img src={image} alt="product image" />
+                        </div>
+                    }
                     <div className='space-y-5 w-full lg:w-1/2 '>
                         <div>
                             <h2 className='text-primary text-xl lg:text-3xl font-bold'>{title}</h2>
