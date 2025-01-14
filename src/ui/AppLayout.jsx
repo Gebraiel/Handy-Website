@@ -20,7 +20,6 @@ export default function AppLayout() {
       title:"Products",link:"/products",hasSubMenu:true,submenu:categoriesMenu
     },
     {title:"Sustainability",link:"/sustainability"},
-    {title:"Certificates",link:"/certificates"},
     {title:"Media Center",link:"/media-center"},
     {title:"Contact Us",link:"/contact"},
   ]

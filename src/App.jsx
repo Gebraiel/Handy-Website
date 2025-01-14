@@ -13,9 +13,9 @@ import {loader as productsLoader} from './pages/Category';
 import {loader as productLoader} from './pages/Product';
 import {loader as categoriesLoader} from './ui/AppLayout';
 import Product from "./pages/Product";
-import Certificates from "./pages/Certificates";
 import CustomerSupport from "./pages/CustomerSupport";
 import Health from "./pages/Health";
+import Branches from "./pages/Branches";
 // import {loader as categoriesLoader} from "./pages/Products";
 const router = createBrowserRouter([
   {
@@ -57,10 +57,6 @@ const router = createBrowserRouter([
         element:<Sustainability />
       }
       ,{
-        path:"/certificates",
-        element:<Certificates />
-      }
-      ,{
         path:"/category/:categoryId",
         element:<Category />,
         loader:productsLoader
@@ -77,6 +73,10 @@ const router = createBrowserRouter([
       {
         path:"/health",
         element:<Health/>
+      },
+      { 
+        path:"/branches",
+        element:<Branches/>
       }
     ],
   },
