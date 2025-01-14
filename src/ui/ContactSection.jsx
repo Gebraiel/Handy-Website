@@ -16,29 +16,29 @@ export default function ContactSection() {
         </div>
         <ul className="py-8 space-y-5">
           <li className="flex items-center gap-5 text-primary">
-            <FaMapMarkerAlt className="text-2xl" />
+            <FaMapMarkerAlt className="w-[24px]  text-2xl" />
             <Paragraph className="font-medium" size="sm">
               Block No.13, Second Industrial Zone, New Borg El Arab City,
               Alexandria, Egypt.
             </Paragraph>
           </li>
           <li className="flex items-center gap-5 text-primary">
-            <FaEnvelopeOpen className="text-2xl" />
+            <FaEnvelopeOpen className="w-[24px] text-2xl" />
             <Paragraph className="font-medium">tissue.mill@handy.com.eg</Paragraph>
           </li>
           <li className="flex items-center gap-5 text-primary">
-            <FaTty className="text-2xl" />
+            <FaTty className="w-[24px] text-2xl" />
             <Paragraph className="font-medium flex flex-col">
               <span>+2 03 4626379</span>
               <span>+2 03 4626425</span>
             </Paragraph>
           </li>
           <li className="flex items-center gap-5 text-primary">
-            <FaPhone className="text-2xl" />
+            <FaPhone className="w-[24px] text-2xl" />
             <Paragraph className="font-medium">+2 0122390783</Paragraph>
           </li>
           <li className="flex items-center gap-5 text-primary">
-            <FaFax className="text-2xl" />
+            <FaFax className="w-[24px] text-2xl" />
             <Paragraph className="font-medium">+2 03 4626164</Paragraph>
           </li>
         </ul>
@@ -50,25 +50,25 @@ export default function ContactSection() {
         </div>
         <ul className="py-8 space-y-5">
           <li className="flex items-center gap-5 text-primary">
-            <FaMapMarkerAlt className="text-2xl" />
+            <FaMapMarkerAlt className="w-[24px] text-2xl" />
             <Paragraph className="font-medium" size="sm">
               Block No. (86,87,88), Fourth Industrial Zone, October 6th City,
               Giza, Egypt.
             </Paragraph>
           </li>
           <li className="flex items-center gap-5 text-primary">
-            <FaEnvelopeOpen className="text-2xl" />
+            <FaEnvelopeOpen className="w-[24px] text-2xl" />
             <Paragraph className="font-medium">info@handy.com.eg</Paragraph>
           </li>
           <li className="flex items-center gap-5 text-primary">
-            <FaTty className="text-2xl" />
+            <FaTty className="w-[24px] text-2xl" />
             <Paragraph className="font-medium flex flex-col">
               <span>+2 02 38333156</span>
             </Paragraph>
           </li>
 
           <li className="flex items-center gap-5 text-primary">
-            <FaFax className="text-2xl" />
+            <FaFax className="w-[24px] text-2xl" />
             <Paragraph className="font-medium">+2 02 38333157</Paragraph>
           </li>
         </ul>
