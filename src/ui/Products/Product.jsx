@@ -15,12 +15,16 @@ export default function Product({product,view,categoryName}) {
       } bg-white shadow-md`}
       
     >
-      {
-        product.image &&
+      
         <div className={`w-full  ${view == "list" ? " pl-5 lg:w-1/4" : ""}`}>
-          <img className="m-auto" src={product.image} alt="Product Image" />
+              {
+                  product.image ?
+                  <img className="m-auto" src={product.image} alt="Product Image" />
+                  :
+                  <div className="bg-white w-full aspect-square"></div>
+              }
         </div>
-      }
+      
       <div
         className={`flex flex-col ${
           view == "list" ? "lg:flex-row" : "items-center"
