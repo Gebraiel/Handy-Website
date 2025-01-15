@@ -5,11 +5,12 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { IoCloseSharp } from "react-icons/io5";
 import { FaCaretDown } from "react-icons/fa6";
 
-export default function Header({menu}) {
+export default function Header({menu,isAbsolute}) {
   const [show, setShow] = useState(false);
   const [isSticky, setIsSticky] = useState(false);
   const headerRef = useRef(null); // Reference for the header element
 
+  const headerClasses = isAbsolute ? "transition-all duration-300 absolute left-0 top-0 w-full z-50  text-white":"bg-primary text-white"; 
   useEffect(() => {
     function scrollHandle() {
       setIsSticky(window.scrollY > headerRef.current.offsetHeight);
@@ -22,7 +23,7 @@ export default function Header({menu}) {
   return (
     <header
       ref={headerRef}
-      className={`transition-all duration-300 absolute left-0 top-0 w-full z-50  text-white `}
+      className={headerClasses}
       // className={`transition-all duration-300  left-0 top-0 w-full z-50  text-white ${
       //   isSticky
       //     ? "fixed animate-fadeDown bg-primary bg-contain bg-[url('/pattern.png')]"

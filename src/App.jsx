@@ -16,6 +16,7 @@ import Product from "./pages/Product";
 import CustomerSupport from "./pages/CustomerSupport";
 import Health from "./pages/Health";
 import Branches from "./pages/Branches";
+import Error from "./pages/PageNotFound";
 // import {loader as categoriesLoader} from "./pages/Products";
 const router = createBrowserRouter([
   {
@@ -77,6 +78,9 @@ const router = createBrowserRouter([
       { 
         path:"/branches",
         element:<Branches/>
+      },{
+        path:"*",
+        element:<Error message={"Bad Request This Page Isn't Found"}/>
       }
     ],
   },

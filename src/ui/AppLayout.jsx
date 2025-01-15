@@ -5,10 +5,17 @@ import { getCategories } from "../services/categories";
 import { useLoaderData } from "react-router-dom";
 import CategoriesContext from "../context/CategoriesContext";
 import ScrollToTop from "./ScrollToTop";
+import { useMatches } from "react-router-dom";
 
 export default function AppLayout() {
-  const categories=useLoaderData();
-  console.log(categories);
+  const matches = useMatches()
+  console.log(matches[0].params['*']);
+  const isNotFound = matches[0].params['*'] != undefined;
+
+  console.log(isNotFound);
+  
+  const categories = useLoaderData();
+  // console.log(categories);
   const categoriesMenu = categories.map((category) => ({
     title: category.name,
     link: `/category/${category.id}`,
@@ -28,10 +35,11 @@ export default function AppLayout() {
     {title:"Customer Support",link:"/support"},
     {title:"Our Branches",link:"/branches"},
   ]
+
   return (
-    <CategoriesContext.Provider value={categories}>
+    <CategoriesContext.Provider value={categories} >
       <ScrollToTop />
-      <Header menu={menu}/>
+      <Header menu={menu} isAbsolute={!isNotFound}/>
       <main>
         <Outlet />
       </main>
