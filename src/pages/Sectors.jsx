@@ -77,7 +77,7 @@ export default function Sectors() {
         />
       </Section>
 
-      <SectorsNavigation links={["Hadny Paper" ,"Hadny Tissue Products","Handy Wet Wipes"]} />
+      <SectorsNavigation links={["Handy Paper" ,"Hadny Tissue Products","Handy Wet Wipes"]} />
  
      
     </>

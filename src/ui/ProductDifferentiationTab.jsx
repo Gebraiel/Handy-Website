@@ -1,9 +1,10 @@
 import React from 'react'
-import Paragraph from './Paragraph'
+import Section from './Section'
 
 export default function ProductDifferentiationTab() {
   return (
-    <div className='flex justify-center xl:justify-between items-center flex-wrap gap-y-5'>
+    <Section className='!pt-0'>
+      <div className='flex justify-center xl:justify-between items-center flex-wrap gap-y-5'>
       <div className='w-full xl:w-1/2'>
         <b className='text-xl'>Product Differentiation</b>
         <ul className='list-disc pl-7 pt-5 space-y-1'>
@@ -33,5 +34,6 @@ export default function ProductDifferentiationTab() {
         <img src="/About/01.jpg" alt="Product Differentiation" />
       </div>
     </div>
+    </Section>
   )
 }
