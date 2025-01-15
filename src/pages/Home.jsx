@@ -7,7 +7,7 @@ import Slider from "../ui/Home/Slider";
 import HandyBackground from "../ui/Home/HadnyBackground";
 import Certificates from "../ui/Home/Certificates";
 import SectionTitle from "../ui/SectionTitle";
-import { Link } from "react-router-dom";
+import { Link,useNavigation } from "react-router-dom";
 import ProductCategories from "../ui/Categories/ProductCategories";
 import Banner from "../ui/Banner";
 import Paragraph from "../ui/Paragraph";
@@ -15,6 +15,8 @@ import { FaMedal } from "react-icons/fa6";
 import { FaThumbsUp } from "react-icons/fa";
 import { RiLeafFill } from "react-icons/ri";
 import { FaGlobe } from "react-icons/fa";
+import React from "react";
+import Loader from "../ui/Loader";
 
 
 const sustainabilityLength = 14;
@@ -33,6 +35,9 @@ const sliderImagesArray = Array.from(
 
 
 export default function Home() {
+    const navigation = useNavigation();
+  const isLoading = navigation.state === "loading";
+  if (isLoading) return <Loader />;
   return (
     <> 
       <Section type="fullscreen">

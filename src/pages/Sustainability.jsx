@@ -5,6 +5,9 @@ import Banner from "../ui/Banner";
 import Paragraph from "../ui/Paragraph";
 import Lightbox from "../ui/Lightbox";
 import Gallery from "../ui/Gallery";
+import Loader from "../ui/Loader";
+import { useNavigation } from "react-router-dom";
+
 const sustainabilityLength = 14;
 const sustainabilityImagesArray = Array.from(
   { length: sustainabilityLength },
@@ -19,7 +22,11 @@ export default function Sustainability() {
     setShowLightBox(true);
     setLightBoxImage(image);
   }
+  const navigation = useNavigation();
+  const isLoading = navigation.state === "loading";
+  if (isLoading) return <Loader />;
   return (
+    
     <>
       <Banner
         image="/banner/slider-1.png"

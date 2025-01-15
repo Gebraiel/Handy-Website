@@ -6,6 +6,7 @@ import { useLoaderData } from "react-router-dom";
 import CategoriesContext from "../context/CategoriesContext";
 import ScrollToTop from "./ScrollToTop";
 import { useMatches } from "react-router-dom";
+import {AnimatePresence} from "motion/react";
 
 export default function AppLayout() {
   const matches = useMatches()
@@ -41,7 +42,9 @@ export default function AppLayout() {
       <ScrollToTop />
       <Header menu={menu} isAbsolute={!isNotFound}/>
       <main>
-        <Outlet />
+        <AnimatePresence>
+          <Outlet/>
+        </AnimatePresence>
       </main>
       <Footer mainLinks={menu} otherLinks={otherLinks}/>
     </CategoriesContext.Provider>

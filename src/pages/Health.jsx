@@ -3,8 +3,13 @@ import Banner from '../ui/Banner'
 import Paragraph from '../ui/Paragraph'
 import Section from '../ui/Section'
 import SectionTitle from '../ui/SectionTitle'
+import { useNavigation } from "react-router-dom"
+import Loader from '../ui/Loader'
 
 export default function Health() {
+      const navigation = useNavigation();
+  const isLoading = navigation.state === "loading";
+  if (isLoading) return <Loader />;
   return (
     <>
         <Banner image={'/banner/slider-1.png'}>

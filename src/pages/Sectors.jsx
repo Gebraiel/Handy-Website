@@ -9,9 +9,14 @@ import { SlEnergy } from "react-icons/sl";
 import Features from "../ui/Home/Features";
 import { FaTools } from "react-icons/fa";
 import SectorsNavigation from "../ui/SectorsNavigation";
+import Loader from "../ui/Loader";
+import { useNavigation } from "react-router-dom";
 
 
 export default function Sectors() {
+       const navigation = useNavigation();
+  const isLoading = navigation.state === "loading";
+  if (isLoading) return <Loader />;
   return (
     <>
       <Banner

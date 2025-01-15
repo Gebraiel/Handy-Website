@@ -15,11 +15,7 @@ export default function Category() {
   const [productPackage, setProductPackage] = useState("all");
   const [packagesList, setPackagesList] = useState([]);
   const products = useLoaderData();
-  const navigation = useNavigation();
-  const isLoading = navigation.state === "loading";
-
   const categoryName = products[0]?.category?.name;
-
   const categoryId = products[0]?.category?.id;
   useEffect(() => {
     let set = new Set();
@@ -27,7 +23,9 @@ export default function Category() {
     setPackagesList(Array.from(set));
     setProductPackage('all')
   }, [products]);
-
+  
+  const navigation = useNavigation();
+  const isLoading = navigation.state === "loading";
   if (isLoading) return <Loader />;
   return (
     <>

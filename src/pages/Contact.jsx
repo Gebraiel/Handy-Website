@@ -4,8 +4,13 @@ import SectionTitle from '../ui/SectionTitle'
 import Section from '../ui/Section'
 import ContactSection from '../ui/ContactSection'
 import Form from '../ui/Form'
+import { useNavigation } from "react-router-dom"
+import Loader from '../ui/Loader'
 
 export default function Contact() {
+    const navigation = useNavigation();
+  const isLoading = navigation.state === "loading";
+  if (isLoading) return <Loader />;
   return (
        <>
          <Banner image={'/banner/slider-1.png'} >

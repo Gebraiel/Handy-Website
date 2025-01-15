@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import axios from '../../node_modules/axios/index'
-import { useLoaderData } from 'react-router-dom'
+import { useLoaderData,useNavigation } from 'react-router-dom'
 import Section from '../ui/Section';
 import Banner from '../ui/Banner';
 import SectionTitle from '../ui/SectionTitle';
@@ -8,7 +8,9 @@ import { getProduct } from '../services/products';
 import Paragraph from '../ui/Paragraph';
 import ToastSuccess from '../ui/ToastSuccess';
 import {AnimatePresence} from "motion/react";
+import Loader from '../ui/Loader';
 export default function Product() {
+
     const {title,image,details,category:{name:categoryName}} = useLoaderData();
     const [showToast,setShowToast] = useState(false);
     function copyToClipboard(){
@@ -16,6 +18,9 @@ export default function Product() {
         setShowToast(true);
         setTimeout(()=>setShowToast(false),2000);
     }
+        const navigation = useNavigation();
+  const isLoading = navigation.state === "loading";
+  if (isLoading) return <Loader />;
   return (
         <>
             <Banner image='/banner/slider-1.png' className='flex items-center justify-center'>

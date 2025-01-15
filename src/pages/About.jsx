@@ -8,8 +8,13 @@ import Tabs from '../ui/Tabs'
 import ProductDifferentiationTab from '../ui/ProductDifferentiationTab'
 import BrandDifferentiationTab from '../ui/BrandDifferentiationTab'
 import AdditionalStrengthsTab from '../ui/AdditionalStrengthsTab'
+import { useNavigation } from "react-router-dom"
+import Loader from '../ui/Loader'
 
 export default function About() {
+  const navigation = useNavigation();
+  const isLoading = navigation.state === "loading";
+  if (isLoading) return <Loader />;
   return (
     <>
       <Banner image={'/banner/slider-1.png'} >
