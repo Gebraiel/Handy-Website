@@ -48,7 +48,7 @@ export default function HandyPaperSector() {
         
         <div className=" m-auto mt-5">
           <div>
-            <SectionTitle className="mb-5 !max-w-[66ch] !mx-auto">
+            <SectionTitle className="mb-5 !max-w-[66ch] !mx-auto !text-left">
               Handy Paper
             </SectionTitle>
             <Paragraph size="md" className="text-justify m-auto">
@@ -117,13 +117,13 @@ export default function HandyPaperSector() {
       <div >
 
          
-            <SectionTitle className="my-5">
+            <SectionTitle className="my-5 !text-left">
               Paper Making Process
             </SectionTitle>
-            <Paragraph size="md" className='text-center'>
+            <Paragraph size="md" className=''>
               The production of tissue paper involves several key steps:
             </Paragraph>
-          <motion.div variants={parentVarient} initial="hidden" whileInView="visible" className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 items-stretch my-16">
+          <motion.div variants={parentVarient} initial="hidden" whileInView="visible" viewport={{once:true}} className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 items-stretch my-16">
                 
                 <motion.div variants={childrenVairent} className={`text-center `} >
                   <div className="pb-5 border-b-2 border-secondary w-fit m-auto text-3xl text-[#b0cbd3] font-extrabold">

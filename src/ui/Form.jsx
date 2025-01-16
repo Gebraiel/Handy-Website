@@ -10,7 +10,7 @@ export default function Form() {
   }
    const inputClasses = 'border border-[#ccc] py-2 px-3 focus:outline-primary w-full mt-2';
   return (
-    <form onSubmit={handleSubmit(submitForm)}>
+    <form onSubmit={handleSubmit(submitForm)} className='bg-white shadow-md p-10'>
         <SectionTitle className='!text-left mb-5'>Contact Form</SectionTitle>
         <div className='space-y-5'>
             <div className='flex sm:flex-row flex-col gap-5 '>
@@ -23,8 +23,13 @@ export default function Form() {
                     <label>Last Name</label>
                     <input className={inputClasses} type="text" {...register('lastName',{required:"This input is required"})} />
                     {errors.lastName && <Paragraph size="sm" className='text-secondary italic my-3'>{errors.lastName.message}</Paragraph>}
-
                 </div>
+            </div>
+            <div className='w-full'>
+                <label>Company Details</label>
+                <input className={inputClasses} {...register('companyDetails',{required:"This input is required"})} type="text"/>
+                {errors.companyDetails && <Paragraph size="sm" className='text-secondary italic my-3'>{errors.companyDetails.message}</Paragraph>}
+
             </div>
             <div className='w-full'>
                 <label>Email</label>
@@ -96,7 +101,7 @@ export default function Form() {
                 {errors.message && <Paragraph size="sm" className='text-secondary italic my-3'>{errors.message.message}</Paragraph>}
 
             </div>
-            <button type='submit' className='border border-[#ccc] px-8 text-primary font-semibold hover:text-white hover:bg-primary transition-colors duration-300 py-3 block m-auto'>Submit</button>
+            <button type='submit' className='border border-[#ccc] px-8 text-primary font-semibold hover:text-white hover:bg-primary transition-colors duration-300 py-3 block '>Submit</button>
         </div>
     </form>
   )

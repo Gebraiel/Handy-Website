@@ -25,7 +25,7 @@ export default function Contact() {
               <ContactSection />
               </div>
               <div className="lg:w-1/2">
-              <Form />
+                <Form />
               </div>
             </div>
          </Section>

@@ -29,7 +29,7 @@ export default function Sustainability() {
     
     <>
       <Banner
-        image="/banner/slider-1.png"
+        image="/Banners/sustainability.webp"
         className="flex items-center justify-center"
       >
         <SectionTitle className="!mb-0">Sustainability</SectionTitle>

@@ -15,7 +15,7 @@ export default function HandyWetWipes() {
         </div>
         <div className="mt-5">
           <div>
-            <SectionTitle className="mb-5">
+            <SectionTitle className="mb-5 !text-left">
               Handy Wet Wipes
             </SectionTitle>
             <div className="space-y-3">
@@ -54,7 +54,7 @@ export default function HandyWetWipes() {
 
       <Section className="!pt-0">
         <div className="mt-5">
-          <SectionTitle className="my-5 ">
+          <SectionTitle className="my-5  !text-left">
             Production Process
           </SectionTitle>
           <Paragraph size="md" className="text-center">

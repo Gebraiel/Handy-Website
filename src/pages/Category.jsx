@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useLoaderData, useNavigation } from "react-router-dom";
 import Section from "../ui/Section";
 import Loader from "../ui/Loader";
@@ -9,14 +9,18 @@ import { CiBoxList } from "react-icons/ci";
 import { RiGalleryView2 } from "react-icons/ri";
 import ProductList from "../ui/Products/ProductList";
 import SectionTitle from "../ui/SectionTitle";
+import CategoriesContext from "../context/CategoriesContext";
 
 export default function Category() {
   const [view, setView] = useState("list");
   const [productPackage, setProductPackage] = useState("all");
   const [packagesList, setPackagesList] = useState([]);
-  const products = useLoaderData();
-  const categoryName = products[0]?.category?.name;
-  const categoryId = products[0]?.category?.id;
+
+  const {products,categoryId} = useLoaderData();
+  const categories = useContext(CategoriesContext);
+  const category = categories.find((category)=>category.id == categoryId);
+  const categoryName = category.name;
+
   useEffect(() => {
     let set = new Set();
     products.map((product) => product.package && set.add(product.package));
@@ -30,7 +34,7 @@ export default function Category() {
   return (
     <>
       <Banner
-        image="/banner/slider-1.png"
+        image={category.banner ? category.banner : "/banner/slider-1.png"}
         className="flex justify-center items-center "
       >
         <SectionTitle className="text-primary font-bold text-center capitalize">
@@ -90,6 +94,6 @@ export default function Category() {
 
 export async function loader({ params }) {
   const { categoryId } = params;
-  const products = getCategoryProducts(Number(categoryId));
-  return products;
+  const products = await getCategoryProducts(Number(categoryId));
+  return {products,categoryId};
 }

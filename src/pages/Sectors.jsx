@@ -28,22 +28,23 @@ export default function Sectors() {
         </SectionTitle>
       </Banner>
       <Section>
+
         <div className="flex flex-col lg:flex-row items-center gap-10">
          
           <div className="flex flex-col md:flex-row justify-center lg:justify-start  gap-5 ">
             <div className="p-5 bg-white  text-center space-y-5 lg:w-1/2 w-full">
-              <b className="xl:text-2xl md:text-md">Capacity</b>
+              <b className="xl:text-2xl md:text-md">Tissue Paper Mill Capacity</b>
               <Counter counter="25000" duration={2000} countBy={100} />
 
               <Paragraph size="sm">
-                Mtons / Year of Tissue Paper
+                Mtons / Year 
               </Paragraph>
             </div>
             <div className="p-5 bg-white text-center  space-y-5 lg:w-1/2 w-full">
-              <b className="xl:text-2xl md:text-md">Eco Friendly</b>
+              <b className="xl:text-2xl md:text-md">Tissue Paper Converting Plant</b>
               <Counter counter="800" duration={2000} countBy={10} />
               <Paragraph size="sm">
-                Mtons / Year of Converted Tissue Paper Products
+                Mtons / Year 
               </Paragraph>
             </div>
           </div>

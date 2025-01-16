@@ -80,7 +80,7 @@ const router = createBrowserRouter([
         element:<Branches/>
       },{
         path:"*",
-        element:<Error message={"Bad Request This Page Isn't Found"}/>
+        element:<Error />
       }
     ],
   },
