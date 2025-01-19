@@ -2,9 +2,12 @@ import React from "react";
 import Section from "./Section";
 import Paragraph from "./Paragraph";
 import SectionTitle from "./SectionTitle";
+import GallerySlider from "./GallerySlider";
+import {motion} from 'motion/react';
+
 export default function HandyWetWipes() {
   return (
-    <>
+    <motion.div initial={{opacity:0,x:-100}} animate={{opacity:1,x:0}} exit={{opacity:0,x:100}}>
       <Section className="!py-0">
         {/* <SectorsNavigation /> */}
         <div className='lg:block hidden'>
@@ -184,6 +187,9 @@ export default function HandyWetWipes() {
          
         </div>
       </Section>
-    </>
+      <Section type="fullscreen" >
+        <GallerySlider images={['/sectors/sector1.webp','/sectors/sector2.webp','/sectors/sector3.webp']} noOfCols={3}/>
+      </Section>
+    </motion.div>
   );
 }

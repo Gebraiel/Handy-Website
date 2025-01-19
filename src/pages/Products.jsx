@@ -6,7 +6,7 @@ import Banner from '../ui/Banner'
 import { useNavigation } from "react-router-dom"
 import Loader from '../ui/Loader'
 export default function Products() {
-       const navigation = useNavigation();
+  const navigation = useNavigation();
   const isLoading = navigation.state === "loading";
   if (isLoading) return <Loader />;
   return (

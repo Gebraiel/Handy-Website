@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import Section from './Section'
 import SectionTitle from './SectionTitle'
-
+import {AnimatePresence} from "motion/react"
 export default function Tabs({children,links,active=0}) {
   const[activeTab,setActiveTab] = useState(active);      
   return (
@@ -18,7 +18,9 @@ export default function Tabs({children,links,active=0}) {
             </div>
         </Section>
         {
-            children[activeTab]
+            <AnimatePresence>
+                {children[activeTab]}
+            </AnimatePresence>
         }
     </>
   )

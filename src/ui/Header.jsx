@@ -82,6 +82,7 @@ export default function Header({menu,isAbsolute}) {
                       {
                         item.submenu.map((child,index)=>
                           <li className="border-b-2 p-4 bg-primary" key={index}><Link to={child.link}>{child.title}</Link></li>
+                          
                         )
                       }
                     </ul>

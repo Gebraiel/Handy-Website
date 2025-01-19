@@ -31,8 +31,9 @@ export default function About() {
         <SectionTitle className='mb-10'>Our Journey</SectionTitle>
         <Timeline/>
       </Section>
-
-        <SectionTitle className='mt-14 mb-10'>What Makes Handy Stand Out ?</SectionTitle>
+      <Section className='!py-0'>
+        <SectionTitle className='mt-14 mb-10 !text-left'>What Makes Handy Stand Out ?</SectionTitle>
+      </Section>
         <Tabs links={["Product Differentiation","Brand Differentiation","Additional Strengths"]}>
           <ProductDifferentiationTab/>
           <BrandDifferentiationTab />

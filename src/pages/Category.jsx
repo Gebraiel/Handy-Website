@@ -95,5 +95,6 @@ export default function Category() {
 export async function loader({ params }) {
   const { categoryId } = params;
   const products = await getCategoryProducts(Number(categoryId));
+  console.log(products);
   return {products,categoryId};
 }

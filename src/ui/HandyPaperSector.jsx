@@ -2,18 +2,13 @@ import React from 'react'
 import Section from './Section'
 import Paragraph from './Paragraph'
 import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
-import L from "leaflet";
 import 'leaflet/dist/leaflet.css';
 import SectionTitle from './SectionTitle';
 import markerIconPng from "leaflet/dist/images/marker-icon.png"
 import {Icon} from 'leaflet'
-import Process from './Process';
-import { FaMedal } from "react-icons/fa6";
-import { FaThumbsUp } from "react-icons/fa";
-import { RiLeafFill } from "react-icons/ri";
-import { FaGlobe } from "react-icons/fa";
-import Features from './Home/Features';
 import { motion } from "motion/react"
+import GallerySlider from './GallerySlider';
+
 const parentVarient = {
 
   visible:{
@@ -30,12 +25,14 @@ const childrenVairent={
     opacity:1
   }
 }
+ 
 
 
 export default function HandyPaperSector() {
 
+ 
   return (
-    <>
+    <motion.div initial={{opacity:0,x:-100}} animate={{opacity:1,x:0}} exit={{opacity:0,x:100}}>
      <Section className="!py-0">
         {/* <SectorsNavigation /> */}
         
@@ -81,6 +78,8 @@ export default function HandyPaperSector() {
             className='h-96 '
             zoom={4}
             scrollWheelZoom={false}
+            worldCopyJump={true}  // Prevents the map from repeating
+            noWrap={true} 
           >
               <TileLayer
     attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -201,6 +200,10 @@ export default function HandyPaperSector() {
           </motion.div>
         </div>
       </Section>
-      </>
+
+      <Section type="fullscreen" className='overflow-x-hidden' >
+        <GallerySlider images={['/sectors/sector1.webp','/sectors/sector2.webp','/sectors/sector3.webp']} noOfCols={3}/>
+      </Section>
+      </motion.div>
   )
 }
