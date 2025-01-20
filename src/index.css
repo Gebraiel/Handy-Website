@@ -17,6 +17,12 @@ button:focus-visible,a:focus-visible,select:focus-visible,input:focus-visible,te
     outline-offset: 5px;
 }
 
-#SA,#LB{
-    fill:blue;
+@media(min-width:1280px){
+    
+    .has-submenu:hover > .submenu{
+        display: block;
+        opacity: 1;
+        animation: fadeUp 0.5s ease forwards;
+    }
 }
+

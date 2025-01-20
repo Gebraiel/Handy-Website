@@ -10,12 +10,14 @@ import { RiGalleryView2 } from "react-icons/ri";
 import ProductList from "../ui/Products/ProductList";
 import SectionTitle from "../ui/SectionTitle";
 import CategoriesContext from "../context/CategoriesContext";
+import { useSearchParams } from "react-router-dom";
 
 export default function Category() {
   const [view, setView] = useState("list");
-  const [productPackage, setProductPackage] = useState("all");
   const [packagesList, setPackagesList] = useState([]);
+  const[filter,setFilter] = useState({package:"all",subcategory:""});
 
+  const [searchParams] = useSearchParams();
   const {products,categoryId} = useLoaderData();
   const categories = useContext(CategoriesContext);
   const category = categories.find((category)=>category.id == categoryId);
@@ -25,9 +27,8 @@ export default function Category() {
     let set = new Set();
     products.map((product) => product.package && set.add(product.package));
     setPackagesList(Array.from(set));
-    setProductPackage('all')
+    setFilter({package:'all',subcategory:searchParams.get('filter')});
   }, [products]);
-  
   const navigation = useNavigation();
   const isLoading = navigation.state === "loading";
   if (isLoading) return <Loader />;
@@ -53,7 +54,7 @@ export default function Category() {
                 <select
                   defaultValue="all"
                   className="border-b py-3 focus:outline-none"
-                  onChange={(e) => setProductPackage(e.target.value)}
+                  onChange={(e) => setFilter({...filter,package:e.target.value})}
                 >
                   <option value="all">All Packages</option>
                   {packagesList.map((item, index) => (
@@ -81,7 +82,7 @@ export default function Category() {
 
         <div>
           {products.length > 0 ? (
-              <ProductList products={products} view={view} filter={productPackage}/>
+              <ProductList products={products} view={view} filter={filter}/>
             )
           : (
             <SectionTitle className="mb-1">No Products Found</SectionTitle>
@@ -95,6 +96,5 @@ export default function Category() {
 export async function loader({ params }) {
   const { categoryId } = params;
   const products = await getCategoryProducts(Number(categoryId));
-  console.log(products);
   return {products,categoryId};
 }

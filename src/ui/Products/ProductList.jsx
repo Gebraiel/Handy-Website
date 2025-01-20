@@ -8,34 +8,35 @@ export default function ProductList({ products, view, filter }) {
   const isJumbo = categoryName.toLowerCase().includes("jumbo");
 
   useEffect(() => {
-    if (filter != "all")
-      setFilteredProducts(
-        products.filter(
-          (product) => product.package.toLowerCase() == filter.toLowerCase()
-        )
-      );
-    else setFilteredProducts(products);
-  }, [filter]);
+    if(filter.package == 'all' && filter.subcategory == ""){
+      setFilteredProducts(products);
+    }else{
+      let newProducts = products;
+      if(filter.subcategory){
+          console.log('filter by subcategory');
+          newProducts=newProducts.filter(
+            (product) => product.subcategory?.toLowerCase() == filter.subcategory.toLowerCase()
+          )
+      }
+      if(filter.package !='all'){
+          console.log("filter by package");
+
+          console.log(filter.package);
+          newProducts=newProducts.filter(
+            (product) => {
+              console.log(product.package.toLowerCase() == filter.package.toLowerCase());
+              return product.package.toLowerCase() == filter.package.toLowerCase()
+            }
+          )
+      }
+      console.log("Products After Filtertion: ",newProducts);
+      setFilteredProducts(newProducts);
+    }
+    
+  },[filter]);
   if(isJumbo)
     return(
-  
-      // <div className="flex flex-col lg:flex-row gap-10 items-baseline">
-      //   <div className="space-y-5">
-      //     <div className="text-center">
-      //       <p className="text-center text-2xl font-bold border-t-2 border-primary bg-white text-primary shadow-md p-5">Virgin Pulp</p>
-      //     </div>
-      //     {products.filter((product) => product.subtitle.toLowerCase() == 'virgin pulp').map((product) => <JumboProduct product={product} view='gallery' key={product.id}/>)}
-      //   </div>
-      //   <div className="space-y-5">
-      //     <div className="text-center">
-      //       <p className="text-2xl font-bold border-t-2 border-primary bg-white text-primary shadow-md p-5">Economy</p>
-      //     </div>
-      //     {products.filter((product) => product.subtitle.toLowerCase() == 'economy').map((product) => <JumboProduct product={product} view='gallery' key={product.id}/>)}
-
-      //   </div>
-      // </div>
       <JumboProductsList products={products} view={view}/>
-
     )
   return (
     <div

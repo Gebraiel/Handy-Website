@@ -4,10 +4,12 @@ import { NavLink, Link } from "react-router-dom";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoCloseSharp } from "react-icons/io5";
 import { FaCaretDown } from "react-icons/fa6";
+import SubMenu from "./submenu";
 
 export default function Header({menu,isAbsolute}) {
   const [show, setShow] = useState(false);
   const [isSticky, setIsSticky] = useState(false);
+  const [showSubmenu,setShowSubmenu] = useState(false);
   const headerRef = useRef(null); // Reference for the header element
 
   const headerClasses = isAbsolute ? "transition-all duration-300 absolute left-0 top-0 w-full z-50  text-white":"bg-primary text-white"; 
@@ -44,31 +46,25 @@ export default function Header({menu,isAbsolute}) {
                 show ? "max-h-[395px] opacity-100" : "max-h-0 opacity-0"
               } `}
             >
-              {menu.map((item)=>
-              <li className=" border border-l-0 border-r-0  bg-primary uppercase font-bold group">
-                <NavLink to={`${item.link}`} className={(isActive)=> `flex gap-1 p-5 items-center ${isActive ? "text-secondary" : "text-white"}`} >
-                  {item.title}
-                  { item.hasSubMenu && <FaCaretDown /> }
-  
-                </NavLink>
-                {
-                  item.hasSubMenu &&
-                   <ul className="bg-primary text-white w-full  group-hover:block group-hover:animate-slideDown max-h-0 hidden">
-                      {
-                        item.submenu.map((child)=>
-                          <li className=" border-y py-4 px-8"><Link to={child.link}>{child.title}</Link></li>
-                        )
-                      }
-                    </ul>
-                } 
-              </li>)}
+              {
+                menu.map((item)=>
+                  item.hasSubMenu ? 
+                    <SubMenu item={item}/>
+                    :
+                   <li className=" border border-l-0 border-r-0  bg-primary uppercase font-bold " >
+                    <NavLink to={`${item.link}`} className={`flex gap-1 p-5 items-center w-fit text-white`} >
+                        {item.title}
+                    </NavLink>
+                  </li>
+                )
+              }
             </ul>
           )}
         </div>
         <div className="hidden xl:block ">
           <ul className="flex gap-10 ">
             {menu.map((item,index)=>
-              <li className="uppercase font-bold relative group text-xs" key={index}>
+              <li className="uppercase font-bold relative has-submenu text-xs" key={index}>
                 <NavLink to={`${item.link}`} className={({ isActive }) => `${item.hasSubMenu ? 'flex gap-1 items-center ' : ""} ${isActive ? (isSticky ? 'text-secondary' : 'text-primary') : 'text-white'}`
                         
                 }>
@@ -77,11 +73,35 @@ export default function Header({menu,isAbsolute}) {
 
                 </NavLink>
                 {
+                  //First Level Submenu
                   item.hasSubMenu &&
-                   <ul className=" text-white w-52 pt-5 absolute left-0 top-full  group-hover:block group-hover:animate-fadeUp opacity-0 hidden">
+                   <ul className=" text-white w-52 pt-5 absolute left-0 top-full submenu  opacity-0 hidden">
                       {
                         item.submenu.map((child,index)=>
-                          <li className="border-b-2 p-4 bg-primary" key={index}><Link to={child.link}>{child.title}</Link></li>
+                          <li className="border-b-2 p-4 bg-primary relative has-submenu" key={index}>
+                            
+                            <Link to={child.link} className="flex gap-1 items-center">
+                              {child.title}
+                              { child.hasSubMenu && <FaCaretDown /> }
+
+                            </Link>
+                            {
+                              //Second Level Submenu
+                              child.hasSubMenu && 
+                              <ul className="text-white w-52 absolute left-full top-0 opacity-0 hidden submenu">
+                                {
+                                  child.submenu.map((e,index)=>
+                                    <li className="border-b-2 p-4 bg-primary" key={index}>
+                                      
+                                      <Link to={e.link}>{e.title}</Link>
+                                      
+                                    </li>
+                                    
+                                  )
+                                }
+                              </ul>
+                            }  
+                          </li>
                           
                         )
                       }

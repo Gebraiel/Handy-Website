@@ -10,17 +10,65 @@ import {AnimatePresence} from "motion/react";
 
 export default function AppLayout() {
   const matches = useMatches()
-  console.log(matches[0].params['*']);
   const isNotFound = matches[0].params['*'] != undefined;
 
-  console.log(isNotFound);
   
   const categories = useLoaderData();
-  // console.log(categories);
-  const categoriesMenu = categories.map((category) => ({
-    title: category.name,
-    link: `/category/${category.id}`,
-  }));  
+  // const categoriesMenu = categories.map((category) => ({
+  //   title: category.name,
+  //   link: `/category/${category.id}`,
+  // }));  
+  //Jumbo 
+  //Home Care
+  //Facial 
+  //Toilet
+  //Wet Wipes
+
+  const categoriesMenu = [
+    {
+      title:"Jumbo Rolls",
+      link:"/category/2"
+    },
+    {
+      title:"Home Care",
+      link:"/category/3"
+    },
+    {
+      title:"Facial Tissues",
+      link:"/category/1"
+    },
+    {
+      title:"Toilet Tissues",
+      link:"/category/4"
+    },
+    {
+      title:"Wet Wipes",
+      link:"/category/5",
+      hasSubMenu:true,
+      submenu:[
+        {
+          title:"BABY CARE",
+          link:"/category/5?filter=BABY CARE"
+        },
+        {
+          title:"MAKEUP REMOVING",
+          link:"/category/5?filter=MAKEUP REMOVING"
+        },
+        {
+          title:"GERM DEFENCE",
+          link:"/category/5?filter=GERM DEFENCE"
+        },
+        {
+          title:"ALL-PURPOSE USE",
+          link:"/category/5?filter=ALL-PURPOSE USE"
+        },
+        {
+          title:"PREMIUM REFRESHMENT",
+          link:"/category/5?filter=PREMIUM REFRESHMENT"
+        },
+      ]
+    },
+  ]
   const menu = [
     {title:"About Us",link:"/about"},
     {title:"Sectors",link:"/sectors"},
