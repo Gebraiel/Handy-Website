@@ -4,7 +4,7 @@ import { NavLink, Link } from "react-router-dom";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoCloseSharp } from "react-icons/io5";
 import { FaCaretDown } from "react-icons/fa6";
-import SubMenu from "./submenu";
+import SubMenu from "./SubMenu";
 
 export default function Header({menu,isAbsolute}) {
   const [show, setShow] = useState(false);
