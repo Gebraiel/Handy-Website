@@ -9,7 +9,6 @@ import SubMenu from "./SubMenu";
 export default function Header({menu,isAbsolute}) {
   const [show, setShow] = useState(false);
   const [isSticky, setIsSticky] = useState(false);
-  const [showSubmenu,setShowSubmenu] = useState(false);
   const headerRef = useRef(null); // Reference for the header element
 
   const headerClasses = isAbsolute ? "transition-all duration-300 absolute left-0 top-0 w-full z-50  text-white":"bg-primary text-white"; 
@@ -51,7 +50,7 @@ export default function Header({menu,isAbsolute}) {
                   item.hasSubMenu ? 
                     <SubMenu item={item}/>
                     :
-                   <li className=" border border-l-0 border-r-0  bg-primary uppercase font-bold " >
+                  <li className=" border border-l-0 border-r-0  bg-primary uppercase font-bold " >
                     <NavLink to={`${item.link}`} className={`flex gap-1 p-5 items-center w-fit text-white`} >
                         {item.title}
                     </NavLink>

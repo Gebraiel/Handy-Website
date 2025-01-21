@@ -33,9 +33,7 @@ export default function HandyPaperSector() {
  
   return (
     <motion.div initial={{opacity:0,x:-100}} animate={{opacity:1,x:0}} exit={{opacity:0,x:100}}>
-     <Section className="!py-0">
-        {/* <SectorsNavigation /> */}
-        
+     <Section className="!py-0">        
         <div className='lg:block hidden'>
           <img src="/sectors/sector1.webp" alt="" />
         </div>
@@ -43,7 +41,7 @@ export default function HandyPaperSector() {
           <img src="/sectors/sector1.jpg" alt="" />
         </div>
         
-        <div className=" m-auto mt-5">
+        <div className=" m-auto my-[50px]">
           <div>
             <SectionTitle className="mb-5 !max-w-[66ch] !mx-auto !text-left">
               Handy Paper
@@ -72,7 +70,7 @@ export default function HandyPaperSector() {
 
         </div>
       </Section>
-      <Section className='my-7' type="fullscreen">
+      <Section className='my-[50px]' type="fullscreen">
           <MapContainer
             center={[33.854721, 35.862285]}
             className='h-96 '
@@ -112,14 +110,14 @@ export default function HandyPaperSector() {
        
           </MapContainer>
       </Section>
-      <Section className="!pt-0">
+      <Section className="!py-0">
       <div >
 
          
-            <SectionTitle className="my-5 !text-left">
+            <SectionTitle className="my-5">
               Paper Making Process
             </SectionTitle>
-            <Paragraph size="md" className=''>
+            <Paragraph size="md" className='text-center'>
               The production of tissue paper involves several key steps:
             </Paragraph>
           <motion.div variants={parentVarient} initial="hidden" whileInView="visible" viewport={{once:true}} className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 items-stretch my-16">

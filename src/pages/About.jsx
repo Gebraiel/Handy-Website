@@ -18,6 +18,7 @@ export default function About() {
   return (
     <>
       <Banner image={'/banner/slider-1.png'}/>
+
       <Section>
         <SectionTitle className='mb-10 !text-left'>About Us</SectionTitle>
           
@@ -32,7 +33,7 @@ export default function About() {
         <Timeline/>
       </Section>
       <Section className='!py-0'>
-        <SectionTitle className='mt-14 mb-10 !text-left'>What Makes Handy Stand Out ?</SectionTitle>
+        <SectionTitle className='mt-14 mb-10'>What Makes Handy Stand Out ?</SectionTitle>
       </Section>
         <Tabs links={["Product Differentiation","Brand Differentiation","Additional Strengths"]}>
           <ProductDifferentiationTab/>

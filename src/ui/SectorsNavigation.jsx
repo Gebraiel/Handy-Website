@@ -28,7 +28,7 @@ export default function SectorsNavigation({links}) {
   },[])
   return (
         <>
-        <SectionTitle className='my-10'>Our Sectors</SectionTitle>
+        <SectionTitle className='my-[50px]'>Our Sectors</SectionTitle>
         <Tabs links={links} active={active}>
           <HandyPaperSector />
           <HandyTissueProductsSector />

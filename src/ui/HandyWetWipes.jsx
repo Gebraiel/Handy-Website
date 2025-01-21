@@ -16,7 +16,7 @@ export default function HandyWetWipes() {
         <div className='lg:hidden'>
           <img src="/sectors/sector3.jpg" alt="" />
         </div>
-        <div className="mt-5">
+        <div className="my-[50px]">
           <div>
             <SectionTitle className="mb-5 !text-left">
               Handy Wet Wipes
@@ -55,9 +55,9 @@ export default function HandyWetWipes() {
         </div>
       </Section>
 
-      <Section className="!pt-0">
-        <div className="mt-5">
-          <SectionTitle className="my-5  !text-left">
+      <Section className="!py-0">
+        <div className="my-[50px]">
+          <SectionTitle className="my-5">
             Production Process
           </SectionTitle>
           <Paragraph size="md" className="text-center">
@@ -155,7 +155,7 @@ export default function HandyWetWipes() {
  
           </div>
         </div>
-        <div className="mt-5">
+        <div className="mb-[50px]">
           <SectionTitle className="my-5 !text-left">
             Key Drivers of Excellence
           </SectionTitle>

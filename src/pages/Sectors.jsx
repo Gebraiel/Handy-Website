@@ -12,9 +12,10 @@ import SectorsNavigation from "../ui/SectorsNavigation";
 import Loader from "../ui/Loader";
 import { useNavigation } from "react-router-dom";
 
+import { FaBoxTissue } from "react-icons/fa";
 
 export default function Sectors() {
-       const navigation = useNavigation();
+  const navigation = useNavigation();
   const isLoading = navigation.state === "loading";
   if (isLoading) return <Loader />;
   return (
@@ -22,27 +23,24 @@ export default function Sectors() {
       <Banner
         image="/banner/slider-1.png"
         className="flex justify-center items-center "
-      >
-        <SectionTitle className="text-primary font-bold text-center capitalize">
-          Sectors
-        </SectionTitle>
-      </Banner>
-      <Section>
-
-        <div className="flex flex-col lg:flex-row items-center gap-10">
+      />
+      <Section className="!py-[50px]">
+        <SectionTitle className="mb-10">Sectors</SectionTitle>
+        <div className="flex flex-col  items-center gap-10">
          
-          <div className="flex flex-col md:flex-row justify-center lg:justify-start  gap-5 ">
-            <div className="p-5 bg-white  text-center space-y-5 lg:w-1/2 w-full">
-              <b className="xl:text-2xl md:text-md">Tissue Paper Mill Capacity</b>
+          <div className="grid grid-cols-1 gap-5 lg:grid-cols-2  lg:w-full">
+            <div className="p-5 bg-white shadow-md  text-center space-y-5 ">
+              <div className="flex flex-col items-center gap-2 justify-center text-lg"><img src="/tissue-roll.png" alt="" className="w-12" /> <b>Tissue Paper Mill Capacity</b></div>
               <Counter counter="25000" duration={2000} countBy={100} />
 
               <Paragraph size="sm">
                 Mtons / Year 
               </Paragraph>
             </div>
-            <div className="p-5 bg-white text-center  space-y-5 lg:w-1/2 w-full">
-              <b className="xl:text-2xl md:text-md">Tissue Paper Converting Plant</b>
-              <Counter counter="800" duration={2000} countBy={10} />
+            <div className="p-5 bg-white shadow-md text-center  space-y-5 ">
+            <div className="flex flex-col items-center gap-2 justify-center text-lg"><img src="/tissue-roll.png" alt="" className="w-12" /> <b>Tissue Paper Converting Plant Capacity</b></div>
+
+              <Counter counter="800" duration={2000} countBy={10} /> 
               <Paragraph size="sm">
                 Mtons / Year 
               </Paragraph>
@@ -55,7 +53,7 @@ export default function Sectors() {
           </Paragraph>
         </div>
       </Section>
-      <Section className="bg-primary">
+      <Section className="bg-primary !py-12">
         <SectionTitle className="text-white mb-10">Machinery</SectionTitle>
         <Features
           minWidth="300"

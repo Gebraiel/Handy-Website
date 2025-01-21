@@ -16,7 +16,7 @@ export default function HandyTissueProductsSector() {
         <div className='lg:hidden'>
           <img src="/sectors/sector2.jpg" alt="" />
         </div>
-        <div className="mt-5">
+        <div className="my-[50px]">
           <div>
             <SectionTitle className="mb-5 !text-left">
               Handy Tissue Products
@@ -38,14 +38,14 @@ export default function HandyTissueProductsSector() {
         </div>
       </Section>
 
-      <Section className="!pt-0">
-        <div className="mt-5">
-          <SectionTitle className="my-5 !leading-tight  !text-left">
+      <Section className="!py-0">
+        <div className="my-[50px]">
+          <SectionTitle className="my-5 !leading-tight ">
           <p className=" text-primary">The Transformation Process</p>
           <p className="text-secondary">From Jumbo Rolls to Everyday Essentials</p>
              
           </SectionTitle>
-          <Paragraph size="md">
+          <Paragraph size="md" className="text-center">
             Using state-of-the-art converting machinery, our production process
             transforms jumbo rolls into high-quality tissue products through the
             following precise steps:
@@ -143,7 +143,7 @@ export default function HandyTissueProductsSector() {
             </div>
           </div>
         </div>
-        <div className="mt-5">
+        <div className="mb-[50px]">
           <SectionTitle className="my-5 !text-left">
             Key Drivers of Excellence
           </SectionTitle>
