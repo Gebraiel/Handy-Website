@@ -13,23 +13,18 @@ export default function ProductList({ products, view, filter }) {
     }else{
       let newProducts = products;
       if(filter.subcategory){
-          console.log('filter by subcategory');
           newProducts=newProducts.filter(
             (product) => product.subcategory?.toLowerCase() == filter.subcategory.toLowerCase()
           )
       }
       if(filter.package !='all'){
-          console.log("filter by package");
 
-          console.log(filter.package);
           newProducts=newProducts.filter(
             (product) => {
-              console.log(product.package.toLowerCase() == filter.package.toLowerCase());
               return product.package.toLowerCase() == filter.package.toLowerCase()
             }
           )
       }
-      console.log("Products After Filtertion: ",newProducts);
       setFilteredProducts(newProducts);
     }
     

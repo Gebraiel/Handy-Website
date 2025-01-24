@@ -37,12 +37,12 @@ export default function Category() {
       <Banner
         image={category.banner ? category.banner : "/banner/slider-1.png"}
         className="flex justify-center items-center "
-      >
-        <SectionTitle className="text-primary font-bold text-center capitalize">
+      />
+      
+      <Section>
+        <SectionTitle className="text-primary font-bold text-center capitalize mb-10">
           {categoryName || "Products"}
         </SectionTitle>
-      </Banner>
-      <Section>
         <div className="flex justify-center flex-wrap items-center mb-5">
           <CategoryNavigation id={categoryId} />
        

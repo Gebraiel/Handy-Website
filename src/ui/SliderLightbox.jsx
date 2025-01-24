@@ -20,7 +20,7 @@ export default function SliderLightbox({images,active,closeLightbox}) {
     return ()=> window.removeEventListener('keydown',handler);
   })
   return (
-    <motion.div initial={{opacity:0}} animate={{opacity:1}} exit={{opacity:0}} className='flex flex-row gap-5 w-screen h-screen fixed inset-0 bg-[rgba(0,0,0,0.3)] justify-center items-center px-5'>
+    <motion.div initial={{opacity:0}} animate={{opacity:1}} exit={{opacity:0}} className='flex flex-row gap-5 w-screen h-screen fixed z-[1000] inset-0 bg-[rgba(0,0,0,0.3)] justify-center items-center px-5'>
         <button disabled={activeImage == 0} onClick={handlePrev} className='flex justify-center items-center  text-white' >
             <FaArrowCircleLeft className='text-2xl'/>
         </button>

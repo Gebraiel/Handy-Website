@@ -11,13 +11,13 @@ import { FaTools } from "react-icons/fa";
 import SectorsNavigation from "../ui/SectorsNavigation";
 import Loader from "../ui/Loader";
 import { useNavigation } from "react-router-dom";
-
-import { FaBoxTissue } from "react-icons/fa";
-
 export default function Sectors() {
+
   const navigation = useNavigation();
   const isLoading = navigation.state === "loading";
+  
   if (isLoading) return <Loader />;
+
   return (
     <>
       <Banner
@@ -81,7 +81,7 @@ export default function Sectors() {
         />
       </Section>
 
-      <SectorsNavigation links={["Handy Paper" ,"Hadny Tissue Products","Handy Wet Wipes"]} />
+      <SectorsNavigation links={["Handy Paper" ,"Handy Tissue Products","Handy Wet Wipes"]} />
  
      
     </>

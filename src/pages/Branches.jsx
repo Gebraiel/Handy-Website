@@ -13,8 +13,9 @@ export default function Branches() {
   if (isLoading) return <Loader />;
   return (
     <>
-      <Banner image={"/banner/slider-1.png"}><SectionTitle>Our Branches</SectionTitle></Banner>
+      <Banner image={"/banner/slider-1.png"}/>
         <Section className="my-7">
+        <SectionTitle className="mb-10">Our Branches</SectionTitle>
         <div className="space-y-5">
             <div className="grid grid-cols-1 lg:grid-cols-2 justify-between items-center gap-5">
                 <div className=" bg-primary bg-[url('/pattern.png')] bg-contain p-8 text-white text-center space-y-3 h-full flex flex-col items-center justify-center" >

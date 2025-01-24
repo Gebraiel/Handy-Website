@@ -20,13 +20,13 @@ export default function Footer({mainLinks,otherLinks}) {
             <div className="flex gap-10 flex-wrap">
               <ul className="uppercase">
                 {
-                  mainLinks.map((link,index) => <li><Link key={index} to={link.link}>{link.title}</Link></li>)
+                  mainLinks.map((link) => <li><Link key={link} to={link.link}>{link.title}</Link></li>)
                 }
                 
               </ul>
               <ul className="uppercase">
                 {
-                  otherLinks.map((link,index) => <li><Link key={index} to={link.link}>{link.title}</Link></li>)
+                  otherLinks.map((link) => <li><Link key={link} to={link.link}>{link.title}</Link></li>)
                 }
                 
                 

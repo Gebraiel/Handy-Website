@@ -13,14 +13,12 @@ export default function Slider({images,noOfCols}) {
 
   const [noOfNext,setNoOfNext] = useState(size - cols);
   const [noOfPrev,setNoOfPrev] = useState(0);
-  const [widthOfCol,setWidthOfCol] = useState( window.innerWidth / cols);
+  const [widthOfCol,setWidthOfCol] = useState( (window.innerWidth - 20) / cols);
 
-  console.log(widthOfCol)
   const calculateColumnWidth = () => {
     const newCols = window.innerWidth <= 500 ? 1 : window.innerWidth <= 720 ? 2 : noOfCols;
     setCols(newCols);
-    console.log(window.innerWidth)
-    setWidthOfCol(window.innerWidth / newCols); // Recalculate column width
+    setWidthOfCol((window.innerWidth - 20) / newCols); // Recalculate column width
     
   };
   function closeLightbox(){

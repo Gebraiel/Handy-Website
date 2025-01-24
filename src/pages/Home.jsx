@@ -42,23 +42,51 @@ export default function Home() {
     <> 
       <Section type="fullscreen">
         <Slider
-          images={sliderImagesArray}
-          headings={[
+          slides={[
             {
-              heading:
-                "Innovative Solutions",
-              subtitle: "We offer ",
+              image:"/banner/slider-1.png",
+              content:{
+                heading:"Innovative Solutions",
+                subtitle:"We offer "
+              }
             },
             {
-              heading:
-                "Modern, high-quality products",
-              subtitle: "Proudly producing ",
+              image:"/banner/slider-2.png",
+              content:{
+                heading:"Modern, high-quality products",
+                subtitle:"Proudly producing "
+              }
             },
             {
-              heading: "35 Years of redefining hygiene standards in Egypt",
-              subtitle: "Experience more than ",
-            },
+              image:"/banner/slider-3.png",
+              content:{
+                heading:"35 Years of redefining hygiene standards in Egypt",
+                subtitle:"Experience more than "
+              }
+            },{
+              image:"/banner/slider-1.png"
+            }
+            ,{
+              image:"/banner/slider-2.png"
+            }
           ]}
+          // images={sliderImagesArray}
+          // headings={[
+          //   {
+          //     heading:
+          //       "Innovative Solutions",
+          //     subtitle: "We offer ",
+          //   },
+          //   {
+          //     heading:
+          //       "Modern, high-quality products",
+          //     subtitle: "Proudly producing ",
+          //   },
+          //   {
+          //     heading: "35 Years of redefining hygiene standards in Egypt",
+          //     subtitle: "Experience more than ",
+          //   },
+          // ]}
         />
       </Section>
       <Section className="relative">

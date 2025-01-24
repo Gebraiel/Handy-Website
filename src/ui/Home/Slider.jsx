@@ -2,39 +2,43 @@ import { useState } from "react";
 import nextArrow from "../../assets/icon-next.svg";
 import prevArrow from "../../assets/icon-previous.svg";
 import Typing from "./Typing";
-function Slider({ images, headings }) {
+import Bullets from "../Bullets";
+function Slider({ slides}) {
   const [active, setActive] = useState(0);
   function handleNext() {
-    setActive((active) => (active == images.length - 1 ? 0 : active + 1));
+    setActive((active) => (active == slides.length - 1 ? 0 : active + 1));
   }
 
   function handlePrev() {
-    setActive((active) => (active == 0 ? images.length - 1 : active - 1));
+    setActive((active) => (active == 0 ? slides.length - 1 : active - 1));
   }
 
   return (
     <div className="relative h-[calc(100vh)] ">
       <div className="absolute w-full h-full left-0 top-0 bg-[#09216d] opacity-30 z-10"></div>
       <div className={`relative h-full`}>
-        {images.map((image, index) => (
+        {slides.map((slide, index) => (
           <img
-            src={image}
+            src={slide.image}
             className={`transition-all absolute duration-500 ease-in-out w-full h-full left-0 top-0 object-cover ${
               index === active ? "opacity-100" : "opacity-0"
             }`}
-            key={image}
+            key={slide.image}
           />
         ))}
       </div>
       <div className="text-center w-full h-full  absolute left-0 top-0 flex justify-center items-center z-10 text-white">
-        <div className="opacity-0 animate-fadeUp w-[90%]" key={active}>
-          <Typing word={headings[active].subtitle}/>
-          <h1 className={`text-4xl lg:text-5xl font-bold xl:text-6xl`}>
-            {headings[active].heading}
-          </h1>
-        </div>
+        {
+          slides[active].content &&
+          <div className="opacity-0 animate-fadeUp w-[90%]" key={active}>
+            <Typing word={slides[active].content.subtitle}/>
+            <h1 className={`text-4xl lg:text-5xl font-bold xl:text-6xl`}>
+              {slides[active].content.heading}
+            </h1>
+          </div>
+        }
       </div>
-      <div className=" w-full flex h-full justify-center items-end sm:justify-between sm:items-center gap-5 pb-5 px-5 absolute left-0 top-0 z-20">
+      <div className=" w-full hidden h-full justify-center items-end sm:flex sm:justify-between sm:items-center gap-5 pb-5 px-5 absolute left-0 top-0 z-20">
         <button
           className="bg-white w-10 h-10 flex justify-center items-center rounded-full"
           onClick={handlePrev}
@@ -47,6 +51,9 @@ function Slider({ images, headings }) {
         >
           <img src={nextArrow} />
         </button>
+      </div>
+      <div className='flex gap-5 absolute w-full bottom-5 left-0 justify-center z-50'>
+        <Bullets length={slides.length} active={active} setActive={setActive}/>
       </div>
     </div>
   );

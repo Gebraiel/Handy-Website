@@ -31,10 +31,10 @@ export default function Sustainability() {
       <Banner
         image="/Banners/sustainability.webp"
         className="flex items-center justify-center"
-      >
-        <SectionTitle className="!mb-0">Sustainability</SectionTitle>
-      </Banner>
+      />
       <Section>
+        <SectionTitle className="mb-10">Sustainability</SectionTitle>
+
         <div className="flex flex-col lg:flex-row gap-5 justify-between">
           <div className="w-full lg:w-1/2 space-y-5">
           <Paragraph className="text-justify" size="md">
@@ -55,7 +55,8 @@ We lead with purpose, prioritizing responsible sourcing, efficient production pr
       </Section>
 
       <Section className="pt-0">
-       
+        <SectionTitle className="mb-10">School Visits</SectionTitle>
+
         <Paragraph className="text-justify mb-10" size="md">
           Guided by the United Nations Global Compact and Sustainable Development Goals, we ensure that all our activities are aligned with these principles. With a shared mission to leave a better world for future generations, we are proud of the positive contributions we make to both the environment and the communities we serve.
           </Paragraph>

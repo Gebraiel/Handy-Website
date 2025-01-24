@@ -5,11 +5,10 @@ import Tabs from './Tabs';
 import HandyPaperSector from './HandyPaperSector';
 import HandyTissueProductsSector from './HandyTissueProductsSector';
 import HandyWetWipes from './HandyWetWipes';
-import Section from './Section';
 import SectionTitle from './SectionTitle';
 export default function SectorsNavigation({links}) {
   const {sectorName} = useParams();
-  const {active,setActive} = useState(0);
+  const [active,setActive] = useState(0);
 
   useEffect(()=>{
     if(sectorName){
@@ -25,7 +24,7 @@ export default function SectorsNavigation({links}) {
             break;
       }
     }
-  },[])
+  },[sectorName])
   return (
         <>
         <SectionTitle className='my-[50px]'>Our Sectors</SectionTitle>

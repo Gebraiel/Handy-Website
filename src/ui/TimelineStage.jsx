@@ -2,8 +2,8 @@ import React, { useState } from 'react'
 import Paragraph from './Paragraph'
 import { motion } from "motion/react"
 export default function TimelineStage({stage,index}) {
+  
   const[active,setActive] = useState(false);
-  console.log(index , index % 2 == 0)
   const [isEven] = useState(index % 2 == 0);
   const parentVarient = {
     hidden:{opacity:0},

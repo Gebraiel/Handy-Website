@@ -1,12 +1,10 @@
 import supabase from "./supabase";
 
 async function getSubCategories(subCategoryId){
-    console.log(subCategoryId)
     let { data: subcategory, error } = await supabase
         .from('subcategories')
         .select("*")
         .eq('id',subCategoryId);
-    console.log(subcategory)
     if(error)
         console.error(error);
     return subcategory;

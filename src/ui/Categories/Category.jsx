@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import Paragraph from "../Paragraph";
 
 export default function Category({category}) {
-    console.log(category)
   return (
     <div className="flex flex-col lg:flex-row lg:odd:flex-row lg:even:flex-row-reverse  justify-between items-center gap-5 ">
       <div className="max-w-[350px] m-auto">

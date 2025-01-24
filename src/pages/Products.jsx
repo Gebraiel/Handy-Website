@@ -11,15 +11,15 @@ export default function Products() {
   if (isLoading) return <Loader />;
   return (
     <>
-      <Banner image={'/Banners/products.webp'} >
-         <SectionTitle className="!leading-tight !mb-0">
-            <h1 className="text-secondary ">Handy Products</h1>
-            <h1 className="text-primary">Clean, fresh, and on-the-go Quality That Speaks for Itself</h1>
-          </SectionTitle>
-      </Banner>
+      <Banner image={'/Banners/products.webp'} />
+        
     
       <Section>      
-          <ProductCategories />
+        <SectionTitle className="!leading-tight mb-10">
+          <h1 className="text-secondary ">Handy Products</h1>
+          <h1 className="text-primary">Clean, fresh, and on-the-go Quality That Speaks for Itself</h1>
+        </SectionTitle>
+        <ProductCategories />
       </Section>
     </>
     

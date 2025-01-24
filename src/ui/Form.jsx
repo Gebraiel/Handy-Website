@@ -5,7 +5,6 @@ import Paragraph from './Paragraph';
 
 export default function Form() {
   const {register,handleSubmit,formState: { errors }} = useForm();
-  console.log(errors);
   function submitForm(data){
   }
    const inputClasses = 'border border-[#ccc] py-2 px-3 focus:outline-primary w-full mt-2';

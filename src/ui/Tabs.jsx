@@ -1,9 +1,12 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Section from './Section'
-import SectionTitle from './SectionTitle'
 import {AnimatePresence} from "motion/react"
 export default function Tabs({children,links,active=0}) {
-  const[activeTab,setActiveTab] = useState(active);      
+  const[activeTab,setActiveTab] = useState(active);   
+  
+  useEffect(()=>{
+    setActiveTab(active);
+  },[active])
   return (
    <>
         <Section className='!py-0'>

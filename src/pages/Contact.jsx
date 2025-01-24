@@ -13,13 +13,13 @@ export default function Contact() {
   if (isLoading) return <Loader />;
   return (
        <>
-         <Banner image={'/banner/slider-1.png'} >
-            <SectionTitle className="!leading-tight !mb-0">
-              Contact Us
-            </SectionTitle>
-         </Banner>
+         <Banner image={'/banner/slider-1.png'} />
+            
        
-         <Section>      
+         <Section>  
+            <SectionTitle className=" mb-10">
+              Contact Us
+            </SectionTitle>    
             <div className='flex lg:flex-row flex-col justify-between gap-10'>
               <div className='lg:w-1/2'>
               <ContactSection />
