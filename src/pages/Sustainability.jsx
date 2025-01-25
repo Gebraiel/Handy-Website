@@ -3,11 +3,11 @@ import Section from "../ui/Section";
 import SectionTitle from "../ui/SectionTitle";
 import Banner from "../ui/Banner";
 import Paragraph from "../ui/Paragraph";
-import Lightbox from "../ui/Lightbox";
-import Gallery from "../ui/Gallery";
+import Gallery from "../ui/Sustainability/Gallery";
 import Loader from "../ui/Loader";
 import { useNavigation } from "react-router-dom";
-
+import {AnimatePresence} from "motion/react"
+import Lightbox from "../ui/Lightbox";
 const sustainabilityLength = 14;
 const sustainabilityImagesArray = Array.from(
   { length: sustainabilityLength },
@@ -15,15 +15,14 @@ const sustainabilityImagesArray = Array.from(
     `/sustainability/sign system-${i + 1 < 10 ? "0" + (i + 1) : i + 1}.jpg`
 );
 const lightBoxImages=['/categories/jumbo.jpg','/categories/jumbo.jpg','/categories/jumbo.jpg','/categories/jumbo.jpg']
+
 export default function Sustainability() {
-  const [showLightBox,setShowLightBox] = useState(false);
-  const [lightBoxImage,setLightBoxImage] = useState("");
-  function handleLightBox(image){
-    setShowLightBox(true);
-    setLightBoxImage(image);
-  }
+  const [active,setActive] = useState(-1);
   const navigation = useNavigation();
   const isLoading = navigation.state === "loading";
+  function closeLightbox(){
+    setActive(-1);
+  }
   if (isLoading) return <Loader />;
   return (
     
@@ -61,9 +60,10 @@ We lead with purpose, prioritizing responsible sourcing, efficient production pr
           Guided by the United Nations Global Compact and Sustainable Development Goals, we ensure that all our activities are aligned with these principles. With a shared mission to leave a better world for future generations, we are proud of the positive contributions we make to both the environment and the communities we serve.
           </Paragraph>
 
-        <Gallery handleClick={handleLightBox} images={lightBoxImages}/>
-        {showLightBox &&<Lightbox large={lightBoxImage} hideLightBox={setShowLightBox}/>}
-      </Section>
+        <Gallery handleClick={setActive} images={lightBoxImages}/>
+        <AnimatePresence>
+            {active > -1 &&  <Lightbox images={lightBoxImages} active={active} closeLightbox={closeLightbox}/>}
+        </AnimatePresence>      </Section>
     </>
   );
 }

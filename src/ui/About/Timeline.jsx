@@ -1,5 +1,4 @@
 import React from 'react'
-import Paragraph from './Paragraph'
 import TimelineStage from './TimelineStage'
 
 export default function Timeline() {

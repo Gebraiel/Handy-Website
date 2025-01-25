@@ -3,7 +3,7 @@ import { FaMedal } from "react-icons/fa6";
 import { FaThumbsUp } from "react-icons/fa";
 import { RiLeafFill } from "react-icons/ri";
 import { FaGlobe } from "react-icons/fa";
-import Paragraph from './Paragraph';
+import Paragraph from '../Paragraph';
 export default function Process() {
   return (
    <div className="flex flex-wrap justify-center gap-5 items-stretch ">

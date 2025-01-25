@@ -18,7 +18,7 @@ export default function Product() {
         setShowToast(true);
         setTimeout(()=>setShowToast(false),2000);
     }
-        const navigation = useNavigation();
+  const navigation = useNavigation();
   const isLoading = navigation.state === "loading";
   if (isLoading) return <Loader />;
   return (

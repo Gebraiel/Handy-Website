@@ -1,9 +1,9 @@
 import React from 'react'
-import Section from './Section'
-import Paragraph from './Paragraph'
+import Section from '../Section'
+import Paragraph from '../Paragraph'
 import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
 import 'leaflet/dist/leaflet.css';
-import SectionTitle from './SectionTitle';
+import SectionTitle from '../SectionTitle';
 import markerIconPng from "leaflet/dist/images/marker-icon.png"
 import {Icon} from 'leaflet'
 import { motion } from "motion/react"

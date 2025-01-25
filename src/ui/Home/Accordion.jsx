@@ -2,6 +2,7 @@ import { useState } from "react";
 import { FaPlusCircle } from "react-icons/fa";
 import { FaCircleMinus } from "react-icons/fa6";
 import Paragraph from "../Paragraph";
+import {motion,AnimatePresence} from "framer-motion";
 
 export default function Accordion({ accordion }) {
   const { heading, content } = accordion;
@@ -17,14 +18,26 @@ export default function Accordion({ accordion }) {
           {isOpen ? <FaCircleMinus /> : <FaPlusCircle />}
         </button>
       </div>
-      <Paragraph
-        size="sm"
-        className={`transition-all duration-300 overflow-hidden text-sm ${
-          isOpen ? "max-h-50 mt-5 opacity-100" : "max-h-0 opacity-0"
-        }`}
-      >
-        {content}
-      </Paragraph>
+      <AnimatePresence>
+       {
+         isOpen && 
+         <motion.p
+           key="content"
+           layout
+           initial={{height:0}}
+           animate={{height:"auto"}}
+           exit={{height:0}}
+           transition={{ duration: 0.3 }}
+
+           className={`text-sm overflow-hidden `}
+         >
+           
+           {content}     
+           
+         </motion.p>
+       }
+      </AnimatePresence>
+
     </div>
   );
 }

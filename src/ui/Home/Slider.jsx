@@ -2,7 +2,7 @@ import { useState } from "react";
 import nextArrow from "../../assets/icon-next.svg";
 import prevArrow from "../../assets/icon-previous.svg";
 import Typing from "./Typing";
-import Bullets from "../Bullets";
+import Bullets from "./Bullets";
 function Slider({ slides}) {
   const [active, setActive] = useState(0);
   function handleNext() {

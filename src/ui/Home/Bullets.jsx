@@ -6,7 +6,6 @@ export default function Bullets({length,active,setActive}) {
         setActiveBullet(active);
     },[active]);
   const bullets = new Array(length).fill(null);
-  console.log(bullets.length)
   return (
     bullets.map((_,index)=><button key={index} className={`w-4 h-4 rounded-full border border-white transition-colors duration-300 ${index === activeBullet ? "bg-primary" : "bg-transparent"}`} onClick={()=>setActive(index)}></button>)
   )

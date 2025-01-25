@@ -1,7 +1,7 @@
 import React from 'react'
-import SectionTitle from './SectionTitle'
 import { useForm } from 'react-hook-form'
-import Paragraph from './Paragraph';
+import SectionTitle from '../SectionTitle';
+import Paragraph from '../Paragraph';
 
 export default function Form() {
   const {register,handleSubmit,formState: { errors }} = useForm();

@@ -7,12 +7,14 @@ import CategoriesContext from "../context/CategoriesContext";
 import ScrollToTop from "./ScrollToTop";
 import { useMatches } from "react-router-dom";
 import {AnimatePresence} from "motion/react";
+import { useNavigation } from "react-router-dom";
 
 export default function AppLayout() {
   const matches = useMatches()
   const isNotFound = matches[0].params['*'] != undefined;
-
-  
+  const navigation = useNavigation();
+  const isLoading = navigation.state === "loading";
+  console.log(isLoading)
   const categories = useLoaderData();
   // const categoriesMenu = categories.map((category) => ({
   //   title: category.name,

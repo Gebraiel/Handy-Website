@@ -3,9 +3,9 @@ import Banner from '../ui/Banner'
 import SectionTitle from '../ui/SectionTitle'
 import Section from '../ui/Section'
 import ContactSection from '../ui/ContactSection'
-import Form from '../ui/Form'
 import { useNavigation } from "react-router-dom"
 import Loader from '../ui/Loader'
+import Form from '../ui/Contact/Form'
 
 export default function Contact() {
     const navigation = useNavigation();

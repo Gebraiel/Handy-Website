@@ -30,7 +30,7 @@ export default function AboutSection() {
               </p>
             </SectionTitle>
           </div>
-          <div className="flex flex-col gap-5 justify-center mt-5 xl:w-1/2">
+          <div className="flex flex-col gap-5 justify-center mt-5 bg-white">
             {accordions.map((accordion, index) => (
               <Accordion accordion={accordion} key={index} />
             ))}

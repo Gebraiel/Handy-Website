@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Product from "./Product";
 import JumboProductsList from "./JumboProductsList";
-
+import {motion} from "motion/react"
 export default function ProductList({ products, view, filter }) {
   const categoryName = products[0]?.category?.name;
   const [filteredProducts, setFilteredProducts] = useState(products);
@@ -34,7 +34,7 @@ export default function ProductList({ products, view, filter }) {
       <JumboProductsList products={products} view={view}/>
     )
   return (
-    <div
+    <motion.div
       className={`${
         view == "list"
           ? "space-y-5"
@@ -51,6 +51,6 @@ export default function ProductList({ products, view, filter }) {
           />
           ))
       }
-    </div>
+    </motion.div>
   );
 }

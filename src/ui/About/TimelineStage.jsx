@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import Paragraph from './Paragraph'
 import { motion } from "motion/react"
+import Paragraph from '../Paragraph';
 export default function TimelineStage({stage,index}) {
   
   const[active,setActive] = useState(false);

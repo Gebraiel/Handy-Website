@@ -8,7 +8,7 @@ import { MdOutlineSpeed } from "react-icons/md";
 import { SlEnergy } from "react-icons/sl";
 import Features from "../ui/Home/Features";
 import { FaTools } from "react-icons/fa";
-import SectorsNavigation from "../ui/SectorsNavigation";
+import SectorsNavigation from "../ui/Sectors/SectorsNavigation";
 import Loader from "../ui/Loader";
 import { useNavigation } from "react-router-dom";
 export default function Sectors() {

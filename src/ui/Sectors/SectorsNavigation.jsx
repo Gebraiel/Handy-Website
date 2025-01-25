@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
 
-import Tabs from './Tabs';
+import Tabs from '../Tabs';
 import HandyPaperSector from './HandyPaperSector';
 import HandyTissueProductsSector from './HandyTissueProductsSector';
 import HandyWetWipes from './HandyWetWipes';
-import SectionTitle from './SectionTitle';
+import SectionTitle from '../SectionTitle';
 export default function SectorsNavigation({links}) {
   const {sectorName} = useParams();
   const [active,setActive] = useState(0);

@@ -44,8 +44,9 @@ export default function Category() {
           {categoryName || "Products"}
         </SectionTitle>
         <div className="flex justify-center flex-wrap items-center mb-5">
+          
           <CategoryNavigation id={categoryId} />
-       
+
         </div>
         {
           
@@ -53,7 +54,7 @@ export default function Category() {
                 
                 <select
                   defaultValue="all"
-                  className="border-b py-3 focus:outline-none"
+                  className="border-b py-3 focus:outline-none sm:w-fit w-full"
                   onChange={(e) => setFilter({...filter,package:e.target.value})}
                 >
                   <option value="all">All Packages</option>

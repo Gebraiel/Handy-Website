@@ -4,7 +4,7 @@ import Section from "../ui/Section";
 
 import ContactSection from "../ui/ContactSection";
 import Slider from "../ui/Home/Slider";
-import HandyBackground from "../ui/Home/HadnyBackground";
+import HandyBackground from "../ui/Home/HandyBackground";
 import Certificates from "../ui/Home/Certificates";
 import SectionTitle from "../ui/SectionTitle";
 import { Link,useNavigation } from "react-router-dom";
@@ -64,29 +64,12 @@ export default function Home() {
                 subtitle:"Experience more than "
               }
             },{
-              image:"/banner/slider-1.png"
+              image:"/banner/slider-4.png"
             }
             ,{
-              image:"/banner/slider-2.png"
+              image:"/banner/slider-5.png"
             }
           ]}
-          // images={sliderImagesArray}
-          // headings={[
-          //   {
-          //     heading:
-          //       "Innovative Solutions",
-          //     subtitle: "We offer ",
-          //   },
-          //   {
-          //     heading:
-          //       "Modern, high-quality products",
-          //     subtitle: "Proudly producing ",
-          //   },
-          //   {
-          //     heading: "35 Years of redefining hygiene standards in Egypt",
-          //     subtitle: "Experience more than ",
-          //   },
-          // ]}
         />
       </Section>
       <Section className="relative">

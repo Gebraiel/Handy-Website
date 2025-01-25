@@ -1,88 +1,66 @@
 import React from "react";
-import Section from "./Section";
-import Paragraph from "./Paragraph";
-import SectionTitle from "./SectionTitle";
+import Section from "../Section";
+import Paragraph from "../Paragraph";
+import SectionTitle from "../SectionTitle";
 import GallerySlider from "./GallerySlider";
 import {motion} from 'motion/react';
-
-export default function HandyWetWipes() {
+export default function HandyTissueProductsSector() {
   return (
     <motion.div initial={{opacity:0,x:-100}} animate={{opacity:1,x:0}} exit={{opacity:0,x:100}}>
       <Section className="!py-0">
         {/* <SectorsNavigation /> */}
+
         <div className='lg:block hidden'>
-          <img src="/sectors/sector3.webp" alt="" />
+          <img src="/sectors/sector2.webp" alt="" />
         </div>
         <div className='lg:hidden'>
-          <img src="/sectors/sector3.jpg" alt="" />
+          <img src="/sectors/sector2.jpg" alt="" />
         </div>
         <div className="my-[50px]">
           <div>
             <SectionTitle className="mb-5 !text-left">
-              Handy Wet Wipes
+              Handy Tissue Products
             </SectionTitle>
-            <div className="space-y-3">
-              <div>
-                <b>Established : 2018</b>
-                <Paragraph size="md" className="text-justify m-auto">
-                  Since its inception, our wet wipes plant has been at the
-                  forefront of producing premium-quality products that meet both
-                  local and international standards. With a steadfast commitment
-                  to customer satisfaction, we take pride in the positive
-                  feedback we’ve received from consumers around the globe.
-                </Paragraph>
-              </div>
-              <div>
-                <b>State-of-the-Art Production Facility</b>
-                <Paragraph size="md" className="text-justify m-auto">
-                  Built to adhere to Good Manufacturing Practices (GMP), our
-                  facility maintains strict hygiene standards across production
-                  floors, laboratories, and warehouses. Equipped with a 40-roll
-                  capacity machine, it produces various wipe sizes with an
-                  impressive output of up to 3,000 cartons per day, ranking
-                  among the most productive in the Middle East.
-                </Paragraph>
-              </div>
-              <div>
-                <b>Water and Chemical Systems</b>
-                <Paragraph size="md" className="text-justify m-auto">
-                  An automated water purification system ensures water quality
-                  that meets European Pharmacopoeia and WHO standards.
-                </Paragraph>
-              </div>
-            </div>
+            <Paragraph size="md" className="text-justify m-auto">
+              In 2018, we took a bold step forward by establishing our second
+              facility in 6th of October City. Equipped with cutting-edge South
+              Korean technology and highly automated packaging systems, this
+              plant reflects our commitment to innovation and efficiency.
+            </Paragraph>
+
+            <Paragraph size="md" className="text-justify m-auto my-3">
+              This advanced facility specializes in producing a versatile range
+              of tissue paper products tailored to meet diverse consumer needs,
+              including facial tissues, toilet paper, kitchen towels, table
+              napkins, handkerchiefs, and C-fold towels.
+            </Paragraph>
           </div>
         </div>
       </Section>
 
       <Section className="!py-0">
         <div className="my-[50px]">
-          <SectionTitle className="my-5">
-            Production Process
+          <SectionTitle className="my-5 !leading-tight ">
+          <p className=" text-primary">The Transformation Process</p>
+          <p className="text-secondary">From Jumbo Rolls to Everyday Essentials</p>
+             
           </SectionTitle>
           <Paragraph size="md" className="text-center">
             Using state-of-the-art converting machinery, our production process
             transforms jumbo rolls into high-quality tissue products through the
-            following precise steps
+            following precise steps:
           </Paragraph>
-<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 items-stretch my-16">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 items-stretch my-16">
             <div className={`text-center`}>
               <div className="pb-5 border-b-2 border-secondary w-fit m-auto text-3xl text-[#b0cbd3] font-extrabold">
                 1
               </div>
               <h4 className="text-2xl font-bold my-5 text-primary">
-              Non-Woven Fabric Production
+                Unwinding
               </h4>
               <Paragraph size="sm" className="sm:text-left">
-              <b>Fiber Preparation</b> : Raw materials like wood pulp or
-              polyester are processed into fibers.
-              </Paragraph>
-              <Paragraph size="sm" className="sm:text-left">
-              <b>Web Formation</b> : Fibers are transformed into a web
-                    using spun lace or air-laid techniques.
-              </Paragraph>
-              <Paragraph size="sm" className="sm:text-left">
-              <b>Roll Formation</b> : The web is rolled into master rolls.
+                Jumbo rolls are fed into machines with care to ensure seamless
+                processing.
               </Paragraph>
             </div>
             <div className={` text-center `}>
@@ -90,11 +68,11 @@ export default function HandyWetWipes() {
                 2
               </div>
               <h4 className="text-2xl font-bold my-5 text-primary">
-                Slitting and Rewinding
+                Embossing
               </h4>
               <Paragraph size="sm" className="sm:text-left">
-                Master rolls are cut into narrower
-                rolls and rewound for processing.
+                Patterns like ripples and diamonds are added to enhance texture,
+                softness, and absorbency.
               </Paragraph>
             </div>
             <div className={` text-center `}>
@@ -102,41 +80,41 @@ export default function HandyWetWipes() {
                 3
               </div>
               <h4 className="text-2xl font-bold my-5 text-primary">
-              Solution Formulation
+                Perforation
               </h4>
               <Paragraph size="sm" className="sm:text-left">
-                Ingredients like water, surfactants,
-                and emollients are mixed to create the cleaning solution.
+                Clean, adjustable perforations allow easy tearing and versatile
+                product lengths.
               </Paragraph>
             </div>
             <div className={` text-center `}>
               <div className="pb-5 border-b-2 border-secondary w-fit m-auto text-3xl text-[#b0cbd3] font-extrabold">
                 4
               </div>
-              <h4 className="text-2xl font-bold my-5 text-primary">Impregnation</h4>
+              <h4 className="text-2xl font-bold my-5 text-primary">Folding</h4>
               <Paragraph size="sm" className="sm:text-left">
-                Fabric is impregnated with the solution,
-                ensuring precise saturation for performance.
+                Products are folded into uniform shapes, whether sheets, rolls,
+                or interfolded packs.
               </Paragraph>
             </div>
             <div className={` text-center `}>
               <div className="pb-5 border-b-2 border-secondary w-fit m-auto text-3xl text-[#b0cbd3] font-extrabold">
                 5
               </div>
-              <h4 className="text-2xl font-bold my-5 text-primary">Folding and Cutting</h4>
+              <h4 className="text-2xl font-bold my-5 text-primary">Cutting</h4>
               <Paragraph size="sm" className="sm:text-left group-[]:">
-              The fabric is folded and cut into
-              individual wipes or sheets.
+                Advanced cutters shape each item to precise dimensions for
+                consistency.
               </Paragraph>
             </div>
             <div className={`text-center `}>
               <div className="pb-5 border-b-2 border-secondary w-fit m-auto text-3xl text-[#b0cbd3] font-extrabold">
                 6
               </div>
-              <h4 className="text-2xl font-bold my-5 text-primary">Packaging</h4>
+              <h4 className="text-2xl font-bold my-5 text-primary">Winding</h4>
               <Paragraph size="sm" className="sm:text-left">
-              Wipes are sealed in containers, pouches, or
-              canisters to maintain quality.
+                Clean, adjustable perforations allow easy tearing and versatile
+                product lengths.
               </Paragraph>
             </div>
             <div className={` text-center `}>
@@ -144,15 +122,25 @@ export default function HandyWetWipes() {
                 7
               </div>
               <h4 className="text-2xl font-bold my-5 text-primary">
-              Labelling and Secondary Packaging
+                Packaging
               </h4>
               <Paragraph size="sm" className="sm:text-left">
-              Labels with product
-              details are applied, and wipes are packed into cartons for
-              shipment.
+                Finished products are carefully wrapped, ensuring quality while
+                showcasing Handy's branding.
               </Paragraph>
             </div>
- 
+            <div className={` text-center `}>
+              <div className="pb-5 border-b-2 border-secondary w-fit m-auto text-3xl text-[#b0cbd3] font-extrabold">
+                8
+              </div>
+              <h4 className="text-2xl font-bold my-5 text-primary">
+                Palletizing
+              </h4>
+              <Paragraph size="sm" className="sm:text-left">
+                Packaged items are efficiently stacked for optimal storage and
+                transport.
+              </Paragraph>
+            </div>
           </div>
         </div>
         <div className="mb-[50px]">
@@ -164,27 +152,35 @@ export default function HandyWetWipes() {
           <ul className="list-disc pl-5">
             <li>
               <Paragraph size="sm">
-                <b>Quality Control</b> : Ensures consistency and safety.
+                <b>Advanced Machinery</b> : Delivering precision and efficiency
+                at every stage.
               </Paragraph>
             </li>
             <li>
               <Paragraph size="sm">
-                <b>Hygiene</b> : Prevents contamination.
+                <b>High-Quality Materials</b> : Ensuring superior softness,
+                strength, and absorbency.
               </Paragraph>
             </li>
             <li>
               <Paragraph size="sm">
-                <b>Regulatory Compliance</b> : Guarantees adherence to standards .
+                <b>Expert Operators</b> : Skilled hands and sharp eyes maintain
+                production standards .
               </Paragraph>
             </li>
             <li>
               <Paragraph size="sm">
-                <b>Innovation</b> : Drives the creation of superior products.
+                <b>Robust Quality Checks</b> : Guaranteeing defect-free,
+                top-tier products.
               </Paragraph>
             </li>
           </ul>
 
-         
+          <Paragraph size="lg" className="mt-3">
+            With this facility, Handy Tissue Products continues to set new
+            benchmarks in hygiene product manufacturing, blending cutting-edge
+            technology with an unwavering commitment to quality.
+          </Paragraph>
         </div>
       </Section>
       <Section type="fullscreen" >
