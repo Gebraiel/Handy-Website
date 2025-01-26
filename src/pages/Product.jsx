@@ -23,7 +23,6 @@ export default function Product() {
   if (isLoading) return <Loader />;
   return (
         <>
-            <Banner image='/banner/slider-1.png' className='flex items-center justify-center'/>
             <Section className='!py-[50px]'>
                 <div className='flex flex-col lg:flex-row items-center justify-center gap-5'>
                     {

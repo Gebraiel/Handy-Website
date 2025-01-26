@@ -11,10 +11,10 @@ import { useNavigation } from "react-router-dom";
 
 export default function AppLayout() {
   const matches = useMatches()
+  const isProducts = matches[1].pathname.includes('/product/');
   const isNotFound = matches[0].params['*'] != undefined;
   const navigation = useNavigation();
-  const isLoading = navigation.state === "loading";
-  console.log(isLoading)
+  const isRelative = isNotFound || isProducts;
   const categories = useLoaderData();
   // const categoriesMenu = categories.map((category) => ({
   //   title: category.name,
@@ -90,7 +90,7 @@ export default function AppLayout() {
   return (
     <CategoriesContext.Provider value={categories} >
       <ScrollToTop />
-      <Header menu={menu} isAbsolute={!isNotFound}/>
+      <Header menu={menu} isAbsolute={!isRelative }/>
       <main>
         <AnimatePresence>
           <Outlet/>
