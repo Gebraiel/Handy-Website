@@ -12,12 +12,11 @@ export default function Health() {
   if (isLoading) return <Loader />;
   return (
     <>
-        <Banner image={'/banner/slider-1.png'}>
-            <SectionTitle>
+        <Banner image={'/Safety/banner.webp'} />
+        <Section>
+            <SectionTitle className='mb-10'>
                 Health & Safety Measures
             </SectionTitle>
-        </Banner>
-        <Section>
             <Paragraph size='lg' >
             At Handy, we prioritize the health and safety of our team. Our commitment to a safe workplace includes
             </Paragraph>

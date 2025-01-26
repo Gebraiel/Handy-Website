@@ -12,11 +12,8 @@ export default function CustomerSupport() {
   if (isLoading) return <Loader />;
   return (
     <>
-         <Banner image={'/banner/slider-1.png'} >
-                <SectionTitle className="!leading-tight !mb-0">
-                Customer Support
-                </SectionTitle>
-        </Banner>
+         <Banner image={'/Customer-Support/banner.webp'} />
+
         <Section>
                 <SectionTitle className='mb-10'>
                 Your Needs, Our Priority
