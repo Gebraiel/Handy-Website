@@ -5,7 +5,6 @@ import Typing from "./Typing";
 import Bullets from "./Bullets";
 function Slider({ slides}) {
   const [active, setActive] = useState(0);
-  // let interval = useMemo(()=>setInterval(handleNext,5000),[]);
   let intervalRef = useRef(null)
   const intervalTime = 5000;
   function handleClick(fn){

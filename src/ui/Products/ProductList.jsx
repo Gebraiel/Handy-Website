@@ -14,7 +14,7 @@ export default function ProductList({ products, view, filter }) {
       let newProducts = products;
       if(filter.subcategory){
           newProducts=newProducts.filter(
-            (product) => product.subcategory?.toLowerCase() == filter.subcategory.toLowerCase()
+            (product) => product.subcategory?.toLowerCase().trim() == filter.subcategory.toLowerCase()
           )
       }
       if(filter.package !='all'){
