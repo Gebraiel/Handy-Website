@@ -36,7 +36,7 @@ export default function Product() {
                             <h2 className='text-primary text-xl lg:text-3xl font-bold'>{title}</h2>
                             <Paragraph className='text-secondary font-semibold' size="lg">{categoryName}</Paragraph>
                         </div>
-                        <ul className='list-disc pl-5'>{details.split(',').map((item,index)=><li key={index}>{item}</li>)}</ul>
+                        <ul className='list-disc pl-5'>{details.split('|').map((item,index)=><li key={index}>{item}</li>)}</ul>
                         <button className='w-full bg-primary text-white py-3 font-bold'onClick={copyToClipboard}>Share</button>
                     </div>
                 </div>
