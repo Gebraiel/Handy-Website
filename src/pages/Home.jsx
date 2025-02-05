@@ -111,15 +111,15 @@ export default function Home() {
         <SectionTitle className="mb-10">Sectors</SectionTitle>
         <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
           <div className="w-full bg-white">
-            <div className="relative w-full group">
+            <Link to="/sectors/handy-paper" className="relative w-full group">
               <p className="absolute right-5 bottom-5 text-8xl font-bold text-white opacity-50 transition-all group-hover:opacity-100 group-hover:-translate-y-2">
                 01
               </p>
               <img src='/sectors/sector1.jpg' alt="" />
-            </div>
+            </Link>
 
             <div className="p-7 ">
-              <b className="text-2xl text-primary">Handy Paper</b>
+              <Link to="/sectors/handy-paper"><b className="text-2xl text-primary">Handy Paper</b></Link>
               <Paragraph className="mt-5">
                 Nestled in New Borg El-Arab City, Alexandria, our first factory
                 houses the iconic ‘Recard’ machine from 1989, producing jumbo
@@ -134,15 +134,15 @@ export default function Home() {
             </div>
           </div>
           <div className="w-full bg-white">
-            <div className="relative w-full group">
+            <Link to="/sectors/handy-tissue-products" className="relative w-full group">
               <p className="absolute right-5 bottom-5 text-8xl font-bold text-white opacity-50 transition-all group-hover:opacity-100 group-hover:-translate-y-2">
                 02
               </p>
               <img src='/sectors/sector2.jpg' alt="" />
-            </div>
+            </Link>
 
             <div className="p-7">
-              <b className="text-2xl text-primary">Handy Tissue Products </b>
+              <Link to="/sectors/handy-tissue-products"><b className="text-2xl text-primary">Handy Tissue Products </b></Link>
               <Paragraph className="mt-5 text-md">
                 In 2018, we expanded with a state-of-the-art facility in 6th of
                 October City, powered by South Korean technology. This facility
@@ -155,15 +155,15 @@ export default function Home() {
             </div>
           </div>
           <div className="w-full bg-white">
-            <div className="relative w-full group">
+            <Link to="/sectors/handy-wet-wipes" className="relative w-full group">
               <p className="absolute right-5 bottom-5 text-8xl font-bold text-white opacity-50 transition-all group-hover:opacity-100 group-hover:-translate-y-2">
                 03
               </p>
               <img src='/sectors/sector3.jpg' alt="" />
-            </div>
+            </Link>
 
             <div className="p-7 ">
-              <b className="text-2xl text-primary">Wet Wipes</b>
+              <Link to="/sectors/handy-wet-wipes"><b className="text-2xl text-primary">Wet Wipes</b></Link>
               <Paragraph className="mt-5 text-md">
                 Our Wet Wipes Plant, established in 2018, creates top-tier wipes
                 that meet both local and global standards, delivering the
