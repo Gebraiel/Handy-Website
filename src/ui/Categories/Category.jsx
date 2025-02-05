@@ -5,11 +5,11 @@ import Paragraph from "../Paragraph";
 export default function Category({category}) {
   return (
     <div className="flex flex-col lg:flex-row lg:odd:flex-row lg:even:flex-row-reverse  justify-between items-center gap-5 ">
-      <div className="max-w-[350px] m-auto">
+      <Link to={`/category/${category.id}`} className="max-w-[350px] m-auto">
         <img src={category.image}alt="Category Image" />
-      </div>
+      </Link>
       <div className="w-full lg:w-1/2">
-        <b className="text-2xl text-secondary capitalize">{category.name}</b>
+        <Link to={`/category/${category.id}`}><b className="text-2xl text-secondary capitalize">{category.name}</b></Link>
         <Paragraph className="my-5">
         {
           !category.description ? `Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam
