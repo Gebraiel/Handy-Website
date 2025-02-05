@@ -4,14 +4,14 @@ export default function Certificates() {
       <div className="">
         <img
           className="border shadow-lg w-[350px] m-auto"
-          src="/certificates/certificates1.jpg"
+          src="/certificates/certificates1.webp"
           alt=""
         />
       </div>
       <div className="">
         <img
           className="border shadow-lg w-[350px] m-auto"
-          src="/certificates/certificates2.jpg"
+          src="/certificates/certificates2.webp"
           alt=""
         />
       </div>

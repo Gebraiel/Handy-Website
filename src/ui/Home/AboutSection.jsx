@@ -1,5 +1,5 @@
 import Accordion from "./Accordion";
-import handy from "../../assets/handy.jpeg";
+import handy from "../../assets/handy.webp";
 import SectionTitle from "../SectionTitle";
 import Paragraph from "../Paragraph";
 const accordions = [

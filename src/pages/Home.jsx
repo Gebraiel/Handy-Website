@@ -23,14 +23,9 @@ const sustainabilityLength = 14;
 const sustainabilityImagesArray = Array.from(
   { length: sustainabilityLength },
   (_, i) =>
-    `/sustainability/sign system-${
+    `/sustainability/sign-${
       i + 1 < 10 ? "0" + (i + 1) : i + 1
-    }.jpg`
-);
-const sliderLength = 3;
-const sliderImagesArray = Array.from(
-  { length: sliderLength },
-  (_, i) => `/banner/slider-${i + 1}.png`
+    }.webp`
 );
 
 
@@ -44,30 +39,30 @@ export default function Home() {
         <Slider
           slides={[
             {
-              image:"/banner/slider-1.png",
+              image:"/banner/slider-1.webp",
               content:{
                 heading:"Innovative Solutions",
                 subtitle:"We offer "
               }
             },
             {
-              image:"/banner/slider-2.png",
+              image:"/banner/slider-2.webp",
               content:{
                 heading:"Modern, high-quality products",
                 subtitle:"Proudly producing "
               }
             },
             {
-              image:"/banner/slider-3.png",
+              image:"/banner/slider-3.webp",
               content:{
                 heading:"35 Years of redefining hygiene standards in Egypt",
                 subtitle:"Experience more than "
               }
             },{
-              image:"/banner/slider-4.png"
+              image:"/banner/slider-3.webp"
             }
             ,{
-              image:"/banner/slider-5.png"
+              image:"/banner/slider-3.webp"
             }
           ]}
         />
@@ -115,7 +110,7 @@ export default function Home() {
               <p className="absolute right-5 bottom-5 text-8xl font-bold text-white opacity-50 transition-all group-hover:opacity-100 group-hover:-translate-y-2">
                 01
               </p>
-              <img src='/sectors/sector1.jpg' alt="" />
+              <img src='/sectors/sector-01.webp' alt="Handy Paper Sector" />
             </Link>
 
             <div className="p-7 ">
@@ -138,7 +133,7 @@ export default function Home() {
               <p className="absolute right-5 bottom-5 text-8xl font-bold text-white opacity-50 transition-all group-hover:opacity-100 group-hover:-translate-y-2">
                 02
               </p>
-              <img src='/sectors/sector2.jpg' alt="" />
+              <img src='/sectors/sector-02.webp' alt="Handy Tissue Products Sector" />
             </Link>
 
             <div className="p-7">
@@ -159,7 +154,7 @@ export default function Home() {
               <p className="absolute right-5 bottom-5 text-8xl font-bold text-white opacity-50 transition-all group-hover:opacity-100 group-hover:-translate-y-2">
                 03
               </p>
-              <img src='/sectors/sector3.jpg' alt="" />
+              <img src='/sectors/sector-03.webp' alt="Wet Wipes Sector" />
             </Link>
 
             <div className="p-7 ">
@@ -175,7 +170,7 @@ export default function Home() {
         </div>
       </Section>
      
-      <Banner image="/banner.jpg" className=" text-center">
+      <Banner image="/banner.webp" className=" text-center">
         <b className="text-2xl md:text-3xl lg:text-4xl 2xl:text-5xl xl:leading-tight text-white">
           Proudly producing modern and high-quality products, using advanced
           machinery under the guidance of a skilled team
@@ -214,7 +209,7 @@ export default function Home() {
       </Section>
       <Section
         className={
-          "bg-[url(/slider-4.jpg)] bg-center bg-cover  text-center relative"
+          "bg-[url(/slider-4.webp)] bg-center bg-cover  text-center relative"
         }
       >
         <div className="absolute left-0 top-0 w-full h-full bg-[rgba(0,0,0,0.4)] "></div>
