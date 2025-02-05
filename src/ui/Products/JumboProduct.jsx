@@ -13,7 +13,7 @@ export default function JumboProduct({ product, view }) {
           <h1 className="text-primary text-3xl font-bold">{product.title}</h1>
            {/* <h2 className="text-secondary text-xl font-bold my-2 capitalize">{product.subtitle}</h2> */}
           <ul className="list-disc pl-5 mt-5">
-            {product.details.split(",").map((item, index) => (
+            {product.details.split("|").map((item, index) => (
               <li key={index}>{item}</li>
             ))}
           </ul>
