@@ -15,7 +15,7 @@ export async function getCategoryProducts(categoryId){
    
     let { data: products, error } = await supabase
     .from('products',)
-    .select('*,category(*)',).eq('category',categoryId).order('id', { ascending: false });;
+    .select('*,category(*)',).eq('category',categoryId).order('id', { ascending: true });;
     if(error){
         console.error(error);
         throw new Error("Error whilte getting products");
