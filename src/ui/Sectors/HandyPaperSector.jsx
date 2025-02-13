@@ -63,7 +63,7 @@ export default function HandyPaperSector() {
             </Paragraph>
             <Paragraph size="lg" className="text-justify m-auto">
               This facility serves markets across KSA, Lebanon, Greece, Cyprus,
-              Kuwait, Morocco, Syria, Sudan, Kenya, the Caribbean, and West
+              Kuwait, Morocco, Kenya, and West
               Africa.
             </Paragraph>
           </div>
@@ -101,13 +101,6 @@ export default function HandyPaperSector() {
             <Marker position={[31.791702	,-7.09262]} icon={new Icon({iconUrl: markerIconPng, iconSize: [25, 41], iconAnchor: [12, 41]})}>
 
             </Marker>
-            <Marker position={[34.802075	,38.996815]} icon={new Icon({iconUrl: markerIconPng, iconSize: [25, 41], iconAnchor: [12, 41]})}>
-
-            </Marker>
-            <Marker position={[12.862807	,38.996815]} icon={new Icon({iconUrl: markerIconPng, iconSize: [25, 41], iconAnchor: [12, 41]})}>
- 
-            </Marker>
-       
           </MapContainer>
       </Section>
       <Section className="!py-0">
