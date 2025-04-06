@@ -3,6 +3,8 @@ import Logo from "/Logo.png";
 import { FaEnvelopeOpen } from "react-icons/fa";
 import Paragraph from "./Paragraph";
 import { FaLocationDot } from "react-icons/fa6";
+import { FaTty } from "react-icons/fa6";
+import { FaFax } from "react-icons/fa";
 
 export default function Footer({mainLinks,otherLinks}) {
   const year = new Date().getFullYear();
@@ -35,28 +37,58 @@ export default function Footer({mainLinks,otherLinks}) {
           </div>
           
         </div>
-        <div className="space-y-3">
-          <h5 className="text-secondary font-bold text-3xl">Contact Us</h5>
-          <ul className="space-y-5">
-            <li className="flex flex-col sm:flex-row items-center justify-start gap-5">
-              <FaLocationDot className="text-3xl"/>
-              <Paragraph size="sm" className="text-center sm:text-left">Block No.13, Second Industrial Zone, New Borg El Arab City,
-              Alexandria, Egypt.</Paragraph>
-            </li>
-            <li className="flex flex-col sm:flex-row items-center justify-start gap-5">
-              <FaEnvelopeOpen className="text-3xl" />
-              <Paragraph size="sm" className="text-center sm:text-left">tissue.mill@handy.com.eg</Paragraph>
-            </li>
-            <li className="flex flex-col sm:flex-row items-center justify-start gap-5 ">
-              <FaLocationDot className="text-3xl"/>
-              <Paragraph size="sm" className="text-center sm:text-left"> Block No. (86,87,88), Fourth Industrial Zone, October 6th City,
-              Giza, Egypt.</Paragraph>
-            </li>
-            <li className="flex flex-col sm:flex-row items-center justify-start gap-5">
-              <FaEnvelopeOpen className="text-3xl" />
-              <Paragraph size="sm" className="text-center sm:text-left">info@handy.com.eg</Paragraph>
-            </li>
-          </ul>
+        <div className="space-y-10">
+          <div>
+            <h5 className="text-secondary font-bold text-3xl">HANDY TISSUE MILL
+            </h5>
+            <ul className="space-y-5 mt-5">
+              <li className="flex flex-col sm:flex-row items-center justify-start gap-5">
+                <FaLocationDot className="text-3xl"/>
+                <Paragraph size="sm" className="text-center sm:text-left">Block No.13, Second Industrial Zone, New Borg El Arab City,
+                Alexandria, Egypt.</Paragraph>
+              </li>
+              <li className="flex flex-col sm:flex-row items-center justify-start gap-5">
+                <FaEnvelopeOpen className="text-3xl" />
+                <Paragraph size="sm" className="text-center sm:text-left">tissue.mill@handy.com.eg</Paragraph>
+              </li>
+              <li className="flex flex-col sm:flex-row items-center justify-start gap-5 ">
+                 <FaTty className="text-3xl" />
+                  <Paragraph className="text-center sm:text-left font-medium flex flex-col">
+                    <span>+2 03 4626379</span>
+                    <span>+2 03 4626425</span>
+                  </Paragraph>
+              </li>
+              <li className="flex flex-col sm:flex-row items-center justify-start gap-5">
+                <FaFax className="w-[24px] text-3xl" />
+                <Paragraph className="text-center sm:text-left font-medium">+2 03 4626164</Paragraph>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h5 className="text-secondary font-bold text-3xl">HANDY CONVERTING PLANT
+            </h5>
+            <ul className="space-y-5 mt-5">
+              <li className="flex flex-col sm:flex-row items-center justify-start gap-5">
+                <FaLocationDot className="text-3xl"/>
+                <Paragraph size="sm" className="text-center sm:text-left">Block No. (86,87,88), Fourth Industrial Zone, October 6th City,
+                Giza, Egypt.</Paragraph>
+              </li>
+              <li className="flex flex-col sm:flex-row items-center justify-start gap-5">
+                <FaEnvelopeOpen className="text-3xl" />
+                <Paragraph size="sm" className="text-center sm:text-left">info@handy.com.eg</Paragraph>
+              </li>
+              <li className="flex flex-col sm:flex-row items-center justify-start gap-5 ">
+                 <FaTty className="text-3xl" />
+                  <Paragraph className="text-center sm:text-left font-medium flex flex-col">
+                    <span>+2 02 38333156</span>
+                  </Paragraph>
+              </li>
+              <li className="flex flex-col sm:flex-row items-center justify-start gap-5">
+                <FaFax className="w-[24px] text-3xl" />
+                <Paragraph className="text-center sm:text-left font-medium">+2 02 38333157</Paragraph>
+              </li>
+            </ul>
+          </div>
 
         </div>
       </div>
