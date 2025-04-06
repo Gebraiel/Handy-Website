@@ -10,7 +10,7 @@ export default function Footer({mainLinks,otherLinks}) {
   const year = new Date().getFullYear();
   return (
     <footer className="bg-primary text-white bg-[length:60%] bg-[url('/pattern.png')]">
-      <div className="container w-[80%] border-t-0 py-24 m-auto grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-5 p-5">
+      <div className="container w-[80%] border-t-0 py-24 m-auto grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-4 gap-5 p-5">
         <div className="">
           <Link to="/" className="block w-52">
             <img src={Logo} alt="Logo" />
@@ -19,7 +19,7 @@ export default function Footer({mainLinks,otherLinks}) {
         <div className="">
           <div className="space-y-3">            
             <h5 className="text-secondary font-bold text-3xl">Pages</h5>
-            <div className="flex gap-10 flex-wrap">
+            <div className="">
               <ul className="uppercase">
                 {
                   mainLinks.map((link) => <li><Link key={link} to={link.link}>{link.title}</Link></li>)
@@ -39,7 +39,7 @@ export default function Footer({mainLinks,otherLinks}) {
         </div>
         <div className="space-y-10">
           <div>
-            <h5 className="text-secondary font-bold text-3xl">HANDY TISSUE MILL
+            <h5 className="text-secondary font-bold text-xl">HANDY TISSUE MILL
             </h5>
             <ul className="space-y-5 mt-5">
               <li className="flex flex-col sm:flex-row items-center justify-start gap-5">
@@ -64,8 +64,11 @@ export default function Footer({mainLinks,otherLinks}) {
               </li>
             </ul>
           </div>
-          <div>
-            <h5 className="text-secondary font-bold text-3xl">HANDY CONVERTING PLANT
+         
+
+        </div>
+        <div>
+            <h5 className="text-secondary font-bold text-xl">HANDY CONVERTING PLANT
             </h5>
             <ul className="space-y-5 mt-5">
               <li className="flex flex-col sm:flex-row items-center justify-start gap-5">
@@ -89,8 +92,6 @@ export default function Footer({mainLinks,otherLinks}) {
               </li>
             </ul>
           </div>
-
-        </div>
       </div>
       <div className="text-center py-5">
         <p>

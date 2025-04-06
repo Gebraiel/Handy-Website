@@ -176,7 +176,7 @@ export default function Home() {
           machinery under the guidance of a skilled team
         </b>
       </Banner>
-      <Section>
+      <Section className="bg-[#f1eeee]">
         <SectionTitle className="!leading-tight mb-10">
           <>
             <p className="text-secondary ">Handy Products</p>
@@ -185,23 +185,6 @@ export default function Home() {
         </SectionTitle>
         <ProductCategories />
       </Section>
-      <Section className="!py-0">
-        <SectionTitle className="mb-10">Sustainability</SectionTitle>
-
-        
-        <Paragraph className="text-primary">
-          We believe in sustainability at every step of our production. From
-          eco-friendly materials to water purification systems meeting WHO
-          standards, we strive to protect both the planet and your health. At
-          HANDY, we create products that support a cleaner, greener future.
-        </Paragraph>
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-5 mt-10 m-auto">
-          {sustainabilityImagesArray.map((e,index) => (
-            <img src={e} key={index}/>
-          ))}
-        </div>
-      </Section>
-     
       <Section className="relative">
         <HandyBackground />
         <SectionTitle className="mb-10">Certificates</SectionTitle>
@@ -224,11 +207,29 @@ export default function Home() {
           inspiring them to protect our planet.
         </Paragraph>
       </Section>
+      <Section >
+        <SectionTitle className="mb-10">Sustainability</SectionTitle>
 
-      <Section>
+        
+        <Paragraph className="text-primary">
+          We believe in sustainability at every step of our production. From
+          eco-friendly materials to water purification systems meeting WHO
+          standards, we strive to protect both the planet and your health. At
+          HANDY, we create products that support a cleaner, greener future.
+        </Paragraph>
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-[repeat(14,1fr)] gap-5 mt-10 m-auto">
+          {sustainabilityImagesArray.map((e,index) => (
+            <img src={e} key={index}/>
+          ))}
+        </div>
+      </Section>
+     
+      
+
+      {/* <Section>
         <SectionTitle className="mb-10">Contact Us</SectionTitle>
         <ContactSection />
-      </Section>
+      </Section> */}
     </>
   );
 }
