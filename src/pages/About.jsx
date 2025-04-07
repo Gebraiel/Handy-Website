@@ -28,7 +28,7 @@ export default function About() {
 
           </Paragraph>
       </Section>
-      <Section className='!py-0'>
+      <Section className=''>
         <SectionTitle className='mb-10'>Our Journey</SectionTitle>
         <Timeline/>
       </Section>
