@@ -24,7 +24,7 @@ export default function Sectors() {
         image="/banner/slider-1.png"
         className="flex justify-center items-center "
       />
-      <Section className="!py-[50px]">
+      <Section>
         <SectionTitle className="mb-10">Sectors</SectionTitle>
         <div className="flex flex-col  items-center gap-10">
          
@@ -53,7 +53,7 @@ export default function Sectors() {
           </Paragraph>
         </div>
       </Section>
-      <Section className="bg-primary !py-12">
+      <Section className="bg-primary">
         <SectionTitle className="text-white mb-10">Machinery</SectionTitle>
         <Features
           minWidth="300"

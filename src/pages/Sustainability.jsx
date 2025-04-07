@@ -53,7 +53,7 @@ We lead with purpose, prioritizing responsible sourcing, efficient production pr
         </div>
       </Section>
 
-      <Section className="pt-0">
+      <Section >
         <SectionTitle className="mb-10">School Visits</SectionTitle>
 
         <Paragraph className="text-justify mb-10" size="md">

@@ -23,7 +23,7 @@ export default function Product() {
   if (isLoading) return <Loader />;
   return (
         <>
-            <Section className='!py-[50px]'>
+            <Section>
                 <div className='flex flex-col lg:flex-row items-center justify-center gap-5'>
                     {
                         image &&
