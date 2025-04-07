@@ -185,11 +185,22 @@ export default function Home() {
         </SectionTitle>
         <ProductCategories />
       </Section>
-      <Section className="relative">
-        <HandyBackground />
-        <SectionTitle>Certificates</SectionTitle>
-        <Certificates />
-      </Section>
+      <Section >
+        <SectionTitle>Sustainability</SectionTitle>
+
+        
+        <Paragraph className="text-primary">
+          We believe in sustainability at every step of our production. From
+          eco-friendly materials to water purification systems meeting WHO
+          standards, we strive to protect both the planet and your health. At
+          HANDY, we create products that support a cleaner, greener future.
+        </Paragraph>
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-[repeat(14,1fr)] gap-5 mt-10 m-auto">
+          {sustainabilityImagesArray.map((e,index) => (
+            <img src={e} key={index}/>
+          ))}
+        </div>
+      </Section>  
       <Section
         className={
           "bg-[url(/slider-4.webp)] bg-center bg-cover  text-center relative"
@@ -207,23 +218,12 @@ export default function Home() {
           inspiring them to protect our planet.
         </Paragraph>
       </Section>
-      <Section >
-        <SectionTitle>Sustainability</SectionTitle>
 
-        
-        <Paragraph className="text-primary">
-          We believe in sustainability at every step of our production. From
-          eco-friendly materials to water purification systems meeting WHO
-          standards, we strive to protect both the planet and your health. At
-          HANDY, we create products that support a cleaner, greener future.
-        </Paragraph>
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-[repeat(14,1fr)] gap-5 mt-10 m-auto">
-          {sustainabilityImagesArray.map((e,index) => (
-            <img src={e} key={index}/>
-          ))}
-        </div>
+      <Section className="relative">
+        <HandyBackground />
+        <SectionTitle>Certificates</SectionTitle>
+        <Certificates />
       </Section>
-     
       
 
       {/* <Section>
