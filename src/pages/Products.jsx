@@ -15,7 +15,7 @@ export default function Products() {
         
     
       <Section>      
-        <SectionTitle className="!leading-tight mb-10">
+        <SectionTitle className="!leading-tight">
           <h1 className="text-secondary ">Handy Products</h1>
           <h1 className="text-primary">Clean, fresh, and on-the-go Quality That Speaks for Itself</h1>
         </SectionTitle>

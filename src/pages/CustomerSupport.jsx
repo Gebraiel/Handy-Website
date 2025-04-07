@@ -15,7 +15,7 @@ export default function CustomerSupport() {
          <Banner image={'/Customer-Support/banner.webp'} />
 
         <Section>
-                <SectionTitle className='mb-10'>
+                <SectionTitle>
                 Your Needs, Our Priority
                 </SectionTitle>
                 <ol className='space-y-3'>

@@ -14,7 +14,7 @@ export default function Health() {
     <>
         <Banner image={'/Safety/banner.webp'} />
         <Section>
-            <SectionTitle className='mb-10'>
+            <SectionTitle>
                 Health & Safety Measures
             </SectionTitle>
             <Paragraph size='lg' >

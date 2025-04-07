@@ -25,7 +25,7 @@ export default function Sectors() {
         className="flex justify-center items-center "
       />
       <Section>
-        <SectionTitle className="mb-10">Sectors</SectionTitle>
+        <SectionTitle>Sectors</SectionTitle>
         <div className="flex flex-col  items-center gap-10">
          
           <div className="grid grid-cols-1 gap-5 lg:grid-cols-2  lg:w-full">
@@ -54,7 +54,7 @@ export default function Sectors() {
         </div>
       </Section>
       <Section className="bg-primary">
-        <SectionTitle className="text-white mb-10">Machinery</SectionTitle>
+        <SectionTitle className="text-white">Machinery</SectionTitle>
         <Features
           minWidth="300"
           features={[

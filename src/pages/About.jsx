@@ -20,7 +20,7 @@ export default function About() {
       <Banner image={'/banner/slider-1.png'}/>
 
       <Section>
-        <SectionTitle className='mb-10 !text-left'>About Us</SectionTitle>
+        <SectionTitle className='!text-left'>About Us</SectionTitle>
           
         <Paragraph size='md' className=''>
           Alex Converta is an Egyptian leader in tissue paper production, specializing in both white and colored paper, and converting it into essential hygiene products like facial tissues, handkerchiefs, toilet rolls, table napkins, kitchen towels, and sanitary towels.
@@ -29,11 +29,11 @@ export default function About() {
           </Paragraph>
       </Section>
       <Section className=''>
-        <SectionTitle className='mt-0 mb-24'>Our Journey</SectionTitle>
+        <SectionTitle >Our Journey</SectionTitle>
         <Timeline/>
       </Section>
-      <Section className='!py-0'>
-        <SectionTitle className='mt-14 mb-10'>What Makes Handy Stand Out ?</SectionTitle>
+      <Section className='!pb-0'>
+        <SectionTitle >What Makes Handy Stand Out ?</SectionTitle>
       </Section>
         <Tabs links={["Product Differentiation","Brand Differentiation","Additional Strengths"]}>
           <ProductDifferentiationTab/>

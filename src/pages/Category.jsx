@@ -40,7 +40,7 @@ export default function Category() {
       />
       
       <Section>
-        <SectionTitle className="text-primary font-bold text-center capitalize mb-10">
+        <SectionTitle className="text-primary font-bold text-center capitalize">
           {categoryName || "Products"}
         </SectionTitle>
         <div className="flex justify-center flex-wrap items-center mb-5">
@@ -86,7 +86,7 @@ export default function Category() {
               <ProductList products={products} view={view} filter={filter}/>
             )
           : (
-            <SectionTitle className="mb-1">No Products Found</SectionTitle>
+            <SectionTitle>No Products Found</SectionTitle>
           )}
         </div>
       </Section>

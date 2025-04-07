@@ -69,7 +69,7 @@ export default function Home() {
       </Section>
       <Section className="relative">
         <HandyBackground />
-        <SectionTitle className="!leading-tight mb-10">
+        <SectionTitle className="!leading-tight">
           <p className="text-secondary ">Your Premium Hygiene Partner</p>
           <p className="text-primary">for Everyday Freshness</p>
         </SectionTitle>
@@ -85,7 +85,7 @@ export default function Home() {
         <AboutSection />
       </Section>
       <Section className={"bg-primary"}>
-        <SectionTitle className="text-white mb-10">Why Handy</SectionTitle>
+        <SectionTitle className="text-white">Why Handy</SectionTitle>
         <Features minWidth="300" features={
           [
               {icon: <FaMedal />,title:"Certified Quality",description:`Our products are ISO 9001 & ISO 14001 certified, ensuring the highest
@@ -103,7 +103,7 @@ export default function Home() {
       </Section>
 
       <Section className={"bg-[aliceblue]"}>
-        <SectionTitle className="mb-10">Sectors</SectionTitle>
+        <SectionTitle>Sectors</SectionTitle>
         <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
           <div className="w-full bg-white">
             <Link to="/sectors/handy-paper" className="relative w-full group">
@@ -177,7 +177,7 @@ export default function Home() {
         </b>
       </Banner>
       <Section className="bg-[#f1eeee]">
-        <SectionTitle className="!leading-tight mb-10">
+        <SectionTitle className="!leading-tight">
           <>
             <p className="text-secondary ">Handy Products</p>
             <p className="text-primary">Clean, fresh, and on-the-go Quality That Speaks for Itself</p>
@@ -187,7 +187,7 @@ export default function Home() {
       </Section>
       <Section className="relative">
         <HandyBackground />
-        <SectionTitle className="mb-10">Certificates</SectionTitle>
+        <SectionTitle>Certificates</SectionTitle>
         <Certificates />
       </Section>
       <Section
@@ -208,7 +208,7 @@ export default function Home() {
         </Paragraph>
       </Section>
       <Section >
-        <SectionTitle className="mb-10">Sustainability</SectionTitle>
+        <SectionTitle>Sustainability</SectionTitle>
 
         
         <Paragraph className="text-primary">

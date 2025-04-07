@@ -17,7 +17,7 @@ export default function Contact() {
             
        
          <Section>  
-            <SectionTitle className=" mb-10">
+            <SectionTitle >
               Contact Us
             </SectionTitle>    
             <div className='flex lg:flex-row flex-col justify-between gap-10'>
