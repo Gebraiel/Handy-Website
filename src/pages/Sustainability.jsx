@@ -35,7 +35,7 @@ export default function Sustainability() {
         <SectionTitle>Sustainability</SectionTitle>
 
         <div className="flex flex-col gap-5 justify-between">
-          <div className="w-full lg:w-1/2 space-y-5">
+          <div className="w-full space-y-5">
           <Paragraph className="text-justify" size="md">
           At Handy, sustainability isn’t just a goal; it’s a core value.
 We lead with purpose, prioritizing responsible sourcing, efficient production processes, and eco-friendly packaging to minimize our environmental footprint and contribute to a greener future.
