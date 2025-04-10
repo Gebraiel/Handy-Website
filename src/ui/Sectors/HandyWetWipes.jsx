@@ -57,7 +57,7 @@ export default function HandyWetWipes() {
 
       <Section className="!py-0 bg-[#f1eeee]">
         <div className="my-[50px]">
-          <SectionTitle className="my-0">
+          <SectionTitle className="!mb-0">
             Production Process
           </SectionTitle>
           <Paragraph size="md" className="text-center">

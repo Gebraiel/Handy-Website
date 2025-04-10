@@ -70,7 +70,7 @@ export default function HandyPaperSector() {
 
         </div>
       </Section>
-      <Section className='my-[50px]' type="fullscreen">
+      <Section className='mt-[50px]' type="fullscreen">
           <MapContainer
             center={[33.854721, 35.862285]}
             className='h-96 '
@@ -107,7 +107,7 @@ export default function HandyPaperSector() {
       <div >
 
          
-            <SectionTitle className="my-0">
+            <SectionTitle >
               Paper Making Process
             </SectionTitle>
             <Paragraph size="md" className='text-center'>
@@ -192,7 +192,7 @@ export default function HandyPaperSector() {
         </div>
       </Section>
 
-      <Section type="fullscreen" className='overflow-x-hidden' >
+      <Section type="fullscreen" className='overflow-x-hidden bg-[#f1eeee]' >
         <GallerySlider images={['/sectors/sector1.webp','/sectors/sector2.webp','/sectors/sector3.webp']} noOfCols={3}/>
       </Section>
       </motion.div>
