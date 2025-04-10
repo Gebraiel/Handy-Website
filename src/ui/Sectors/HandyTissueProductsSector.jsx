@@ -38,9 +38,9 @@ export default function HandyTissueProductsSector() {
         </div>
       </Section>
 
-      <Section className="!py-0">
+      <Section className="!py-0 bg-[#f1eeee]">
         <div className="my-[50px]">
-          <SectionTitle className="my-5 !leading-tight ">
+          <SectionTitle className="my-0 !leading-tight ">
           <p className=" text-primary">The Transformation Process</p>
           <p className="text-secondary">From Jumbo Rolls to Everyday Essentials</p>
              
@@ -50,7 +50,7 @@ export default function HandyTissueProductsSector() {
             transforms jumbo rolls into high-quality tissue products through the
             following precise steps:
           </Paragraph>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 items-stretch my-16">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-auto gap-10 items-stretch my-16">
             <div className={`text-center`}>
               <div className="pb-5 border-b-2 border-secondary w-fit m-auto text-3xl text-[#b0cbd3] font-extrabold">
                 1

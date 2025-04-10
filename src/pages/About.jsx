@@ -28,7 +28,7 @@ export default function About() {
 
           </Paragraph>
       </Section>
-      <Section className=''>
+      <Section className='bg-[#f1eeee]'>
         <SectionTitle >Our Journey</SectionTitle>
         <Timeline/>
       </Section>

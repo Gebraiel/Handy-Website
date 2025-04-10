@@ -103,11 +103,11 @@ export default function HandyPaperSector() {
             </Marker>
           </MapContainer>
       </Section>
-      <Section className="!py-0">
+      <Section className="!py-0 bg-[#f1eeee]">
       <div >
 
          
-            <SectionTitle className="my-5">
+            <SectionTitle className="my-0">
               Paper Making Process
             </SectionTitle>
             <Paragraph size="md" className='text-center'>
