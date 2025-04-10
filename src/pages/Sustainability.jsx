@@ -34,7 +34,7 @@ export default function Sustainability() {
       <Section>
         <SectionTitle>Sustainability</SectionTitle>
 
-        <div className="flex flex-col lg:flex-row gap-5 justify-between">
+        <div className="flex flex-col gap-5 justify-between">
           <div className="w-full lg:w-1/2 space-y-5">
           <Paragraph className="text-justify" size="md">
           At Handy, sustainability isn’t just a goal; it’s a core value.
@@ -45,9 +45,9 @@ We lead with purpose, prioritizing responsible sourcing, efficient production pr
           </Paragraph>
           
           </div>
-          <div className="lg:max-w-[500px] m-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 lg:grid-cols-3 xl:grid-cols-4  gap-5">
-            {sustainabilityImagesArray.map((e) => (
-              <img src={e} />
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-[repeat(14,1fr)] gap-5 mt-10 m-auto">
+            {sustainabilityImagesArray.map((e,index) => (
+              <img src={e} key={index}/>
             ))}
           </div>
         </div>
