@@ -103,17 +103,17 @@ export default function HandyPaperSector() {
             </Marker>
           </MapContainer>
       </Section>
-      <Section className="!py-0 bg-[#f1eeee]">
+      <Section className="bg-[#f1eeee]">
       <div >
 
          
-            <SectionTitle >
+            <SectionTitle className='!mb-0'>
               Paper Making Process
             </SectionTitle>
             <Paragraph size="md" className='text-center'>
               The production of tissue paper involves several key steps:
             </Paragraph>
-          <motion.div variants={parentVarient} initial="hidden" whileInView="visible" viewport={{once:true}} className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 items-stretch my-16">
+          <motion.div variants={parentVarient} initial="hidden" whileInView="visible" viewport={{once:true}} className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-7 gap-10 items-stretch my-16">
                 
                 <motion.div variants={childrenVairent} className={`text-center `} >
                   <div className="pb-5 border-b-2 border-secondary w-fit m-auto text-3xl text-[#b0cbd3] font-extrabold">
