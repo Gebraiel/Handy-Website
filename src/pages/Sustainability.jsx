@@ -14,7 +14,7 @@ const sustainabilityImagesArray = Array.from(
   (_, i) =>
     `/sustainability/sign system-${i + 1 < 10 ? "0" + (i + 1) : i + 1}.jpg`
 );
-const lightBoxImagesLength = 12;
+const lightBoxImagesLength = 10;
 const lightBoxImages = Array.from(
   { length: lightBoxImagesLength },
   (_, i) =>
