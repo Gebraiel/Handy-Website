@@ -12,6 +12,7 @@ export async function getImagesFromFolder(bucketName, folderPath) {
     })
   
     if (error) {
+        console.log(`${supabaseUrl}/storage/v1/object/public/${bucketName}/`);
       console.error('خطأ أثناء جلب الصور من الفولدر:', error)
       return []
     }
