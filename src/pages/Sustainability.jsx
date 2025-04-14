@@ -14,7 +14,12 @@ const sustainabilityImagesArray = Array.from(
   (_, i) =>
     `/sustainability/sign system-${i + 1 < 10 ? "0" + (i + 1) : i + 1}.jpg`
 );
-const lightBoxImages=['/categories/jumbo.jpg','/categories/jumbo.jpg','/categories/jumbo.jpg','/categories/jumbo.jpg']
+const lightBoxImagesLength = 12;
+const lightBoxImages = Array.from(
+  { length: lightBoxImagesLength },
+  (_, i) =>
+    `/sustainability/sign system-${i + 1 < 10 ? "0" + (i + 1) : i + 1}.jpg`
+);
 
 export default function Sustainability() {
   const [active,setActive] = useState(-1);
