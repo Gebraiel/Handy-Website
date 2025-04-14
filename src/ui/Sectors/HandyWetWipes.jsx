@@ -65,7 +65,7 @@ export default function HandyWetWipes() {
             transforms jumbo rolls into high-quality tissue products through the
             following precise steps
           </Paragraph>
-<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-7 gap-10 items-stretch my-16">
+<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-7 gap-10 items-stretch my-16">
             <div className={`text-center`}>
               <div className="pb-5 border-b-2 border-secondary w-fit m-auto text-3xl text-[#b0cbd3] font-extrabold">
                 1
