@@ -45,7 +45,7 @@ We lead with purpose, prioritizing responsible sourcing, efficient production pr
           </Paragraph>
           
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-[repeat(14,1fr)] gap-5 mt-10 m-auto">
+          <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-[repeat(14,1fr)] gap-5 mt-10 m-auto">
             {sustainabilityImagesArray.map((e,index) => (
               <img src={e} key={index}/>
             ))}
