@@ -3,13 +3,13 @@ const supabaseUrl = 'https://jdhdpfkykyftmrcqzxcz.supabase.co'
 
 export async function getImagesFromFolder(bucketName, folderPath) {
     const { data, error } = await supabase
-      .storage
-      .from(bucketName)
-      .list(folderPath, {
-        limit: 100,
-        offset: 0,
-        sortBy: { column: 'name', order: 'asc' }
-      })
+    .storage
+    .from(bucketName)
+    .list('', {
+      limit: 100, // عدّل حسب الحاجة
+      offset: 0,
+      sortBy: { column: 'name', order: 'asc' }
+    })
   
     if (error) {
       console.error('خطأ أثناء جلب الصور من الفولدر:', error)
@@ -18,7 +18,7 @@ export async function getImagesFromFolder(bucketName, folderPath) {
   
     const imagesArray = data.map(file => ({
       name: file.name,
-      url: `${supabaseUrl}/storage/v1/object/public/${bucketName}/${folderPath}/${file.name}`
+      url: `${supabaseUrl}/storage/v1/object/public/${bucketName}/${file.name}`
     }))
   
     return imagesArray

@@ -10,7 +10,7 @@ import {motion} from 'motion/react';
 export default function HandyWetWipes() {
   let [sectorImages,setSectorImages] = useState([]);
   useEffect(()=>{
-    setSectorImages(getImagesFromBucket('sectors','Wet Wipes'));
+    setSectorImages(getImagesFromBucket('handy-paper'));
   },[])
   return (
     <motion.div initial={{opacity:0,x:-100}} animate={{opacity:1,x:0}} exit={{opacity:0,x:100}}>
@@ -194,7 +194,7 @@ export default function HandyWetWipes() {
         </div>
       </Section>
       <Section type="fullscreen" >
-        <GallerySlider images={sectorImages} noOfCols={3}/>
+        {sectorImages&&<GallerySlider images={sectorImages} noOfCols={3}/>}
       </Section>
     </motion.div>
   );
