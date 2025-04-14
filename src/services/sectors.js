@@ -1,7 +1,7 @@
 import supabase from "./supabase";
 const supabaseUrl = 'https://jdhdpfkykyftmrcqzxcz.supabase.co'
 
-export async function getImagesFromFolder(bucketName, folderPath) {
+export async function getImagesFromBucket(bucketName, folderPath) {
     const { data, error } = await supabase
     .storage
     .from(bucketName)
@@ -12,7 +12,7 @@ export async function getImagesFromFolder(bucketName, folderPath) {
     })
   
     if (error) {
-        console.log(`${supabaseUrl}/storage/v1/object/public/${bucketName}/`);
+      console.log(`${supabaseUrl}/storage/v1/object/public/${bucketName}/`);
       console.error('خطأ أثناء جلب الصور من الفولدر:', error)
       return []
     }
