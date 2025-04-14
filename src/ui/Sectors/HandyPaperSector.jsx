@@ -31,7 +31,12 @@ const childrenVairent={
 export default function HandyPaperSector() {
   let [sectorImages,setSectorImages] = useState([]);
   useEffect(()=>{
-    setSectorImages(getImagesFromBucket('sectors/Handy Paper'));
+    async function getImage(){
+      const images = await getImagesFromBucket('sectors','handy-paper');
+      console.log(images)
+      setSectorImages(images);
+    }
+    getImage()
   },[])
   return (
     <motion.div initial={{opacity:0,x:-100}} animate={{opacity:1,x:0}} exit={{opacity:0,x:100}}>
@@ -195,7 +200,7 @@ export default function HandyPaperSector() {
       </Section>
 
       <Section type="fullscreen" className='overflow-x-hidden bg-[#f1eeee]' >
-        <GallerySlider images={['/sectors/sector1.webp','/sectors/sector2.webp','/sectors/sector3.webp']} noOfCols={3}/>
+        {sectorImages.length>0&&<GallerySlider images={sectorImages} noOfCols={3}/>}
       </Section>
       </motion.div>
   )
