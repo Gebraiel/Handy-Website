@@ -18,7 +18,7 @@ const lightBoxImagesLength = 12;
 const lightBoxImages = Array.from(
   { length: lightBoxImagesLength },
   (_, i) =>
-    `/sustainability/sign system-${i + 1 < 10 ? "0" + (i + 1) : i + 1}.jpg`
+    `/School Visit/School${i + 1}.jpg`
 );
 
 export default function Sustainability() {
