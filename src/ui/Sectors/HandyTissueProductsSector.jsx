@@ -5,15 +5,31 @@ import SectionTitle from "../SectionTitle";
 import GallerySlider from "./GallerySlider";
 import {motion} from 'motion/react';
 import { getImagesFromBucket } from "../../services/sectors";
+const parentVarient = {
+
+  visible:{
+    transition:{
+      staggerChildren:0.3
+    }
+  }
+}
+const childrenVairent={
+  hidden:{
+    opacity:0
+  },
+  visible:{
+    opacity:1
+  }
+}
+
 export default function HandyTissueProductsSector() {
    let [sectorImages,setSectorImages] = useState([]);
    useEffect(()=>{
-     async function getImage(){
+     async function getImages(){
        const images = await getImagesFromBucket('sectors','Handy Tissue');
-       console.log(images)
        setSectorImages(images);
      }
-     getImage()
+     getImages()
    },[])
   return (
     <motion.div initial={{opacity:0,x:-100}} animate={{opacity:1,x:0}} exit={{opacity:0,x:100}}>
@@ -60,98 +76,100 @@ export default function HandyTissueProductsSector() {
             transforms jumbo rolls into high-quality tissue products through the
             following precise steps:
           </Paragraph>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-8 gap-10 items-stretch my-16">
-            <div className={`text-center`}>
-              <div className="pb-5 border-b-2 border-secondary w-fit m-auto text-3xl text-[#b0cbd3] font-extrabold">
-                1
-              </div>
-              <h4 className="text-2xl font-bold my-5 text-primary">
-                Unwinding
-              </h4>
-              <Paragraph size="sm" className="sm:text-left">
-                Jumbo rolls are fed into machines with care to ensure seamless
-                processing.
-              </Paragraph>
-            </div>
-            <div className={` text-center `}>
-              <div className="pb-5 border-b-2 border-secondary w-fit m-auto text-3xl text-[#b0cbd3] font-extrabold">
-                2
-              </div>
-              <h4 className="text-2xl font-bold my-5 text-primary">
-                Embossing
-              </h4>
-              <Paragraph size="sm" className="sm:text-left">
-                Patterns like ripples and diamonds are added to enhance texture,
-                softness, and absorbency.
-              </Paragraph>
-            </div>
-            <div className={` text-center `}>
-              <div className="pb-5 border-b-2 border-secondary w-fit m-auto text-3xl text-[#b0cbd3] font-extrabold">
-                3
-              </div>
-              <h4 className="text-2xl font-bold my-5 text-primary">
-                Perforation
-              </h4>
-              <Paragraph size="sm" className="sm:text-left">
-                Clean, adjustable perforations allow easy tearing and versatile
-                product lengths.
-              </Paragraph>
-            </div>
-            <div className={` text-center `}>
-              <div className="pb-5 border-b-2 border-secondary w-fit m-auto text-3xl text-[#b0cbd3] font-extrabold">
-                4
-              </div>
-              <h4 className="text-2xl font-bold my-5 text-primary">Folding</h4>
-              <Paragraph size="sm" className="sm:text-left">
-                Products are folded into uniform shapes, whether sheets, rolls,
-                or interfolded packs.
-              </Paragraph>
-            </div>
-            <div className={` text-center `}>
-              <div className="pb-5 border-b-2 border-secondary w-fit m-auto text-3xl text-[#b0cbd3] font-extrabold">
-                5
-              </div>
-              <h4 className="text-2xl font-bold my-5 text-primary">Cutting</h4>
-              <Paragraph size="sm" className="sm:text-left group-[]:">
-                Advanced cutters shape each item to precise dimensions for
-                consistency.
-              </Paragraph>
-            </div>
-            <div className={`text-center `}>
-              <div className="pb-5 border-b-2 border-secondary w-fit m-auto text-3xl text-[#b0cbd3] font-extrabold">
-                6
-              </div>
-              <h4 className="text-2xl font-bold my-5 text-primary">Winding</h4>
-              <Paragraph size="sm" className="sm:text-left">
-                Clean, adjustable perforations allow easy tearing and versatile
-                product lengths.
-              </Paragraph>
-            </div>
-            <div className={` text-center `}>
-              <div className="pb-5 border-b-2 border-secondary w-fit m-auto text-3xl text-[#b0cbd3] font-extrabold">
-                7
-              </div>
-              <h4 className="text-2xl font-bold my-5 text-primary">
-                Packaging
-              </h4>
-              <Paragraph size="sm" className="sm:text-left">
-                Finished products are carefully wrapped, ensuring quality while
-                showcasing Handy's branding.
-              </Paragraph>
-            </div>
-            <div className={` text-center `}>
-              <div className="pb-5 border-b-2 border-secondary w-fit m-auto text-3xl text-[#b0cbd3] font-extrabold">
-                8
-              </div>
-              <h4 className="text-2xl font-bold my-5 text-primary">
-                Palletizing
-              </h4>
-              <Paragraph size="sm" className="sm:text-left">
-                Packaged items are efficiently stacked for optimal storage and
-                transport.
-              </Paragraph>
-            </div>
-          </div>
+           <motion.div variants={parentVarient} initial="hidden" whileInView="visible" viewport={{once:true}} className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-8 gap-10 items-stretch my-16">
+                
+                <motion.div variants={childrenVairent} className={`text-center `} >
+                  <div className="pb-5 border-b-2 border-secondary w-fit m-auto text-3xl text-[#b0cbd3] font-extrabold">
+                    1
+                  </div>
+                  <h4 className="text-2xl font-bold my-5 text-primary">
+                    Unwinding
+                  </h4>
+                  <Paragraph size="sm" className="sm:text-left">
+                    Jumbo rolls are fed into machines with care to ensure seamless
+                    processing.
+                  </Paragraph>
+                </motion.div>
+                <motion.div variants={childrenVairent} className={` text-center  `} >
+                    <div className="pb-5 border-b-2 border-secondary w-fit m-auto text-3xl text-[#b0cbd3] font-extrabold">
+                      2
+                    </div>
+                    <h4 className="text-2xl font-bold my-5 text-primary">
+                      Embossing
+                    </h4>
+                    <Paragraph size="sm" className="sm:text-left">
+                      Patterns like ripples and diamonds are added to enhance texture,
+                      softness, and absorbency.
+                    </Paragraph>
+                </motion.div>
+                <motion.div variants={childrenVairent}  className={` text-center `}>
+                  <div className="pb-5 border-b-2 border-secondary w-fit m-auto text-3xl text-[#b0cbd3] font-extrabold">
+                    3
+                  </div>
+                  <h4 className="text-2xl font-bold my-5 text-primary">
+                    Perforation
+                  </h4>
+                  <Paragraph size="sm" className="sm:text-left">
+                    Clean, adjustable perforations allow easy tearing and versatile
+                    product lengths.
+                  </Paragraph>
+                </motion.div>
+                <motion.div variants={childrenVairent}  className={` text-center `}>
+                    <div className="pb-5 border-b-2 border-secondary w-fit m-auto text-3xl text-[#b0cbd3] font-extrabold">
+                      4
+                    </div>
+                    <h4 className="text-2xl font-bold my-5 text-primary">Folding</h4>
+                    <Paragraph size="sm" className="sm:text-left">
+                      Products are folded into uniform shapes, whether sheets, rolls,
+                      or interfolded packs.
+                    </Paragraph>
+                </motion.div>
+                <motion.div variants={childrenVairent}  className={` text-center `}>
+                    <div className="pb-5 border-b-2 border-secondary w-fit m-auto text-3xl text-[#b0cbd3] font-extrabold">
+                      5
+                    </div>
+                    <h4 className="text-2xl font-bold my-5 text-primary">Cutting</h4>
+                    <Paragraph size="sm" className="sm:text-left group-[]:">
+                      Advanced cutters shape each item to precise dimensions for
+                      consistency.
+                    </Paragraph>
+                </motion.div>
+                <motion.div variants={childrenVairent}  className={` text-center `}>
+                    <div className="pb-5 border-b-2 border-secondary w-fit m-auto text-3xl text-[#b0cbd3] font-extrabold">
+                      6
+                    </div>
+                    <h4 className="text-2xl font-bold my-5 text-primary">Winding</h4>
+                    <Paragraph size="sm" className="sm:text-left">
+                      Clean, adjustable perforations allow easy tearing and versatile
+                      product lengths.
+                    </Paragraph>
+                </motion.div>
+                <motion.div variants={childrenVairent}  className={` text-center `}>
+                  <div className="pb-5 border-b-2 border-secondary w-fit m-auto text-3xl text-[#b0cbd3] font-extrabold">
+                    7
+                  </div>
+                  <h4 className="text-2xl font-bold my-5 text-primary">
+                    Packaging
+                  </h4>
+                  <Paragraph size="sm" className="sm:text-left">
+                    Finished products are carefully wrapped, ensuring quality while
+                    showcasing Handy's branding.
+                  </Paragraph>
+                </motion.div>
+                <motion.div variants={childrenVairent}  className={` text-center `}>
+                  <div className="pb-5 border-b-2 border-secondary w-fit m-auto text-3xl text-[#b0cbd3] font-extrabold">
+                    8
+                  </div>
+                  <h4 className="text-2xl font-bold my-5 text-primary">
+                    Palletizing
+                  </h4>
+                  <Paragraph size="sm" className="sm:text-left">
+                    Packaged items are efficiently stacked for optimal storage and
+                    transport.
+                  </Paragraph>
+                </motion.div>
+          </motion.div>
+          
         </div>
         <div className="mb-[50px]">
           <SectionTitle className="my-5 !text-left">

@@ -31,12 +31,11 @@ const childrenVairent={
 export default function HandyPaperSector() {
   let [sectorImages,setSectorImages] = useState([]);
   useEffect(()=>{
-    async function getImage(){
+    async function getImages(){
       const images = await getImagesFromBucket('sectors','handy-paper');
-      console.log(images)
       setSectorImages(images);
     }
-    getImage()
+    getImages()
   },[])
   return (
     <motion.div initial={{opacity:0,x:-100}} animate={{opacity:1,x:0}} exit={{opacity:0,x:100}}>

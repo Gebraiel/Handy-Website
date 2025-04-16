@@ -3,27 +3,44 @@ import Section from "../Section";
 import Paragraph from "../Paragraph";
 import SectionTitle from "../SectionTitle";
 import GallerySlider from "./GallerySlider";
-import {motion} from 'motion/react';
+import { motion } from "motion/react";
 import { getImagesFromBucket } from "../../services/sectors";
-
+const parentVarient = {
+  visible: {
+    transition: {
+      staggerChildren: 0.3,
+    },
+  },
+};
+const childrenVairent = {
+  hidden: {
+    opacity: 0,
+  },
+  visible: {
+    opacity: 1,
+  },
+};
 export default function HandyWetWipes() {
-  let [sectorImages,setSectorImages] = useState([]);
-   useEffect(()=>{
-     async function getImage(){
-       const images = await getImagesFromBucket('sectors','Wet Wipes');
-       console.log(images)
-       setSectorImages(images);
-     }
-     getImage()
-   },[])
+  let [sectorImages, setSectorImages] = useState([]);
+  useEffect(() => {
+    async function getImages() {
+      const images = await getImagesFromBucket("sectors", "Wet Wipes");
+      setSectorImages(images);
+    }
+    getImages();
+  }, []);
   return (
-    <motion.div initial={{opacity:0,x:-100}} animate={{opacity:1,x:0}} exit={{opacity:0,x:100}}>
+    <motion.div
+      initial={{ opacity: 0, x: -100 }}
+      animate={{ opacity: 1, x: 0 }}
+      exit={{ opacity: 0, x: 100 }}
+    >
       <Section className="!py-0 ">
         {/* <SectorsNavigation /> */}
-        <div className='lg:block hidden'>
+        <div className="lg:block hidden">
           <img src="/sectors/sector3.webp" alt="" />
         </div>
-        <div className='lg:hidden'>
+        <div className="lg:hidden">
           <img src="/sectors/sector3.jpg" alt="" />
         </div>
         <div className="my-[50px]">
@@ -67,35 +84,39 @@ export default function HandyWetWipes() {
 
       <Section className="bg-[#f1eeee]">
         <div className="my-[50px]">
-          <SectionTitle className="!mb-0">
-            Production Process
-          </SectionTitle>
+          <SectionTitle className="!mb-0">Production Process</SectionTitle>
           <Paragraph size="md" className="text-center">
             Using state-of-the-art converting machinery, our production process
             transforms jumbo rolls into high-quality tissue products through the
             following precise steps
           </Paragraph>
-<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-7 gap-10 items-stretch my-16">
-            <div className={`text-center`}>
+          <motion.div
+            variants={parentVarient}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-7 gap-10 items-stretch my-16"
+          >
+            <motion.div variants={childrenVairent} className={`text-center `}>
               <div className="pb-5 border-b-2 border-secondary w-fit m-auto text-3xl text-[#b0cbd3] font-extrabold">
                 1
               </div>
               <h4 className="text-2xl font-bold my-5 text-primary">
-              Non-Woven Fabric Production
+                Non-Woven Fabric Production
               </h4>
               <Paragraph size="sm" className="sm:text-left">
-              <b>Fiber Preparation</b> : Raw materials like wood pulp or
-              polyester are processed into fibers.
+                <b>Fiber Preparation</b> : Raw materials like wood pulp or
+                polyester are processed into fibers.
               </Paragraph>
               <Paragraph size="sm" className="sm:text-left">
-              <b>Web Formation</b> : Fibers are transformed into a web
-                    using spun lace or air-laid techniques.
+                <b>Web Formation</b> : Fibers are transformed into a web using
+                spun lace or air-laid techniques.
               </Paragraph>
               <Paragraph size="sm" className="sm:text-left">
-              <b>Roll Formation</b> : The web is rolled into master rolls.
+                <b>Roll Formation</b> : The web is rolled into master rolls.
               </Paragraph>
-            </div>
-            <div className={` text-center `}>
+            </motion.div>
+            <motion.div variants={childrenVairent} className={` text-center  `}>
               <div className="pb-5 border-b-2 border-secondary w-fit m-auto text-3xl text-[#b0cbd3] font-extrabold">
                 2
               </div>
@@ -103,67 +124,71 @@ export default function HandyWetWipes() {
                 Slitting and Rewinding
               </h4>
               <Paragraph size="sm" className="sm:text-left">
-                Master rolls are cut into narrower
-                rolls and rewound for processing.
+                Master rolls are cut into narrower rolls and rewound for
+                processing.
               </Paragraph>
-            </div>
-            <div className={` text-center `}>
+            </motion.div>
+            <motion.div variants={childrenVairent} className={` text-center `}>
               <div className="pb-5 border-b-2 border-secondary w-fit m-auto text-3xl text-[#b0cbd3] font-extrabold">
                 3
               </div>
               <h4 className="text-2xl font-bold my-5 text-primary">
-              Solution Formulation
+                Solution Formulation
               </h4>
               <Paragraph size="sm" className="sm:text-left">
-                Ingredients like water, surfactants,
-                and emollients are mixed to create the cleaning solution.
+                Ingredients like water, surfactants, and emollients are mixed to
+                create the cleaning solution.
               </Paragraph>
-            </div>
-            <div className={` text-center `}>
+            </motion.div>
+            <motion.div variants={childrenVairent} className={` text-center `}>
               <div className="pb-5 border-b-2 border-secondary w-fit m-auto text-3xl text-[#b0cbd3] font-extrabold">
                 4
               </div>
-              <h4 className="text-2xl font-bold my-5 text-primary">Impregnation</h4>
+              <h4 className="text-2xl font-bold my-5 text-primary">
+                Impregnation
+              </h4>
               <Paragraph size="sm" className="sm:text-left">
-                Fabric is impregnated with the solution,
-                ensuring precise saturation for performance.
+                Fabric is impregnated with the solution, ensuring precise
+                saturation for performance.
               </Paragraph>
-            </div>
-            <div className={` text-center `}>
+            </motion.div>
+            <motion.div variants={childrenVairent} className={` text-center `}>
               <div className="pb-5 border-b-2 border-secondary w-fit m-auto text-3xl text-[#b0cbd3] font-extrabold">
                 5
               </div>
-              <h4 className="text-2xl font-bold my-5 text-primary">Folding and Cutting</h4>
+              <h4 className="text-2xl font-bold my-5 text-primary">
+                Folding and Cutting
+              </h4>
               <Paragraph size="sm" className="sm:text-left group-[]:">
-              The fabric is folded and cut into
-              individual wipes or sheets.
+                The fabric is folded and cut into individual wipes or sheets.
               </Paragraph>
-            </div>
-            <div className={`text-center `}>
+            </motion.div>
+            <motion.div variants={childrenVairent} className={` text-center `}>
               <div className="pb-5 border-b-2 border-secondary w-fit m-auto text-3xl text-[#b0cbd3] font-extrabold">
                 6
               </div>
-              <h4 className="text-2xl font-bold my-5 text-primary">Packaging</h4>
+              <h4 className="text-2xl font-bold my-5 text-primary">
+                Packaging
+              </h4>
               <Paragraph size="sm" className="sm:text-left">
-              Wipes are sealed in containers, pouches, or
-              canisters to maintain quality.
+                Wipes are sealed in containers, pouches, or canisters to
+                maintain quality.
               </Paragraph>
-            </div>
-            <div className={` text-center `}>
+            </motion.div>
+            <motion.div variants={childrenVairent} className={` text-center `}>
               <div className="pb-5 border-b-2 border-secondary w-fit m-auto text-3xl text-[#b0cbd3] font-extrabold">
                 7
               </div>
               <h4 className="text-2xl font-bold my-5 text-primary">
-              Labelling and Secondary Packaging
+                Labelling and Secondary Packaging
               </h4>
               <Paragraph size="sm" className="sm:text-left">
-              Labels with product
-              details are applied, and wipes are packed into cartons for
-              shipment.
+                Labels with product details are applied, and wipes are packed
+                into cartons for shipment.
               </Paragraph>
-            </div>
- 
-          </div>
+            </motion.div>
+          </motion.div>
+          
         </div>
         <div className="mb-[50px]">
           <SectionTitle className="my-5 !text-left">
@@ -184,7 +209,8 @@ export default function HandyWetWipes() {
             </li>
             <li>
               <Paragraph size="sm">
-                <b>Regulatory Compliance</b> : Guarantees adherence to standards .
+                <b>Regulatory Compliance</b> : Guarantees adherence to standards
+                .
               </Paragraph>
             </li>
             <li>
@@ -193,12 +219,10 @@ export default function HandyWetWipes() {
               </Paragraph>
             </li>
           </ul>
-
-         
         </div>
       </Section>
       <Section type="fullscreen" className="bg-[#f1eeee]">
-        {sectorImages&&<GallerySlider images={sectorImages} noOfCols={3}/>}
+        {sectorImages && <GallerySlider images={sectorImages} noOfCols={3} />}
       </Section>
     </motion.div>
   );
