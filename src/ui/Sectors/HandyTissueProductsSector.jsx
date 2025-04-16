@@ -44,7 +44,7 @@ export default function HandyTissueProductsSector() {
         </div>
         <div className="my-[50px]">
           <div>
-            <SectionTitle className="mb-5 !text-left">
+            <SectionTitle className="2xl:mb-5 !text-left">
               Handy Tissue Products
             </SectionTitle>
             <Paragraph size="md" className="text-justify m-auto">
@@ -66,7 +66,7 @@ export default function HandyTissueProductsSector() {
 
       <Section className="bg-[#f1eeee]">
         <div className="my-[50px]">
-          <SectionTitle className="!mb-0 !leading-tight ">
+          <SectionTitle className="2xl:mb-5 !leading-tight ">
           <p className=" text-primary">The Transformation Process</p>
           <p className="text-secondary">From Jumbo Rolls to Everyday Essentials</p>
              
@@ -172,7 +172,7 @@ export default function HandyTissueProductsSector() {
           
         </div>
         <div className="mb-[50px]">
-          <SectionTitle className="my-5 !text-left">
+          <SectionTitle className="2xl:mb-5 !text-left">
             Key Drivers of Excellence
           </SectionTitle>
           <Paragraph size="md">Our plant thrives on the synergy of:</Paragraph>

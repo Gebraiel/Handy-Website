@@ -49,7 +49,7 @@ export default function HandyPaperSector() {
         
         <div className=" m-auto my-[50px]">
           <div>
-            <SectionTitle className="mb-5 !max-w-[66ch] !mx-auto !text-left">
+            <SectionTitle className="2xl:mb-5 !max-w-[66ch] !mx-auto !text-left">
               Handy Paper
             </SectionTitle>
             <Paragraph size="md" className="text-justify m-auto">
@@ -113,7 +113,7 @@ export default function HandyPaperSector() {
       <div >
 
          
-            <SectionTitle className='!mb-0'>
+            <SectionTitle className='2xl:mb-5'>
               Paper Making Process
             </SectionTitle>
             <Paragraph size="md" className='text-center'>

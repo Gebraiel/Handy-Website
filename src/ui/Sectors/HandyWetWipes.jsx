@@ -45,7 +45,7 @@ export default function HandyWetWipes() {
         </div>
         <div className="my-[50px]">
           <div>
-            <SectionTitle className="mb-5 !text-left">
+            <SectionTitle className="2xl:mb-5 !text-left">
               Handy Wet Wipes
             </SectionTitle>
             <div className="space-y-3">
@@ -84,7 +84,7 @@ export default function HandyWetWipes() {
 
       <Section className="bg-[#f1eeee]">
         <div className="my-[50px]">
-          <SectionTitle className="!mb-0">Production Process</SectionTitle>
+          <SectionTitle className="2xl:mb-5">Production Process</SectionTitle>
           <Paragraph size="md" className="text-center">
             Using state-of-the-art converting machinery, our production process
             transforms jumbo rolls into high-quality tissue products through the
@@ -191,7 +191,7 @@ export default function HandyWetWipes() {
           
         </div>
         <div className="mb-[50px]">
-          <SectionTitle className="my-5 !text-left">
+          <SectionTitle className="2xl:mb-5 !text-left">
             Key Drivers of Excellence
           </SectionTitle>
           <Paragraph size="md">Our plant thrives on the synergy of:</Paragraph>
