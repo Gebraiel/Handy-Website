@@ -10,7 +10,7 @@ export default function Slider({images,noOfCols}) {
   const [active,setActive] = useState(-1);
 
   const size=images.length;
-
+  
   const [noOfNext,setNoOfNext] = useState(size - cols);
   const [noOfPrev,setNoOfPrev] = useState(0);
   const [widthOfCol,setWidthOfCol] = useState( (window.innerWidth - 20) / cols);
@@ -42,8 +42,10 @@ export default function Slider({images,noOfCols}) {
     },[])
 
   useEffect(()=>{
+    console.log(size);
+    console.log(images);
     setNoOfNext(size-cols);
-  },[cols])
+  },[cols,images])
   return (
     <>
         <div style={{transform:`translateX(${x}px)`,width:`${widthOfCol * size}px`}} className="flex  transition-transform duration-500">
