@@ -31,7 +31,7 @@ export default function ProductDifferentiationTab() {
         </ul>
       </div>
       <div className=''>
-        <img src="/About/additional-strength-01.webp" alt="Product Differentiation" />
+        <img src="/About/Product Differentiation.webp" alt="Product Differentiation" />
       </div>
     </div>
     </Section>

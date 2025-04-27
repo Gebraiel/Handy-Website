@@ -29,7 +29,7 @@ export default function BrandDifferentiationTab() {
       </ul>
     </div>
     <div className=''>
-      <img src="/About/additional-strength-02.webp" alt="Brand Differentiation" />
+      <img src="/About/Brand Differentiation.webp" alt="Brand Differentiation" />
     </div>
   </div>
     </Section>

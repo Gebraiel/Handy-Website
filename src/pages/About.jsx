@@ -17,7 +17,7 @@ export default function About() {
   if (isLoading) return <Loader />;
   return (
     <>
-      <Banner image={'/banner/slider-1.png'}/>
+      <Banner image={'/About/cover.webp'}/>
 
       <Section>
         <SectionTitle className='!text-left'>About Us</SectionTitle>

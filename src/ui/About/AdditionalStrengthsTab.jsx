@@ -26,7 +26,7 @@ export default function AdditionalStrengthsTab() {
       </ul>
     </div>
     <div className=''>
-      <img src="/About/additional-strength-03.webp" alt="Brand Differentiation" />
+      <img src="/About/Additional strength.webp" alt="Brand Differentiation" />
     </div>
   </div>
     </Section>
