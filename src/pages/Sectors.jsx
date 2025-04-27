@@ -21,7 +21,7 @@ export default function Sectors() {
   return (
     <>
       <Banner
-        image="/banner/slider-1.png"
+        image="/sectors/cover.webp"
         className="flex justify-center items-center "
       />
       <Section>
