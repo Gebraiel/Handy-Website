@@ -41,7 +41,7 @@ export default function HandyWetWipes() {
           <img src="/sectors/sector3.webp" alt="" />
         </div>
         <div className="lg:hidden">
-          <img src="/sectors/sector3.jpg" alt="" />
+          <img src="/sectors/Handy Wet Wipes.webp" alt="" />
         </div>
         <div className="my-[50px]">
           <div>

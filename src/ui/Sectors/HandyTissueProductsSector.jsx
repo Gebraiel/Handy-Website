@@ -40,7 +40,7 @@ export default function HandyTissueProductsSector() {
           <img src="/sectors/sector1.webp" alt="" />
         </div>
         <div className='lg:hidden'>
-          <img src="/sectors/sector1.jpg" alt="" />
+          <img src="/sectors/Handy Tissue Products.webp" alt="" />
         </div>
         <div className="my-[50px]">
           <div>

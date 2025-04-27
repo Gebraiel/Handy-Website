@@ -44,7 +44,7 @@ export default function HandyPaperSector() {
           <img src="/sectors/sector2.webp" alt="" />
         </div>
         <div className='lg:hidden'>
-          <img src="/sectors/sector2.jpg" alt="" />
+          <img src="/sectors/Handy Paper.webp" alt="" />
         </div>
         
         <div className=" m-auto my-[50px]">
