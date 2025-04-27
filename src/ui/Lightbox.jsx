@@ -24,7 +24,7 @@ export default function Lightbox({images,active,closeLightbox}) {
         <button disabled={activeImage == 0} onClick={handlePrev} className='flex justify-center items-center  text-white' >
             <FaArrowCircleLeft className='text-2xl'/>
         </button>
-        <div className='max-w-[800px] m-auto'>
+        <div className='m-auto'>
             <AnimatePresence mode="wait">
                 <motion.img key={activeImage} initial={{x:100,opacity:0}} animate={{opacity:1,x:0}} exit={{opacity:0,x:-100}} src={images[activeImage]} alt="Lightbox Image" />
             </AnimatePresence>
