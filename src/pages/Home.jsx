@@ -59,10 +59,12 @@ export default function Home() {
                 subtitle:"Experience more than "
               }
             },{
-              image:"/banner/slider-3.webp"
+              image:"/banner/slider-4.webp"
             }
             ,{
-              image:"/banner/slider-3.webp"
+              image:"/banner/slider-5.webp"
+            },{
+              image:"/banner/slider-6.webp"
             }
           ]}
         />
@@ -110,7 +112,7 @@ export default function Home() {
               <p className="absolute right-5 bottom-5 text-8xl font-bold text-white opacity-50 transition-all group-hover:opacity-100 group-hover:-translate-y-2">
                 01
               </p>
-              <img src='/sectors/sector-01.webp' alt="Handy Paper Sector" />
+              <img src='/sectors/Handy Paper.webp' alt="Handy Paper Sector" />
             </Link>
 
             <div className="p-7 ">
@@ -133,7 +135,7 @@ export default function Home() {
               <p className="absolute right-5 bottom-5 text-8xl font-bold text-white opacity-50 transition-all group-hover:opacity-100 group-hover:-translate-y-2">
                 02
               </p>
-              <img src='/sectors/sector-02.webp' alt="Handy Tissue Products Sector" />
+              <img src='/sectors/Handy Tissue Products.webp' alt="Handy Tissue Products Sector" />
             </Link>
 
             <div className="p-7">
@@ -154,7 +156,7 @@ export default function Home() {
               <p className="absolute right-5 bottom-5 text-8xl font-bold text-white opacity-50 transition-all group-hover:opacity-100 group-hover:-translate-y-2">
                 03
               </p>
-              <img src='/sectors/sector-03.webp' alt="Wet Wipes Sector" />
+              <img src='/sectors/Handy Wet Wipes.webp' alt="Wet Wipes Sector" />
             </Link>
 
             <div className="p-7 ">
