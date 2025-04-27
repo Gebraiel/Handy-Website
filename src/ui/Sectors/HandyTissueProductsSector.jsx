@@ -37,7 +37,7 @@ export default function HandyTissueProductsSector() {
         {/* <SectorsNavigation /> */}
 
         <div className='lg:block hidden'>
-          <img src="/sectors/sector1.webp" alt="" />
+          <img src="/sectors/sector2.webp" alt="" />
         </div>
         <div className='lg:hidden'>
           <img src="/sectors/Handy Tissue Products.webp" alt="" />

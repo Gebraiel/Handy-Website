@@ -41,7 +41,7 @@ export default function HandyPaperSector() {
     <motion.div initial={{opacity:0,x:-100}} animate={{opacity:1,x:0}} exit={{opacity:0,x:100}}>
      <Section className="!py-0">        
         <div className='lg:block hidden'>
-          <img src="/sectors/sector2.webp" alt="" />
+          <img src="/sectors/sector1.webp" alt="" />
         </div>
         <div className='lg:hidden'>
           <img src="/sectors/Handy Paper.webp" alt="" />
