@@ -14,6 +14,6 @@ export async function getCategories(){
         return customOrder.indexOf(a.name) - customOrder.indexOf(b.name)
       })
       
-    console.log(sortedData)
-    return categories;
+
+    return sortedData;
 }
