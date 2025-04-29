@@ -13,7 +13,7 @@ export default function Contact() {
   if (isLoading) return <Loader />;
   return (
        <>
-         <Banner image={'/Contact/banner.webp'} className='bg-[length:55%]' />
+         <Banner image={'/Contact/banner.webp'} className='!bg-[55%]' />
             
        
          <Section>  
