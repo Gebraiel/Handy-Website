@@ -14,11 +14,11 @@ const sustainabilityImagesArray = Array.from(
   (_, i) =>
     `/sustainability/sign system-${i + 1 < 10 ? "0" + (i + 1) : i + 1}.jpg`
 );
-const lightBoxImagesLength = 10;
+const lightBoxImagesLength = 15;
 const lightBoxImages = Array.from(
   { length: lightBoxImagesLength },
   (_, i) =>
-    `/School Visit/School${i + 1}.jpg`
+    `/School Visit/School${i + 1}.webp`
 );
 
 export default function Sustainability() {

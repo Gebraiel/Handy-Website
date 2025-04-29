@@ -63,8 +63,6 @@ export default function Home() {
             }
             ,{
               image:"/banner/slider-5.webp"
-            },{
-              image:"/banner/slider-6.webp"
             }
           ]}
         />
