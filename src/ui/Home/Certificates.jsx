@@ -15,6 +15,13 @@ export default function Certificates() {
           alt=""
         />
       </div>
+      <div className="">
+        <img
+          className="border shadow-lg w-[350px] m-auto"
+          src="/certificates/certificates3.webp"
+          alt=""
+        />
+      </div>
     </div>
   );
 }
