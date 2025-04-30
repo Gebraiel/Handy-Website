@@ -36,7 +36,7 @@ export default function Category() {
     <>
       <Banner
         image={category.banner ? category.banner : "/banner/slider-1.png"}
-        className="flex justify-center items-center "
+        className="flex justify-center items-center bg-[55%] sm:bg-cover"
       />
       
       <Section>
