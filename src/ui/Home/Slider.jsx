@@ -65,7 +65,7 @@ function Slider({ slides}) {
           </div>
         }
       </div>
-      <div className=" w-full  h-full  items-end flex justify-between items-center gap-5 pb-5 px-5 absolute left-0 top-0 z-20">
+      <div className=" w-full hidden h-full justify-center items-end sm:flex sm:justify-between sm:items-center gap-5 pb-5 px-5 absolute left-0 top-0 z-20">
         <button
           className="bg-white w-10 h-10 flex justify-center items-center rounded-full"
           onClick={()=>handleClick(handlePrev)}
