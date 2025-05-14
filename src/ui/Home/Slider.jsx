@@ -32,20 +32,26 @@ function Slider({ slides}) {
       <div className="absolute w-full h-full left-0 top-0 bg-[#09216d] opacity-30 z-10"></div>
       <div className={`relative h-full`}>
         {slides.map((slide, index) => (
-          <img
-            src={slide.image}
-            className={`transition-all absolute duration-500 ease-in-out w-full h-full left-0 top-0 object-cover ${
-              index === active ? "opacity-100" : "opacity-0"
-            }`}
-            key={slide.image}
-          />
-          <img
-            src={slide.image}
-            className={`transition-all absolute duration-500 ease-in-out w-full h-full left-0 top-0 object-cover ${
-              index === active ? "opacity-100" : "opacity-0"
-            }`}
-            key={slide.image}
-          />
+          <>
+            <div className="hidden lg:block">
+              <img
+              src={slide.image.desktop}
+              className={`transition-all absolute duration-500 ease-in-out w-full h-full left-0 top-0 object-cover ${
+                index === active ? "opacity-100" : "opacity-0"
+              }`}
+              key={slide.image.desktop}
+            />
+            </div>
+            <div className="block lg:hidden">
+              <img
+                src={slide.image.mobile}
+                className={`transition-all absolute duration-500 ease-in-out w-full h-full left-0 top-0 object-cover ${
+                  index === active ? "opacity-100" : "opacity-0"
+                }`}
+                key={slide.image.mobile}
+              />
+            </div>
+          </>
         ))}
       </div>
       <div className="text-center w-full h-full  absolute left-0 top-0 flex justify-center items-center z-10 text-white">

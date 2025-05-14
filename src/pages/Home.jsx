@@ -39,30 +39,45 @@ export default function Home() {
         <Slider
           slides={[
             {
-              image:"/banner/slider-1.webp",
+              image:{
+                desktop:"/banner/slider-1.webp",
+                mobile:"banner/slider-1-mobile.webp"
+              },
               content:{
                 heading:"Innovative Solutions",
                 subtitle:"We offer "
               }
             },
             {
-              image:"/banner/slider-2.webp",
+              image:{
+                desktop:"/banner/slider-2.webp",
+                mobile:"/banner/slider-2-mobile.webp"
+              },
               content:{
                 heading:"Modern, high-quality products",
                 subtitle:"Proudly producing "
               }
             },
             {
-              image:"/banner/slider-3.webp",
+              image:{
+                desktop:"/banner/slider-3.webp",
+                mobile:"/banner/slider-3-mobile.webp"
+              },
               content:{
                 heading:"35 Years of redefining hygiene standards in Egypt",
                 subtitle:"Experience more than "
               }
             },{
-              image:"/banner/slider-4.webp"
+              image:{
+                desktop:"/banner/slider-4.webp",
+                mobile:"banner/slider-4-mobile.webp"
+              }
             }
             ,{
-              image:"/banner/slider-5.webp"
+              image:{
+                desktop:"/banner/slider-5.webp",
+                mobile:"/banner/slider-5-mobile.webp"
+              }
             }
           ]}
         />
