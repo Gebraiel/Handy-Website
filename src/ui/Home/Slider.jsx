@@ -39,6 +39,13 @@ function Slider({ slides}) {
             }`}
             key={slide.image}
           />
+          <img
+            src={slide.image}
+            className={`transition-all absolute duration-500 ease-in-out w-full h-full left-0 top-0 object-cover ${
+              index === active ? "opacity-100" : "opacity-0"
+            }`}
+            key={slide.image}
+          />
         ))}
       </div>
       <div className="text-center w-full h-full  absolute left-0 top-0 flex justify-center items-center z-10 text-white">
