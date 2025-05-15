@@ -48,6 +48,7 @@ export default function ProductList({ products, view, filter }) {
             categoryName={categoryName}
             view={view}
             key={index}
+            products={products}
           />
           ))
       }

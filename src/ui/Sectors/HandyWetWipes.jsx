@@ -5,6 +5,7 @@ import SectionTitle from "../SectionTitle";
 import GallerySlider from "./GallerySlider";
 import { motion } from "motion/react";
 import { getImagesFromBucket } from "../../services/sectors";
+import SwiperSlider from "./SwiperSlider";
 const parentVarient = {
   visible: {
     transition: {
@@ -221,8 +222,8 @@ export default function HandyWetWipes() {
           </ul>
         </div>
       </Section>
-      <Section type="fullscreen" className="bg-[#f1eeee]">
-        {sectorImages && <GallerySlider images={sectorImages} noOfCols={3} />}
+      <Section type="fullscreen" className="bg-[#f1eeee] px-5">
+        {sectorImages && <SwiperSlider images={sectorImages}/>}
       </Section>
     </motion.div>
   );

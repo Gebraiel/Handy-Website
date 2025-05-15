@@ -26,7 +26,7 @@ export default function AboutSection() {
             <SectionTitle className="!text-left">
               <p className="text-secondary my-3"> +35 Years of</p>
               <p className="text-primary">
-                redefining hygiene standards in Egypt
+                Redefining hygiene standards in Egypt
               </p>
             </SectionTitle>
           </div>

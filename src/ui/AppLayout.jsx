@@ -8,14 +8,18 @@ import ScrollToTop from "./ScrollToTop";
 import { useMatches } from "react-router-dom";
 import {AnimatePresence} from "motion/react";
 import { useNavigation } from "react-router-dom";
+import { useState } from "react";
+import OutletContext from "../context/OutletContext";
 
 export default function AppLayout() {
   const matches = useMatches()
   const isProducts = matches[1].pathname.includes('/product/');
   const isNotFound = matches[0].params['*'] != undefined;
   const navigation = useNavigation();
-  const isRelative = isNotFound || isProducts;
+  // const isRelative = isNotFound || isProducts;
+  const [isRelative,setIsRelative] = useState(false);
   const categories = useLoaderData();
+  console.log(categories);
   // const categoriesMenu = categories.map((category) => ({
   //   title: category.name,
   //   link: `/category/${category.id}`,
@@ -32,16 +36,8 @@ export default function AppLayout() {
       link:"/category/2"
     },
     {
-      title:"Home Care",
-      link:"/category/3"
-    },
-    {
       title:"Facial Tissues",
       link:"/category/1"
-    },
-    {
-      title:"Toilet Tissues",
-      link:"/category/4"
     },
     {
       title:"Wet Wipes",
@@ -70,10 +66,26 @@ export default function AppLayout() {
         },
       ]
     },
+    {
+      title:"Toilet Tissues",
+      link:"/category/4"
+    },
+    {
+      title:"Home Care",
+      link:"/category/3"
+    }
+    
+   
+    
   ]
   const menu = [
+    {title:"Home",link:"/"},
     {title:"About Us",link:"/about"},
-    {title:"Sectors",link:"/sectors"},
+    {title:"Sectors",link:"/sectors",hasSubMenu:true,submenu:[
+      {title:"Handy Paper",link:"/sectors/handy-paper"},
+      {title:"Handy Tissue Products",link:"/sectors/handy-tissue-products"},
+      {title:"Wet Wipes",link:"/sectors/handy-wet-wipes"},
+    ]},
     {
       title:"Products",link:"/products",hasSubMenu:true,submenu:categoriesMenu
     },
@@ -93,7 +105,9 @@ export default function AppLayout() {
       <Header menu={menu} isAbsolute={!isRelative }/>
       <main>
         <AnimatePresence>
-          <Outlet/>
+          <OutletContext.Provider value={setIsRelative}>
+              <Outlet/>
+          </OutletContext.Provider>
         </AnimatePresence>
       </main>
       <Footer mainLinks={menu} otherLinks={otherLinks}/>

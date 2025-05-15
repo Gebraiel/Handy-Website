@@ -10,6 +10,7 @@ import {Icon} from 'leaflet'
 import { motion } from "motion/react"
 import GallerySlider from './GallerySlider';
 import { getImagesFromBucket } from '../../services/sectors';
+import SwiperSlider from './SwiperSlider';
 const parentVarient = {
 
   visible:{
@@ -198,8 +199,13 @@ export default function HandyPaperSector() {
         </div>
       </Section>
 
-      <Section type="fullscreen" className='overflow-x-hidden bg-[#f1eeee]' >
-        {sectorImages.length>0&&<GallerySlider images={sectorImages} noOfCols={3}/>}
+      <Section type="fullscreen" className='overflow-x-hidden bg-[#f1eeee] px-5' >
+        {
+          sectorImages.length>0
+          &&
+          // <GallerySlider images={sectorImages} noOfCols={3}/>
+          <SwiperSlider images={sectorImages}/>
+        }
       </Section>
       </motion.div>
   )

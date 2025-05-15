@@ -24,12 +24,12 @@ export default function Header({menu,isAbsolute}) {
   return (
     <header
       ref={headerRef}
-      className={headerClasses}
-      // className={`transition-all duration-300  left-0 top-0 w-full z-50  text-white ${
-      //   isSticky
-      //     ? "fixed animate-fadeDown bg-primary bg-contain bg-[url('/pattern.png')]"
-      //     : "absolute bg-transparent"
-      // }  `}
+
+      className={`transition-all duration-300  left-0 top-0 w-full z-50  text-white ${!isAbsolute || isSticky ? "bg-primary bg-contain bg-[url('/pattern.png')]" : ""} ${
+        isSticky
+          ? "fixed animate-fadeDown  z-[51]"
+          : headerClasses
+      }  ` }
     >
       <div className="container w-[90%] flex items-center justify-between m-auto p-5">
         <Link to="/" className="max-w-40">
@@ -51,7 +51,7 @@ export default function Header({menu,isAbsolute}) {
                     <SubMenu item={item}/>
                     :
                   <li className=" border border-l-0 border-r-0  bg-primary uppercase font-bold " >
-                    <NavLink to={`${item.link}`} className={`flex gap-1 p-5 items-center w-fit text-white`} >
+                    <NavLink to={`${item.link}`} className={`flex gap-1 p-5 items-center w-fit text-white `} >
                         {item.title}
                     </NavLink>
                   </li>
@@ -64,7 +64,7 @@ export default function Header({menu,isAbsolute}) {
           <ul className="flex gap-10 ">
             {menu.map((item,index)=>
               <li className="uppercase font-bold relative has-submenu text-xs" key={index}>
-                <NavLink to={`${item.link}`} className={({ isActive }) => `${item.hasSubMenu ? 'flex gap-1 items-center ' : ""} ${isActive ? (isSticky ? 'text-secondary' : 'text-primary') : 'text-white'}`
+                <NavLink to={`${item.link}`} className={({ isActive }) => `${item.hasSubMenu ? 'flex gap-1 items-center ' : ""} ${isActive ? (isSticky || !isAbsolute ? 'text-secondary' : 'text-primary') : 'text-white'} text-sm `
                         
                 }>
                       {item.title}

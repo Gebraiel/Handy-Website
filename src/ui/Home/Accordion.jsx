@@ -6,7 +6,7 @@ import {motion,AnimatePresence} from "framer-motion";
 
 export default function Accordion({ accordion }) {
   const { heading, content } = accordion;
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(true);
   function handleToggle() {
     setIsOpen(!isOpen);
   }

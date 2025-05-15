@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import SectionTitle from '../ui/SectionTitle'
 import Banner from '../ui/Banner'
 import Section from '../ui/Section'
@@ -12,6 +12,7 @@ import Timeline from '../ui/About/Timeline'
 import BrandDifferentiationTab from '../ui/About/BrandDifferentiationTab'
 
 export default function About() {
+
   const navigation = useNavigation();
   const isLoading = navigation.state === "loading";
   if (isLoading) return <Loader />;

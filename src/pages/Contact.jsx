@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext, useEffect } from 'react'
 import Banner from '../ui/Banner'
 import SectionTitle from '../ui/SectionTitle'
 import Section from '../ui/Section'
@@ -6,16 +6,26 @@ import ContactSection from '../ui/ContactSection'
 import { useNavigation } from "react-router-dom"
 import Loader from '../ui/Loader'
 import Form from '../ui/Contact/Form'
+import OutletContext from '../context/OutletContext'
 
 export default function Contact() {
-    const navigation = useNavigation();
+  const setRelative = useContext(OutletContext);
+  
+  // setRelative(true);
+  const navigation = useNavigation();
   const isLoading = navigation.state === "loading";
+  useEffect(()=>{
+    setRelative(true);
+    return ()=>{
+      setRelative(false);
+    }
+  },[])
   if (isLoading) return <Loader />;
   return (
        <>
-         <Banner image={'/Contact/banner.webp'} className='!bg-[55%]' />
+         {/* <Banner image={'/Contact/banner.webp'} className='!bg-[55%]' />
             
-       
+        */}
          <Section>  
             <SectionTitle >
               Contact Us

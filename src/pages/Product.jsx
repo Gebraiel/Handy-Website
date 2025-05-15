@@ -9,6 +9,7 @@ import Paragraph from '../ui/Paragraph';
 import ToastSuccess from '../ui/ToastSuccess';
 import {AnimatePresence} from "motion/react";
 import Loader from '../ui/Loader';
+import { useNavigate } from 'react-router-dom';
 export default function Product() {
 
     const {title,image,details,category:{name:categoryName}} = useLoaderData();
@@ -19,11 +20,15 @@ export default function Product() {
         setTimeout(()=>setShowToast(false),2000);
     }
   const navigation = useNavigation();
+  const navigate = useNavigate();
   const isLoading = navigation.state === "loading";
   if (isLoading) return <Loader />;
   return (
         <>
             <Section>
+                <div>
+                    <button className='bg-primary text-white py-3 px-6 font-bold' onClick={()=>navigate(-1)}>Back</button>
+                </div>
                 <div className='flex flex-col lg:flex-row items-center justify-center gap-5'>
                     {
                         image &&
@@ -40,6 +45,7 @@ export default function Product() {
                         <button className='w-full bg-primary text-white py-3 font-bold'onClick={copyToClipboard}>Share</button>
                     </div>
                 </div>
+               
             </Section>
 
             
