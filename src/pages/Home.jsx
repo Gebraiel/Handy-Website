@@ -83,7 +83,7 @@ export default function Home() {
         />
       </Section>
       <Section className="relative">
-        <HandyBackground className="xl:bg-[bottom_-250px_left_-100px]"/>
+        <HandyBackground className="xl:!bg-[bottom_-250px_left_-100px]"/>
         <SectionTitle className="!leading-tight">
           <p className="text-secondary ">Your Premium Hygiene Partner</p>
           <p className="text-primary">for Everyday Freshness</p>

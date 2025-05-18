@@ -11,7 +11,7 @@ export default function Header({menu,isAbsolute}) {
   const [isSticky, setIsSticky] = useState(false);
   const headerRef = useRef(null); // Reference for the header element
 
-  const headerClasses = isAbsolute ? "transition-all duration-300 absolute left-0 top-0 w-full z-50  text-white":"bg-primary text-white"; 
+  const headerClasses = isAbsolute ? "absolute  text-white":"bg-primary text-white"; 
   useEffect(() => {
     function scrollHandle() {
       setIsSticky(window.scrollY > headerRef.current.offsetHeight);

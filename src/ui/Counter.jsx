@@ -1,25 +1,21 @@
 import React, { useEffect, useState } from 'react';
-export default function Counter({ counter, duration, countBy }) {
-  const [num, setNum] = useState(0);
+import CountUp from 'react-countup';
+import { useInView } from 'react-intersection-observer';
+
+export default function ResettingCounter({counter}) {
+  const { ref, inView } = useInView({ threshold: 0.5 });
+  const [start, setStart] = useState(false);
 
   useEffect(() => {
-    const totalIncrements = Math.ceil(counter / countBy); // Total steps needed
-    const stepDuration = duration / totalIncrements; // Duration for each step
+    if (inView) {
+      setStart(false);  // Reset first
+      setTimeout(() => setStart(true), 100); // Then restart count
+    }
+  }, [inView]);
 
-    const interval = setInterval(() => {
-      setNum((prevNum) => {
-        if (prevNum + countBy >= counter) {
-          clearInterval(interval); // Stop the interval when reaching the target
-          return counter;
-        }
-        return prevNum + countBy;
-      });
-    }, stepDuration);
-
-    return () => clearInterval(interval); // Cleanup interval on unmount
-  }, [counter, duration, countBy]);
-
-  return <p className="font-bold text-primary xl:text-7xl text-5xl w-52 m-auto">{num}</p>;
-
-
+  return (
+    <div ref={ref} className="font-bold text-primary xl:text-7xl text-5xl w-52 m-auto">
+      {start && <CountUp end={counter} duration={5} />}
+    </div>
+  );
 }

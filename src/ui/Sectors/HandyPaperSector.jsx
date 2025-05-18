@@ -80,7 +80,7 @@ export default function HandyPaperSector() {
       <Section className='mt-[50px]' type="fullscreen">
           <MapContainer
             center={[33.854721, 35.862285]}
-            className='h-96 '
+            className='h-96 z-10'
             zoom={4}
             scrollWheelZoom={false}
             worldCopyJump={true}  // Prevents the map from repeating

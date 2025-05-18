@@ -1,67 +1,85 @@
-import React, { useState } from 'react'
-import axios from '../../node_modules/axios/index'
+import React, { useContext, useEffect, useState } from 'react'
 import { useLoaderData,useNavigation } from 'react-router-dom'
 import Section from '../ui/Section';
-import Banner from '../ui/Banner';
-import SectionTitle from '../ui/SectionTitle';
-import { getProduct } from '../services/products';
+import { getCategoryProducts, getProduct } from '../services/products';
 import Paragraph from '../ui/Paragraph';
 import ToastSuccess from '../ui/ToastSuccess';
 import {AnimatePresence} from "motion/react";
-import Loader from '../ui/Loader';
 import { useNavigate } from 'react-router-dom';
-export default function Product() {
+import OutletContext from '../context/OutletContext';
+import { HiArrowSmallLeft } from "react-icons/hi2";
+import { HiArrowSmallRight } from "react-icons/hi2";
 
-    const {title,image,details,category:{name:categoryName}} = useLoaderData();
+export default function Product() {
+    const {product:{id,title,image,details,category:{name:categoryName}},products} = useLoaderData();
+    const prevIndex = products.findIndex((product)=>product.id == id) - 1;
+    const nextIndex = products.findIndex((product)=>product.id == id) + 1;
     const [showToast,setShowToast] = useState(false);
     function copyToClipboard(){
         navigator.clipboard.writeText(location.href);
         setShowToast(true);
         setTimeout(()=>setShowToast(false),2000);
     }
-  const navigation = useNavigation();
-  const navigate = useNavigate();
-  const isLoading = navigation.state === "loading";
-  if (isLoading) return <Loader />;
-  return (
-        <>
-            <Section>
-                <div>
-                    <button className='bg-primary text-white py-3 px-6 font-bold' onClick={()=>navigate(-1)}>Back</button>
-                </div>
-                <div className='flex flex-col lg:flex-row items-center justify-center gap-5'>
-                    {
-                        image &&
-                        <div className='w-full lg:w-1/2'>
-                            <img src={image} alt="product image" />
-                        </div>
-                    }
-                    <div className='space-y-5 w-full lg:w-1/2 '>
-                        <div>
-                            <h2 className='text-primary text-xl lg:text-3xl font-bold'>{title}</h2>
-                            <Paragraph className='text-secondary font-semibold' size="lg">{categoryName}</Paragraph>
-                        </div>
-                        <ul className='list-disc pl-5'>{details.split('|').map((item,index)=><li key={index}>{item}</li>)}</ul>
-                        <button className='w-full bg-primary text-white py-3 font-bold'onClick={copyToClipboard}>Share</button>
+    const navigate = useNavigate();
+    const setIsRelative = useContext(OutletContext);
+    useEffect(()=>{
+        setIsRelative(true);
+        return ()=>{
+            setIsRelative(false);
+        }
+    },[])
+    return (
+            <>
+                <Section>
+                    <div>
+                        <button className='button flex gap-2 items-center' onClick={()=>navigate(-1)}><span><HiArrowSmallLeft /></span>Back</button>
                     </div>
-                </div>
-               
-            </Section>
+                    <div className='flex flex-col lg:flex-row items-center justify-center gap-5'>
+                        {
+                            image &&
+                            <div className='w-full lg:w-1/2'>
+                                <img src={image} alt="product image" />
+                            </div>
+                        }
+                        <div className='space-y-5 w-full lg:w-1/2 '>
+                            <div>
+                                
 
-            
-                
-                <AnimatePresence>
-                    {
-                        showToast &&<ToastSuccess message={"Product URL Copied To Clipboard"}/>
-                    }   
-                </AnimatePresence>
-            
-        </>  
-    )
+                                <h2 className='text-primary text-xl lg:text-3xl font-bold'>
+                                    {title}
+                                </h2>
+                                
+                                
+                                <Paragraph className='text-secondary font-semibold' size="lg">{categoryName}</Paragraph>
+                            </div>
+                            <ul className='list-disc pl-5'>{details.split('|').map((item,index)=><li key={index}>{item}</li>)}</ul>
+                            <button className='w-full button'onClick={copyToClipboard}>Share</button>
+                        </div>
+                    </div>
+                    <div className='flex justify-between items-center'>
+                        <button onClick={()=>navigate(`/product/${products[prevIndex].id}`)} className={'button flex gap-1 items-center '} disabled={prevIndex < 0}>
+                            <span><HiArrowSmallLeft /></span>
+                            Prev
+                        </button>
+                        <button onClick={()=>navigate(`/product/${products[nextIndex].id}`)} className='button flex gap-1 items-center' disabled={nextIndex >= products.length}>
+                            Next
+                            <span><HiArrowSmallRight /></span>
+
+                        </button>
+                    </div>
+                </Section>
+                    <AnimatePresence>
+                        {
+                            showToast &&<ToastSuccess message={"Product URL Copied To Clipboard"}/>
+                        }   
+                    </AnimatePresence>
+            </>  
+        )
 }
 
 export async function loader({params}){
     const {productId} = params
     const product = (await getProduct(Number(productId)))[0];
-    return product;
+    const products = await getCategoryProducts(product.category.id);
+    return {product,products};
 }

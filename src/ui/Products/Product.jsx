@@ -45,7 +45,7 @@ export default function Product({product,view,categoryName}) {
         <div className="mt-5">
             <Link
             to={`/product/${product.id}`}
-            className="py-2 px-3 bg-primary text-white font-bold"
+            className="button"
             >
             Details
             </Link>

@@ -10,26 +10,17 @@ import {AnimatePresence} from "motion/react";
 import { useNavigation } from "react-router-dom";
 import { useState } from "react";
 import OutletContext from "../context/OutletContext";
-
+import { getProducts } from "../services/products";
+ 
 export default function AppLayout() {
   const matches = useMatches()
-  const isProducts = matches[1].pathname.includes('/product/');
-  const isNotFound = matches[0].params['*'] != undefined;
-  const navigation = useNavigation();
+  // const isProducts = matches[1].pathname.includes('/product/');
+  // const isNotFound = matches[0].params['*'] != undefined;
+  // const navigation = useNavigation();
   // const isRelative = isNotFound || isProducts;
   const [isRelative,setIsRelative] = useState(false);
-  const categories = useLoaderData();
-  console.log(categories);
-  // const categoriesMenu = categories.map((category) => ({
-  //   title: category.name,
-  //   link: `/category/${category.id}`,
-  // }));  
-  //Jumbo 
-  //Home Care
-  //Facial 
-  //Toilet
-  //Wet Wipes
-
+  const {categories,products} = useLoaderData();
+  console.log(products);
   const categoriesMenu = [
     {
       title:"Jumbo Rolls",
@@ -106,7 +97,7 @@ export default function AppLayout() {
       <main>
         <AnimatePresence>
           <OutletContext.Provider value={setIsRelative}>
-              <Outlet/>
+                <Outlet/>
           </OutletContext.Provider>
         </AnimatePresence>
       </main>
@@ -115,5 +106,7 @@ export default function AppLayout() {
   );
 }
 export async function loader(){
-  return await getCategories();
+  const categories = await getCategories();
+  const products = await getProducts();
+  return {categories,products}
 }

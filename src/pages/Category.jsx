@@ -11,6 +11,7 @@ import ProductList from "../ui/Products/ProductList";
 import SectionTitle from "../ui/SectionTitle";
 import CategoriesContext from "../context/CategoriesContext";
 import { useSearchParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export default function Category() {
   const [view, setView] = useState("list");
@@ -31,7 +32,7 @@ export default function Category() {
   }, [products]);
   const navigation = useNavigation();
   const isLoading = navigation.state === "loading";
-  if (isLoading) return <Loader />;
+  // if (isLoading) return <Loader />;
   return (
     <>
       <Banner
@@ -89,7 +90,12 @@ export default function Category() {
             <SectionTitle>No Products Found</SectionTitle>
           )}
         </div>
+
+          <div className="text-center mt-10">
+            <a href="/files/Product Catalog.pdf" download='Products Catalog' className="button">Download Catalog</a>
+          </div>
       </Section>
+
     </>
   );
 }
