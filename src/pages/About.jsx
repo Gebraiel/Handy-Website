@@ -24,8 +24,9 @@ export default function About() {
         <SectionTitle className='!text-left'>About Us</SectionTitle>
           
         <Paragraph size='md' className=''>
-          Alex Converta is an Egyptian leader in tissue paper production, specializing in both white and colored paper, and converting it into essential hygiene products like facial tissues, handkerchiefs, toilet rolls, table napkins, kitchen towels, and sanitary towels.
-  "From a humble beginning to becoming a trusted household name, Handy's journey is marked by innovation, resilience, and a dedication to making everyday life better for millions." In 2016, Habibco Trade Co. acquired Alex Converta and invested in cutting-edge Recard tissue machines to boost production.
+         Alex Converta is an Egyptian leader in tissue paper production, specializing in both white and colored paper, and converting it into essential hygiene products like facial tissues, handkerchiefs, toilet rolls, table napkins, kitchen towels, and sanitary towels.
+"From a humble beginning to becoming a trusted household name, Handy's journey is marked by innovation, resilience, and a dedication to making everyday life better for millions."
+Handy Paper established its first manufacturing facility in New Borg El-Arab City, Alexandria, launching operations with the iconic Recard machine and a daily production capacity of up to 15 tons of jumbo tissue rolls.
 
           </Paragraph>
       </Section>

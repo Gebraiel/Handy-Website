@@ -71,12 +71,20 @@ export default function Home() {
               image:{
                 desktop:"/banner/slider-4.webp",
                 mobile:"banner/slider-4-mobile.webp"
+              },
+              content:{
+                heading:"Smart Storage Solutions for Premium Tissue Products.",
+                subtitle:""
               }
             }
             ,{
               image:{
                 desktop:"/banner/slider-5.webp",
                 mobile:"/banner/slider-5-mobile.webp"
+              },
+              content:{
+                heading:"Spacious Facilities Powering Efficient Distribution.",
+                subtitle:""
               }
             }
           ]}
