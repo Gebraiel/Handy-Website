@@ -32,12 +32,12 @@ export default function AboutSection() {
           </div>
           <div className="flex flex-col gap-5 justify-center mt-5 bg-white">
             {accordions.map((accordion, index) => (
-              <Accordion accordion={accordion} key={index} />
+              <Accordion accordion={accordion} open={true} key={index} />
             ))}
           </div>
         </div>
         <div className="max-w-[400px] m-auto">
-          <img className="m-auto" src={handy} alt="" />
+          <img className="m-auto"  src={handy} alt="" />
         </div>
       </div>
     </>

@@ -32,7 +32,7 @@ const sustainabilityImagesArray = Array.from(
 export default function Home() {
     const navigation = useNavigation();
   const isLoading = navigation.state === "loading";
-  if (isLoading) return <Loader />;
+
   return (
     <> 
       <Section type="fullscreen">

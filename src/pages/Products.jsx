@@ -8,7 +8,6 @@ import Loader from '../ui/Loader'
 export default function Products() {
   const navigation = useNavigation();
   const isLoading = navigation.state === "loading";
-  if (isLoading) return <Loader />;
   return (
     <>
       <Banner image={'/Banners/products.webp'} />

@@ -20,7 +20,6 @@ export default function Contact() {
       setRelative(false);
     }
   },[])
-  if (isLoading) return <Loader />;
   return (
        <>
          {/* <Banner image={'/Contact/banner.webp'} className='!bg-[55%]' />

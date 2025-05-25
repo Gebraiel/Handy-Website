@@ -28,7 +28,6 @@ export default function Sustainability() {
   function closeLightbox(){
     setActive(-1);
   }
-  if (isLoading) return <Loader />;
   return (
     
     <>

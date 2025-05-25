@@ -10,7 +10,6 @@ export default function Branches() {
 
   const navigation = useNavigation();
   const isLoading = navigation.state === "loading";
-  if (isLoading) return <Loader />;
   return (
     <>
       <Banner image={"/banner/slider-1.png"}/>

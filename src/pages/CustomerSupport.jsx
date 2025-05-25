@@ -9,7 +9,6 @@ import Loader from '../ui/Loader'
 export default function CustomerSupport() {
       const navigation = useNavigation();
   const isLoading = navigation.state === "loading";
-  if (isLoading) return <Loader />;
   return (
     <>
          <Banner image={'/Customer-Support/banner.webp'} />

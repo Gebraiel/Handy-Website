@@ -4,9 +4,9 @@ import { FaCircleMinus } from "react-icons/fa6";
 import Paragraph from "../Paragraph";
 import {motion,AnimatePresence} from "framer-motion";
 
-export default function Accordion({ accordion }) {
+export default function Accordion({ accordion ,open}) {
   const { heading, content } = accordion;
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(open);
   function handleToggle() {
     setIsOpen(!isOpen);
   }
