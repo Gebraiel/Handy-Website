@@ -83,13 +83,28 @@ export default function AppLayout() {
     {title:"Sustainability",link:"/sustainability"},
     {title:"Media Center",link:"/media-center"},
     {title:"Contact Us",link:"/contact"},
+    {title:"AR"}
   ]
   const otherLinks=[
     {title:"Health & Safety Measures",link:"/health"},
     {title:"Customer Support",link:"/support"},
     {title:"Our Branches",link:"/branches"},
   ]
-
+  const footerMenu = [
+    {title:"Home",link:"/"},
+    {title:"About Us",link:"/about"},
+    {title:"Sectors",link:"/sectors",hasSubMenu:true,submenu:[
+      {title:"Handy Paper",link:"/sectors/handy-paper"},
+      {title:"Handy Tissue Products",link:"/sectors/handy-tissue-products"},
+      {title:"Wet Wipes",link:"/sectors/handy-wet-wipes"},
+    ]},
+    {
+      title:"Products",link:"/products",hasSubMenu:true,submenu:categoriesMenu
+    },
+    {title:"Sustainability",link:"/sustainability"},
+    {title:"Media Center",link:"/media-center"},
+    {title:"Contact Us",link:"/contact"},
+  ]
   return (
     <CategoriesContext.Provider value={categories} >
       <ScrollToTop />
@@ -101,7 +116,7 @@ export default function AppLayout() {
           </OutletContext.Provider>
         </AnimatePresence>
       </main>
-      <Footer mainLinks={menu} otherLinks={otherLinks}/>
+      <Footer mainLinks={footerMenu} otherLinks={otherLinks}/>
     </CategoriesContext.Provider>
   );
 }

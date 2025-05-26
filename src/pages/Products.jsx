@@ -19,6 +19,9 @@ export default function Products() {
           <h1 className="text-primary">Clean, fresh, and on-the-go Quality That Speaks for Itself</h1>
         </SectionTitle>
         <ProductCategories />
+         <div className="text-center mt-10">
+            <a href="/files/Product Catalog.pdf" download='Products Catalog' className="button">Download Catalog</a>
+          </div>
       </Section>
     </>
     

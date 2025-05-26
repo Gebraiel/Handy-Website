@@ -49,18 +49,18 @@ export default function Footer({mainLinks,otherLinks}) {
               </li>
               <li className="flex flex-col sm:flex-row items-center justify-start gap-5">
                 <FaEnvelopeOpen className="text-3xl" />
-                <Paragraph size="sm" className="text-center sm:text-left">tissue.mill@handy.com.eg</Paragraph>
+                <Paragraph size="sm" className="text-center sm:text-left"><a href="mailto:tissue.mill@handy.com.eg">tissue.mill@handy.com.eg</a></Paragraph>
               </li>
               <li className="flex flex-col sm:flex-row items-center justify-start gap-5 ">
                  <FaTty className="text-3xl" />
                   <Paragraph className="text-center sm:text-left font-medium flex flex-col">
-                    <span>+2 03 4626379</span>
-                    <span>+2 03 4626425</span>
+                    <a href="tel:+2 03 4626379">+2 03 4626379</a>
+                    <a href="tel:+2 03 4626425">+2 03 4626425</a>
                   </Paragraph>
               </li>
               <li className="flex flex-col sm:flex-row items-center justify-start gap-5">
                 <FaFax className="w-[24px] text-3xl" />
-                <Paragraph className="text-center sm:text-left font-medium">+2 03 4626164</Paragraph>
+                <Paragraph className="text-center sm:text-left font-medium"><a href="tel:+2 03 4626164">+2 03 4626164</a></Paragraph>
               </li>
             </ul>
           </div>
@@ -78,17 +78,17 @@ export default function Footer({mainLinks,otherLinks}) {
               </li>
               <li className="flex flex-col sm:flex-row items-center justify-start gap-5">
                 <FaEnvelopeOpen className="text-3xl" />
-                <Paragraph size="sm" className="text-center sm:text-left">info@handy.com.eg</Paragraph>
+                <Paragraph size="sm" className="text-center sm:text-left"><a href="mailto:info@handy.com.eg">info@handy.com.eg</a></Paragraph>
               </li>
               <li className="flex flex-col sm:flex-row items-center justify-start gap-5 ">
                  <FaTty className="text-3xl" />
                   <Paragraph className="text-center sm:text-left font-medium flex flex-col">
-                    <span>+2 02 38333156</span>
+                    <a href="tel:+2 02 38333156">+2 02 38333156</a>
                   </Paragraph>
               </li>
               <li className="flex flex-col sm:flex-row items-center justify-start gap-5">
                 <FaFax className="w-[24px] text-3xl" />
-                <Paragraph className="text-center sm:text-left font-medium">+2 02 38333157</Paragraph>
+                <Paragraph className="text-center sm:text-left font-medium"><a href="tel:+2 02 38333157">+2 02 38333157</a></Paragraph>
               </li>
             </ul>
           </div>

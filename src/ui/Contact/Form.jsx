@@ -4,10 +4,16 @@ import SectionTitle from '../SectionTitle';
 import Paragraph from '../Paragraph';
 
 export default function Form() {
-  const {register,handleSubmit,formState: { errors }} = useForm();
+  const {register,watch,handleSubmit,formState: { errors }} = useForm();
   function submitForm(data){
   }
-   const inputClasses = 'border border-[#ccc] py-2 px-3 focus:outline-primary w-full mt-2';
+
+    const inqueryType = watch("inqueryType");
+    const sector = watch("sector");
+
+    const subjectValue = inqueryType&&sector ?`${sector}-${inqueryType}`:'';
+
+   const inputClasses = 'border border-[#ccc] py-2 px-3 focus:outline-primary w-full mt-2 disabled:bg-[#ccc]';
   return (
     <form onSubmit={handleSubmit(submitForm)} className='bg-white shadow-md p-10'>
         <SectionTitle className='!text-left mb-5'>Contact Form</SectionTitle>
@@ -90,7 +96,7 @@ export default function Form() {
             </div>
             <div>
                 <label>Subject</label>
-                <input type='text' {...register('subject',{required:"This input is required"})} className={`${inputClasses}`}/>
+                <input type='text' disabled value={subjectValue} {...register('subject')} className={`${inputClasses}`}/>
                 {errors.subject && <Paragraph size="sm" className='text-secondary italic my-3'>{errors.subject.message}</Paragraph>}
 
             </div>

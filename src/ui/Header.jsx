@@ -51,7 +51,7 @@ export default function Header({menu,isAbsolute}) {
                     <SubMenu item={item}/>
                     :
                   <li className=" border border-l-0 border-r-0  bg-primary uppercase font-bold " >
-                    <NavLink to={`${item.link}`} className={`flex gap-1 p-5 items-center w-fit text-white `} >
+                    <NavLink to={`${item.link? item.link : '/'}`} className={`flex gap-1 p-5 items-center w-fit text-white `} >
                         {item.title}
                     </NavLink>
                   </li>
@@ -64,7 +64,7 @@ export default function Header({menu,isAbsolute}) {
           <ul className="flex gap-10 ">
             {menu.map((item,index)=>
               <li className="uppercase font-bold relative has-submenu text-xs" key={index}>
-                <NavLink to={`${item.link}`} className={({ isActive }) => `${item.hasSubMenu ? 'flex gap-1 items-center ' : ""} ${isActive ? (isSticky || !isAbsolute ? 'text-secondary' : 'text-primary') : 'text-white'} text-sm `
+                <NavLink to={`${item.link? item.link : '/'}`} className={({ isActive }) => `${item.hasSubMenu ? 'flex gap-1 items-center ' : ""} ${isActive ? (isSticky || !isAbsolute ? 'text-secondary' : 'text-primary') : 'text-white'} text-sm `
                         
                 }>
                       {item.title}

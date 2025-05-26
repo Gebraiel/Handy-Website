@@ -91,9 +91,7 @@ export default function Category() {
           )}
         </div>
 
-          <div className="text-center mt-10">
-            <a href="/files/Product Catalog.pdf" download='Products Catalog' className="button">Download Catalog</a>
-          </div>
+         
       </Section>
 
     </>

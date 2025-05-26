@@ -24,22 +24,22 @@ export default function ContactSection() {
           </li>
           <li className="flex items-center gap-5 text-primary">
             <FaEnvelopeOpen className="w-[24px] text-2xl" />
-            <Paragraph className="font-medium">tissue.mill@handy.com.eg</Paragraph>
+            <Paragraph className="font-medium"><a href="mailto:tissue.mill@handy.com.eg">tissue.mill@handy.com.eg</a></Paragraph>
           </li>
           <li className="flex items-center gap-5 text-primary">
             <FaTty className="w-[24px] text-2xl" />
             <Paragraph className="font-medium flex flex-col">
-              <span>+2 03 4626379</span>
-              <span>+2 03 4626425</span>
+              <a href="tel:+2034626379">+2 03 4626379</a>
+              <a href="tel:+2034626425">+2 03 4626425</a>
             </Paragraph>
           </li>
           <li className="flex items-center gap-5 text-primary">
             <FaPhone className="w-[24px] text-2xl" />
-            <Paragraph className="font-medium">+2 0122390783</Paragraph>
+            <Paragraph className="font-medium"><a href="tel:+2 0122390783">+2 0122390783</a></Paragraph>
           </li>
           <li className="flex items-center gap-5 text-primary">
             <FaFax className="w-[24px] text-2xl" />
-            <Paragraph className="font-medium">+2 03 4626164</Paragraph>
+            <Paragraph className="font-medium"><a href="tel:+2034626164">+2 03 4626164</a></Paragraph>
           </li>
         </ul>
       </div>
@@ -58,18 +58,18 @@ export default function ContactSection() {
           </li>
           <li className="flex items-center gap-5 text-primary">
             <FaEnvelopeOpen className="w-[24px] text-2xl" />
-            <Paragraph className="font-medium">info@handy.com.eg</Paragraph>
+            <Paragraph className="font-medium"> <a href="mailto:info@handy.com.eg">info@handy.com.eg</a></Paragraph>
           </li>
           <li className="flex items-center gap-5 text-primary">
             <FaTty className="w-[24px] text-2xl" />
             <Paragraph className="font-medium flex flex-col">
-              <span>+2 02 38333156</span>
+              <a href="tel:+20238333156">+2 02 38333156</a>
             </Paragraph>
           </li>
 
           <li className="flex items-center gap-5 text-primary">
             <FaFax className="w-[24px] text-2xl" />
-            <Paragraph className="font-medium">+2 02 38333157</Paragraph>
+            <Paragraph className="font-medium"><a href="tel:+20238333157">+2 02 38333157</a></Paragraph>
           </li>
         </ul>
       </div>
