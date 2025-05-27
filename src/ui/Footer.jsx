@@ -44,8 +44,8 @@ export default function Footer({mainLinks,otherLinks}) {
             <ul className="space-y-5 mt-5">
               <li className="flex flex-col sm:flex-row items-center justify-start gap-5">
                 <FaLocationDot className="text-3xl"/>
-                <Paragraph size="sm" className="text-center sm:text-left">Block No.13, Second Industrial Zone, New Borg El Arab City,
-                Alexandria, Egypt.</Paragraph>
+                <Paragraph size="sm" className="text-center sm:text-left"><a href="https://maps.app.goo.gl/sQavxE64RvDio4LT8" target="_blank">Block No.13, Second Industrial Zone, New Borg El Arab City,
+                Alexandria, Egypt.</a></Paragraph>
               </li>
               <li className="flex flex-col sm:flex-row items-center justify-start gap-5">
                 <FaEnvelopeOpen className="text-3xl" />
@@ -73,8 +73,8 @@ export default function Footer({mainLinks,otherLinks}) {
             <ul className="space-y-5 mt-5">
               <li className="flex flex-col sm:flex-row items-center justify-start gap-5">
                 <FaLocationDot className="text-3xl"/>
-                <Paragraph size="sm" className="text-center sm:text-left">Block No. (86,87,88), Fourth Industrial Zone, October 6th City,
-                Giza, Egypt.</Paragraph>
+                <Paragraph size="sm" className="text-center sm:text-left"><a href="https://maps.app.goo.gl/4VppVHX4RHzxSv348" target="_blank">Block No. (86,87,88), Fourth Industrial Zone, October 6th City,
+                Giza, Egypt.</a></Paragraph>
               </li>
               <li className="flex flex-col sm:flex-row items-center justify-start gap-5">
                 <FaEnvelopeOpen className="text-3xl" />
