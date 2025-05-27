@@ -218,7 +218,7 @@ export default function About() {
       </Section>
       <Section className="bg-[#f1eeee]">
         <SectionTitle>Our Journey</SectionTitle>
-        <img src="/About/cover.webp"/>
+        <img src="/About/Our Journey.webp"/>
 
         <Timeline />
       </Section>
