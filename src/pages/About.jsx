@@ -218,6 +218,8 @@ export default function About() {
       </Section>
       <Section className="bg-[#f1eeee]">
         <SectionTitle>Our Journey</SectionTitle>
+        <img src="/About/cover.webp"/>
+
         <Timeline />
       </Section>
       <Section className="!pb-0">
@@ -236,7 +238,6 @@ export default function About() {
       </Tabs>
       <Section>
         <SectionTitle>People & Workplace Culture at Handy</SectionTitle>
-        <img src="/sectors/cover.webp"/>
         <Paragraph size="md" className="">
           At Handy, we are committed to creating a modern, inclusive, and
           inspiring work environment that values open communication over
