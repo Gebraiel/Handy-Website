@@ -219,7 +219,8 @@ export default function About() {
       <Section className="bg-[#f1eeee]">
         <SectionTitle>Our Journey</SectionTitle>
         <div className="mb-[100px]">
-          <img src="/About/Our Journey.webp" alt="Our Joureny"/>
+          <img className="xl:block hidden" src="/About/Our Journey.webp" alt="Our Joureny"/>
+          <img className="block xl:hidden" src="/About/Our Journey Mobile.webp" alt="Our Joureny"/>
         </div>
 
         <Timeline />
