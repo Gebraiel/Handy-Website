@@ -18,8 +18,10 @@ export default function ContactSection() {
           <li className="flex items-center gap-5 text-primary">
             <FaMapMarkerAlt className="w-[24px]  text-2xl" />
             <Paragraph className="font-medium" size="sm">
+              <a href="https://maps.app.goo.gl/sQavxE64RvDio4LT8" target="_blank">
               Block No.13, Second Industrial Zone, New Borg El Arab City,
               Alexandria, Egypt.
+              </a>
             </Paragraph>
           </li>
           <li className="flex items-center gap-5 text-primary">
@@ -52,8 +54,11 @@ export default function ContactSection() {
           <li className="flex items-center gap-5 text-primary">
             <FaMapMarkerAlt className="w-[24px] text-2xl" />
             <Paragraph className="font-medium" size="sm">
+              <a href="https://maps.app.goo.gl/4VppVHX4RHzxSv348" target="_blank">
               Block No. (86,87,88), Fourth Industrial Zone, October 6th City,
               Giza, Egypt.
+              </a>
+              
             </Paragraph>
           </li>
           <li className="flex items-center gap-5 text-primary">

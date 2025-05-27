@@ -59,10 +59,10 @@ export default function Product() {
                     <div className='flex justify-between items-center'>
                         <button onClick={()=>navigate(`/product/${products[prevIndex].id}`)} className={'button flex gap-1 items-center '} disabled={prevIndex < 0}>
                             <span><HiArrowSmallLeft /></span>
-                            Prev
+                            Previous Product
                         </button>
                         <button onClick={()=>navigate(`/product/${products[nextIndex].id}`)} className='button flex gap-1 items-center' disabled={nextIndex >= products.length}>
-                            Next
+                            Next Product
                             <span><HiArrowSmallRight /></span>
 
                         </button>

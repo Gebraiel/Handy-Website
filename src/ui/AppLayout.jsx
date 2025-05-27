@@ -83,7 +83,8 @@ export default function AppLayout() {
     {title:"Sustainability",link:"/sustainability"},
     {title:"Media Center",link:"/media-center"},
     {title:"Contact Us",link:"/contact"},
-    {title:"AR"}
+    {title:"AR"},
+    {title:"EN"}
   ]
   const otherLinks=[
     {title:"Health & Safety Measures",link:"/health"},
