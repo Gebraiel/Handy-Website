@@ -236,7 +236,7 @@ export default function About() {
       </Tabs>
       <Section>
         <SectionTitle>People & Workplace Culture at Handy</SectionTitle>
-
+        <img src="/sectors/cover.webp"/>
         <Paragraph size="md" className="">
           At Handy, we are committed to creating a modern, inclusive, and
           inspiring work environment that values open communication over
