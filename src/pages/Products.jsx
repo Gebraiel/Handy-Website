@@ -6,6 +6,8 @@ import Banner from '../ui/Banner'
 import { useNavigation } from "react-router-dom"
 import Loader from '../ui/Loader'
 export default function Products() {
+    console.log("Products");
+
   const navigation = useNavigation();
   const isLoading = navigation.state === "loading";
   return (
@@ -15,8 +17,8 @@ export default function Products() {
     
       <Section>      
         <SectionTitle className="!leading-tight">
-          <h1 className="text-secondary ">Handy Products</h1>
-          <h1 className="text-primary">Clean, fresh, and on-the-go Quality That Speaks for Itself</h1>
+          <p className="text-secondary ">Handy Products</p>
+          <p className="text-primary">Clean, fresh, and on-the-go Quality That Speaks for Itself</p>
         </SectionTitle>
         <ProductCategories />
          <div className="text-center mt-10">

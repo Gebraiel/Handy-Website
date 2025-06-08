@@ -11,6 +11,8 @@ import { HiArrowSmallLeft } from "react-icons/hi2";
 import { HiArrowSmallRight } from "react-icons/hi2";
 
 export default function Product() {
+    console.log("Product");
+
     const {product:{id,title,image,details,category:{name:categoryName}},products} = useLoaderData();
     const prevIndex = products.findIndex((product)=>product.id == id) - 1;
     const nextIndex = products.findIndex((product)=>product.id == id) + 1;

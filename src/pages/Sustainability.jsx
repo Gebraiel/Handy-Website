@@ -22,6 +22,8 @@ const lightBoxImages = Array.from(
 );
 
 export default function Sustainability() {
+    console.log("Sustainability");
+
   const [active,setActive] = useState(-1);
   const navigation = useNavigation();
   const isLoading = navigation.state === "loading";

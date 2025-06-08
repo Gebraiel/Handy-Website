@@ -14,6 +14,8 @@ import { useSearchParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 
 export default function Category() {
+  console.log("Category");
+
   const [view, setView] = useState("list");
   const [packagesList, setPackagesList] = useState([]);
   const[filter,setFilter] = useState({package:"all",subcategory:""});

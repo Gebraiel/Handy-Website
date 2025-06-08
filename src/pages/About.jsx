@@ -14,6 +14,7 @@ import Accordion from "../ui/Home/Accordion";
 import handy from "../assets/handy.webp";
 
 export default function About() {
+  console.log("About");
   const navigation = useNavigation();
   const isLoading = navigation.state === "loading";
   const accordions = [

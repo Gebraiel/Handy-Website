@@ -30,8 +30,9 @@ const sustainabilityImagesArray = Array.from(
 
 
 export default function Home() {
-    const navigation = useNavigation();
-  const isLoading = navigation.state === "loading";
+  console.log("Home");
+
+  const navigation = useNavigation();
 
   return (
     <> 

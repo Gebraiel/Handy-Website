@@ -5,6 +5,7 @@ import Typing from "./Typing";
 import Bullets from "./Bullets";
 function Slider({ slides}) {
   const [active, setActive] = useState(0);
+  console.log("Slider rendering");
   let intervalRef = useRef(null)
   const intervalTime = 5000;
   function handleClick(fn){
@@ -32,7 +33,7 @@ function Slider({ slides}) {
       <div className="absolute w-full h-full left-0 top-0 bg-[#09216d] opacity-30 z-10"></div>
       <div className={`relative h-full`}>
         {slides.map((slide, index) => (
-          <>
+          <div key={index}>
             <div className="hidden lg:block">
               <img
               src={slide.image.desktop}
@@ -51,7 +52,7 @@ function Slider({ slides}) {
                 key={slide.image.mobile}
               />
             </div>
-          </>
+          </div>
         ))}
       </div>
       <div className="text-center w-full h-full  absolute left-0 top-0 flex justify-center items-center z-10 text-white">

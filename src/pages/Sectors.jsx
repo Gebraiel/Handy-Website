@@ -15,6 +15,7 @@ import SectorsNavigation from "../ui/Sectors/SectorsNavigation";
 import Loader from "../ui/Loader";
 import { useNavigation } from "react-router-dom";
 export default function Sectors() {
+  console.log("Sectors");
 
   const navigation = useNavigation();
   const isLoading = navigation.state === "loading";

@@ -11,16 +11,10 @@ import { useNavigation } from "react-router-dom";
 import { useState } from "react";
 import OutletContext from "../context/OutletContext";
 import { getProducts } from "../services/products";
+import HeaderWithRealive from "./HeaderWithRealive";
  
 export default function AppLayout() {
-  const matches = useMatches()
-  // const isProducts = matches[1].pathname.includes('/product/');
-  // const isNotFound = matches[0].params['*'] != undefined;
-  // const navigation = useNavigation();
-  // const isRelative = isNotFound || isProducts;
-  const [isRelative,setIsRelative] = useState(false);
   const {categories,products} = useLoaderData();
-  console.log(products);
   const categoriesMenu = [
     {
       title:"Jumbo Rolls",
@@ -69,23 +63,6 @@ export default function AppLayout() {
    
     
   ]
-  const menu = [
-    {title:"Home",link:"/"},
-    {title:"About Us",link:"/about"},
-    {title:"Sectors",link:"/sectors",hasSubMenu:true,submenu:[
-      {title:"Handy Paper",link:"/sectors/handy-paper"},
-      {title:"Handy Tissue Products",link:"/sectors/handy-tissue-products"},
-      {title:"Wet Wipes",link:"/sectors/handy-wet-wipes"},
-    ]},
-    {
-      title:"Products",link:"/products",hasSubMenu:true,submenu:categoriesMenu
-    },
-    {title:"Sustainability",link:"/sustainability"},
-    {title:"Media Center",link:"/media-center"},
-    {title:"Contact Us",link:"/contact"},
-    {title:"AR"},
-    {title:"EN"}
-  ]
   const otherLinks=[
     {title:"Health & Safety Measures",link:"/health"},
     {title:"Customer Support",link:"/support"},
@@ -109,14 +86,15 @@ export default function AppLayout() {
   return (
     <CategoriesContext.Provider value={categories} >
       <ScrollToTop />
-      <Header menu={menu} isAbsolute={!isRelative }/>
+      
+      <HeaderWithRealive render={(setIsRelative)=>
       <main>
         <AnimatePresence>
           <OutletContext.Provider value={setIsRelative}>
                 <Outlet/>
           </OutletContext.Provider>
         </AnimatePresence>
-      </main>
+      </main>}/>
       <Footer mainLinks={footerMenu} otherLinks={otherLinks}/>
     </CategoriesContext.Provider>
   );

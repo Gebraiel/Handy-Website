@@ -8,6 +8,7 @@ import { FaFax } from "react-icons/fa";
 
 export default function Footer({mainLinks,otherLinks}) {
   const year = new Date().getFullYear();
+  console.log("FOOTER")
   return (
     <footer className="bg-primary text-white bg-[length:60%] bg-[url('/pattern.png')]">
       <div className="container w-[80%] border-t-0 py-24 m-auto grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-4 gap-5 p-5">
@@ -22,13 +23,13 @@ export default function Footer({mainLinks,otherLinks}) {
             <div className="">
               <ul className="uppercase">
                 {
-                  mainLinks.map((link) => <li><Link key={link} to={link.link}>{link.title}</Link></li>)
+                  mainLinks.map((link,index) => <li key={index}><Link  to={link.link}>{link.title}</Link></li>)
                 }
                 
               </ul>
               <ul className="uppercase">
                 {
-                  otherLinks.map((link) => <li><Link key={link} to={link.link}>{link.title}</Link></li>)
+                  otherLinks.map((link,index) => <li key={index}><Link  to={link.link}>{link.title}</Link></li>)
                 }
                 
                 

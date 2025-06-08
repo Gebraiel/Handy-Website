@@ -9,11 +9,14 @@ import Form from '../ui/Contact/Form'
 import OutletContext from '../context/OutletContext'
 
 export default function Contact() {
+    console.log("Contact");
+
   const setRelative = useContext(OutletContext);
   
   // setRelative(true);
   const navigation = useNavigation();
   const isLoading = navigation.state === "loading";
+  console.log("Contact");
   useEffect(()=>{
     setRelative(true);
     return ()=>{

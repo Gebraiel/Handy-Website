@@ -7,6 +7,7 @@ import Loader from "../ui/Loader";
 import { useNavigation } from "react-router-dom";
 
 export default function Branches() {
+  console.log("Branches");
 
   const navigation = useNavigation();
   const isLoading = navigation.state === "loading";
