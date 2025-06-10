@@ -11,6 +11,10 @@ import { motion } from "motion/react"
 import GallerySlider from './GallerySlider';
 import { getImagesFromBucket } from '../../services/sectors';
 import SwiperSlider from './SwiperSlider';
+import Counter from "../Counter";
+import { FaPeopleGroup } from "react-icons/fa6";
+import { FaGlobeAmericas } from "react-icons/fa";
+
 const parentVarient = {
 
   visible:{
@@ -86,10 +90,10 @@ export default function HandyPaperSector() {
             worldCopyJump={true}  // Prevents the map from repeating
             noWrap={true} 
           >
-              <TileLayer
-    attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-    url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-  />
+             <TileLayer
+  attribution='&copy; <a href="https://carto.com/">CARTO</a>'
+  url="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png"
+/>
             <Marker position={[33.854721, 35.862285]} icon={new Icon({iconUrl: markerIconPng, iconSize: [25, 41], iconAnchor: [12, 41]})}>
   
             </Marker>
@@ -198,7 +202,37 @@ export default function HandyPaperSector() {
           </motion.div>
         </div>
       </Section>
+      <Section>
+        <div className="grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-3  lg:w-full">
+          <div className="p-5 bg-white shadow-md  text-center space-y-5 ">
+            <div className="flex flex-col items-center gap-2 justify-center text-lg"><img src="/tissue-roll.png" alt="" className="w-12" /> <b>Tissue Paper Mill Capacity</b></div>
+            <Counter counter="25000"  />
 
+            <Paragraph size="sm">
+              Tons / Year 
+            </Paragraph>
+          </div>
+          
+          <div className="p-5 bg-white shadow-md  text-center space-y-5 ">
+            <div className="flex flex-col items-center gap-2 justify-center text-lg"><FaPeopleGroup  className="size-12" /> <b>Employee in Handy Paper Mill</b></div>
+            <Counter counter="148" />
+
+            <Paragraph size="sm">
+              Tons / Year 
+            </Paragraph>
+          </div>
+         
+          <div className="p-5 bg-white shadow-md  text-center space-y-5 ">
+            <div className="flex flex-col items-center gap-2 justify-center text-lg"><FaGlobeAmericas  className="size-12" /> <b>Export Countries in Handy Paper Mill</b></div>
+            <Counter counter="12" />
+
+            <Paragraph size="sm">
+              Tons / Year 
+            </Paragraph>
+          </div>
+         
+        </div>
+      </Section>
       <Section type="fullscreen" className='overflow-x-hidden bg-[#f1eeee] px-5' >
         {
           sectorImages.length>0

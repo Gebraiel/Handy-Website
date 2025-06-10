@@ -8,7 +8,7 @@ export async function getCategories(){
         console.error(error);
         throw new Error('Error While getting categories');
     }
-    const customOrder = ['jumbo rolls', 'facial tissues', 'wet wipes', 'toilet tissues', 'home care']
+    const customOrder = ['jumbo rolls', 'facial tissues','toilet tissues', 'home care','wet wipes']
 
     const sortedData = categories.sort((a, b) => {
         return customOrder.indexOf(a.name) - customOrder.indexOf(b.name)

@@ -12,6 +12,8 @@ import Category from "./pages/Category";
 import {loader as productsLoader} from './pages/Category';
 import {loader as productLoader} from './pages/Product';
 import {loader as categoriesLoader} from './ui/AppLayout';
+import {loader as fileLoader} from './pages/Products';
+
 import Product from "./pages/Product";
 import CustomerSupport from "./pages/CustomerSupport";
 import Health from "./pages/Health";
@@ -33,6 +35,7 @@ const router = createBrowserRouter([
       },{
         path:"/products",
         element:<Products />,
+        loader:fileLoader
       }
       ,{
         path:"/about",

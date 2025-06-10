@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { NavLink ,Link } from 'react-router-dom'
-import { FaCaretDown } from "react-icons/fa6";
+import { FaCaretRight,FaCaretDown } from "react-icons/fa6";
 import {AnimatePresence,motion} from "motion/react";
 export default function SubMenu({item}) {
   const [show,setShow] = useState(false);
@@ -28,7 +28,7 @@ export default function SubMenu({item}) {
                                     <button className='w-full' onClick={()=>setShowSubmenu(!showSubmenu)}>
                                         <Link to={child.link} className="flex gap-1 items-center w-fit" >
                                             {child.title}
-                                            <FaCaretDown/>
+                                            <FaCaretRight/>
                                         </Link>
                                     </button>
                                     <AnimatePresence>

@@ -3,7 +3,6 @@ import Banner from "../ui/Banner";
 import SectionTitle from "../ui/SectionTitle";
 import Section from "../ui/Section";
 import Paragraph from "../ui/Paragraph";
-import Counter from "../ui/Counter";
 import { MdOutlineSpeed } from "react-icons/md";
 import { SlEnergy } from "react-icons/sl";
 import { FaPeopleGroup } from "react-icons/fa6";
@@ -28,24 +27,24 @@ export default function Sectors() {
         className="flex justify-center items-center "
       />
       <Section>
-        <SectionTitle>Sectors</SectionTitle>
-        <div className="flex flex-col  items-center gap-10">
-         
-          <div className="grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-3  lg:w-full">
+        <div className="flex items-center justify-between gap-10">
+          <SectionTitle className="!mb-0">Sectors</SectionTitle>
+
+          {/* <div className="grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-3  lg:w-full">
             <div className="p-5 bg-white shadow-md  text-center space-y-5 ">
               <div className="flex flex-col items-center gap-2 justify-center text-lg"><img src="/tissue-roll.png" alt="" className="w-12" /> <b>Tissue Paper Mill Capacity</b></div>
               <Counter counter="25000"  />
 
               <Paragraph size="sm">
-                Mtons / Year 
+                Tons / Year 
               </Paragraph>
             </div>
             <div className="p-5 bg-white shadow-md text-center  space-y-5 ">
             <div className="flex flex-col items-center gap-2 justify-center text-lg"><img src="/tissue-roll.png" alt="" className="w-12" /> <b>Tissue Paper Converting Plant Capacity</b></div>
 
-              <Counter counter="800"  /> 
+              <Counter counter="100"  /> 
               <Paragraph size="sm">
-                Mtons / Year 
+                Tons / Year 
               </Paragraph>
             </div>
             <div className="p-5 bg-white shadow-md  text-center space-y-5 ">
@@ -53,7 +52,7 @@ export default function Sectors() {
               <Counter counter="148" />
 
               <Paragraph size="sm">
-                Mtons / Year 
+                Tons / Year 
               </Paragraph>
             </div>
             <div className="p-5 bg-white shadow-md text-center  space-y-5 ">
@@ -61,7 +60,7 @@ export default function Sectors() {
 
               <Counter counter="112" /> 
               <Paragraph size="sm">
-                Mtons / Year 
+                Tons / Year 
               </Paragraph>
             </div>
             <div className="p-5 bg-white shadow-md  text-center space-y-5 ">
@@ -69,7 +68,7 @@ export default function Sectors() {
               <Counter counter="12" />
 
               <Paragraph size="sm">
-                Mtons / Year 
+                Tons / Year 
               </Paragraph>
             </div>
             <div className="p-5 bg-white shadow-md text-center  space-y-5 ">
@@ -77,10 +76,10 @@ export default function Sectors() {
 
               <Counter counter="10" duration={5000} countBy={10} /> 
               <Paragraph size="sm">
-                Mtons / Year 
+                Tons / Year 
               </Paragraph>
             </div>
-          </div>
+          </div> */}
           <Paragraph size="md" className="text-justify py-5 max-w-[66ch]">
             We take immense pride in the machinery and equipment that
             distinguish Handy from other factories, showcasing our commitment to

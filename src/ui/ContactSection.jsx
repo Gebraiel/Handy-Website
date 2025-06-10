@@ -4,6 +4,8 @@ import { FaEnvelopeOpen } from "react-icons/fa";
 import { FaTty } from "react-icons/fa6";
 import { FaPhone } from "react-icons/fa6";
 import { FaFax } from "react-icons/fa";
+import { IoLogoWhatsapp } from "react-icons/io";
+
 import Paragraph from "./Paragraph";
 
 export default function ContactSection() {
@@ -69,6 +71,12 @@ export default function ContactSection() {
             <FaTty className="w-[24px] text-2xl" />
             <Paragraph className="font-medium flex flex-col">
               <a href="tel:+20238333156">+2 02 38333156</a>
+            </Paragraph>
+          </li>
+          <li className="flex items-center gap-5 text-primary">
+            <IoLogoWhatsapp className="w-[24px] text-2xl" />
+            <Paragraph className="font-medium flex flex-col">
+              <a href="https://wa.me/+201286644171" target="_blank">+2 01286644171</a>
             </Paragraph>
           </li>
 

@@ -16,12 +16,12 @@ export default function SectorsNavigation({links}) {
         case "handy-paper":
           setActive(0)
           break;
-          case "handy-tissue-products":
-            setActive(1);
-            break
-          case "handy-wet-wipes":
-            setActive(2);
-            break;
+        case "handy-tissue-products":
+          setActive(1);
+          break
+        case "handy-wet-wipes":
+          setActive(2);
+          break;
       }
     }
   },[sectorName])

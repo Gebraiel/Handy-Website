@@ -9,14 +9,16 @@ import { useNavigate } from 'react-router-dom';
 import OutletContext from '../context/OutletContext';
 import { HiArrowSmallLeft } from "react-icons/hi2";
 import { HiArrowSmallRight } from "react-icons/hi2";
+import { Link } from 'react-router-dom';
 
 export default function Product() {
     console.log("Product");
 
-    const {product:{id,title,image,details,category:{name:categoryName}},products} = useLoaderData();
+    const {product:{id,title,image,details,subcategory,category:{name:categoryName,id:categoryId}},products} = useLoaderData();
     const prevIndex = products.findIndex((product)=>product.id == id) - 1;
     const nextIndex = products.findIndex((product)=>product.id == id) + 1;
     const [showToast,setShowToast] = useState(false);
+    const productTitle= title.split("<br>");
     function copyToClipboard(){
         navigator.clipboard.writeText(location.href);
         setShowToast(true);
@@ -33,8 +35,15 @@ export default function Product() {
     return (
             <>
                 <Section>
-                    <div>
-                        <button className='button flex gap-2 items-center' onClick={()=>navigate(-1)}><span><HiArrowSmallLeft /></span>Back</button>
+                    <div className='text-primary font-bold uppercase'>
+                        <Link to="/">Home </Link>
+                        / <Link to="/products">Products </Link>
+                        / <Link to={`/category/${categoryId}`}>{categoryName}</Link>
+                        
+                        {
+                        subcategory && 
+                        <> / <Link to={`/category/${categoryId}?filter=${subcategory}`}>{subcategory}</Link></>}
+ 
                     </div>
                     <div className='flex flex-col lg:flex-row items-center justify-center gap-5'>
                         {
@@ -45,13 +54,21 @@ export default function Product() {
                         }
                         <div className='space-y-5 w-full lg:w-1/2 '>
                             <div>
-                                
-
                                 <h2 className='text-primary text-xl lg:text-3xl font-bold'>
-                                    {title}
+                                    {
+                                        title.includes("<br>")
+                                        ?
+                                        <>
+                                            <span>{productTitle[0]}</span>
+                                            <br/>
+                                            <span>{productTitle[1]}</span>
+                                        </>
+                                        :
+                                        <>
+                                            <span>{title}</span>
+                                        </>
+                                    }
                                 </h2>
-                                
-                                
                                 <Paragraph className='text-secondary font-semibold' size="lg">{categoryName}</Paragraph>
                             </div>
                             <ul className='list-disc pl-5'>{details.split('|').map((item,index)=><li key={index}>{item}</li>)}</ul>

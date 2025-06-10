@@ -12,7 +12,16 @@ const categoriesMenu = [
       title:"Facial Tissues",
       link:"/category/1"
     },
+   
     {
+      title:"Toilet Tissues",
+      link:"/category/4"
+    },
+    {
+      title:"Home Care",
+      link:"/category/3"
+    },
+     {
       title:"Wet Wipes",
       link:"/category/5",
       hasSubMenu:true,
@@ -38,14 +47,6 @@ const categoriesMenu = [
           link:"/category/5?filter=PREMIUM REFRESHMENT"
         },
       ]
-    },
-    {
-      title:"Toilet Tissues",
-      link:"/category/4"
-    },
-    {
-      title:"Home Care",
-      link:"/category/3"
     }
     
    
@@ -66,8 +67,8 @@ const menu = [
     {title:"Sustainability",link:"/sustainability"},
     {title:"Media Center",link:"/media-center"},
     {title:"Contact Us",link:"/contact"},
-    {title:"AR"},
-    {title:"EN"}
+    {title:<p className='flex gap-1'><img src="/Flags/ar.svg"/> AR</p>},
+    {title:<p className='flex gap-1'><img src="/Flags/en.svg"/> EN</p>}
   ]
   return (
     <>

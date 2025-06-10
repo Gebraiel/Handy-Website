@@ -5,6 +5,7 @@ import Paragraph from "./Paragraph";
 import { FaLocationDot } from "react-icons/fa6";
 import { FaTty } from "react-icons/fa6";
 import { FaFax } from "react-icons/fa";
+import { IoLogoWhatsapp } from "react-icons/io";
 
 export default function Footer({mainLinks,otherLinks}) {
   const year = new Date().getFullYear();
@@ -87,6 +88,13 @@ export default function Footer({mainLinks,otherLinks}) {
                     <a href="tel:+2 02 38333156">+2 02 38333156</a>
                   </Paragraph>
               </li>
+              <li className="flex items-center gap-5 ">
+                <IoLogoWhatsapp className="w-[24px] text-2xl" />
+                <Paragraph className="font-medium flex flex-col">
+                  <a href="https://wa.me/+201286644171" target="_blank">+2 01286644171</a>
+                </Paragraph>
+              </li>
+              
               <li className="flex flex-col sm:flex-row items-center justify-start gap-5">
                 <FaFax className="w-[24px] text-3xl" />
                 <Paragraph className="text-center sm:text-left font-medium"><a href="tel:+2 02 38333157">+2 02 38333157</a></Paragraph>

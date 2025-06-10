@@ -6,6 +6,9 @@ import GallerySlider from "./GallerySlider";
 import {motion} from 'motion/react';
 import { getImagesFromBucket } from "../../services/sectors";
 import SwiperSlider from "./SwiperSlider";
+import Counter from "../Counter";
+import { FaPeopleGroup } from "react-icons/fa6";
+import { FaGlobeAmericas } from "react-icons/fa";
 const parentVarient = {
 
   visible:{
@@ -211,6 +214,37 @@ export default function HandyTissueProductsSector() {
             technology with an unwavering commitment to quality.
           </Paragraph>
         </div>
+      </Section>
+      <Section>
+        <div className="grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-3  lg:w-full">
+
+            <div className="p-5 bg-white shadow-md text-center  space-y-5 ">
+            <div className="flex flex-col items-center gap-2 justify-center text-lg"><img src="/tissue-roll.png" alt="" className="w-12" /> <b>Tissue Paper Converting Plant Capacity</b></div>
+
+              <Counter counter="100"  /> 
+              <Paragraph size="sm">
+                Tons / Year 
+              </Paragraph>
+            </div>
+            
+            <div className="p-5 bg-white shadow-md text-center  space-y-5 ">
+            <div className="flex flex-col items-center gap-2 justify-center text-lg"><FaPeopleGroup  className="size-12" /> <b>Employee in Converting Plant</b></div>
+
+              <Counter counter="112" /> 
+              <Paragraph size="sm">
+                Tons / Year 
+              </Paragraph>
+            </div>
+          
+            <div className="p-5 bg-white shadow-md text-center  space-y-5 ">
+            <div className="flex flex-col items-center gap-2 justify-center text-lg"><FaGlobeAmericas  className="size-12" /> <b>Export Countries in Converting Plant Capacity</b></div>
+
+              <Counter counter="10" duration={5000} countBy={10} /> 
+              <Paragraph size="sm">
+                Tons / Year 
+              </Paragraph>
+            </div>
+          </div>
       </Section>
       <Section type="fullscreen" className="bg-[#f1eeee]  px-5">
         {sectorImages&&<SwiperSlider images={sectorImages}/>}

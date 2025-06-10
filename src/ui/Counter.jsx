@@ -14,8 +14,8 @@ export default function ResettingCounter({counter}) {
   }, [inView]);
 
   return (
-    <div ref={ref} className="font-bold text-primary xl:text-7xl text-5xl w-52 m-auto">
-      {start && <CountUp end={counter} duration={5} />}
+    <div ref={ref} className="font-bold text-primary xl:text-5xl text-xl w-52 m-auto">
+      { start ? <CountUp end={counter} duration={5} />: 0 }
     </div>
   );
 }

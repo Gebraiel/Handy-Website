@@ -3,7 +3,8 @@ import Logo from "/Logo.png";
 import { NavLink, Link } from "react-router-dom";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoCloseSharp } from "react-icons/io5";
-import { FaCaretDown } from "react-icons/fa6";
+import { FaCaretDown,FaCaretRight } from "react-icons/fa6";
+
 import SubMenu from "./SubMenu";
 
 export default function Header({menu,isAbsolute}) {
@@ -42,7 +43,7 @@ export default function Header({menu,isAbsolute}) {
           {show && (
             <ul
               className={`absolute left-0 top-full w-full transition-all duration-300 ${
-                show ? "max-h-[395px] opacity-100" : "max-h-0 opacity-0"
+                show ? "max-h-[1000px] opacity-100" : "max-h-0 opacity-0"
               } `}
             >
               {
@@ -81,7 +82,7 @@ export default function Header({menu,isAbsolute}) {
                             
                             <Link to={child.link} className="flex gap-1 items-center">
                               {child.title}
-                              { child.hasSubMenu && <FaCaretDown /> }
+                              { child.hasSubMenu && <FaCaretRight /> }
 
                             </Link>
                             {

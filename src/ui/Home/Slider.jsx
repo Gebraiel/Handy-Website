@@ -80,7 +80,7 @@ function Slider({ slides}) {
           <img src={nextArrow} />
         </button>
       </div>
-      <div className='flex gap-5 absolute w-full bottom-5 left-0 justify-center z-50'>
+      <div className='flex gap-5 absolute w-full bottom-5 left-0 justify-center z-40'>
         <Bullets length={slides.length} active={active} setActive={setActive} handleClick={handleClick}/>
       </div>
     </div>
