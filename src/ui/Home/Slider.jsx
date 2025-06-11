@@ -37,7 +37,6 @@ function Slider({ slides}) {
             <div className="hidden lg:block">
               <img
               src={slide.image.desktop}
-              loading="eager"
               className={`transition-all absolute duration-500 ease-in-out w-full h-full left-0 top-0 object-cover ${
                 index === active ? "opacity-100" : "opacity-0"
               }`}
@@ -47,8 +46,7 @@ function Slider({ slides}) {
             <div className="block lg:hidden">
               <img
                 src={slide.image.mobile}
-                loading="eager"
-                className={`transition-all absolute duration-500 ease-in-out w-full h-full left-0 top-0 object-cover ${
+                  className={`transition-all absolute duration-500 ease-in-out w-full h-full left-0 top-0 object-cover ${
                   index === active ? "opacity-100" : "opacity-0"
                 }`}
                 key={slide.image.mobile}

@@ -37,8 +37,7 @@ export default function AboutSection() {
           </div>
         </div>
         <div className="max-w-[400px] m-auto">
-          <img className="m-auto"  src={handy} alt="" loading="lazy" style={{ filter: 'blur(10px)', transition: 'filter 0.3s ease' }}
-  onLoad={(e) => e.target.style.filter = 'none'} />
+          <img className="m-auto"  src={handy} alt=""  />
         </div>
       </div>
     </>

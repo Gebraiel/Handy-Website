@@ -134,7 +134,7 @@ export default function Home() {
               <p className="absolute right-5 bottom-5 text-8xl font-bold text-white opacity-50 transition-all group-hover:opacity-100 group-hover:-translate-y-2">
                 01
               </p>
-              <img src='/sectors/Handy Paper.webp' alt="Handy Paper Sector" loading="lazy" />
+              <img src='/sectors/Handy Paper.webp' alt="Handy Paper Sector"  />
             </Link>
 
             <div className="p-7 ">
@@ -157,7 +157,7 @@ export default function Home() {
               <p className="absolute right-5 bottom-5 text-8xl font-bold text-white opacity-50 transition-all group-hover:opacity-100 group-hover:-translate-y-2">
                 02
               </p>
-              <img src='/sectors/Handy Tissue Products.webp' alt="Handy Tissue Products Sector" loading="lazy" />
+              <img src='/sectors/Handy Tissue Products.webp' alt="Handy Tissue Products Sector"  />
             </Link>
 
             <div className="p-7">
@@ -178,7 +178,7 @@ export default function Home() {
               <p className="absolute right-5 bottom-5 text-8xl font-bold text-white opacity-50 transition-all group-hover:opacity-100 group-hover:-translate-y-2">
                 03
               </p>
-              <img src='/sectors/Handy Wet Wipes.webp' alt="Wet Wipes Sector" loading="lazy" />
+              <img src='/sectors/Handy Wet Wipes.webp' alt="Wet Wipes Sector"  />
             </Link>
 
             <div className="p-7 ">
@@ -221,7 +221,7 @@ export default function Home() {
         </Paragraph>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-[repeat(14,1fr)] gap-5 mt-10 m-auto">
           {sustainabilityImagesArray.map((e,index) => (
-            <img src={e} key={index} loading="lazy"/>
+            <img src={e} key={index} />
           ))}
         </div>
       </Section>  
