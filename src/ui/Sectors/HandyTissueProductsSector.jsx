@@ -221,7 +221,7 @@ export default function HandyTissueProductsSector() {
             <div className="p-5 bg-white shadow-md text-center  space-y-5 ">
             <div className="flex flex-col items-center gap-2 justify-center text-lg"><img src="/tissue-roll.png" alt="" className="w-12" /> <b>Tissue Paper Converting Plant Capacity</b></div>
 
-              <Counter counter="100"  /> 
+              <Counter counter="1000"  /> 
               <Paragraph size="sm">
                 Tons / Year 
               </Paragraph>
