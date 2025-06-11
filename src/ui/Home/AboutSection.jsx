@@ -37,7 +37,7 @@ export default function AboutSection() {
           </div>
         </div>
         <div className="max-w-[400px] m-auto">
-          <img className="m-auto"  src={handy} alt="" />
+          <img className="m-auto"  src={handy} alt="" loading="lazy" />
         </div>
       </div>
     </>

@@ -26,7 +26,7 @@ export default function Lightbox({images,active,closeLightbox}) {
         </button>
         <div className='m-auto'>
             <AnimatePresence mode="wait">
-                <motion.img key={activeImage} initial={{x:100,opacity:0}} animate={{opacity:1,x:0}} exit={{opacity:0,x:-100}} src={images[activeImage]} alt="Lightbox Image" />
+                <motion.img key={activeImage} loading="lazy" initial={{x:100,opacity:0}} animate={{opacity:1,x:0}} exit={{opacity:0,x:-100}} src={images[activeImage]} alt="Lightbox Image" />
             </AnimatePresence>
         </div>
         <button disabled={activeImage == images.length - 1} onClick={handleNext} className='flex justify-center items-center text-white'>
