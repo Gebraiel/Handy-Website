@@ -52,7 +52,7 @@ export default function HandyPaperSector() {
           <img src="/sectors/Handy Paper.webp" alt="" />
         </div>
         
-        <div className=" m-auto my-[50px]">
+        <div className=" m-auto 2xl:my-[50px] my-[25px]">
           <div>
             <SectionTitle className="2xl:mb-5 !max-w-[66ch] !mx-auto !text-left">
               Handy Paper
@@ -81,7 +81,7 @@ export default function HandyPaperSector() {
 
         </div>
       </Section>
-      <Section className='mt-[50px]' type="fullscreen">
+      <Section className='2xl:mt-[50px] mt-[25px]' type="fullscreen">
           <MapContainer
             center={[33.854721, 35.862285]}
             className='h-96 z-10'
@@ -124,7 +124,7 @@ export default function HandyPaperSector() {
             <Paragraph size="md" className='text-center'>
               The production of tissue paper involves several key steps:
             </Paragraph>
-          <motion.div variants={parentVarient} initial="hidden" whileInView="visible" viewport={{once:true}} className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-7 gap-10 items-stretch my-16">
+          <motion.div variants={parentVarient} initial="hidden" whileInView="visible" viewport={{once:true}} className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-7 2xl:gap-10 gap-5 items-stretch 2xl:my-16 my-8">
                 
                 <motion.div variants={childrenVairent} className={`text-center `} >
                   <div className="pb-5 border-b-2 border-secondary w-fit m-auto text-3xl text-[#b0cbd3] font-extrabold">

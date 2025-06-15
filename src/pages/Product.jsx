@@ -73,9 +73,7 @@ export default function Product() {
                             </div>
                             <ul className='list-disc pl-5'>{details.split('|').map((item,index)=><li key={index}>{item}</li>)}</ul>
                             <button className='w-full button'onClick={copyToClipboard}>Share</button>
-                        </div>
-                    </div>
-                    <div className='flex justify-between items-center'>
+                            <div className='flex justify-between items-center'>
                         <button onClick={()=>navigate(`/product/${products[prevIndex].id}`)} className={'button flex gap-1 items-center '} disabled={prevIndex < 0}>
                             <span><HiArrowSmallLeft /></span>
                             Previous Product
@@ -86,6 +84,9 @@ export default function Product() {
 
                         </button>
                     </div>
+                        </div>
+                    </div>
+                    
                 </Section>
                     <AnimatePresence>
                         {

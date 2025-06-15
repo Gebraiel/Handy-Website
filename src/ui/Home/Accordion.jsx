@@ -11,10 +11,10 @@ export default function Accordion({ accordion ,open}) {
     setIsOpen(!isOpen);
   }
   return (
-    <div className="border-2 border-[#e5eaec] p-2 ">
+    <div className="border-2 border-[#e5eaec] 2xl:p-5 xl:p-2 ">
       <div className="flex justify-between items-center">
         <b>{heading}</b>
-        <button onClick={handleToggle} className="text-2xl text-primary">
+        <button onClick={handleToggle} className="2xl:text-4xl xl:text-2xl text-primary">
           {isOpen ? <FaCircleMinus /> : <FaPlusCircle />}
         </button>
       </div>

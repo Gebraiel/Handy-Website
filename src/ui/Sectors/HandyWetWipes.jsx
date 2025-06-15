@@ -44,7 +44,7 @@ export default function HandyWetWipes() {
         <div className="lg:hidden">
           <img src="/sectors/Handy Wet Wipes.webp" alt="" />
         </div>
-        <div className="my-[50px]">
+        <div className="2xl:my-[50px] my-[50px]">
           <div>
             <SectionTitle className="2xl:mb-5 !text-left">
               Handy Wet Wipes
@@ -84,7 +84,7 @@ export default function HandyWetWipes() {
       </Section>
 
       <Section className="bg-[#f1eeee]">
-        <div className="my-[50px]">
+        <div className="2xl:my-[50px] my-[50px]">
           <SectionTitle className="2xl:mb-5">Production Process</SectionTitle>
           <Paragraph size="md" className="text-center">
             Using state-of-the-art converting machinery, our production process
@@ -96,7 +96,7 @@ export default function HandyWetWipes() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-7 gap-10 items-stretch my-16"
+            className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-7 2xl:gap-10 gap-5 items-stretch 2xl:my-16 my-8"
           >
             <motion.div variants={childrenVairent} className={`text-center `}>
               <div className="pb-5 border-b-2 border-secondary w-fit m-auto text-3xl text-[#b0cbd3] font-extrabold">
@@ -191,7 +191,7 @@ export default function HandyWetWipes() {
           </motion.div>
           
         </div>
-        <div className="mb-[50px]">
+        <div className="2xl:mb-[50px] mb-[25px]">
           <SectionTitle className="2xl:mb-5 !text-left">
             Key Drivers of Excellence
           </SectionTitle>

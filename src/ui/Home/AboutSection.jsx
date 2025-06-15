@@ -24,7 +24,7 @@ export default function AboutSection() {
               OUR MISSION & VISION
             </Paragraph>
             <SectionTitle className="!text-left">
-              <p className="text-secondary my-1"> +35 Years of</p>
+              <p className="text-secondary 2xl:my-5 xl:my-1"> +35 Years of</p>
               <p className="text-primary">
                 Redefining hygiene standards in Egypt
               </p>
@@ -36,8 +36,8 @@ export default function AboutSection() {
             ))}
           </div>
         </div>
-        <div className="max-w-[400px] m-auto">
-          <img className="m-auto"  src={handy} alt=""  />
+        <div className=" max-w-[400px] xl:w-[400px] 2xl:w-full m-auto">
+          <img className="m-auto xl:w-full xl:h-52 2xl:h-auto xl:object-cover" src={handy} alt=""  />
         </div>
       </div>
     </>

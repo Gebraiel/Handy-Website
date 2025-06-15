@@ -46,7 +46,7 @@ export default function HandyTissueProductsSector() {
         <div className='lg:hidden'>
           <img src="/sectors/Handy Tissue Products.webp" alt="" />
         </div>
-        <div className="my-[50px]">
+        <div className="2xl:my-[50px] my-[25px]">
           <div>
             <SectionTitle className="2xl:mb-5 !text-left">
               Handy Tissue Products
@@ -69,7 +69,7 @@ export default function HandyTissueProductsSector() {
       </Section>
 
       <Section className="bg-[#f1eeee]">
-        <div className="my-[50px]">
+        <div className="2xl:my-[50px] my-[25px]">
           <SectionTitle className="2xl:mb-5 !leading-tight ">
           <p className=" text-primary">The Transformation Process</p>
           <p className="text-secondary">From Jumbo Rolls to Everyday Essentials</p>
@@ -80,7 +80,7 @@ export default function HandyTissueProductsSector() {
             transforms jumbo rolls into high-quality tissue products through the
             following precise steps:
           </Paragraph>
-           <motion.div variants={parentVarient} initial="hidden" whileInView="visible" viewport={{once:true}} className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-8 gap-10 items-stretch my-16">
+           <motion.div variants={parentVarient} initial="hidden" whileInView="visible" viewport={{once:true}} className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-8 2xl:gap-10 gap-5 items-stretch 2xl:my-16 my-8">
                 
                 <motion.div variants={childrenVairent} className={`text-center `} >
                   <div className="pb-5 border-b-2 border-secondary w-fit m-auto text-3xl text-[#b0cbd3] font-extrabold">

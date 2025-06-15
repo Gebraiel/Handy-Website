@@ -4,7 +4,7 @@ import Section from '../Section'
 export default function BrandDifferentiationTab() {
   return (
     <Section className='!pt-0'>
-      <div className='flex justify-center xl:justify-between items-center flex-wrap gap-y-5'>
+      <div className='flex justify-center xl:justify-between items-start flex-wrap gap-y-5'>
     <div className='w-full xl:w-1/2'>
       <b className='text-xl'>Brand Differentiation</b>
       <ul className='list-disc pl-7 pt-5 space-y-2'>
@@ -29,7 +29,7 @@ export default function BrandDifferentiationTab() {
       </ul>
     </div>
     <div className=''>
-      <img src="/About/Brand Differentiation.webp" alt="Brand Differentiation" />
+      <img src="/About/Brand Differentiation.webp" alt="Brand Differentiation"  className='2xl:h-auto 2xl:w-full xl:w-[400px] xl:h-[300px] xl:object-cover ' />
     </div>
   </div>
     </Section>
