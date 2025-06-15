@@ -17,8 +17,8 @@ export default function Features({features}) {
     {
         features.map((feature,index)=>{
           return(
-            <div key={index} className={`bg-contain bg-[url('/pattern.png')] text-center py-16 px-9 bg-gray transition-all duration-300  border-4 border-[#e06c61]`}>
-              <div className="pb-5 border-b-2 border-secondary w-fit m-auto text-3xl">
+            <div key={index} className={`bg-contain bg-[url('/pattern.png')] text-center py-8 px-9 bg-gray transition-all duration-300  border-4 border-[#e06c61]`}>
+              <div className="pb-2 border-b-2 border-secondary w-fit m-auto text-3xl">
                 {feature.icon}
               </div>
               <h4 className="sm:text-2xl text-xl font-bold my-5">{feature.title}</h4>

@@ -137,9 +137,9 @@ export default function Home() {
               <img src='/sectors/Handy Paper.webp' alt="Handy Paper Sector"  />
             </Link>
 
-            <div className="p-7 ">
+            <div className="p-3">
               <Link to="/sectors/handy-paper"><b className="text-2xl text-primary">Handy Paper</b></Link>
-              <Paragraph className="mt-5">
+              <Paragraph className="mt-2">
                 Nestled in New Borg El-Arab City, Alexandria, our first factory
                 houses the iconic ‘Recard’ machine from 1989, producing jumbo
                 rolls. In 2016, we supercharged operations with RECARD
@@ -160,9 +160,9 @@ export default function Home() {
               <img src='/sectors/Handy Tissue Products.webp' alt="Handy Tissue Products Sector"  />
             </Link>
 
-            <div className="p-7">
+            <div className="p-3">
               <Link to="/sectors/handy-tissue-products"><b className="text-2xl text-primary">Handy Tissue Products </b></Link>
-              <Paragraph className="mt-5 text-md">
+              <Paragraph className="mt-2 text-md">
                 In 2018, we expanded with a state-of-the-art facility in 6th of
                 October City, powered by South Korean technology. This facility
                 is where we craft everything from facial tissues to toilet
@@ -181,9 +181,9 @@ export default function Home() {
               <img src='/sectors/Handy Wet Wipes.webp' alt="Wet Wipes Sector"  />
             </Link>
 
-            <div className="p-7 ">
+            <div className="p-3 ">
               <Link to="/sectors/handy-wet-wipes"><b className="text-2xl text-primary">Wet Wipes</b></Link>
-              <Paragraph className="mt-5 text-md">
+              <Paragraph className="mt-2 text-md">
                 Our Wet Wipes Plant, established in 2018, creates top-tier wipes
                 that meet both local and global standards, delivering the
                 perfect blend of convenience, safety, and hygiene.

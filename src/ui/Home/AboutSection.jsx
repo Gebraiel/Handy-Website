@@ -17,20 +17,20 @@ const accordions = [
 export default function AboutSection() {
   return (
     <>
-      <div className="flex lg:flex-row flex-col justify-between gap-14 lg:mt-16 2xl:mt-32">
+      <div className="flex lg:flex-row flex-col justify-between gap-14 2xl:mt-32 mt-16 ">
         <div className="lg:w-2/3">
-          <div className="mb-16 mt-20">
+          <div className="">
             <Paragraph className="font-semibold text-primary">
               OUR MISSION & VISION
             </Paragraph>
             <SectionTitle className="!text-left">
-              <p className="text-secondary my-3"> +35 Years of</p>
+              <p className="text-secondary my-1"> +35 Years of</p>
               <p className="text-primary">
                 Redefining hygiene standards in Egypt
               </p>
             </SectionTitle>
           </div>
-          <div className="flex flex-col gap-5 justify-center mt-5 bg-white">
+          <div className="flex flex-col gap-2 justify-center  bg-white">
             {accordions.map((accordion, index) => (
               <Accordion accordion={accordion} open={true} key={index} />
             ))}
