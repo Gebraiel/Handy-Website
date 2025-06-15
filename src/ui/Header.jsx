@@ -6,6 +6,7 @@ import { IoCloseSharp } from "react-icons/io5";
 import { FaCaretDown,FaCaretRight } from "react-icons/fa6";
 
 import SubMenu from "./SubMenu";
+import FadeIn from "./Animation/FadeIn";
 
 export default function Header({menu,isAbsolute}) {
   const [show, setShow] = useState(false);
@@ -64,7 +65,8 @@ export default function Header({menu,isAbsolute}) {
         <div className="hidden xl:block ">
           <ul className="flex gap-10 ">
             {menu.map((item,index)=>
-              <li className="uppercase font-bold relative has-submenu text-xs" key={index}>
+              <FadeIn delay={0.1 * index}>
+                <li className="uppercase font-bold relative has-submenu text-xs" key={index}>
                 <NavLink to={`${item.link? item.link : '/'}`} className={({ isActive }) => `${item.hasSubMenu ? 'flex gap-1 items-center ' : ""} ${isActive ? (isSticky || !isAbsolute ? 'text-secondary' : 'text-primary') : 'text-white'} `
                         
                 }>
@@ -108,6 +110,7 @@ export default function Header({menu,isAbsolute}) {
                     </ul>
                 } 
               </li>  
+              </FadeIn>
             )}
             
           </ul>

@@ -12,6 +12,7 @@ import { useState } from "react";
 import OutletContext from "../context/OutletContext";
 import { getProducts } from "../services/products";
 import HeaderWithRealive from "./HeaderWithRealive";
+import FadeIn from "./Animation/FadeIn";
  
 export default function AppLayout() {
   const {categories,products} = useLoaderData();
@@ -91,7 +92,7 @@ export default function AppLayout() {
       <main>
         <AnimatePresence>
           <OutletContext.Provider value={setIsRelative}>
-                <Outlet/>
+              <Outlet/>
           </OutletContext.Provider>
         </AnimatePresence>
       </main>}/>

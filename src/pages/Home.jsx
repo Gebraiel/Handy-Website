@@ -39,7 +39,8 @@ export default function Home() {
 
   return (
     <> 
-      <Section type="fullscreen">
+      <FadeIn>
+         <Section type="fullscreen">
         <Slider
           slides={[
             {
@@ -94,6 +95,7 @@ export default function Home() {
           ]}
         />
       </Section>
+      </FadeIn>
       <FadeIn delay={0.6} duration={0.6}>
         <Section className="relative">
           <HandyBackground className="xl:!bg-[bottom_-250px_left_-100px]"/>
