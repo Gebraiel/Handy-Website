@@ -17,6 +17,9 @@ import { RiLeafFill } from "react-icons/ri";
 import { FaGlobe } from "react-icons/fa";
 import React from "react";
 import Loader from "../ui/Loader";
+import FadeIn from "../ui/Animation/FadeIn";
+import FadeDown from "../ui/Animation/FadeDown";
+import FadeLeft from "../ui/Animation/FadeLeft";
 
 
 const sustainabilityLength = 14;
@@ -91,24 +94,27 @@ export default function Home() {
           ]}
         />
       </Section>
-      <Section className="relative">
-        <HandyBackground className="xl:!bg-[bottom_-250px_left_-100px]"/>
-        <SectionTitle className="!leading-tight">
-          <p className="text-secondary ">Your Premium Hygiene Partner</p>
-          <p className="text-primary">for Everyday Freshness</p>
-        </SectionTitle>
+      <FadeIn delay={0.6} duration={0.6}>
+        <Section className="relative">
+          <HandyBackground className="xl:!bg-[bottom_-250px_left_-100px]"/>
+          <SectionTitle className="!leading-tight">
+            <p className="text-secondary ">Your Premium Hygiene Partner</p>
+            <p className="text-primary">for Everyday Freshness</p>
+          </SectionTitle>
 
-  
-        <Paragraph className="text-center text-primary">
-          At HANDY, we’ve been redefining hygiene since 1978, bringing you
-          products that make everyday life fresher, easier, and more
-          comfortable. Whether at home or in business, our high-quality products
-          are designed for maximum convenience, offering the perfect balance of
-          strength, softness, and eco-friendly solutions.
-        </Paragraph>
-        <AboutSection />
-      </Section>
-      <Section className={"bg-primary"}>
+    
+          <Paragraph className="text-center text-primary">
+            At HANDY, we’ve been redefining hygiene since 1978, bringing you
+            products that make everyday life fresher, easier, and more
+            comfortable. Whether at home or in business, our high-quality products
+            are designed for maximum convenience, offering the perfect balance of
+            strength, softness, and eco-friendly solutions.
+          </Paragraph>
+          <AboutSection />
+        </Section>
+      </FadeIn>
+      
+        <Section className={"bg-primary"}>
         <SectionTitle className="text-white">Why Handy</SectionTitle>
         <Features minWidth="300" features={
           [
@@ -128,7 +134,8 @@ export default function Home() {
 
       <Section className={"bg-[aliceblue]"}>
         <SectionTitle>Sectors</SectionTitle>
-        <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
+        <FadeDown>
+          <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
           <div className="w-full bg-white">
             <Link to="/sectors/handy-paper" className="relative w-full group">
               <p className="absolute right-5 bottom-5 text-8xl font-bold text-white opacity-50 transition-all group-hover:opacity-100 group-hover:-translate-y-2">
@@ -192,36 +199,45 @@ export default function Home() {
             </div>
           </div>
         </div>
+        </FadeDown>
       </Section>
      
       <Banner image="/banner.webp" className=" text-center">
-        <b className="text-2xl md:text-3xl lg:text-4xl 2xl:text-5xl xl:leading-tight text-white">
+        <FadeIn>
+          <b className="text-2xl md:text-3xl lg:text-4xl 2xl:text-5xl xl:leading-tight text-white">
           Proudly producing modern and high-quality products, using advanced
           machinery under the guidance of a skilled team
         </b>
+        </FadeIn>
       </Banner>
       <Section className="bg-[#f1eeee]">
-        <SectionTitle className="!leading-tight">
+        <FadeLeft>
+          <SectionTitle className="!leading-tight">
           <>
             <p className="text-secondary ">Handy Products</p>
             <p className="text-primary">Clean, fresh, and on-the-go Quality That Speaks for Itself</p>
           </>
         </SectionTitle>
+        </FadeLeft>
         <ProductCategories />
       </Section>
       <Section >
         <SectionTitle>Sustainability</SectionTitle>
 
         
-        <Paragraph className="text-primary">
+        <FadeIn>
+          <Paragraph className="text-primary">
           We believe in sustainability at every step of our production. From
           eco-friendly materials to water purification systems meeting WHO
           standards, we strive to protect both the planet and your health. At
           HANDY, we create products that support a cleaner, greener future.
         </Paragraph>
+        </FadeIn>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-[repeat(14,1fr)] gap-5 mt-10 m-auto">
           {sustainabilityImagesArray.map((e,index) => (
-            <img src={e} key={index} />
+            <FadeIn delay={index*0.1}>
+              <img src={e} key={index} />
+            </FadeIn>
           ))}
         </div>
       </Section>  

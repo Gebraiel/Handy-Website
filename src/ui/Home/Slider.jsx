@@ -3,6 +3,7 @@ import nextArrow from "../../assets/icon-next.svg";
 import prevArrow from "../../assets/icon-previous.svg";
 import Typing from "./Typing";
 import Bullets from "./Bullets";
+import {motion} from "motion/react";
 function Slider({ slides}) {
   const [active, setActive] = useState(0);
   console.log("Slider rendering");
