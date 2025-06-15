@@ -35,10 +35,10 @@ export default function Product() {
     return (
             <>
                 <Section>
-                    <div className='text-primary font-bold uppercase'>
-                        <Link to="/">Home </Link>
-                        / <Link to="/products">Products </Link>
-                        / <Link to={`/category/${categoryId}`}>{categoryName}</Link>
+                    <div className='text-[#ccc]  text-xs font-bold uppercase'>
+                        <Link to="/" className="hover:text-primary transition-colors duration-300">Home </Link>
+                        / <Link to="/products" className="hover:text-primary transition-colors duration-300">Products </Link>
+                        / <Link className="text-primary" to={`/category/${categoryId}`}>{categoryName}</Link>
                         
                         {
                         subcategory && 
