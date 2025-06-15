@@ -8,8 +8,8 @@ export default function Category({category}) {
   return (
     <div className="flex flex-col lg:flex-row lg:odd:flex-row lg:even:flex-row-reverse  justify-between items-center gap-5 ">
       <div className="max-w-[350px] m-auto">
-        <FadeLeft>
-          <img src={category.image}alt="Category Image" className="mix-blend-multiply" />
+        <FadeLeft  className="mix-blend-multiply">
+          <img src={category.image}alt="Category Image" />
         </FadeLeft>
       </div>
       <div className="w-full lg:w-1/2">

@@ -35,7 +35,9 @@ export default function Header({menu,isAbsolute}) {
     >
       <div className="container w-[90%] flex items-center justify-between m-auto p-5">
         <Link to="/" className="max-w-40">
-          <img src={Logo} alt="Logo" />
+          <FadeIn delay={0.3}>
+            <img src={Logo} alt="Logo" />
+          </FadeIn>
         </Link>
         <div className="xl:hidden">
           <button onClick={() => setShow(!show)}>
