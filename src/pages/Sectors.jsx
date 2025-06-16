@@ -5,8 +5,7 @@ import Section from "../ui/Section";
 import Paragraph from "../ui/Paragraph";
 import { MdOutlineSpeed } from "react-icons/md";
 import { SlEnergy } from "react-icons/sl";
-import { FaPeopleGroup } from "react-icons/fa6";
-import { FaGlobeAmericas } from "react-icons/fa";
+
 
 import Features from "../ui/Home/Features";
 import { FaTools } from "react-icons/fa";

@@ -14,6 +14,9 @@ import SwiperSlider from './SwiperSlider';
 import Counter from "../Counter";
 import { FaPeopleGroup } from "react-icons/fa6";
 import { FaGlobeAmericas } from "react-icons/fa";
+import FadeLeft from '../Animation/FadeLeft';
+import FadeIn from '../Animation/FadeIn';
+import {AnimatePresence} from "motion/react"
 
 const parentVarient = {
 
@@ -43,18 +46,23 @@ export default function HandyPaperSector() {
     getImages()
   },[])
   return (
-    <motion.div initial={{opacity:0,x:-100}} animate={{opacity:1,x:0}} exit={{opacity:0,x:100}}>
+    <div>
      <Section className="!py-0">        
         <div className='lg:block hidden'>
-          <img src="/sectors/sector1.webp" alt="" />
+          <FadeLeft>
+            <img src="/sectors/sector1.webp" alt="" />
+          </FadeLeft>
         </div>
         <div className='lg:hidden'>
-          <img src="/sectors/Handy Paper.webp" alt="" />
+          <FadeLeft>
+            <img src="/sectors/Handy Paper.webp" alt="" />
+          </FadeLeft>
         </div>
         
         <div className=" m-auto 2xl:my-[50px] my-[25px]">
           <div>
-            <SectionTitle className="2xl:mb-5 !max-w-[66ch] !mx-auto !text-left">
+            <FadeIn>
+              <SectionTitle className="2xl:mb-5 !max-w-[66ch] !mx-auto !text-left">
               Handy Paper
             </SectionTitle>
             <Paragraph size="md" className="text-justify m-auto">
@@ -77,11 +85,13 @@ export default function HandyPaperSector() {
               Kuwait, Morocco, Kenya, and West
               Africa.
             </Paragraph>
+            </FadeIn>
           </div>
 
         </div>
       </Section>
-      <Section className='2xl:mt-[50px] mt-[25px]' type="fullscreen">
+      <FadeIn>
+        <Section className='2xl:mt-[50px] mt-[25px]' type="fullscreen">
           <MapContainer
             center={[33.854721, 35.862285]}
             className='h-96 z-10'
@@ -114,16 +124,19 @@ export default function HandyPaperSector() {
             </Marker>
           </MapContainer>
       </Section>
+      </FadeIn>
       <Section className="bg-[#f1eeee]">
       <div >
 
          
-            <SectionTitle className='2xl:mb-5'>
+          <FadeIn>
+             <SectionTitle className='2xl:mb-5'>
               Paper Making Process
             </SectionTitle>
             <Paragraph size="md" className='text-center'>
               The production of tissue paper involves several key steps:
             </Paragraph>
+          </FadeIn>
           <motion.div variants={parentVarient} initial="hidden" whileInView="visible" viewport={{once:true}} className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-7 2xl:gap-10 gap-5 items-stretch 2xl:my-16 my-8">
                 
                 <motion.div variants={childrenVairent} className={`text-center `} >
@@ -204,7 +217,8 @@ export default function HandyPaperSector() {
       </Section>
       <Section>
         <div className="grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-3  lg:w-full">
-          <div className="p-5 bg-white shadow-md  text-center space-y-5 ">
+          <FadeIn>
+            <div className="p-5 bg-white shadow-md  text-center space-y-5 ">
             <div className="flex flex-col items-center gap-2 justify-center text-lg"><img src="/tissue-roll.png" alt="" className="w-12" /> <b>Tissue Paper Mill Capacity</b></div>
             <Counter counter="25000"  />
 
@@ -212,8 +226,10 @@ export default function HandyPaperSector() {
               Tons / Year 
             </Paragraph>
           </div>
+          </FadeIn>
           
-          <div className="p-5 bg-white shadow-md  text-center space-y-5 ">
+          <FadeIn delay={0.1}>
+            <div className="p-5 bg-white shadow-md  text-center space-y-5 ">
             <div className="flex flex-col items-center gap-2 justify-center text-lg"><FaPeopleGroup  className="size-12" /> <b>Employee in Handy Paper Mill</b></div>
             <Counter counter="148" />
 
@@ -221,8 +237,10 @@ export default function HandyPaperSector() {
               Tons / Year 
             </Paragraph>
           </div>
+          </FadeIn>
          
-          <div className="p-5 bg-white shadow-md  text-center space-y-5 ">
+          <FadeIn delay={0.2}>
+            <div className="p-5 bg-white shadow-md  text-center space-y-5 ">
             <div className="flex flex-col items-center gap-2 justify-center text-lg"><FaGlobeAmericas  className="size-12" /> <b>Export Countries in Handy Paper Mill</b></div>
             <Counter counter="12" />
 
@@ -230,6 +248,7 @@ export default function HandyPaperSector() {
               Tons / Year 
             </Paragraph>
           </div>
+          </FadeIn>
          
         </div>
       </Section>
@@ -241,6 +260,6 @@ export default function HandyPaperSector() {
           <SwiperSlider images={sectorImages}/>
         }
       </Section>
-      </motion.div>
+      </div>
   )
 }

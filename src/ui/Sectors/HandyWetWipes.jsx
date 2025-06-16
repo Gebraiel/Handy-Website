@@ -6,6 +6,8 @@ import GallerySlider from "./GallerySlider";
 import { motion } from "motion/react";
 import { getImagesFromBucket } from "../../services/sectors";
 import SwiperSlider from "./SwiperSlider";
+import FadeLeft from "../Animation/FadeLeft";
+import FadeIn from "../Animation/FadeIn";
 const parentVarient = {
   visible: {
     transition: {
@@ -31,21 +33,21 @@ export default function HandyWetWipes() {
     getImages();
   }, []);
   return (
-    <motion.div
-      initial={{ opacity: 0, x: -100 }}
-      animate={{ opacity: 1, x: 0 }}
-      exit={{ opacity: 0, x: 100 }}
-    >
+    <div>
       <Section className="!py-0 ">
         {/* <SectorsNavigation /> */}
         <div className="lg:block hidden">
-          <img src="/sectors/sector3.webp" alt="" />
+          <FadeLeft>
+            <img src="/sectors/sector3.webp" alt="" />
+          </FadeLeft>
         </div>
         <div className="lg:hidden">
-          <img src="/sectors/Handy Wet Wipes.webp" alt="" />
+          <FadeLeft>
+            <img src="/sectors/Handy Wet Wipes.webp" alt="" />
+          </FadeLeft>
         </div>
         <div className="2xl:my-[50px] my-[50px]">
-          <div>
+          <FadeIn>
             <SectionTitle className="2xl:mb-5 !text-left">
               Handy Wet Wipes
             </SectionTitle>
@@ -79,18 +81,20 @@ export default function HandyWetWipes() {
                 </Paragraph>
               </div>
             </div>
-          </div>
+          </FadeIn>
         </div>
       </Section>
 
       <Section className="bg-[#f1eeee]">
         <div className="2xl:my-[50px] my-[50px]">
-          <SectionTitle className="2xl:mb-5">Production Process</SectionTitle>
-          <Paragraph size="md" className="text-center">
-            Using state-of-the-art converting machinery, our production process
-            transforms jumbo rolls into high-quality tissue products through the
-            following precise steps
-          </Paragraph>
+          <FadeIn>
+            <SectionTitle className="2xl:mb-5">Production Process</SectionTitle>
+            <Paragraph size="md" className="text-center">
+              Using state-of-the-art converting machinery, our production process
+              transforms jumbo rolls into high-quality tissue products through the
+              following precise steps
+            </Paragraph>
+          </FadeIn>
           <motion.div
             variants={parentVarient}
             initial="hidden"
@@ -192,39 +196,49 @@ export default function HandyWetWipes() {
           
         </div>
         <div className="2xl:mb-[50px] mb-[25px]">
-          <SectionTitle className="2xl:mb-5 !text-left">
+          <FadeIn>
+            <SectionTitle className="2xl:mb-5 !text-left">
             Key Drivers of Excellence
           </SectionTitle>
           <Paragraph size="md">Our plant thrives on the synergy of:</Paragraph>
 
+          </FadeIn>
           <ul className="list-disc pl-5">
-            <li>
-              <Paragraph size="sm">
-                <b>Quality Control</b> : Ensures consistency and safety.
-              </Paragraph>
-            </li>
-            <li>
+            <FadeLeft>
+              <li>
+                <Paragraph size="sm">
+                  <b>Quality Control</b> : Ensures consistency and safety.
+                </Paragraph>
+              </li>
+            </FadeLeft>
+            <FadeLeft delay={0.1}>
+              <li>
               <Paragraph size="sm">
                 <b>Hygiene</b> : Prevents contamination.
               </Paragraph>
             </li>
-            <li>
+            </FadeLeft>
+            <FadeLeft delay={0.2}>
+              <li>
               <Paragraph size="sm">
                 <b>Regulatory Compliance</b> : Guarantees adherence to standards
                 .
               </Paragraph>
             </li>
-            <li>
+            </FadeLeft>
+            <FadeLeft delay={0.3}>
+              <li>
               <Paragraph size="sm">
                 <b>Innovation</b> : Drives the creation of superior products.
               </Paragraph>
             </li>
+            </FadeLeft>
           </ul>
         </div>
       </Section>
       <Section type="fullscreen" className="bg-[#f1eeee] px-5">
         {sectorImages && <SwiperSlider images={sectorImages}/>}
       </Section>
-    </motion.div>
+    </div>
   );
 }
