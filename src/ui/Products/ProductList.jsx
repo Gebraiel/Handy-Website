@@ -3,6 +3,7 @@ import Product from "./Product";
 import JumboProductsList from "./JumboProductsList";
 import {motion} from "motion/react"
 import FadeIn from "../Animation/FadeIn";
+import FadeLeft from "../Animation/FadeLeft";
 export default function ProductList({ products, view, filter }) {
   const categoryName = products[0]?.category?.name;
   const [filteredProducts, setFilteredProducts] = useState(products);
@@ -44,7 +45,7 @@ export default function ProductList({ products, view, filter }) {
     >
       {
         filteredProducts.map((product, index) => (
-            <FadeIn   delay={index*0.01} key={product.id}
+            <FadeLeft delay={index*0.01} key={product.id}
 >
 
               <Product
@@ -53,7 +54,7 @@ export default function ProductList({ products, view, filter }) {
                 view={view}
               />
               
-            </FadeIn>
+            </FadeLeft>
           ))
       }
     </div>
