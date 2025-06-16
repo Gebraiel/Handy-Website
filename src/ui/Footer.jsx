@@ -88,9 +88,9 @@ export default function Footer({mainLinks,otherLinks}) {
                     <a href="tel:+2 02 38333156">+2 02 38333156</a>
                   </Paragraph>
               </li>
-              <li className="flex items-center gap-5 ">
+              <li className="flex flex-col sm:flex-row items-center justify-start gap-5 ">
                 <IoLogoWhatsapp className="w-[24px] text-2xl" />
-                <Paragraph className="font-medium flex flex-col">
+                <Paragraph className="text-center sm:text-left font-medium flex flex-col">
                   <a href="https://wa.me/+201286644171" target="_blank">+2 01286644171</a>
                 </Paragraph>
               </li>

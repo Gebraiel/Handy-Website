@@ -7,6 +7,7 @@ import { useNavigation } from "react-router-dom"
 import Loader from '../ui/Loader'
 import Form from '../ui/Contact/Form'
 import OutletContext from '../context/OutletContext'
+import FadeIn from '../ui/Animation/FadeIn'
 
 export default function Contact() {
     console.log("Contact");
@@ -15,7 +16,7 @@ export default function Contact() {
   
   // setRelative(true);
   const navigation = useNavigation();
-  const isLoading = navigation.state === "loading";
+
   console.log("Contact");
   useEffect(()=>{
     setRelative(true);
@@ -23,8 +24,10 @@ export default function Contact() {
       setRelative(false);
     }
   },[])
+  const isLoading = navigation.state === "loading";
+  if (isLoading) return <Loader />;
   return (
-       <>
+       <FadeIn>
          {/* <Banner image={'/Contact/banner.webp'} className='!bg-[55%]' />
             
         */}
@@ -41,6 +44,6 @@ export default function Contact() {
               </div>
             </div>
          </Section>
-       </>
+       </FadeIn>
   )
 }

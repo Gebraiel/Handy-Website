@@ -36,11 +36,12 @@ export default function Home() {
   console.log("Home");
 
   const navigation = useNavigation();
-
+      const isLoading = navigation.state === "loading";
+      if (isLoading) return <Loader />;
   return (
-    <> 
-      <FadeIn>
-         <Section type="fullscreen">
+    <FadeIn> 
+      
+      <Section type="fullscreen">
         <Slider
           slides={[
             {
@@ -95,8 +96,6 @@ export default function Home() {
           ]}
         />
       </Section>
-      </FadeIn>
-      <FadeIn delay={0.6} duration={0.6}>
         <Section className="relative">
           <HandyBackground className="xl:!bg-[bottom_-250px_left_-100px]"/>
           <SectionTitle className="!leading-tight">
@@ -114,7 +113,6 @@ export default function Home() {
           </Paragraph>
           <AboutSection />
         </Section>
-      </FadeIn>
       
         <Section className={"bg-primary"}>
         <SectionTitle className="text-white">Why Handy</SectionTitle>
@@ -272,6 +270,6 @@ export default function Home() {
         <SectionTitle className="mb-10">Contact Us</SectionTitle>
         <ContactSection />
       </Section> */}
-    </>
+    </FadeIn>
   );
 }

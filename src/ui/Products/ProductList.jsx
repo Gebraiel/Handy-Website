@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Product from "./Product";
 import JumboProductsList from "./JumboProductsList";
 import {motion} from "motion/react"
+import FadeIn from "../Animation/FadeIn";
 export default function ProductList({ products, view, filter }) {
   const categoryName = products[0]?.category?.name;
   const [filteredProducts, setFilteredProducts] = useState(products);
@@ -34,7 +35,7 @@ export default function ProductList({ products, view, filter }) {
       <JumboProductsList products={products} view={view}/>
     )
   return (
-    <motion.div
+      <div
       className={`${
         view == "list"
           ? "space-y-5"
@@ -43,14 +44,19 @@ export default function ProductList({ products, view, filter }) {
     >
       {
         filteredProducts.map((product, index) => (
-          <Product
-            product={product}
-            categoryName={categoryName}
-            view={view}
-            key={index}
-          />
+            <FadeIn   delay={index*0.01} key={product.id}
+>
+
+              <Product
+                product={product}
+                categoryName={categoryName}
+                view={view}
+              />
+              
+            </FadeIn>
           ))
       }
-    </motion.div>
+    </div>
+
   );
 }

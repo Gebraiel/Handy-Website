@@ -12,11 +12,12 @@ import Timeline from "../ui/About/Timeline";
 import BrandDifferentiationTab from "../ui/About/BrandDifferentiationTab";
 import Accordion from "../ui/Home/Accordion";
 import handy from "../assets/handy.webp";
+import FadeIn from "../ui/Animation/FadeIn";
+import FadeLeft from "../ui/Animation/FadeLeft";
 
 export default function About() {
   console.log("About");
   const navigation = useNavigation();
-  const isLoading = navigation.state === "loading";
   const accordions = [
   {
     heading: "Quality Control : The Foundation of Excellence",
@@ -197,8 +198,11 @@ export default function About() {
       </>,
   }
 ];
+  const isLoading = navigation.state === "loading";
+  if (isLoading) return <Loader />;
+  
   return (
-    <>
+    <FadeIn>
       <Banner image={"/About/cover.webp"} />
 
       <Section>
@@ -220,8 +224,10 @@ export default function About() {
       <Section className="bg-[#f1eeee]">
         <SectionTitle>Our Journey</SectionTitle>
         <div className="mb-[100px]">
-          <img className="lg:block hidden" src="/About/Our Journey.webp" alt="Our Joureny"/>
-          <img className="block lg:hidden" src="/About/Our Journey Mobile.webp" alt="Our Joureny"/>
+          <FadeLeft>
+            <img className="lg:block hidden" src="/About/Our Journey.webp" alt="Our Joureny"/>
+            <img className="block lg:hidden" src="/About/Our Journey Mobile.webp" alt="Our Joureny"/>
+          </FadeLeft>
         </div>
 
         <Timeline />
@@ -236,11 +242,12 @@ export default function About() {
           "Additional Strengths",
         ]}
       >
-        <ProductDifferentiationTab />
-        <BrandDifferentiationTab />
-        <AdditionalStrengthsTab />
+        <ProductDifferentiationTab key={1} />
+        <BrandDifferentiationTab key={2}/>
+        <AdditionalStrengthsTab key={3}/>
       </Tabs>
-      <Section>
+      <FadeIn>
+        <Section>
         <SectionTitle>People & Workplace Culture at Handy</SectionTitle>
         <Paragraph size="md" className="">
           At Handy, we are committed to creating a modern, inclusive, and
@@ -261,16 +268,19 @@ export default function About() {
           goals while maintaining competitive equity in the market.
         </Paragraph>
       </Section>
+      </FadeIn>
       <Section>
         <SectionTitle>The Core of Handy’s Excellence</SectionTitle>
 
             <div className="flex flex-col gap-5 justify-center mt-5 bg-white">
             {accordions.map((accordion, index) => (
-              <Accordion accordion={accordion} open={false} key={index} />
+              <FadeLeft delay={0.01*index}>
+                <Accordion accordion={accordion} open={false} key={index} />
+              </FadeLeft>
             ))}
           </div>
                
       </Section>
-    </>
+    </FadeIn>
   );
 }

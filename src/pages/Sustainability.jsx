@@ -8,6 +8,7 @@ import Loader from "../ui/Loader";
 import { useNavigation } from "react-router-dom";
 import {AnimatePresence} from "motion/react"
 import Lightbox from "../ui/Lightbox";
+import FadeIn from "../ui/Animation/FadeIn";
 const sustainabilityLength = 14;
 const sustainabilityImagesArray = Array.from(
   { length: sustainabilityLength },
@@ -23,21 +24,24 @@ const lightBoxImages = Array.from(
 
 export default function Sustainability() {
     console.log("Sustainability");
-
+    function closeLightbox(){
+        setActive(-1);
+      }
   const [active,setActive] = useState(-1);
   const navigation = useNavigation();
+
   const isLoading = navigation.state === "loading";
-  function closeLightbox(){
-    setActive(-1);
-  }
+  if (isLoading) return <Loader />;
+  
   return (
     
-    <>
+    <FadeIn>
       <Banner
         image="/Banners/sustainability.webp"
         className="flex items-center justify-center"
       />
-      <Section>
+      <FadeIn>
+        <Section>
         <SectionTitle>Sustainability</SectionTitle>
 
         <div className="flex flex-col gap-5 justify-between">
@@ -53,11 +57,14 @@ We lead with purpose, prioritizing responsible sourcing, efficient production pr
           </div>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-[repeat(14,1fr)] gap-5 mt-10 m-auto">
             {sustainabilityImagesArray.map((e,index) => (
-              <img src={e} key={index}/>
+              <FadeIn delay={0.02*index} key={index}>
+                <img src={e}/>
+              </FadeIn>
             ))}
           </div>
         </div>
       </Section>
+      </FadeIn>
 
       <Section >
         <SectionTitle>School Visits</SectionTitle>
@@ -70,6 +77,6 @@ We lead with purpose, prioritizing responsible sourcing, efficient production pr
         <AnimatePresence>
             {active > -1 &&  <Lightbox images={lightBoxImages} active={active} closeLightbox={closeLightbox}/>}
         </AnimatePresence>      </Section>
-    </>
+    </FadeIn>
   );
 }

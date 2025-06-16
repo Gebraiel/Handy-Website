@@ -5,10 +5,12 @@ import ProductCategories from '../ui/Categories/ProductCategories'
 import Banner from '../ui/Banner'
 import { getCatalog } from '../services/products'
 import { useNavigation,useLoaderData } from 'react-router-dom'
+import FadeIn from '../ui/Animation/FadeIn'
+import Loader from '../ui/Loader'
 export default function Products() {
   const file = useLoaderData();
   const navigation = useNavigation();
-  const isLoading = navigation.state === "loading";
+
   const downloadFile = async () => {
     const response = await fetch(file); // file هو الرابط من Supabase
     const blob = await response.blob();
@@ -22,8 +24,10 @@ export default function Products() {
     window.URL.revokeObjectURL(url); // تنظيف الرابط من الذاكرة
 
   };
+  const isLoading = navigation.state === "loading";
+  if (isLoading) return <Loader />;
   return (
-    <>
+    <FadeIn>
       <Banner image={'/Banners/products.webp'} />
         
     
@@ -37,7 +41,7 @@ export default function Products() {
             <button onClick={downloadFile} className="button">Download Catalog</button>
           </div>
       </Section>
-    </>
+    </FadeIn>
     
   )
 }

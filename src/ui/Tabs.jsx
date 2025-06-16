@@ -21,7 +21,7 @@ export default function Tabs({children,links,active=0}) {
             </div>
         </Section>
         {
-            <AnimatePresence>
+            <AnimatePresence mode="wait">
                 {children[activeTab]}
             </AnimatePresence>
         }

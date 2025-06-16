@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import JumboProduct from "./JumboProduct";
+import FadeIn from "../Animation/FadeIn";
 
 export default function JumboProductsList({products,view}) {
   const [filter,setFilter] = useState('virgin pulp');
@@ -23,8 +24,10 @@ export default function JumboProductsList({products,view}) {
       }`}>
         {products
           .filter((product) => product.subtitle.toLowerCase() == filter)
-          .map((product) => (
-            <JumboProduct product={product} view={view} key={product.id} />
+          .map((product,index) => (
+            <FadeIn key={product.id} delay={index*0.01}>
+              <JumboProduct product={product} view={view} />
+            </FadeIn>
           ))}
       </div>
     </>

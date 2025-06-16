@@ -12,6 +12,7 @@ import SectionTitle from "../ui/SectionTitle";
 import CategoriesContext from "../context/CategoriesContext";
 import { useSearchParams } from "react-router-dom";
 import { Link } from "react-router-dom";
+import FadeIn from "../ui/Animation/FadeIn";
 
 export default function Category() {
   console.log("Category");
@@ -34,9 +35,9 @@ export default function Category() {
   }, [products]);
   const navigation = useNavigation();
   const isLoading = navigation.state === "loading";
-  // if (isLoading) return <Loader />;
+  if (isLoading) return <Loader />;
   return (
-    <>
+    <FadeIn>
       <Banner
         image={category.banner ? category.banner : "/banner/slider-1.png"}
         className="flex justify-center items-center bg-[55%] sm:bg-cover"
@@ -96,7 +97,7 @@ export default function Category() {
          
       </Section>
 
-    </>
+    </FadeIn>
   );
 }
 

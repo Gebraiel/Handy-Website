@@ -5,14 +5,16 @@ import Section from '../ui/Section'
 import Paragraph from '../ui/Paragraph'
 import { useNavigation } from "react-router-dom"
 import Loader from '../ui/Loader'
+import FadeIn from '../ui/Animation/FadeIn'
 
 export default function CustomerSupport() {
       console.log("Customer Support");
 
       const navigation = useNavigation();
-  const isLoading = navigation.state === "loading";
+    const isLoading = navigation.state === "loading";
+    if (isLoading) return <Loader />;
   return (
-    <>
+    <FadeIn>
          <Banner image={'/Customer-Support/banner.webp'} />
 
         <Section>
@@ -85,6 +87,6 @@ export default function CustomerSupport() {
                     </li>
                 </ol>
         </Section>
-    </>
+    </FadeIn>
   )
 }

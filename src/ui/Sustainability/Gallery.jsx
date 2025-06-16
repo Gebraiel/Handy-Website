@@ -7,7 +7,7 @@ function Gallery({ handleClick,images}) {
           {
             images.map((img,index)=> 
               <button onClick={()=>handleClick(index)} key={index}>
-                  <FadeIn delay={0.1*index}>
+                  <FadeIn delay={0.01*index}>
                       <img className="rounded-md" src={img} alt="Gallery Item" />
                   </FadeIn>
               </button>

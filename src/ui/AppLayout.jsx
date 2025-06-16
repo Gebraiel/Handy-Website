@@ -92,7 +92,9 @@ export default function AppLayout() {
       <main>
         <AnimatePresence>
           <OutletContext.Provider value={setIsRelative}>
+            <AnimatePresence mode="wait">
               <Outlet/>
+            </AnimatePresence>
           </OutletContext.Provider>
         </AnimatePresence>
       </main>}/>

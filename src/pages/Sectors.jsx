@@ -13,78 +13,34 @@ import { FaTools } from "react-icons/fa";
 import SectorsNavigation from "../ui/Sectors/SectorsNavigation";
 import Loader from "../ui/Loader";
 import { useNavigation } from "react-router-dom";
+import FadeIn from "../ui/Animation/FadeIn";
+import FadeLeft from "../ui/Animation/FadeLeft";
+import FadeRight from "../ui/Animation/FadeRight";
 export default function Sectors() {
   console.log("Sectors");
 
   const navigation = useNavigation();
   const isLoading = navigation.state === "loading";
-  
+  if (isLoading) return <Loader />;
 
   return (
-    <>
+    <FadeIn>
       <Banner
         image="/sectors/cover.webp"
         className="flex justify-center items-center "
       />
       <Section>
         <div className="flex items-center justify-between gap-10">
-          <SectionTitle className="!mb-0">Sectors</SectionTitle>
-
-          {/* <div className="grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-3  lg:w-full">
-            <div className="p-5 bg-white shadow-md  text-center space-y-5 ">
-              <div className="flex flex-col items-center gap-2 justify-center text-lg"><img src="/tissue-roll.png" alt="" className="w-12" /> <b>Tissue Paper Mill Capacity</b></div>
-              <Counter counter="25000"  />
-
-              <Paragraph size="sm">
-                Tons / Year 
-              </Paragraph>
-            </div>
-            <div className="p-5 bg-white shadow-md text-center  space-y-5 ">
-            <div className="flex flex-col items-center gap-2 justify-center text-lg"><img src="/tissue-roll.png" alt="" className="w-12" /> <b>Tissue Paper Converting Plant Capacity</b></div>
-
-              <Counter counter="100"  /> 
-              <Paragraph size="sm">
-                Tons / Year 
-              </Paragraph>
-            </div>
-            <div className="p-5 bg-white shadow-md  text-center space-y-5 ">
-              <div className="flex flex-col items-center gap-2 justify-center text-lg"><FaPeopleGroup  className="size-12" /> <b>Employee in Handy Paper Mill</b></div>
-              <Counter counter="148" />
-
-              <Paragraph size="sm">
-                Tons / Year 
-              </Paragraph>
-            </div>
-            <div className="p-5 bg-white shadow-md text-center  space-y-5 ">
-            <div className="flex flex-col items-center gap-2 justify-center text-lg"><FaPeopleGroup  className="size-12" /> <b>Employee in Converting Plant</b></div>
-
-              <Counter counter="112" /> 
-              <Paragraph size="sm">
-                Tons / Year 
-              </Paragraph>
-            </div>
-            <div className="p-5 bg-white shadow-md  text-center space-y-5 ">
-              <div className="flex flex-col items-center gap-2 justify-center text-lg"><FaGlobeAmericas  className="size-12" /> <b>Export Countries in Handy Paper Mill</b></div>
-              <Counter counter="12" />
-
-              <Paragraph size="sm">
-                Tons / Year 
-              </Paragraph>
-            </div>
-            <div className="p-5 bg-white shadow-md text-center  space-y-5 ">
-            <div className="flex flex-col items-center gap-2 justify-center text-lg"><FaGlobeAmericas  className="size-12" /> <b>Export Countries in Converting Plant Capacity</b></div>
-
-              <Counter counter="10" duration={5000} countBy={10} /> 
-              <Paragraph size="sm">
-                Tons / Year 
-              </Paragraph>
-            </div>
-          </div> */}
-          <Paragraph size="md" className="text-justify py-5 max-w-[66ch]">
-            We take immense pride in the machinery and equipment that
-            distinguish Handy from other factories, showcasing our commitment to
-            innovation, efficiency, and sustainability.
-          </Paragraph>
+          <FadeLeft>
+            <SectionTitle className="!mb-0">Sectors</SectionTitle>
+          </FadeLeft>
+          <FadeRight>
+            <Paragraph size="md" className="text-justify py-5 max-w-[66ch]">
+              We take immense pride in the machinery and equipment that
+              distinguish Handy from other factories, showcasing our commitment to
+              innovation, efficiency, and sustainability.
+            </Paragraph>
+          </FadeRight>
         </div>
       </Section>
       <Section className="bg-primary">
@@ -118,6 +74,6 @@ export default function Sectors() {
       <SectorsNavigation links={["Handy Paper" ,"Handy Tissue Products","Handy Wet Wipes"]} />
  
      
-    </>
+    </FadeIn>
   );
 }

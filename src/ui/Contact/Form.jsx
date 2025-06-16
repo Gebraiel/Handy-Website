@@ -2,6 +2,7 @@ import React from 'react'
 import { useForm } from 'react-hook-form'
 import SectionTitle from '../SectionTitle';
 import Paragraph from '../Paragraph';
+import FadeRight from '../Animation/FadeRight';
 
 export default function Form() {
   const {register,watch,handleSubmit,formState: { errors }} = useForm();
@@ -15,7 +16,8 @@ export default function Form() {
 
    const inputClasses = 'border border-[#ccc] py-2 px-3 focus:outline-primary w-full mt-2 disabled:bg-[#ccc]';
   return (
-    <form onSubmit={handleSubmit(submitForm)} className='bg-white shadow-md p-10'>
+    <FadeRight>
+        <form onSubmit={handleSubmit(submitForm)} className='bg-white shadow-md p-10'>
         <SectionTitle className='!text-left mb-5'>Contact Form</SectionTitle>
         <div className='space-y-5'>
             <div className='flex sm:flex-row flex-col gap-5 '>
@@ -109,5 +111,6 @@ export default function Form() {
             <button type='submit' className='border border-[#ccc] px-8 text-primary font-semibold hover:text-white hover:bg-primary transition-colors duration-300 py-3 block '>Submit</button>
         </div>
     </form>
+    </FadeRight>
   )
 }

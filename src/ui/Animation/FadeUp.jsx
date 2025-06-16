@@ -10,7 +10,8 @@ export default function FadeUp({children,duration=0.5,delay=0}){
       ref={ref}
       initial={{ opacity: 0,y:50 }}
       animate={isInView ? { opacity: 1,y:0} : {}}
-      transition={{ duration,delay }}
+      transition={{ duration,delay,ease:[0.6, -0.05, 0.01, 0.99] }}
+      exit={{opacity:0,y:-50}}
     >
         {children}
     </motion.div>

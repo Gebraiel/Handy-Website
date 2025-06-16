@@ -10,8 +10,9 @@ export default function FadeLeft({children,duration=0.5,delay=0,className=""}){
       ref={ref}
       initial={{ opacity: 0,x:-50 }}
       animate={isInView ? { opacity: 1,x:0} : {}}
-      transition={{ duration,delay }}
+      transition={{ duration,delay,ease:[0.6, -0.05, 0.01, 0.99] }}
       className={className}
+      exit={{opacity:0,x:50}}
     >
         {children}
     </motion.div>

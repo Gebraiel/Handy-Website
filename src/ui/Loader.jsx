@@ -1,12 +1,52 @@
-import React from 'react'
-import { FaSpinner } from "react-icons/fa";
-
+import { motion } from "motion/react"
 export default function Loader() {
-  return (
-    <div className='w-screen h-screen z-50 bg-white text-white absolute left-0 top-0 flex justify-center items-center'>
-        <div className="w-28">
-          <img src="/Handy-Icon.gif"/>
-        </div>
-    </div>
-  )
+  console.log("Loader is rendered");
+    const dotVariants = {
+        pulse: {
+            scale: [1, 1.5, 1],
+            transition: {
+                duration: 1.2,
+                repeat: Infinity,
+                ease: "easeInOut",
+            },
+        },
+    }
+    return (
+       <div className="fixed inset-0 size-full flex justify-center items-center bg-white z-[51]">
+            <motion.div
+                animate="pulse"
+                transition={{ staggerChildren: -0.2, staggerDirection: -1 }}
+                className="container"
+            >
+                <motion.div className="dot" variants={dotVariants} />
+                <motion.div className="dot" variants={dotVariants} />
+                <motion.div className="dot" variants={dotVariants} />
+                <StyleSheet />
+            </motion.div>
+       </div>
+    )
 }
+
+function StyleSheet() {
+    return (
+        <style>
+            {`
+            .container {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 20px;
+            }
+
+            .dot {
+                width: 20px;
+                height: 20px;
+                border-radius: 50%;
+                background-color: #ff0088;
+                will-change: transform;
+            }
+            `}
+        </style>
+    )
+}
+

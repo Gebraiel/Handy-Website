@@ -5,14 +5,16 @@ import SectionTitle from "../ui/SectionTitle";
 import { FaMapMarkerAlt } from "react-icons/fa";
 import Loader from "../ui/Loader";
 import { useNavigation } from "react-router-dom";
+import FadeIn from "../ui/Animation/FadeIn";
 
 export default function Branches() {
   console.log("Branches");
 
   const navigation = useNavigation();
-  const isLoading = navigation.state === "loading";
+const isLoading = navigation.state === "loading";
+if (isLoading) return <Loader />;
   return (
-    <>
+    <FadeIn>
       <Banner image={"/banner/slider-1.png"}/>
         <Section >
         <SectionTitle>Our Branches</SectionTitle>
@@ -59,6 +61,6 @@ export default function Branches() {
         </div>
 
         </Section>
-    </>
+    </FadeIn>
   );
 }

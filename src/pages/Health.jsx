@@ -5,14 +5,16 @@ import Section from '../ui/Section'
 import SectionTitle from '../ui/SectionTitle'
 import { useNavigation } from "react-router-dom"
 import Loader from '../ui/Loader'
+import FadeIn from '../ui/Animation/FadeIn'
 
 export default function Health() {
-      console.log("Health");
+    console.log("Health");
 
-      const navigation = useNavigation();
-  const isLoading = navigation.state === "loading";
+    const navigation = useNavigation();
+    const isLoading = navigation.state === "loading";
+    if (isLoading) return <Loader />;
   return (
-    <>
+    <FadeIn>
         <Banner image={'/Safety/banner.webp'} />
         <Section>
             <SectionTitle>
@@ -49,7 +51,7 @@ export default function Health() {
 
             </Paragraph>
         </Section>
-    </>
+    </FadeIn>
     
   )
 }
