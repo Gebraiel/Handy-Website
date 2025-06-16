@@ -14,7 +14,6 @@ import FadeLeft from "../ui/Animation/FadeLeft";
 import FadeRight from "../ui/Animation/FadeRight";
 import FadeIn from "../ui/Animation/FadeIn";
 import Loader from "../ui/Loader";
-import { useNavigation } from 'react-router-dom';
 
 export default function Product() {
   console.log("Product");
