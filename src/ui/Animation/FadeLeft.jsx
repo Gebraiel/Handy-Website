@@ -1,7 +1,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 
-export default function FadeLeft({children,duration=0.5,delay=0,className=""}){
+export default function FadeLeft({children,duration=1.4,delay=0,className=""}){
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
 

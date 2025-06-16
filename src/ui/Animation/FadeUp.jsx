@@ -1,7 +1,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 
-export default function FadeUp({children,duration=0.5,delay=0}){
+export default function FadeUp({children,duration=1.4,delay=0}){
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
 
