@@ -42,7 +42,7 @@ function StyleSheet() {
                 width: 20px;
                 height: 20px;
                 border-radius: 50%;
-                background-color: #ff0088;
+                background-color: #09216D;
                 will-change: transform;
             }
             `}
