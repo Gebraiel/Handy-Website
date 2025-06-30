@@ -50,6 +50,7 @@ export default function ProductList({ products, view, filter }) {
 
               <Product
                 product={product}
+                
                 categoryName={categoryName}
                 view={view}
               />

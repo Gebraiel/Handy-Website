@@ -52,7 +52,7 @@ const navigation = useNavigation();
 if (isLoading) return <Loader />;
   return (
     <FadeIn>
-      <Section>
+      <Section className="!py-[25px] ">
         <div className="text-[#ccc]  text-xs font-bold uppercase">
           <Link
             to="/"
@@ -68,18 +68,23 @@ if (isLoading) return <Loader />;
             Products{" "}
           </Link>
           /{" "}
-          <Link className="text-primary" to={`/category/${categoryId}`}>
-            {categoryName}
-          </Link>
-          {subcategory && (
+          
+          {subcategory ? 
             <>
+              <Link to={`/category/${categoryId}`}>
+                {categoryName}
+              </Link>
               {" "}
               /{" "}
-              <Link to={`/category/${categoryId}?filter=${subcategory}`}>
+              <Link  className="text-primary" to={`/category/${categoryId}?filter=${subcategory}`}>
                 {subcategory}
               </Link>
             </>
-          )}
+            :
+            <Link className="text-primary" to={`/category/${categoryId}`}>
+              {categoryName}
+            </Link>
+          }
         </div>
         <div className="flex flex-col lg:flex-row items-center justify-center gap-5">
           {image && (
@@ -163,6 +168,9 @@ if (isLoading) return <Loader />;
 export async function loader({ params }) {
   const { productId } = params;
   const product = (await getProduct(Number(productId)))[0];
-  const products = await getCategoryProducts(product.category.id);
+  console.log(product);
+  const subcategory = product.subcategory
+  const products = await getCategoryProducts(product.category.id,subcategory);
+  console.log(products)
   return { product, products };
 }

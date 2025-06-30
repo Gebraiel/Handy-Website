@@ -145,11 +145,13 @@ export default function HandyPaperSector() {
                   </div>
                   <h4 className="text-2xl font-bold my-5 text-primary">Pulping</h4>
                   <Paragraph size="sm" className="sm:text-left">
-                    <b>Raw Material</b> : Virgin wood pulp or recycled paper.
+                    <b>Raw Material</b> 
+                    <p> Virgin wood pulp or recycled paper.</p>
                   </Paragraph>
                   <Paragraph size="sm" className="sm:text-left">
-                    <b>Pulping Process</b> : The raw material is processed into
-                    a fibrous slurry.
+                    <b>Pulping Process</b>  
+                    <p>The raw material is processed into
+                    a fibrous slurry.</p>
                   </Paragraph>
                 </motion.div>
                 <motion.div variants={childrenVairent} className={` text-center  `} >
@@ -158,8 +160,9 @@ export default function HandyPaperSector() {
                   </div>
                   <h4 className="text-2xl font-bold my-5 text-primary">Refining</h4>
                   <Paragraph size="sm" className="sm:text-left">
-                    <b>Fiber Modification</b> : Adjusts fiber length and
-                    strength, influencing softness and absorbency.
+                    <b>Fiber Modification</b>  
+                    <p>Adjusts fiber length and
+                    strength, influencing softness and absorbency.</p>
                   </Paragraph>
                 </motion.div>
                 <motion.div variants={childrenVairent}  className={` text-center `}>
@@ -168,8 +171,9 @@ export default function HandyPaperSector() {
                   </div>
                   <h4 className="text-2xl font-bold my-5 text-primary">Screening</h4>
                   <Paragraph size="sm" className="sm:text-left">
-                    <b>Impurity Removal</b> : The pulp is screened to remove
-                    dirt or knots.
+                    <b>Impurity Removal</b>  
+                    <p>The pulp is screened to remove
+                    dirt or knots.</p>
                   </Paragraph>
                 </motion.div>
                 <motion.div variants={childrenVairent}  className={` text-center `}>
@@ -178,8 +182,9 @@ export default function HandyPaperSector() {
                   </div>
                   <h4 className="text-2xl font-bold my-5 text-primary">Forming</h4>
                   <Paragraph size="sm" className="sm:text-left">
-                  <b>Sheet Formation</b> : The pulp is spread onto a moving
-                  mesh, forming a wet sheet.
+                  <b>Sheet Formation</b> 
+                  <p>The pulp is spread onto a moving
+                  mesh, forming a wet sheet.</p>
                   </Paragraph>
                 </motion.div>
                 <motion.div variants={childrenVairent}  className={` text-center `}>
@@ -188,8 +193,9 @@ export default function HandyPaperSector() {
                   </div>
                   <h4 className="text-2xl font-bold my-5 text-primary">Pressing</h4>
                   <Paragraph size="sm" className="sm:text-left group-[]:">
-                    <b>Water Removal</b> : The wet sheet is pressed to remove
-                    excess water.
+                    <b>Water Removal</b>  
+                    <p>The wet sheet is pressed to remove
+                    excess water.</p>
                   </Paragraph>
                 </motion.div>
                 <motion.div variants={childrenVairent}  className={` text-center `}>
@@ -198,8 +204,9 @@ export default function HandyPaperSector() {
                   </div>
                   <h4 className="text-2xl font-bold my-5 text-primary">Drying</h4>
                   <Paragraph size="sm" className="sm:text-left">
-                    <b>Moisture Removal</b> : The pressed sheet is dried by
-                    heated cylinders.
+                    <b>Moisture Removal</b>  
+                    <p>The pressed sheet is dried by
+                    heated cylinders.</p>
                   </Paragraph>
                 </motion.div>
                 <motion.div variants={childrenVairent}  className={` text-center `}>
@@ -208,8 +215,10 @@ export default function HandyPaperSector() {
                   </div>
                   <h4 className="text-2xl font-bold my-5 text-primary">Creping</h4>
                   <Paragraph size="sm" className="sm:text-left">
-                  <b>Surface Embossing</b> : The dried paper is embossed to
-                  create a soft, textured surface.
+                  <b>Surface Embossing</b>  
+
+                  <p>The dried paper is embossed to
+                  create a soft, textured surface.</p>
                   </Paragraph>
                 </motion.div>
           </motion.div>

@@ -9,12 +9,12 @@ export default function Category({category}) {
     <div className="flex flex-col lg:flex-row lg:odd:flex-row lg:even:flex-row-reverse  justify-between items-center gap-5 ">
       <div className="max-w-[350px] m-auto">
         <FadeLeft  className="mix-blend-multiply">
-          <img src={category.image}alt="Category Image" />
+          <Link to={`/category/${category.id}`}><img src={category.image}alt="Category Image" /></Link>
         </FadeLeft>
       </div>
       <div className="w-full lg:w-1/2">
         <FadeRight>
-          <b className="text-2xl text-secondary capitalize">{category.name}</b>
+          <b className="text-2xl text-secondary capitalize"><Link to={`/category/${category.id}`}>{category.name}</Link></b>
         <Paragraph className="my-5">
         {
           !category.description ? `Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam

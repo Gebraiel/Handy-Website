@@ -21,7 +21,7 @@ export default function Product({product,view,categoryName}) {
         <div className={`w-full  ${view == "list" ? " pl-5 lg:w-1/4" : ""}`}>
               {
                   product.image ?
-                  <img className="m-auto" src={product.image} alt="Product Image" />
+                  <Link to={`/product/${product.id}`}><img className="m-auto" src={product.image} alt="Product Image" /></Link>
                   :
                   <div className="bg-white w-full aspect-square"></div>
               }
@@ -33,7 +33,7 @@ export default function Product({product,view,categoryName}) {
         } justify-between p-5 flex-grow w-full`}
       >
         <div>
-          <h1 className="text-primary text-xl font-bold">{title}</h1>
+          <h1 className="text-primary text-xl font-bold"><Link to={`/product/${product.id}`}>{title}</Link></h1>
           {isJumbo ? (
             <ul className="list-disc pl-5 mt-5">
               {product.details.split(",").map((item, index) => (

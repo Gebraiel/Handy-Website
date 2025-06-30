@@ -241,9 +241,9 @@ export default function HandyTissueProductsSector() {
 
             <FadeIn>
               <div className="p-5 bg-white shadow-md text-center  space-y-5 ">
-            <div className="flex flex-col items-center gap-2 justify-center text-lg"><img src="/tissue-roll.png" alt="" className="w-12" /> <b>Tissue Paper Converting Plant Capacity</b></div>
+            <div className="flex flex-col items-center gap-2 justify-center text-sm"><img src="/tissue-roll.png" alt="" className="w-12" /> <b>Tissue Paper Converting Plant Capacity</b></div>
 
-              <Counter counter="1000"  /> 
+              <Counter counter="10000"  /> 
               <Paragraph size="sm">
                 Tons / Year 
               </Paragraph>
@@ -252,7 +252,7 @@ export default function HandyTissueProductsSector() {
             
             <FadeIn delay={0.1}>
                           <div className="p-5 bg-white shadow-md text-center  space-y-5 ">
-            <div className="flex flex-col items-center gap-2 justify-center text-lg"><FaPeopleGroup  className="size-12" /> <b>Employee in Converting Plant</b></div>
+            <div className="flex flex-col items-center gap-2 justify-center text-sm"><FaPeopleGroup  className="size-12" /> <b>Employee in Converting Plant</b></div>
 
               <Counter counter="112" /> 
               <Paragraph size="sm">
@@ -263,7 +263,7 @@ export default function HandyTissueProductsSector() {
           
             <FadeIn delay={0.2}>
               <div className="p-5 bg-white shadow-md text-center  space-y-5 ">
-            <div className="flex flex-col items-center gap-2 justify-center text-lg"><FaGlobeAmericas  className="size-12" /> <b>Export Countries in Converting Plant</b></div>
+            <div className="flex flex-col items-center gap-2 justify-center text-sm"><FaGlobeAmericas  className="size-12" /> <b>Export Countries in Converting Plant</b></div>
 
               <Counter counter="10" duration={5000} countBy={10} /> 
               <Paragraph size="sm">

@@ -13,7 +13,7 @@ export default function Header({menu,isAbsolute}) {
   const [isSticky, setIsSticky] = useState(false);
   const headerRef = useRef(null); // Reference for the header element
 
-  const headerClasses = isAbsolute ? "absolute  text-white":"bg-primary text-white"; 
+  const headerClasses = isAbsolute ? "absolute  text-white":"relative bg-primary text-white"; 
   useEffect(() => {
     function scrollHandle() {
       setIsSticky(window.scrollY > headerRef.current.offsetHeight);
@@ -52,12 +52,14 @@ export default function Header({menu,isAbsolute}) {
               {
                 menu.map((item)=>
                   item.hasSubMenu ? 
-                    <SubMenu item={item}/>
+                    <SubMenu item={item} closeHeader={()=>setShow(false)}/>
                     :
                   <li className=" border border-l-0 border-r-0  bg-primary uppercase font-bold " >
-                    <NavLink to={`${item.link? item.link : '/'}`} className={`flex gap-1 p-5 items-center w-fit text-white `} >
+                    <button onClick={()=>setShow(false)}>
+                      <NavLink to={`${item.link? item.link : '/'}`} className={`flex gap-1 p-5 items-center w-fit text-white `} >
                         {item.title}
-                    </NavLink>
+                      </NavLink>
+                    </button>
                   </li>
                 )
               }

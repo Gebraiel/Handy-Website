@@ -29,7 +29,7 @@ export default function Sectors() {
         className="flex justify-center items-center "
       />
       <Section>
-        <div className="flex items-center justify-between gap-10">
+        <div className="flex items-center justify-between gap-10 flex-col lg:flex-row">
           <FadeLeft>
             <SectionTitle className="!mb-0">Sectors</SectionTitle>
           </FadeLeft>

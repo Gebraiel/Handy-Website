@@ -110,15 +110,18 @@ export default function HandyWetWipes() {
                 Non-Woven Fabric Production
               </h4>
               <Paragraph size="sm" className="sm:text-left">
-                <b>Fiber Preparation</b> : Raw materials like wood pulp or
-                polyester are processed into fibers.
+                <b>Fiber Preparation</b>  
+                <p>Raw materials like wood pulp or
+                polyester are processed into fibers.</p>
               </Paragraph>
               <Paragraph size="sm" className="sm:text-left">
-                <b>Web Formation</b> : Fibers are transformed into a web using
-                spun lace or air-laid techniques.
+                <b>Web Formation</b>
+                <p>Fibers are transformed into a web using
+                spun lace or air-laid techniques.</p>
               </Paragraph>
               <Paragraph size="sm" className="sm:text-left">
-                <b>Roll Formation</b> : The web is rolled into master rolls.
+                <b>Roll Formation</b>
+                <p>The web is rolled into master rolls.</p>
               </Paragraph>
             </motion.div>
             <motion.div variants={childrenVairent} className={` text-center  `}>

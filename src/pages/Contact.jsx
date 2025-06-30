@@ -10,14 +10,9 @@ import OutletContext from '../context/OutletContext'
 import FadeIn from '../ui/Animation/FadeIn'
 
 export default function Contact() {
-    console.log("Contact");
-
-  const setRelative = useContext(OutletContext);
-  
-  // setRelative(true);
-  const navigation = useNavigation();
-
   console.log("Contact");
+  const setRelative = useContext(OutletContext);
+  const navigation = useNavigation();
   useEffect(()=>{
     setRelative(true);
     return ()=>{
