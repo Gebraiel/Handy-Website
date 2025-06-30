@@ -109,17 +109,17 @@ export default function HandyWetWipes() {
               <h4 className="text-2xl font-bold my-5 text-primary">
                 Non-Woven Fabric Production
               </h4>
-              <Paragraph size="sm" className="sm:text-left">
+              <Paragraph size="sm" className="text-center">
                 <b>Fiber Preparation</b>  
                 <p>Raw materials like wood pulp or
                 polyester are processed into fibers.</p>
               </Paragraph>
-              <Paragraph size="sm" className="sm:text-left">
+              <Paragraph size="sm" className="text-center">
                 <b>Web Formation</b>
                 <p>Fibers are transformed into a web using
                 spun lace or air-laid techniques.</p>
               </Paragraph>
-              <Paragraph size="sm" className="sm:text-left">
+              <Paragraph size="sm" className="text-center">
                 <b>Roll Formation</b>
                 <p>The web is rolled into master rolls.</p>
               </Paragraph>
@@ -131,7 +131,7 @@ export default function HandyWetWipes() {
               <h4 className="text-2xl font-bold my-5 text-primary">
                 Slitting and Rewinding
               </h4>
-              <Paragraph size="sm" className="sm:text-left">
+              <Paragraph size="sm" className="text-center">
                 Master rolls are cut into narrower rolls and rewound for
                 processing.
               </Paragraph>
@@ -143,7 +143,7 @@ export default function HandyWetWipes() {
               <h4 className="text-2xl font-bold my-5 text-primary">
                 Solution Formulation
               </h4>
-              <Paragraph size="sm" className="sm:text-left">
+              <Paragraph size="sm" className="text-center">
                 Ingredients like water, surfactants, and emollients are mixed to
                 create the cleaning solution.
               </Paragraph>
@@ -155,7 +155,7 @@ export default function HandyWetWipes() {
               <h4 className="text-2xl font-bold my-5 text-primary">
                 Impregnation
               </h4>
-              <Paragraph size="sm" className="sm:text-left">
+              <Paragraph size="sm" className="text-center">
                 Fabric is impregnated with the solution, ensuring precise
                 saturation for performance.
               </Paragraph>
@@ -167,7 +167,7 @@ export default function HandyWetWipes() {
               <h4 className="text-2xl font-bold my-5 text-primary">
                 Folding and Cutting
               </h4>
-              <Paragraph size="sm" className="sm:text-left group-[]:">
+              <Paragraph size="sm" className="text-center group-[]:">
                 The fabric is folded and cut into individual wipes or sheets.
               </Paragraph>
             </motion.div>
@@ -178,7 +178,7 @@ export default function HandyWetWipes() {
               <h4 className="text-2xl font-bold my-5 text-primary">
                 Packaging
               </h4>
-              <Paragraph size="sm" className="sm:text-left">
+              <Paragraph size="sm" className="text-center">
                 Wipes are sealed in containers, pouches, or canisters to
                 maintain quality.
               </Paragraph>
@@ -190,7 +190,7 @@ export default function HandyWetWipes() {
               <h4 className="text-2xl font-bold my-5 text-primary">
                 Labelling and Secondary Packaging
               </h4>
-              <Paragraph size="sm" className="sm:text-left">
+              <Paragraph size="sm" className="text-center">
                 Labels with product details are applied, and wipes are packed
                 into cartons for shipment.
               </Paragraph>

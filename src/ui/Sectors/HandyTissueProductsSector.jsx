@@ -97,7 +97,7 @@ export default function HandyTissueProductsSector() {
                   <h4 className="text-2xl font-bold my-5 text-primary">
                     Unwinding
                   </h4>
-                  <Paragraph size="sm" className="sm:text-left">
+                  <Paragraph size="sm" className="text-center">
                     Jumbo rolls are fed into machines with care to ensure seamless
                     processing.
                   </Paragraph>
@@ -109,7 +109,7 @@ export default function HandyTissueProductsSector() {
                     <h4 className="text-2xl font-bold my-5 text-primary">
                       Embossing
                     </h4>
-                    <Paragraph size="sm" className="sm:text-left">
+                    <Paragraph size="sm" className="text-center">
                       Patterns like ripples and diamonds are added to enhance texture,
                       softness, and absorbency.
                     </Paragraph>
@@ -121,7 +121,7 @@ export default function HandyTissueProductsSector() {
                   <h4 className="text-2xl font-bold my-5 text-primary">
                     Perforation
                   </h4>
-                  <Paragraph size="sm" className="sm:text-left">
+                  <Paragraph size="sm" className="text-center">
                     Clean, adjustable perforations allow easy tearing and versatile
                     product lengths.
                   </Paragraph>
@@ -131,7 +131,7 @@ export default function HandyTissueProductsSector() {
                       4
                     </div>
                     <h4 className="text-2xl font-bold my-5 text-primary">Folding</h4>
-                    <Paragraph size="sm" className="sm:text-left">
+                    <Paragraph size="sm" className="text-center">
                       Products are folded into uniform shapes, whether sheets, rolls,
                       or interfolded packs.
                     </Paragraph>
@@ -141,7 +141,7 @@ export default function HandyTissueProductsSector() {
                       5
                     </div>
                     <h4 className="text-2xl font-bold my-5 text-primary">Cutting</h4>
-                    <Paragraph size="sm" className="sm:text-left group-[]:">
+                    <Paragraph size="sm" className="text-center group-[]:">
                       Advanced cutters shape each item to precise dimensions for
                       consistency.
                     </Paragraph>
@@ -151,7 +151,7 @@ export default function HandyTissueProductsSector() {
                       6
                     </div>
                     <h4 className="text-2xl font-bold my-5 text-primary">Winding</h4>
-                    <Paragraph size="sm" className="sm:text-left">
+                    <Paragraph size="sm" className="text-center">
                       Clean, adjustable perforations allow easy tearing and versatile
                       product lengths.
                     </Paragraph>
@@ -163,7 +163,7 @@ export default function HandyTissueProductsSector() {
                   <h4 className="text-2xl font-bold my-5 text-primary">
                     Packaging
                   </h4>
-                  <Paragraph size="sm" className="sm:text-left">
+                  <Paragraph size="sm" className="text-center">
                     Finished products are carefully wrapped, ensuring quality while
                     showcasing Handy's branding.
                   </Paragraph>
@@ -175,7 +175,7 @@ export default function HandyTissueProductsSector() {
                   <h4 className="text-2xl font-bold my-5 text-primary">
                     Palletizing
                   </h4>
-                  <Paragraph size="sm" className="sm:text-left">
+                  <Paragraph size="sm" className="text-center">
                     Packaged items are efficiently stacked for optimal storage and
                     transport.
                   </Paragraph>

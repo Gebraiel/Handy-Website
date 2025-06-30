@@ -34,7 +34,7 @@ export default function Sectors() {
             <SectionTitle className="!mb-0">Sectors</SectionTitle>
           </FadeLeft>
           <FadeRight>
-            <Paragraph size="md" className="text-justify py-5 max-w-[66ch]">
+            <Paragraph size="md" className="text-left py-5 max-w-[66ch]">
               We take immense pride in the machinery and equipment that
               distinguish Handy from other factories, showcasing our commitment to
               innovation, efficiency, and sustainability.

@@ -144,11 +144,11 @@ export default function HandyPaperSector() {
                     1
                   </div>
                   <h4 className="text-2xl font-bold my-5 text-primary">Pulping</h4>
-                  <Paragraph size="sm" className="sm:text-left">
+                  <Paragraph size="sm" className="text-center">
                     <b>Raw Material</b> 
                     <p> Virgin wood pulp or recycled paper.</p>
                   </Paragraph>
-                  <Paragraph size="sm" className="sm:text-left">
+                  <Paragraph size="sm" className="text-center">
                     <b>Pulping Process</b>  
                     <p>The raw material is processed into
                     a fibrous slurry.</p>
@@ -159,7 +159,7 @@ export default function HandyPaperSector() {
                     2
                   </div>
                   <h4 className="text-2xl font-bold my-5 text-primary">Refining</h4>
-                  <Paragraph size="sm" className="sm:text-left">
+                  <Paragraph size="sm" className="text-center">
                     <b>Fiber Modification</b>  
                     <p>Adjusts fiber length and
                     strength, influencing softness and absorbency.</p>
@@ -170,7 +170,7 @@ export default function HandyPaperSector() {
                    3
                   </div>
                   <h4 className="text-2xl font-bold my-5 text-primary">Screening</h4>
-                  <Paragraph size="sm" className="sm:text-left">
+                  <Paragraph size="sm" className="text-center">
                     <b>Impurity Removal</b>  
                     <p>The pulp is screened to remove
                     dirt or knots.</p>
@@ -181,7 +181,7 @@ export default function HandyPaperSector() {
                     4
                   </div>
                   <h4 className="text-2xl font-bold my-5 text-primary">Forming</h4>
-                  <Paragraph size="sm" className="sm:text-left">
+                  <Paragraph size="sm" className="text-center">
                   <b>Sheet Formation</b> 
                   <p>The pulp is spread onto a moving
                   mesh, forming a wet sheet.</p>
@@ -192,7 +192,7 @@ export default function HandyPaperSector() {
                     5
                   </div>
                   <h4 className="text-2xl font-bold my-5 text-primary">Pressing</h4>
-                  <Paragraph size="sm" className="sm:text-left group-[]:">
+                  <Paragraph size="sm" className="text-center group-[]:">
                     <b>Water Removal</b>  
                     <p>The wet sheet is pressed to remove
                     excess water.</p>
@@ -203,7 +203,7 @@ export default function HandyPaperSector() {
                     6
                   </div>
                   <h4 className="text-2xl font-bold my-5 text-primary">Drying</h4>
-                  <Paragraph size="sm" className="sm:text-left">
+                  <Paragraph size="sm" className="text-center">
                     <b>Moisture Removal</b>  
                     <p>The pressed sheet is dried by
                     heated cylinders.</p>
@@ -214,7 +214,7 @@ export default function HandyPaperSector() {
                     7
                   </div>
                   <h4 className="text-2xl font-bold my-5 text-primary">Creping</h4>
-                  <Paragraph size="sm" className="sm:text-left">
+                  <Paragraph size="sm" className="text-center">
                   <b>Surface Embossing</b>  
 
                   <p>The dried paper is embossed to
@@ -228,7 +228,7 @@ export default function HandyPaperSector() {
         <div className="grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-3  lg:w-full">
           <FadeIn>
             <div className="p-5 bg-white shadow-md  text-center space-y-5 ">
-            <div className="flex flex-col items-center gap-2 justify-center text-lg"><img src="/tissue-roll.png" alt="" className="w-12" /> <b>Tissue Paper Mill Capacity</b></div>
+            <div className="flex flex-col items-center gap-2 justify-center text-sm"><img src="/tissue-roll.png" alt="" className="w-12" /> <b>Tissue Paper Mill Capacity</b></div>
             <Counter counter="25000"  />
 
             <Paragraph size="sm">
@@ -239,7 +239,7 @@ export default function HandyPaperSector() {
           
           <FadeIn delay={0.1}>
             <div className="p-5 bg-white shadow-md  text-center space-y-5 ">
-            <div className="flex flex-col items-center gap-2 justify-center text-lg"><FaPeopleGroup  className="size-12" /> <b>Employee in Handy Paper Mill</b></div>
+            <div className="flex flex-col items-center gap-2 justify-center text-sm"><FaPeopleGroup  className="size-12" /> <b>Employee in Handy Paper Mill</b></div>
             <Counter counter="148" />
 
             <Paragraph size="sm">
@@ -250,7 +250,7 @@ export default function HandyPaperSector() {
          
           <FadeIn delay={0.2}>
             <div className="p-5 bg-white shadow-md  text-center space-y-5 ">
-            <div className="flex flex-col items-center gap-2 justify-center text-lg"><FaGlobeAmericas  className="size-12" /> <b>Export Countries in Handy Paper Mill</b></div>
+            <div className="flex flex-col items-center gap-2 justify-center text-sm"><FaGlobeAmericas  className="size-12" /> <b>Export Countries in Handy Paper Mill</b></div>
             <Counter counter="12" />
 
             <Paragraph size="sm">
