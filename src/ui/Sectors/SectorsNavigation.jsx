@@ -22,12 +22,14 @@ export default function SectorsNavigation({links}) {
         case "handy-wet-wipes":
           setActive(2);
           break;
+        default:
+          setActive(0);
       }
     }
   },[sectorName])
   return (
         <>
-        <SectionTitle className='my-[50px]'>Our Sectors</SectionTitle>
+        <SectionTitle className='my-[50px]' >Our Sectors</SectionTitle>
         <Tabs links={links} active={active}>
           <HandyPaperSector />
           <HandyTissueProductsSector />

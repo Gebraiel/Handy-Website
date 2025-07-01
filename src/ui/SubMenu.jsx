@@ -10,31 +10,39 @@ export default function SubMenu({item,closeHeader}) {
         <li className=" border border-l-0 border-r-0  bg-primary uppercase font-bold ">
 
             <button className='w-full' onClick={()=>setShow(!show)}>
-                <NavLink to={`${item.link}`} onClick={closeHeader} className={`flex gap-1 p-5 items-center w-fit text-white`} >
+                <p className={`flex gap-1 p-5 items-center w-fit text-white`} >
                     {item.title}
                     <FaCaretDown /> 
-                </NavLink>
+                </p>
             </button>
             
                 <AnimatePresence>
                     {
                         show &&
                         <motion.ul className="bg-primary text-white w-full h-0 opacity-0" initial={{height:0,opacity:0}} animate={{height:"auto",opacity:1}} exit={{height:0,opacity:0}}>
+                            <li className=" border-y py-4 px-8 ">
+                                <button className='w-full' onClick={()=>setShow(!show)}>
+                                    <NavLink to={`${item.link}`} onClick={closeHeader} className="flex gap-1 items-center w-fit" >
+                                        {item.title}
+                                    </NavLink>
+                                </button>
+                            </li>
                         {
                             item.submenu.map((child)=>
                             child.hasSubMenu ?
                             
                                 <li className=" border-y py-4 px-8 ">
                                     <button className='w-full' onClick={()=>setShowSubmenu(!showSubmenu)}>
-                                        <Link to={child.link} onClick={closeHeader} className="flex gap-1 items-center w-fit" >
+                                        <p className="flex gap-1 items-center w-fit" >
                                             {child.title}
                                             <FaCaretRight/>
-                                        </Link>
+                                        </p>
                                     </button>
                                     <AnimatePresence>
                                         {
                                             showSubmenu &&
                                             <motion.ul className='h-0 opacity-0' initial={{height:0,opacity:0}} animate={{height:"auto",opacity:1}} exit={{height:0,opacity:0}}>
+                                                <li className='px-4 my-4'><Link to={child.link} onClick={closeHeader}>{child.title}</Link></li>
                                                 {child.submenu.map((grandChild)=> <li className='px-4 my-4'><Link to={grandChild.link} onClick={closeHeader}>{grandChild.title}</Link></li>)}
                                             </motion.ul>
                                         }

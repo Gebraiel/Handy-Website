@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import Banner from "../ui/Banner";
 import SectionTitle from "../ui/SectionTitle";
 import Section from "../ui/Section";
@@ -15,11 +15,19 @@ import { useNavigation } from "react-router-dom";
 import FadeIn from "../ui/Animation/FadeIn";
 import FadeLeft from "../ui/Animation/FadeLeft";
 import FadeRight from "../ui/Animation/FadeRight";
+import { useParams } from "react-router-dom";
 export default function Sectors() {
   console.log("Sectors");
-
+  const {sectorName} = useParams();
+  console.log(sectorName);
+  const sectorsSection = useRef(null);
   const navigation = useNavigation();
   const isLoading = navigation.state === "loading";
+  useEffect(()=>{
+    if(sectorName){
+      sectorsSection.current?.scrollIntoView({ behavior: 'smooth' });
+    }
+  },[sectorName])
   if (isLoading) return <Loader />;
 
   return (
@@ -69,7 +77,7 @@ export default function Sectors() {
           ]}
         />
       </Section>
-
+      <div ref={sectorsSection}></div>
       <SectorsNavigation links={["Handy Paper" ,"Handy Tissue Products","Handy Wet Wipes"]} />
  
      
