@@ -21,11 +21,9 @@ export default function SubMenu({item,closeHeader}) {
                         show &&
                         <motion.ul className="bg-primary text-white w-full h-0 opacity-0" initial={{height:0,opacity:0}} animate={{height:"auto",opacity:1}} exit={{height:0,opacity:0}}>
                             <li className=" border-y py-4 px-8 ">
-                                <button className='w-full' onClick={()=>setShow(!show)}>
-                                    <NavLink to={`${item.link}`} onClick={closeHeader} className="flex gap-1 items-center w-fit" >
+                                    <NavLink to={`${item.link}`} onClick={closeHeader} className="flex gap-1 items-center w-full" >
                                         {item.title}
                                     </NavLink>
-                                </button>
                             </li>
                         {
                             item.submenu.map((child)=>
@@ -33,7 +31,7 @@ export default function SubMenu({item,closeHeader}) {
                             
                                 <li className=" border-y py-4 px-8 ">
                                     <button className='w-full' onClick={()=>setShowSubmenu(!showSubmenu)}>
-                                        <p className="flex gap-1 items-center w-fit" >
+                                        <p className="flex gap-1 items-center" >
                                             {child.title}
                                             <FaCaretRight/>
                                         </p>
@@ -42,8 +40,8 @@ export default function SubMenu({item,closeHeader}) {
                                         {
                                             showSubmenu &&
                                             <motion.ul className='h-0 opacity-0' initial={{height:0,opacity:0}} animate={{height:"auto",opacity:1}} exit={{height:0,opacity:0}}>
-                                                <li className='px-4 my-4'><Link to={child.link} onClick={closeHeader}>{child.title}</Link></li>
-                                                {child.submenu.map((grandChild)=> <li className='px-4 my-4'><Link to={grandChild.link} onClick={closeHeader}>{grandChild.title}</Link></li>)}
+                                                <li className='px-4 my-4'><Link className="block w-full" to={child.link} onClick={closeHeader}>{child.title}</Link></li>
+                                                {child.submenu.map((grandChild)=> <li className='px-4 my-4'><Link className="block w-full" to={grandChild.link} onClick={closeHeader}>{grandChild.title}</Link></li>)}
                                             </motion.ul>
                                         }
                                     </AnimatePresence>
