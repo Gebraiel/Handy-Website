@@ -10,6 +10,7 @@ export default function Features({ features }) {
       setCols(window.innerWidth <= 991 ? 1 : features.length);
     };
     window.addEventListener("resize", handleResize);
+    handleResize()
     return () => window.removeEventListener("resize", handleResize);
   }, []);
   return (
