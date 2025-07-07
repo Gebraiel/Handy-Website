@@ -59,7 +59,7 @@ export default function Header({menu,isAbsolute}) {
                   <SubMenu item={item} closeHeader={()=>setShow(false)}/>
                   :
                 <li className=" border border-l-0 border-r-0  bg-primary uppercase font-bold " >
-                    <NavLink onClick={()=>setShow(false)} className={`flex gap-1 p-5 items-center w-full text-white `} >
+                    <NavLink to={item.link} onClick={()=>setShow(false)} className={`flex gap-1 p-5 items-center w-full text-white `} >
                       {item.title}
                     </NavLink>
                 </li>
