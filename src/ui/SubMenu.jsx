@@ -20,11 +20,7 @@ export default function SubMenu({item,closeHeader}) {
                     {
                         show &&
                         <motion.ul className="bg-primary text-white w-full h-0 opacity-0" initial={{height:0,opacity:0}} animate={{height:"auto",opacity:1}} exit={{height:0,opacity:0}}>
-                            <li className=" border-y py-4 px-8 ">
-                                    <NavLink to={`${item.link}`} onClick={closeHeader} className="flex gap-1 items-center w-full" >
-                                        {item.title}
-                                    </NavLink>
-                            </li>
+                           
                         {
                             item.submenu.map((child)=>
                             child.hasSubMenu ?
@@ -40,16 +36,15 @@ export default function SubMenu({item,closeHeader}) {
                                         {
                                             showSubmenu &&
                                             <motion.ul className='h-0 opacity-0' initial={{height:0,opacity:0}} animate={{height:"auto",opacity:1}} exit={{height:0,opacity:0}}>
-                                                <li className='px-4 my-4'><Link className="block w-full" to={child.link} onClick={closeHeader}>{child.title}</Link></li>
-                                                {child.submenu.map((grandChild)=> <li className='px-4 my-4'><Link className="block w-full" to={grandChild.link} onClick={closeHeader}>{grandChild.title}</Link></li>)}
+                                                {child.submenu.map((grandChild)=> <li className='px-4 my-4 w-full'><Link className="block w-full" to={grandChild.link} onClick={closeHeader}>{grandChild.title}</Link></li>)}
                                             </motion.ul>
                                         }
                                     </AnimatePresence>
 
                                 </li>   
-                                                    :
-                                <li className=" border-y py-4 px-8">
-                                    <Link to={child.link} onClick={closeHeader}>
+                                :
+                                <li className="w-full border-y py-4 px-8">
+                                    <Link className="block w-full" to={child.link} onClick={closeHeader}>
                                         {child.title} 
                                     </Link>
                                     

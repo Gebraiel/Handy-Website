@@ -16,37 +16,14 @@ export default function Loader() {
             <motion.div
                 animate="pulse"
                 transition={{ staggerChildren: -0.2, staggerDirection: -1 }}
-                className="container"
+                className="flex justify-center items-center gap-5"
             >
-                <motion.div className="dot" variants={dotVariants} />
-                <motion.div className="dot" variants={dotVariants} />
-                <motion.div className="dot" variants={dotVariants} />
-                <StyleSheet />
+                <motion.div className="size-5 rounded-full bg-[#09216D] will-change-transform" variants={dotVariants} />
+                <motion.div className="size-5 rounded-full bg-[#09216D] will-change-transform" variants={dotVariants} />
+                <motion.div className="size-5 rounded-full bg-[#09216D] will-change-transform" variants={dotVariants} />
+                
             </motion.div>
        </div>
-    )
-}
-
-function StyleSheet() {
-    return (
-        <style>
-            {`
-            .container {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                gap: 20px;
-            }
-
-            .dot {
-                width: 20px;
-                height: 20px;
-                border-radius: 50%;
-                background-color: #09216D;
-                will-change: transform;
-            }
-            `}
-        </style>
     )
 }
 

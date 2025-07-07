@@ -33,9 +33,9 @@ export default function Header({menu,isAbsolute}) {
     <header
       ref={headerRef}
 
-      className={`transition-all duration-300  left-0 top-0 w-screen z-50  text-white ${!isAbsolute || isSticky || show ? "bg-primary bg-contain bg-[url('/pattern.png')]" : ""} ${
+      className={`transition-all duration-300 left-0 top-0 w-screen z-50  text-white ${!isAbsolute || isSticky || show ? "bg-primary bg-contain bg-[url('/pattern.png')]" : ""} ${
         isSticky
-          ? "sm:fixed animate-fadeDown z-[51]"
+          ? "sm:fixed sm:animate-fadeDown z-[51]"
           : headerClasses
       }  ` }
     >
@@ -59,7 +59,7 @@ export default function Header({menu,isAbsolute}) {
                   <SubMenu item={item} closeHeader={()=>setShow(false)}/>
                   :
                 <li className=" border border-l-0 border-r-0  bg-primary uppercase font-bold " >
-                    <NavLink to={`${item.link? item.link : '/'}`} onClick={()=>setShow(false)} className={`flex gap-1 p-5 items-center w-full text-white `} >
+                    <NavLink onClick={()=>setShow(false)} className={`flex gap-1 p-5 items-center w-full text-white `} >
                       {item.title}
                     </NavLink>
                 </li>
