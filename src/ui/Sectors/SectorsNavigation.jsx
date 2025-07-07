@@ -31,7 +31,7 @@ export default function SectorsNavigation({links}) {
     let timeout ;
     if(sectorName){
      timeout = setTimeout(() => {
-      const offset = window.innerWidth < 768 ? 0 : 200;
+      const offset = window.innerWidth < 768 ? 100 : 200;
       const element = sectorsSection.current;
       if (element) {
         const topPosition = element.getBoundingClientRect().top + window.pageYOffset - offset;
