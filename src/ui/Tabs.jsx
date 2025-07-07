@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Section from './Section'
 import {AnimatePresence} from "motion/react"
-export default function Tabs({children,links,active=0}) {
+export default function Tabs({children,links,active=0,ref}) {
   const[activeTab,setActiveTab] = useState(active);   
   
   useEffect(()=>{
@@ -20,6 +20,7 @@ export default function Tabs({children,links,active=0}) {
                 }        
             </div>
         </Section>
+        <div ref={ref}></div>
         {
             <AnimatePresence mode="wait">
                 {children[activeTab]}

@@ -47,7 +47,8 @@ export default function HandyPaperSector() {
   },[])
   return (
     <div>
-     <Section className="!py-0">        
+     <Section className="!py-0">  
+      
         <div className='lg:block hidden'>
           <FadeLeft>
             <img src="/sectors/sector1.webp" alt="" />
@@ -58,7 +59,7 @@ export default function HandyPaperSector() {
             <img src="/sectors/Handy Paper.webp" alt="" />
           </FadeLeft>
         </div>
-        
+
         <div className=" m-auto 2xl:my-[50px] my-[25px]">
           <div>
             <FadeIn>

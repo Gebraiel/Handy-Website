@@ -39,87 +39,89 @@ export default function Header({menu,isAbsolute}) {
           : headerClasses
       }  ` }
     >
-      <div className="container relative sm:w-[90%] flex items-center justify-between m-auto p-5">
-        <Link to="/" className="max-w-40">
-          <FadeIn delay={0.3}>
-            <img src={Logo} alt="Logo" />
-          </FadeIn>
-        </Link>
-        <div className="xl:hidden">
-          <button onClick={() => setShow(!show)}>
-            { !show ? <GiHamburgerMenu className="text-2xl" /> : <IoCloseSharp className="text-2xl" />}
-          </button>
-          
-          <ul
-            className={`absolute transition-all duration-300 ${show?'left-0':'-left-full'} top-full w-full bg-primary text-white z-50 overflow-y-auto transition-all duration-300`}
-          >
-            {
-              menu.map((item)=>
-                item.hasSubMenu ? 
-                  <SubMenu item={item} closeHeader={()=>setShow(false)}/>
-                  :
-                <li className=" border border-l-0 border-r-0  bg-primary uppercase font-bold " >
-                    <NavLink to={item.link} onClick={()=>setShow(false)} className={`flex gap-1 p-5 items-center w-full text-white `} >
-                      {item.title}
-                    </NavLink>
-                </li>
-              )
-            }
-          </ul>
-          
-        </div>
-        <div className="hidden xl:block ">
-          <ul className="flex gap-10 ">
-            {menu.map((item,index)=>
-              <FadeIn delay={0.1 * index}>
-                <li className="uppercase font-bold relative has-submenu text-xs" key={index}>
-                <NavLink to={`${item.link? item.link : '/'}`} className={({ isActive }) => `${item.hasSubMenu ? 'flex gap-1 items-center ' : ""} ${isActive ? (isSticky || !isAbsolute ? 'text-secondary' : 'text-primary') : 'text-white'} `
-                        
-                }>
-                      {item.title}
-                    { item.hasSubMenu && <FaCaretDown /> }
-
-                </NavLink>
-                {
-                  //First Level Submenu
-                  item.hasSubMenu &&
-                   <ul className=" text-white w-52 pt-5 absolute left-0 top-full submenu  opacity-0 hidden">
-                      {
-                        item.submenu.map((child,index)=>
-                          <li className="border-b-2 p-4 bg-primary relative has-submenu" key={index}>
-                            
-                            <Link to={child.link} className="flex gap-1 items-center">
-                              {child.title}
-                              { child.hasSubMenu && <FaCaretRight /> }
-
-                            </Link>
-                            {
-                              //Second Level Submenu
-                              child.hasSubMenu && 
-                              <ul className="text-white w-52 absolute left-full top-0 opacity-0 hidden submenu">
-                                {
-                                  child.submenu.map((e,index)=>
-                                    <li className="border-b-2 p-4 bg-primary" key={index}>
-                                      
-                                      <Link to={e.link}>{e.title}</Link>
-                                      
-                                    </li>
-                                    
-                                  )
-                                }
-                              </ul>
-                            }  
-                          </li>
-                          
-                        )
-                      }
-                    </ul>
-                } 
-              </li>  
-              </FadeIn>
-            )}
+      <div className="relative">
+        <div className="container  sm:w-[90%] flex items-center justify-between m-auto p-5">
+          <Link to="/" className="max-w-40">
+            <FadeIn delay={0.3}>
+              <img src={Logo} alt="Logo" />
+            </FadeIn>
+          </Link>
+          <div className="xl:hidden">
+            <button onClick={() => setShow(!show)}>
+              { !show ? <GiHamburgerMenu className="text-2xl" /> : <IoCloseSharp className="text-2xl" />}
+            </button>
             
-          </ul>
+            <ul
+              className={`absolute transition-all duration-300 ${show?'left-0':'-left-full'} top-full w-full bg-primary text-white z-50 overflow-y-auto transition-all duration-300`}
+            >
+              {
+                menu.map((item)=>
+                  item.hasSubMenu ? 
+                    <SubMenu item={item} closeHeader={()=>setShow(false)}/>
+                    :
+                  <li className=" border border-l-0 border-r-0  bg-primary uppercase font-bold " >
+                      <NavLink to={item.link} onClick={()=>setShow(false)} className={`flex gap-1 p-5 items-center w-full text-white `} >
+                        {item.title}
+                      </NavLink>
+                  </li>
+                )
+              }
+            </ul>
+            
+          </div>
+          <div className="hidden xl:block ">
+            <ul className="flex gap-10 ">
+              {menu.map((item,index)=>
+                <FadeIn delay={0.1 * index}>
+                  <li className="uppercase font-bold relative has-submenu text-xs" key={index}>
+                  <NavLink to={`${item.link? item.link : '/'}`} className={({ isActive }) => `${item.hasSubMenu ? 'flex gap-1 items-center ' : ""} ${isActive ? (isSticky || !isAbsolute ? 'text-secondary' : 'text-primary') : 'text-white'} `
+                          
+                  }>
+                        {item.title}
+                      { item.hasSubMenu && <FaCaretDown /> }
+
+                  </NavLink>
+                  {
+                    //First Level Submenu
+                    item.hasSubMenu &&
+                    <ul className=" text-white w-52 pt-5 absolute left-0 top-full submenu  opacity-0 hidden">
+                        {
+                          item.submenu.map((child,index)=>
+                            <li className="border-b-2 p-4 bg-primary relative has-submenu" key={index}>
+                              
+                              <Link to={child.link} className="flex gap-1 items-center">
+                                {child.title}
+                                { child.hasSubMenu && <FaCaretRight /> }
+
+                              </Link>
+                              {
+                                //Second Level Submenu
+                                child.hasSubMenu && 
+                                <ul className="text-white w-52 absolute left-full top-0 opacity-0 hidden submenu">
+                                  {
+                                    child.submenu.map((e,index)=>
+                                      <li className="border-b-2 p-4 bg-primary" key={index}>
+                                        
+                                        <Link to={e.link}>{e.title}</Link>
+                                        
+                                      </li>
+                                      
+                                    )
+                                  }
+                                </ul>
+                              }  
+                            </li>
+                            
+                          )
+                        }
+                      </ul>
+                  } 
+                </li>  
+                </FadeIn>
+              )}
+              
+            </ul>
+          </div>
         </div>
       </div>
     </header>

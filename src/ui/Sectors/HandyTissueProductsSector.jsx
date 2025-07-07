@@ -52,6 +52,7 @@ export default function HandyTissueProductsSector() {
             <img src="/sectors/Handy Tissue Products.webp" alt="" />
           </FadeLeft>
         </div>
+
         <div className="2xl:my-[50px] my-[25px]">
           <FadeIn>
             <SectionTitle className="2xl:mb-5 !text-left">

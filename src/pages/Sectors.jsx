@@ -20,14 +20,10 @@ export default function Sectors() {
   console.log("Sectors");
   const {sectorName} = useParams();
   console.log(sectorName);
-  const sectorsSection = useRef(null);
+  
   const navigation = useNavigation();
   const isLoading = navigation.state === "loading";
-  useEffect(()=>{
-    if(sectorName){
-      sectorsSection.current?.scrollIntoView({ behavior: 'smooth' });
-    }
-  },[sectorName])
+
   if (isLoading) return <Loader />;
 
   return (
@@ -77,7 +73,6 @@ export default function Sectors() {
           ]}
         />
       </Section>
-      <div ref={sectorsSection}></div>
       <SectorsNavigation links={["Handy Paper" ,"Handy Tissue Products","Handy Wet Wipes"]} />
  
      
