@@ -13,7 +13,7 @@ export async function getCategories(){
     const sortedData = categories.sort((a, b) => {
         return customOrder.indexOf(a.name) - customOrder.indexOf(b.name)
       })
-      
+
 
     return sortedData;
 }

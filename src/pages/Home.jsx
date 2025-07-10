@@ -20,6 +20,8 @@ import Loader from "../ui/Loader";
 import FadeIn from "../ui/Animation/FadeIn";
 import FadeDown from "../ui/Animation/FadeDown";
 import FadeLeft from "../ui/Animation/FadeLeft";
+import { useTranslation } from "react-i18next";
+import '../utils/i18n';
 
 
 const sustainabilityLength = 14;
@@ -34,14 +36,15 @@ const sustainabilityImagesArray = Array.from(
 
 export default function Home() {
   console.log("Home");
+  const { t } = useTranslation(['Home',"Common"]); // نفس الـ namespace
 
   const navigation = useNavigation();
       const isLoading = navigation.state === "loading";
       if (isLoading) return <Loader />;
   return (
-    <FadeIn> 
-      
-      <Section type="fullscreen">
+    <FadeIn>
+
+      <Section  type="fullscreen">
         <Slider
           slides={[
             {
@@ -50,8 +53,8 @@ export default function Home() {
                 mobile:"banner/slider-1-mobile.webp"
               },
               content:{
-                heading:"Innovative Solutions",
-                subtitle:"We offer "
+                heading:t("heading1", { ns: 'Home' }),
+                subtitle:t("subtitle1", { ns: 'Home' })
               }
             },
             {
@@ -60,8 +63,8 @@ export default function Home() {
                 mobile:"/banner/slider-2-mobile.webp"
               },
               content:{
-                heading:"Modern, high-quality products",
-                subtitle:"Proudly producing "
+                heading:t("heading2", { ns: 'Home' }),
+                subtitle:t("subtitle2", { ns: 'Home' })
               }
             },
             {
@@ -70,8 +73,8 @@ export default function Home() {
                 mobile:"/banner/slider-3-mobile.webp"
               },
               content:{
-                heading:"35 Years of redefining hygiene standards in Egypt",
-                subtitle:"Experience more than "
+                heading:t("heading3", { ns: 'Home' }),
+                subtitle:t('subtitle3', { ns: 'Home' })
               }
             },{
               image:{
@@ -79,7 +82,7 @@ export default function Home() {
                 mobile:"banner/slider-4-mobile.webp"
               },
               content:{
-                heading:"Smart Storage Solutions for Premium Tissue Products.",
+                heading:t("heading4", { ns: 'Home' }),
                 subtitle:""
               }
             }
@@ -89,7 +92,7 @@ export default function Home() {
                 mobile:"/banner/slider-5-mobile.webp"
               },
               content:{
-                heading:"Spacious Facilities Powering Efficient Distribution.",
+                heading:t("heading5", { ns: 'Home' }),
                 subtitle:""
               }
             }
@@ -99,41 +102,34 @@ export default function Home() {
         <Section className="relative">
           <HandyBackground className="xl:!bg-[bottom_-250px_left_-100px]"/>
           <SectionTitle className="!leading-tight">
-            <p className="text-secondary ">Your Premium Hygiene Partner</p>
-            <p className="text-primary">for Everyday Freshness</p>
+            <p className="text-secondary ">{t("About-Heading", { ns: 'Home' })}</p>
+            <p className="text-primary">{t("About-Subtitle", { ns: 'Home' })}</p>
           </SectionTitle>
 
-    
+
           <Paragraph className="text-center text-primary">
-            At HANDY, we’ve been redefining hygiene since 1978, bringing you
-            products that make everyday life fresher, easier, and more
-            comfortable. Whether at home or in business, our high-quality products
-            are designed for maximum convenience, offering the perfect balance of
-            strength, softness, and eco-friendly solutions.
+           {t("About-Content")}
           </Paragraph>
           <AboutSection />
         </Section>
-      
+
         <Section className={"bg-primary"}>
-        <SectionTitle className="text-white">Why Handy</SectionTitle>
+        <SectionTitle className="text-white">{t("Why-Handy", { ns: 'Home' })}</SectionTitle>
         <Features minWidth="300" features={
           [
-              {icon: <FaMedal />,title:"Certified Quality",description:`Our products are ISO 9001 & ISO 14001 certified, ensuring the highest
-              standards.`},
-              
-              {icon:<FaThumbsUp />,title:"Trusted",description:`Years of experience with advanced technology to deliver top-tier
-          hygiene products.`},
-              
-              {icon: <RiLeafFill />,title:"Eco Friendly",description:`We prioritize sustainability, crafting products that are as kind to
-          the planet as they are to you.`},
-              
-              {icon: <FaGlobe />,title:"Global Reach",description:`Exporting to over 10 countries, HANDY products are trusted worldwide.`}
+              {icon: <FaMedal />,title:t("Feateurs-Heading-01", { ns: 'Home' }),description:t("Feateurs-Content-01", { ns: 'Home' })},
+
+              {icon:<FaThumbsUp />,title:t("Feateurs-Heading-02", { ns: 'Home' }),description:t("Feateurs-Content-02", { ns: 'Home' })},
+
+              {icon: <RiLeafFill />,title:t("Feateurs-Heading-03", { ns: 'Home' }),description:t("Feateurs-Content-03", { ns: 'Home' })},
+
+              {icon: <FaGlobe />,title:t("Feateurs-Heading-04", { ns: 'Home' }),description:t("Feateurs-Content-04", { ns: 'Home' })}
           ]
         }/>
       </Section>
 
       <Section className={"bg-[aliceblue]"}>
-        <SectionTitle>Sectors</SectionTitle>
+        <SectionTitle>{t("Sectors", { ns: 'Common' })}</SectionTitle>
         <FadeDown>
           <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
           <div className="w-full bg-white">
@@ -145,17 +141,11 @@ export default function Home() {
             </Link>
 
             <div className="p-3">
-              <Link to="/sectors/handy-paper"><b className="text-2xl text-primary">Handy Paper</b></Link>
+              <Link to="/sectors/handy-paper"><b className="text-2xl text-primary">{t("Handy Paper",{ns:"Common"})}</b></Link>
               <Paragraph className="mt-2">
-                Nestled in New Borg El-Arab City, Alexandria, our first factory
-                houses the iconic ‘Recard’ machine from 1989, producing jumbo
-                rolls. In 2016, we supercharged operations with RECARD
-                technology, increasing capacity to 80 tons per day and launching
-                a recycling initiative. This powerhouse serves markets across
-                KSA, Lebanon, Greece, Cyprus, Kuwait, Morocco, Syria, Sudan,
-                Kenya, the Caribbean, and West Africa.
+                {t("Sectors-Content-01",{ns:"Home"})}
               </Paragraph>
-              <Link className="text-primary font-bold" to="/sectors/handy-paper">Learn more</Link>
+              <Link className="text-primary font-bold" to="/sectors/handy-paper">{t("Learn More",{ns:"Common"})}</Link>
 
             </div>
           </div>
@@ -168,15 +158,11 @@ export default function Home() {
             </Link>
 
             <div className="p-3">
-              <Link to="/sectors/handy-tissue-products"><b className="text-2xl text-primary">Handy Tissue Products </b></Link>
+              <Link to="/sectors/handy-tissue-products"><b className="text-2xl text-primary">{t("Handy Tissue Products",{ns:"Common"})}</b></Link>
               <Paragraph className="mt-2 text-md">
-                In 2018, we expanded with a state-of-the-art facility in 6th of
-                October City, powered by South Korean technology. This facility
-                is where we craft everything from facial tissues to toilet
-                paper, kitchen towels, table napkins, and handkerchiefs, all
-                with a touch of innovation.
+                 {t("Sectors-Content-02",{ns:"Home"})}
               </Paragraph>
-              <Link className="text-primary font-bold" to="/sectors/handy-tissue-products">Learn more</Link>
+              <Link className="text-primary font-bold" to="/sectors/handy-tissue-products">{t("Learn More",{ns:"Common"})}</Link>
 
             </div>
           </div>
@@ -189,24 +175,21 @@ export default function Home() {
             </Link>
 
             <div className="p-3 ">
-              <Link to="/sectors/handy-wet-wipes"><b className="text-2xl text-primary">Wet Wipes</b></Link>
+              <Link to="/sectors/handy-wet-wipes"><b className="text-2xl text-primary">{t("Wet Wipes",{ns:"Common"})}</b></Link>
               <Paragraph className="mt-2 text-md">
-                Our Wet Wipes Plant, established in 2018, creates top-tier wipes
-                that meet both local and global standards, delivering the
-                perfect blend of convenience, safety, and hygiene.
+                 {t("Sectors-Content-03",{ns:"Home"})}
               </Paragraph>
-              <Link className="text-primary font-bold" to="/sectors/handy-wet-wipes">Learn more</Link>
+              <Link className="text-primary font-bold" to="/sectors/handy-wet-wipes">{t("Learn More",{ns:"Common"})}</Link>
             </div>
           </div>
         </div>
         </FadeDown>
       </Section>
-     
+
       <Banner image="/banner.webp" className=" text-center">
         <FadeIn>
           <b className="text-2xl md:text-3xl lg:text-4xl 2xl:text-5xl xl:leading-tight text-white">
-          Proudly producing modern and high-quality products, using advanced
-          machinery under the guidance of a skilled team
+          {t("Banner-Heading",{ns:"Home"})}
         </b>
         </FadeIn>
       </Banner>
@@ -214,23 +197,20 @@ export default function Home() {
         <FadeLeft>
           <SectionTitle className="!leading-tight">
           <>
-            <p className="text-secondary ">Handy Products</p>
-            <p className="text-primary">Clean, fresh, and on-the-go Quality That Speaks for Itself</p>
+            <p className="text-secondary ">{t("Handy-Products-Heading",{ns:"Home"})}</p>
+            <p className="text-primary">{t("Handy-Products-Subheading",{ns:"Home"})}</p>
           </>
         </SectionTitle>
         </FadeLeft>
         <ProductCategories />
       </Section>
       <Section >
-        <SectionTitle>Sustainability</SectionTitle>
+        <SectionTitle>{t("Sustainability",{ns:"Common"})}</SectionTitle>
 
-        
+
         <FadeIn>
           <Paragraph className="text-primary">
-          We believe in sustainability at every step of our production. From
-          eco-friendly materials to water purification systems meeting WHO
-          standards, we strive to protect both the planet and your health. At
-          HANDY, we create products that support a cleaner, greener future.
+          {t("Sustainabilty-Content",{ns:"Home"})}
         </Paragraph>
         </FadeIn>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-[repeat(14,1fr)] gap-5 mt-10 m-auto">
@@ -240,7 +220,7 @@ export default function Home() {
             </FadeIn>
           ))}
         </div>
-      </Section>  
+      </Section>
       <Section
         className={
           "bg-[url(/slider-4.webp)] bg-center bg-cover  text-center relative"
@@ -248,23 +228,16 @@ export default function Home() {
       >
         <div className="absolute left-0 top-0 w-full h-full bg-[rgba(0,0,0,0.4)] "></div>
         <Paragraph className="text-white z-10 relative font-medium" size="lg">
-          Since our founding, we've looked beyond commercial expectations,
-          creating lasting value for society, nature, and humanity. Guided by
-          the United Nations Global Compact and Sustainable Development Goals,
-          we recycle high-quality waste paper with Recard and blend virgin pulp
-          with selected recycled materials to reduce waste and promote
-          circularity. We recently welcomed a school trip to our factory,
-          sharing our commitment to sustainability with future generations and
-          inspiring them to protect our planet.
+          {t("Banner-Content-02",{ns:"Home"})}
         </Paragraph>
       </Section>
 
       <Section className="relative">
         <HandyBackground />
-        <SectionTitle>Certificates</SectionTitle>
+        <SectionTitle>{t("Certificates",{ns:"Common"})}</SectionTitle>
         <Certificates />
       </Section>
-      
+
 
       {/* <Section>
         <SectionTitle className="mb-10">Contact Us</SectionTitle>

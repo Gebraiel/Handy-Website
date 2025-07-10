@@ -6,8 +6,11 @@ import { FaLocationDot } from "react-icons/fa6";
 import { FaTty } from "react-icons/fa6";
 import { FaFax } from "react-icons/fa";
 import { IoLogoWhatsapp } from "react-icons/io";
+import { useTranslation } from "react-i18next";
 
 export default function Footer({mainLinks,otherLinks}) {
+  const {t:tFooter} = useTranslation("Footer");
+  const {t:tCommon} = useTranslation("Common");
   const year = new Date().getFullYear();
   console.log("FOOTER")
   return (
@@ -19,35 +22,34 @@ export default function Footer({mainLinks,otherLinks}) {
           </Link>
         </div>
         <div className="">
-          <div className="space-y-3">            
-            <h5 className="text-secondary font-bold text-3xl">Pages</h5>
+          <div className="space-y-3">
+            <h5 className="text-secondary font-bold text-3xl">{tFooter("Pages")}</h5>
             <div className="">
               <ul className="uppercase">
                 {
                   mainLinks.map((link,index) => <li key={index}><Link  to={link.link}>{link.title}</Link></li>)
                 }
-                
+
               </ul>
               <ul className="uppercase">
                 {
                   otherLinks.map((link,index) => <li key={index}><Link  to={link.link}>{link.title}</Link></li>)
                 }
-                
-                
+
+
               </ul>
             </div>
           </div>
-          
+
         </div>
         <div className="space-y-10">
           <div>
-            <h5 className="text-secondary font-bold text-xl">HANDY TISSUE MILL
+            <h5 className="text-secondary font-bold text-xl">{tCommon("HANDY TISSUE MILL")}
             </h5>
             <ul className="space-y-5 mt-5">
               <li className="flex flex-col sm:flex-row items-center justify-start gap-5">
                 <FaLocationDot className="text-3xl"/>
-                <Paragraph size="sm" className="text-center sm:text-left"><a href="https://maps.app.goo.gl/sQavxE64RvDio4LT8" target="_blank">Block No.13, Second Industrial Zone, New Borg El Arab City,
-                Alexandria, Egypt.</a></Paragraph>
+                <Paragraph size="sm" className="text-center sm:text-left"><a href="https://maps.app.goo.gl/sQavxE64RvDio4LT8" target="_blank">{tCommon("Handy-Mill-Address")}</a></Paragraph>
               </li>
               <li className="flex flex-col sm:flex-row items-center justify-start gap-5">
                 <FaEnvelopeOpen className="text-3xl" />
@@ -66,17 +68,16 @@ export default function Footer({mainLinks,otherLinks}) {
               </li>
             </ul>
           </div>
-         
+
 
         </div>
         <div>
-            <h5 className="text-secondary font-bold text-xl">HANDY CONVERTING PLANT
+            <h5 className="text-secondary font-bold text-xl">{tCommon("HANDY CONVERTING PLANT")}
             </h5>
             <ul className="space-y-5 mt-5">
               <li className="flex flex-col sm:flex-row items-center justify-start gap-5">
                 <FaLocationDot className="text-3xl"/>
-                <Paragraph size="sm" className="text-center sm:text-left"><a href="https://maps.app.goo.gl/4VppVHX4RHzxSv348" target="_blank">Block No. (86,87,88), Fourth Industrial Zone, October 6th City,
-                Giza, Egypt.</a></Paragraph>
+                <Paragraph size="sm" className="text-center sm:text-left"><a href="https://maps.app.goo.gl/4VppVHX4RHzxSv348" target="_blank">{tCommon("Handy-Converting-Address")}</a></Paragraph>
               </li>
               <li className="flex flex-col sm:flex-row items-center justify-start gap-5">
                 <FaEnvelopeOpen className="text-3xl" />
@@ -94,7 +95,7 @@ export default function Footer({mainLinks,otherLinks}) {
                   <a href="https://wa.me/+201286644171" target="_blank">+2 01286644171</a>
                 </Paragraph>
               </li>
-              
+
               <li className="flex flex-col sm:flex-row items-center justify-start gap-5">
                 <FaFax className="w-[24px] text-3xl" />
                 <Paragraph className="text-center sm:text-left font-medium"><a href="tel:+2 02 38333157">+2 02 38333157</a></Paragraph>
@@ -104,7 +105,7 @@ export default function Footer({mainLinks,otherLinks}) {
       </div>
       <div className="text-center py-5">
         <p>
-          Copyright By <b>RASANS</b> - {year}
+          {tFooter("Copyright")} <b>{tFooter("RASANS")}</b> - {year}
         </p>
       </div>
     </footer>

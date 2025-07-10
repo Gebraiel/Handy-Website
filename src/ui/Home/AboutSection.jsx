@@ -2,31 +2,35 @@ import Accordion from "./Accordion";
 import handy from "../../assets/handy.webp";
 import SectionTitle from "../SectionTitle";
 import Paragraph from "../Paragraph";
-const accordions = [
-  {
-    heading: "Our Mission",
-    content:
-      "To provide innovative, high-quality hygiene solutions that elevate your daily life while championing sustainability.",
-  },
-  {
-    heading: "Our Vision",
-    content:
-      "To become the world’s leading hygiene brand, celebrated for our commitment to excellence, innovation, and environmental responsibility.",
-  },
-];
+import { useTranslation } from "react-i18next";
+
 export default function AboutSection() {
+  const {t} = useTranslation("Home");
+
+  const accordions = [
+    {
+      heading: t("Accordion1-Heading"),
+      content:
+        t("Accordion1-Content"),
+    },
+    {
+      heading: t("Accordion2-Heading"),
+      content:
+         t("Accordion2-Content"),
+    },
+  ];
   return (
     <>
       <div className="flex lg:flex-row flex-col justify-between gap-14 2xl:mt-32 mt-16 ">
         <div className="lg:w-2/3">
           <div className="">
             <Paragraph className="font-semibold text-primary">
-              OUR MISSION & VISION
+              {t("Our-Mission-Vision")}
             </Paragraph>
             <SectionTitle className="!text-left">
-              <p className="text-secondary 2xl:my-5 xl:my-1"> +35 Years of</p>
+              <p className="text-secondary 2xl:my-5 xl:my-1"> {t("Vision-Content1")}</p>
               <p className="text-primary">
-                Redefining hygiene standards in Egypt
+                {t("Vision-Content2")}
               </p>
             </SectionTitle>
           </div>

@@ -2,37 +2,38 @@ import React from 'react'
 import Section from '../Section'
 import FadeLeft from '../Animation/FadeLeft'
 import FadeRight from '../Animation/FadeRight'
+import { useTranslation } from 'react-i18next'
 
 export default function BrandDifferentiationTab() {
+  const {t} = useTranslation("About");
   return (
     <Section className='!pt-0'>
       <div className='flex justify-center xl:justify-between items-start flex-wrap gap-y-5'>
     <div className='w-full xl:w-1/2'>
-      <b className='text-xl'>Brand Differentiation</b>
+      <b className='text-xl'>{t("Brand Differentiation")}</b>
       <ul className='list-disc pl-7 pt-5 space-y-2'>
         <FadeLeft delay={0.1}>
           <li className=''>
-          <b>Strong Brand Identity: </b>Memorable logo, tagline, and unique brand story.
+          <b>{t("Strong-Brand-Identity-Heading")}: </b>{t("Strong-Brand-Identity-Content")}
 
-          
+
         </li>
         </FadeLeft>
         <FadeLeft delay={0.2}>
 <li className=''>
-          <b>Effective Marketing: </b>Engaging social media, influencer collaborations, and targeted ads.
-          
+          <b>{t("Effective-Marketing-Heading")}: </b>{t("Effective-Marketing-Content")}
+
         </li>
         </FadeLeft>
         <FadeLeft delay={0.3}>
           <li className=''>
-          <b>Customer Loyalty: </b>
-          Rewarding programs that keep customers coming back.
+          <b>{t("Customer-Loyalty-Heading")}: </b>{t("Customer-Loyalty-Content")}
 
         </li>
         </FadeLeft>
         <FadeLeft delay={0.4}>
           <li className=''>
-          <b>Community Engagement: </b> Active involvement in local initiatives for a positive brand image.
+          <b>{t("Community-Engagement-Heading")}: </b>{t("Community-Engagement-Content")}
 
         </li>
         </FadeLeft>

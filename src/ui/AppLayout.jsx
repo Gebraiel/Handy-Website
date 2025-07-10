@@ -12,21 +12,22 @@ import { useState } from "react";
 import OutletContext from "../context/OutletContext";
 import { getProducts } from "../services/products";
 import HeaderWithRealive from "./HeaderWithRealive";
-import FadeIn from "./Animation/FadeIn";
- 
+import { useTranslation } from "react-i18next";
+
 export default function AppLayout() {
   const {categories,products} = useLoaderData();
+  const{t}=useTranslation("Common");
   const categoriesMenu = [
     {
-      title:"Jumbo Rolls",
+      title:t("Jumbo Rolls"),
       link:"/category/2"
     },
     {
-      title:"Facial Tissues",
+      title:t("Facial Tissues"),
       link:"/category/1"
     },
     {
-      title:"Wet Wipes",
+      title:t("Wet Wipes"),
       link:"/category/5",
       hasSubMenu:true,
       submenu:[
@@ -53,41 +54,41 @@ export default function AppLayout() {
       ]
     },
     {
-      title:"Toilet Tissues",
+      title:t("Toilet Tissues"),
       link:"/category/4"
     },
     {
-      title:"Home Care",
+      title:t("Home Care"),
       link:"/category/3"
     }
-    
-   
-    
+
+
+
   ]
   const otherLinks=[
-    {title:"Health & Safety Measures",link:"/health"},
-    {title:"Customer Support",link:"/support"},
-    {title:"Our Branches",link:"/branches"},
+    {title:t("Health & Safety Measures"),link:"/health"},
+    {title:t("Customer Support"),link:"/support"},
+    {title:t("Our Branches"),link:"/branches"},
   ]
   const footerMenu = [
-    {title:"Home",link:"/"},
-    {title:"About Us",link:"/about"},
-    {title:"Sectors",link:"/sectors",hasSubMenu:true,submenu:[
-      {title:"Handy Paper",link:"/sectors/handy-paper"},
-      {title:"Handy Tissue Products",link:"/sectors/handy-tissue-products"},
-      {title:"Wet Wipes",link:"/sectors/handy-wet-wipes"},
+    {title:t("Home"),link:"/"},
+    {title:t("About Us"),link:"/about"},
+    {title:t("Sectors"),link:"/sectors",hasSubMenu:true,submenu:[
+      {title:t("Handy Paper"),link:"/sectors/handy-paper"},
+      {title:t("Handy Tissue Products"),link:"/sectors/handy-tissue-products"},
+      {title:t("Wet Wipes"),link:"/sectors/handy-wet-wipes"},
     ]},
     {
-      title:"Products",link:"/products",hasSubMenu:true,submenu:categoriesMenu
+      title:t("Products"),link:"/products",hasSubMenu:true,submenu:categoriesMenu
     },
-    {title:"Sustainability",link:"/sustainability"},
-    {title:"Media Center",link:"/media-center"},
-    {title:"Contact Us",link:"/contact"},
+    {title:t("Sustainability"),link:"/sustainability"},
+    {title:t("Media Center"),link:"/media-center"},
+    {title:t("Contact Us"),link:"/contact"},
   ]
   return (
     <CategoriesContext.Provider value={categories} >
       <ScrollToTop />
-      
+
       <HeaderWithRealive render={(setIsRelative)=>
       <main>
         <AnimatePresence>

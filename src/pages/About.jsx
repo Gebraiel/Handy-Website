@@ -14,92 +14,41 @@ import Accordion from "../ui/Home/Accordion";
 import handy from "../assets/handy.webp";
 import FadeIn from "../ui/Animation/FadeIn";
 import FadeLeft from "../ui/Animation/FadeLeft";
+import { useTranslation } from "react-i18next";
 
 export default function About() {
   console.log("About");
   const navigation = useNavigation();
+  const {t:tCommon} = useTranslation("Common")
+  const {t:tAbout} = useTranslation("About")
   const accordions = [
   {
-    heading: "Quality Control : The Foundation of Excellence",
+    heading: tAbout("Quality-Control-Foundation-Heading"),
     content:
-     "At Handy, quality is more than a process—it’s a core value embedded in every step we take. From planning to production, our commitment to excellence drives us to exceed expectations and deliver superior products every time.",
+     tAbout("Quality-Control-Foundation-Content"),
   },
   {
-    heading: "Quality Planning: Setting the Stage for Excellence",
+    heading: tAbout("Quality-Planning-Heading"),
     content:
       <>
         <ul className="list-disc list-inside">
           <li>
-            <b>Defining Standards</b>
+            <b>{tAbout("Defining-Standards-Heading")}</b>
             <p>
-              We establish clear, rigorous quality benchmarks that guide every aspect of our operations
+              {tAbout("Defining-Standards-Content")}
             </p>
           </li>
           <li>
-            <b>Proactive Approach</b>
+            <b>{tAbout("Proactive-Approach-Heading")}</b>
             <p>
-              We anticipate potential challenges and apply preventive measures to eliminate risks before they arise.
+              {tAbout("Proactive-Approach-Content")}
             </p>
-          </li>
-          <li>
-            <b>Purpose-Driven Goals</b>
-            <p>
-               Measurable, strategic objectives keep our teams aligned and focused on continuous improvement.
-            </p>
-          </li>
-        </ul>
-      </>,
-  },
-  ,
-  {
-    heading: "Quality Assurance: Ensuring Consistency and Confidence",
-    content:
-      <>
-        <ul className="list-disc list-inside">
-          <li>
-            <b>Robust Systems</b>
-            <p>
-              Our comprehensive quality management systems ensure consistent performance and reliability.
-            </p>
-          </li>
-          <li>
-            <b>Skilled Teams</b>
-            <p>
-              Ongoing training empowers our employees to adopt best practices and uphold industry-leading standards.
-            </p>
-          </li>
-          <li>
-            <b>Performance Monitoring</b>
-            <p>
-                We continuously evaluate key metrics to drive improvements and maintain our competitive edge.
-            </p>
-          </li>
-        </ul>
-      </>,
-  },
-  ,
-  {
-    heading: "Quality Control: Precision at Every Stage",
-    content:
-      <>
-        <ul className="list-disc list-inside">
-          <li>
-            <b>Rigorous Inspections</b>
-            <p>
-              Detailed testing and evaluations are conducted throughout every phase of production.
 
-            </p>
           </li>
           <li>
-            <b>Data-Driven Accuracy</b>
+            <b>{tAbout("Purpose-Driven-Goals-Heading")}</b>
             <p>
-              We utilize Statistical Process Control (SPC) to detect and minimize variations.
-            </p>
-          </li>
-          <li>
-            <b>Immediate Action</b>
-            <p>
-                Any issues are swiftly addressed to maintain uninterrupted, high-quality operations.
+              {tAbout("Purpose-Driven-Goals-Content")}
             </p>
           </li>
         </ul>
@@ -107,122 +56,172 @@ export default function About() {
   },
   ,
   {
-    heading: "Root Cause Analysis: Solving Problems at the Source",
+    heading: tAbout("Quality-Assurance-Heading"),
     content:
       <>
         <ul className="list-disc list-inside">
           <li>
-            <b>In-Depth Investigation</b>
+            <b>{tAbout("Robust-Systems-Heading")}</b>
             <p>
-               We go beyond the symptoms to uncover the true root causes of any issues.
+              {tAbout("Robust-Systems-Content")}
+            </p>
+          </li>
+          <li>
+            <b>{tAbout("Skilled-Teams-Heading")}</b>
+            <p>
+              {tAbout("Skilled-Teams-Content")}
+            </p>
 
-            </p>
           </li>
           <li>
-            <b>Sustainable Solutions</b>
+            <b>{tAbout("Performance-Monitoring-Heading")}</b>
             <p>
-             Corrective actions are implemented with long-term success in mind, preventing future recurrence.
+              {tAbout("Performance-Monitoring-Content")}
+            </p>
 
-            </p>
           </li>
-          
         </ul>
       </>,
   },
   ,
   {
-    heading: "Continuous Improvement: Progress Through Innovation",
+    heading: tAbout("Quality-Control-Precision-Heading"),
     content:
       <>
         <ul className="list-disc list-inside">
           <li>
-            <b>Insight-Led Evolution</b>
+            <b>{tAbout("Rigorous-Inspections-Heading")}</b>
             <p>
-               Trends and data are continuously analyzed to identify new areas for enhancement.
+              {tAbout("Rigorous-Inspections-Content")}
             </p>
           </li>
           <li>
-            <b>Lean Principles</b>
+            <b>{tAbout("Data-Driven-Accuracy-Heading")}</b>
             <p>
-              We reduce waste and maximize efficiency by integrating lean manufacturing strategies.
+              {tAbout("Data-Driven-Accuracy-Content")}
             </p>
           </li>
           <li>
-            <b>Collaborative Growth</b>
+            <b>{tAbout("Immediate-Action-Heading")}</b>
             <p>
-              Innovation is encouraged across all teams, fostering a culture of shared progress.
+              {tAbout("Immediate-Action-Content")}
             </p>
+
           </li>
-          
         </ul>
       </>,
   },
   ,
   {
-    heading: "The Handy Edge: Proven Quality Techniques",
+    heading: tAbout("Root-Cause-Analysis-Heading"),
     content:
       <>
         <ul className="list-disc list-inside">
           <li>
-            <b>SPC (Statistical Process Control)</b>
+            <b>{tAbout("In-Depth-Investigation-Heading")}</b>
             <p>
-               Enhancing process stability through real-time data monitoring.
+              {tAbout("In-Depth-Investigation-Content")}
             </p>
           </li>
           <li>
-            <b>TQM (Total Quality Management)</b>
+            <b>{tAbout("Sustainable-Solutions-Heading")}</b>
             <p>
-              Engaging all team members in a shared pursuit of quality.
+              {tAbout("Sustainable-Solutions-Content")}
+            </p>
+
+          </li>
+
+        </ul>
+      </>,
+  },
+  ,
+  {
+    heading:tAbout("Continuous-Improvement-Heading"),
+    content:
+      <>
+        <ul className="list-disc list-inside">
+          <li>
+            <b>{tAbout("Insight-Led-Evolution-Heading")}</b>
+            <p>
+              {tAbout("Insight-Led-Evolution-Content")}
             </p>
           </li>
           <li>
-            <b>Six Sigma</b>
+            <b>{tAbout("Lean-Principles-Heading")}</b>
             <p>
-              Driving precision and reducing defects through data-based decisions.
+              {tAbout("Lean-Principles-Content")}
+            </p>
+
+          </li>
+          <li>
+            <b>{tAbout("Collaborative-Growth-Heading")}</b>
+            <p>
+              {tAbout("Collaborative-Growth-Content")}
+            </p>
+          </li>
+
+        </ul>
+      </>,
+  },
+  ,
+  {
+    heading: tAbout("Proven-Quality-Techniques-Heading"),
+    content:
+      <>
+        <ul className="list-disc list-inside">
+          <li>
+            <b>{tAbout("Statistical-Process-Control-Heading")}</b>
+            <p>
+              {tAbout("Statistical-Process-Control-Content")}
             </p>
           </li>
           <li>
-            <b>Lean Manufacturing</b>
+            <b>{tAbout("Total-Quality-Management-Heading")}</b>
             <p>
-              Optimizing operations for speed, flexibility, and minimal waste.
+              {tAbout("Total-Quality-Management-Content")}
+            </p>
+
+          </li>
+          <li>
+            <b>{tAbout("Six-Sigma-Heading")}</b>
+            <p>
+              {tAbout("Six-Sigma-Content")}
+            </p>
+
+          </li>
+          <li>
+            <b>{tAbout("Lean-Manufacturing-Heading")}</b>
+            <p>
+              {tAbout("Lean-Manufacturing-Content")}
             </p>
           </li>
           <li>
-            <b>ISO 9001</b>
+            <b>{tAbout("ISO-Heading")}</b>
             <p>
-               Adhering to globally recognized quality standards for continuous competitive excellence.
+              {tAbout("ISO-Content")}
             </p>
           </li>
-          
+
         </ul>
       </>,
   }
 ];
   const isLoading = navigation.state === "loading";
   if (isLoading) return <Loader />;
-  
+
   return (
     <FadeIn>
       <Banner image={"/About/cover.webp"} />
 
       <Section>
-        <SectionTitle className="!text-left">About Us</SectionTitle>
+        <SectionTitle className="!text-left">{tCommon("About Us")}</SectionTitle>
 
         <Paragraph size="md" className="">
-          Alex Converta is an Egyptian leader in tissue paper production,
-          specializing in both white and colored paper, and converting it into
-          essential hygiene products like facial tissues, handkerchiefs, toilet
-          rolls, table napkins, kitchen towels, and sanitary towels. "From a
-          humble beginning to becoming a trusted household name, Handy's journey
-          is marked by innovation, resilience, and a dedication to making
-          everyday life better for millions." Handy Paper established its first
-          manufacturing facility in New Borg El-Arab City, Alexandria, launching
-          operations with the iconic Recard machine and a daily production
-          capacity of up to 15 tons of jumbo tissue rolls.
+          {tAbout("About-Section-Content")}
         </Paragraph>
       </Section>
       <Section className="bg-[#f1eeee]">
-        <SectionTitle>Our Journey</SectionTitle>
+        <SectionTitle>{tAbout("Our Journey")}</SectionTitle>
         <div className="mb-[100px]">
           <FadeLeft>
             <img className="lg:block hidden" src="/About/Our Journey.webp" alt="Our Joureny"/>
@@ -233,13 +232,13 @@ export default function About() {
         <Timeline />
       </Section>
       <Section className="!pb-0">
-        <SectionTitle>What Makes Handy Stand Out ?</SectionTitle>
+        <SectionTitle>{tAbout("Features")}</SectionTitle>
       </Section>
       <Tabs
         links={[
-          "Product Differentiation",
-          "Brand Differentiation",
-          "Additional Strengths",
+          tAbout("Product Differentiation"),
+          tAbout("Brand Differentiation"),
+          tAbout("Additional Strengths"),
         ]}
       >
         <ProductDifferentiationTab key={1} />
@@ -248,29 +247,15 @@ export default function About() {
       </Tabs>
       <FadeIn>
         <Section>
-        <SectionTitle>People & Workplace Culture at Handy</SectionTitle>
+        <SectionTitle>{tAbout("People-Workplace-Heading")}</SectionTitle>
         <Paragraph size="md" className="">
-          At Handy, we are committed to creating a modern, inclusive, and
-          inspiring work environment that values open communication over
-          hierarchy. Across our factories and offices, employee health and
-          safety remain a top priority, supported by regular training and
-          inspections. Our head office is thoughtfully designed to encourage
-          creativity, movement, and well-being—featuring sustainable materials,
-          ergonomic furniture, and flexible workspaces. We believe that a
-          vibrant and engaging workplace extends beyond daily tasks. Employees
-          enjoy access to social events, seminars, and extracurricular
-          activities like football and sailing clubs. Our office also offers
-          inviting social areas, including a cafeteria and terrace for
-          relaxation. We actively welcome employee feedback, using it to shape
-          new initiatives that enrich our work culture. Through structured
-          performance reviews, clear career paths, and a fair, role-based
-          compensation system, we ensure personal growth aligns with company
-          goals while maintaining competitive equity in the market.
+          {tAbout("People-Workplace-Content")}
+
         </Paragraph>
       </Section>
       </FadeIn>
       <Section>
-        <SectionTitle>The Core of Handy’s Excellence</SectionTitle>
+        <SectionTitle>{tAbout("Handy-Core")}</SectionTitle>
 
             <div className="flex flex-col gap-5 justify-center mt-5 bg-white">
             {accordions.map((accordion, index) => (
@@ -279,7 +264,7 @@ export default function About() {
               </FadeLeft>
             ))}
           </div>
-               
+
       </Section>
     </FadeIn>
   );

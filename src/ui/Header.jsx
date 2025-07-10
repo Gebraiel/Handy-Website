@@ -7,6 +7,8 @@ import { FaCaretDown,FaCaretRight } from "react-icons/fa6";
 
 import SubMenu from "./SubMenu";
 import FadeIn from "./Animation/FadeIn";
+import { useTranslation } from "react-i18next";
+import LanguageSwitcher from "./LanguageSwitcher";
 
 export default function Header({menu,isAbsolute}) {
   const [show, setShow] = useState(false);
@@ -14,7 +16,7 @@ export default function Header({menu,isAbsolute}) {
   const headerRef = useRef(null); // Reference for the header element
   const headerHeight = useRef(0); // نحتفظ بيه مرة واحدة
 
-  const headerClasses = isAbsolute ? "absolute  text-white":"relative bg-primary text-white"; 
+  const headerClasses = isAbsolute ? "absolute  text-white":"relative bg-primary text-white";
   useEffect(() => {
     if (headerRef.current) {
       headerHeight.current = headerRef.current.offsetHeight;
@@ -23,7 +25,7 @@ export default function Header({menu,isAbsolute}) {
     const handleScroll = () => {
       setIsSticky(window.scrollY > headerHeight.current);
     };
-    
+
     document.addEventListener("scroll", handleScroll);
     return () => {
       document.removeEventListener("scroll", handleScroll);
@@ -50,13 +52,13 @@ export default function Header({menu,isAbsolute}) {
             <button onClick={() => setShow(!show)}>
               { !show ? <GiHamburgerMenu className="text-2xl" /> : <IoCloseSharp className="text-2xl" />}
             </button>
-            
+
             <ul
               className={`absolute transition-all duration-300 ${show?'left-0':'-left-full'} top-full w-full bg-primary text-white z-50 overflow-y-auto transition-all duration-300`}
             >
               {
                 menu.map((item)=>
-                  item.hasSubMenu ? 
+                  item.hasSubMenu ?
                     <SubMenu item={item} closeHeader={()=>setShow(false)}/>
                     :
                   <li className=" border border-l-0 border-r-0  bg-primary uppercase font-bold " >
@@ -64,10 +66,17 @@ export default function Header({menu,isAbsolute}) {
                         {item.title}
                       </NavLink>
                   </li>
+
                 )
               }
+              <li>
+                  <button><p className='flex gap-1'><img src="/Flags/ar.svg"/> AR</p></button>
+              </li>
+              <li>
+                  <button><p className='flex gap-1'><img src="/Flags/en.svg"/> EN</p></button>
+              </li>
             </ul>
-            
+
           </div>
           <div className="hidden xl:block ">
             <ul className="flex gap-10 ">
@@ -75,7 +84,7 @@ export default function Header({menu,isAbsolute}) {
                 <FadeIn delay={0.1 * index}>
                   <li className="uppercase font-bold relative has-submenu text-xs" key={index}>
                   <NavLink to={`${item.link? item.link : '/'}`} className={({ isActive }) => `${item.hasSubMenu ? 'flex gap-1 items-center ' : ""} ${isActive ? (isSticky || !isAbsolute ? 'text-secondary' : 'text-primary') : 'text-white'} `
-                          
+
                   }>
                         {item.title}
                       { item.hasSubMenu && <FaCaretDown /> }
@@ -88,7 +97,7 @@ export default function Header({menu,isAbsolute}) {
                         {
                           item.submenu.map((child,index)=>
                             <li className="border-b-2 p-4 bg-primary relative has-submenu" key={index}>
-                              
+
                               <Link to={child.link} className="flex gap-1 items-center">
                                 {child.title}
                                 { child.hasSubMenu && <FaCaretRight /> }
@@ -96,30 +105,30 @@ export default function Header({menu,isAbsolute}) {
                               </Link>
                               {
                                 //Second Level Submenu
-                                child.hasSubMenu && 
+                                child.hasSubMenu &&
                                 <ul className="text-white w-52 absolute left-full top-0 opacity-0 hidden submenu">
                                   {
                                     child.submenu.map((e,index)=>
                                       <li className="border-b-2 p-4 bg-primary" key={index}>
-                                        
+
                                         <Link to={e.link}>{e.title}</Link>
-                                        
+
                                       </li>
-                                      
+
                                     )
                                   }
                                 </ul>
-                              }  
+                              }
                             </li>
-                            
+
                           )
                         }
                       </ul>
-                  } 
-                </li>  
+                  }
+                </li>
                 </FadeIn>
               )}
-              
+              <LanguageSwitcher menuLength={menu.length}/>
             </ul>
           </div>
         </div>
@@ -127,4 +136,3 @@ export default function Header({menu,isAbsolute}) {
     </header>
   );
 }
-

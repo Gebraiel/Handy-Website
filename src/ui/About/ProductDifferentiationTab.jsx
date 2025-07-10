@@ -2,42 +2,44 @@ import React from 'react'
 import Section from '../Section'
 import FadeLeft from '../Animation/FadeLeft'
 import FadeRight from '../Animation/FadeRight'
+import { useTranslation } from 'react-i18next'
 
 export default function ProductDifferentiationTab() {
+  const{t}=useTranslation("About")
   return (
     <Section className='!pt-0'>
       <div className='flex justify-center xl:justify-between items-start flex-wrap gap-y-5'>
       <div className='w-full xl:w-1/2'>
-        <b className='text-xl'>Product Differentiation</b>
+        <b className='text-xl'>{t("Product Differentiation")}</b>
         <ul className='list-disc pl-7 pt-5 space-y-1'>
           <FadeLeft delay={0}>
             <li className=''>
-              <b>Superior Quality: </b>Soft, strong, and highly absorbent.
-              
+              <b>{t("Superior-Quality-Heading")}: </b>{t("Superior-Quality-Content")}
+
             </li>
           </FadeLeft>
           <FadeLeft delay={0.1}>
             <li className=''>
-              <b>Eco-Friendliness: </b>Crafted from sustainable materials like recycled paper and bamboo.
-              
+              <b>{t("Eco-Friendliness-Heading")}: </b>{t("Eco-Friendliness-Content")}
+
             </li>
           </FadeLeft>
          <FadeLeft delay={0.2}>
            <li className=''>
-            <b>Innovative Designs: </b>
-            Distinctive patterns and packaging that attract attention.
+            <b>{t("Innovative-Designs-Heading")}: </b>
+            {t("Innovative-Designs-Content")}
 
           </li>
          </FadeLeft>
-         
+
           <FadeLeft delay={0.3}>
             <li className=''>
-            <b>Specialized Products: </b> Tailored solutions for sensitive skin and extra-strength needs.
+            <b>{t("Specialized-Products-Heading")}: </b> {t("Specialized-Products-Content")}
           </li>
           </FadeLeft>
           <FadeLeft delay={0.4}>
             <li className=''>
-            <b>Natural Ingredients: </b> Enriched with aloe vera and chamomile for health-conscious consumers.
+            <b>{t("Natural-Ingredients-Heading")}: </b> {t("Natural-Ingredients-Content")}
 
           </li>
           </FadeLeft>
