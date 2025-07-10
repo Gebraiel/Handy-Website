@@ -3,9 +3,11 @@ import { FaArrowCircleRight } from "react-icons/fa";
 import { FaArrowCircleLeft } from "react-icons/fa";
 import {AnimatePresence, motion} from "motion/react"
 import { IoIosCloseCircle } from "react-icons/io";
+import { useTranslation } from 'react-i18next';
 
 export default function Lightbox({images,active,closeLightbox}) {
   const [activeImage,setActiveImage] = useState(active);
+  const{i18n} = useTranslation()
   function handleNext(){
     activeImage<images.length-1 && setActiveImage(activeImage+1)
   }
@@ -22,7 +24,7 @@ export default function Lightbox({images,active,closeLightbox}) {
   return (
     <motion.div initial={{opacity:0}} animate={{opacity:1}} exit={{opacity:0}} className='flex flex-row gap-5 w-screen h-screen fixed z-[1000] inset-0 bg-[rgba(0,0,0,0.3)] justify-center items-center px-5'>
         <button disabled={activeImage == 0} onClick={handlePrev} className='flex justify-center items-center  text-white' >
-            <FaArrowCircleLeft className='text-2xl'/>
+            {i18n.language =='en' ? <FaArrowCircleLeft className='text-2xl'/> : <FaArrowCircleRight className='text-2xl'/> }
         </button>
         <div className='m-auto'>
             <AnimatePresence mode="wait">
@@ -30,7 +32,8 @@ export default function Lightbox({images,active,closeLightbox}) {
             </AnimatePresence>
         </div>
         <button disabled={activeImage == images.length - 1} onClick={handleNext} className='flex justify-center items-center text-white'>
-            <FaArrowCircleRight className='text-2xl'/>
+            {i18n.language =='en' ? <FaArrowCircleRight className='text-2xl'/> : <FaArrowCircleLeft className='text-2xl'/> }
+
         </button>
 
         <button>

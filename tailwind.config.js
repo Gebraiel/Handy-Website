@@ -7,6 +7,7 @@ export default {
     extend: {
       fontFamily: {
         sans: ["Poppins"],
+        ar:["Cairo"]
       },
       animation: {
         fadeDown: "fadeDown 0.5s ease forwards",
@@ -62,5 +63,5 @@ export default {
       },
     },
   },
-  
+
 };

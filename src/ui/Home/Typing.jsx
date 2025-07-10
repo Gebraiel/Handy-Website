@@ -11,6 +11,6 @@ export default function Typing({word}) {
             clearTimeout(timeOut);
     },[typing])
   return (
-    <h1 className='text-3xl xl:text-5xl border-r-2 w-fit m-auto mb-2 animate-flashing'>{typing}</h1 >
+    <h1 className='text-3xl xl:text-5xl border-e-2 w-fit m-auto mb-2 animate-flashing'>{typing}</h1 >
   )
 }

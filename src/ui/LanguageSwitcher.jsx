@@ -9,6 +9,12 @@ export default function LanguageSwitcher({menuLength}) {
         if(currentLanguage != lang){
             i18n.changeLanguage(lang);
             document.dir = lang == 'ar' ? "rtl":"ltr";
+            // document.documentElement.classList.toggle('font-ar', i18n.language === 'ar');
+            if(lang == 'ar' ) {
+                document.documentElement.classList.add('font-ar') ;
+            }else{
+                document.documentElement.classList.remove('font-ar')
+            }
         }
     }
     return (

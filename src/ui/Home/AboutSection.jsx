@@ -27,7 +27,7 @@ export default function AboutSection() {
             <Paragraph className="font-semibold text-primary">
               {t("Our-Mission-Vision")}
             </Paragraph>
-            <SectionTitle className="!text-left">
+            <SectionTitle className="!text-start">
               <p className="text-secondary 2xl:my-5 xl:my-1"> {t("Vision-Content1")}</p>
               <p className="text-primary">
                 {t("Vision-Content2")}

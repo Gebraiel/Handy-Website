@@ -214,7 +214,7 @@ export default function About() {
       <Banner image={"/About/cover.webp"} />
 
       <Section>
-        <SectionTitle className="!text-left">{tCommon("About Us")}</SectionTitle>
+        <SectionTitle className="!text-start">{tCommon("About Us")}</SectionTitle>
 
         <Paragraph size="md" className="">
           {tAbout("About-Section-Content")}

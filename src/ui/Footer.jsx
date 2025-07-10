@@ -49,22 +49,22 @@ export default function Footer({mainLinks,otherLinks}) {
             <ul className="space-y-5 mt-5">
               <li className="flex flex-col sm:flex-row items-center justify-start gap-5">
                 <FaLocationDot className="text-3xl"/>
-                <Paragraph size="sm" className="text-center sm:text-left"><a href="https://maps.app.goo.gl/sQavxE64RvDio4LT8" target="_blank">{tCommon("Handy-Mill-Address")}</a></Paragraph>
+                <Paragraph size="sm" className="text-center sm:text-start"><a href="https://maps.app.goo.gl/sQavxE64RvDio4LT8" target="_blank">{tCommon("Handy-Mill-Address")}</a></Paragraph>
               </li>
               <li className="flex flex-col sm:flex-row items-center justify-start gap-5">
                 <FaEnvelopeOpen className="text-3xl" />
-                <Paragraph size="sm" className="text-center sm:text-left"><a href="mailto:tissue.mill@handy.com.eg">tissue.mill@handy.com.eg</a></Paragraph>
+                <Paragraph size="sm" className="text-center sm:text-start"><a href="mailto:tissue.mill@handy.com.eg">tissue.mill@handy.com.eg</a></Paragraph>
               </li>
               <li className="flex flex-col sm:flex-row items-center justify-start gap-5 ">
                  <FaTty className="text-3xl" />
-                  <Paragraph className="text-center sm:text-left font-medium flex flex-col">
-                    <a href="tel:+2 03 4626379">+2 03 4626379</a>
-                    <a href="tel:+2 03 4626425">+2 03 4626425</a>
+                  <Paragraph  className="text-center sm:text-start font-medium flex flex-col">
+                    <a dir="ltr" href="tel:+2 03 4626379">+2 03 4626379</a>
+                    <a dir="ltr" href="tel:+2 03 4626425">+2 03 4626425</a>
                   </Paragraph>
               </li>
               <li className="flex flex-col sm:flex-row items-center justify-start gap-5">
                 <FaFax className="w-[24px] text-3xl" />
-                <Paragraph className="text-center sm:text-left font-medium"><a href="tel:+2 03 4626164">+2 03 4626164</a></Paragraph>
+                <Paragraph className="text-center sm:text-start font-medium"><a dir="ltr" href="tel:+2 03 4626164">+2 03 4626164</a></Paragraph>
               </li>
             </ul>
           </div>
@@ -77,28 +77,28 @@ export default function Footer({mainLinks,otherLinks}) {
             <ul className="space-y-5 mt-5">
               <li className="flex flex-col sm:flex-row items-center justify-start gap-5">
                 <FaLocationDot className="text-3xl"/>
-                <Paragraph size="sm" className="text-center sm:text-left"><a href="https://maps.app.goo.gl/4VppVHX4RHzxSv348" target="_blank">{tCommon("Handy-Converting-Address")}</a></Paragraph>
+                <Paragraph size="sm" className="text-center sm:text-start"><a href="https://maps.app.goo.gl/4VppVHX4RHzxSv348" target="_blank">{tCommon("Handy-Converting-Address")}</a></Paragraph>
               </li>
               <li className="flex flex-col sm:flex-row items-center justify-start gap-5">
                 <FaEnvelopeOpen className="text-3xl" />
-                <Paragraph size="sm" className="text-center sm:text-left"><a href="mailto:info@handy.com.eg">info@handy.com.eg</a></Paragraph>
+                <Paragraph size="sm" className="text-center sm:text-start"><a href="mailto:info@handy.com.eg">info@handy.com.eg</a></Paragraph>
               </li>
               <li className="flex flex-col sm:flex-row items-center justify-start gap-5 ">
                  <FaTty className="text-3xl" />
-                  <Paragraph className="text-center sm:text-left font-medium flex flex-col">
-                    <a href="tel:+2 02 38333156">+2 02 38333156</a>
+                  <Paragraph className="text-center sm:text-start font-medium flex flex-col">
+                    <a dir="ltr" href="tel:+2 02 38333156">+2 02 38333156</a>
                   </Paragraph>
               </li>
               <li className="flex flex-col sm:flex-row items-center justify-start gap-5 ">
                 <IoLogoWhatsapp className="w-[24px] text-2xl" />
-                <Paragraph className="text-center sm:text-left font-medium flex flex-col">
-                  <a href="https://wa.me/+201286644171" target="_blank">+2 01286644171</a>
+                <Paragraph className="text-center sm:text-start font-medium flex flex-col">
+                  <a dir="ltr" href="https://wa.me/+201286644171" target="_blank">+2 01286644171</a>
                 </Paragraph>
               </li>
 
               <li className="flex flex-col sm:flex-row items-center justify-start gap-5">
                 <FaFax className="w-[24px] text-3xl" />
-                <Paragraph className="text-center sm:text-left font-medium"><a href="tel:+2 02 38333157">+2 02 38333157</a></Paragraph>
+                <Paragraph className="text-center sm:text-start font-medium"><a dir="ltr" href="tel:+2 02 38333157">+2 02 38333157</a></Paragraph>
               </li>
             </ul>
           </div>

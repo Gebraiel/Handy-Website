@@ -4,8 +4,10 @@ import prevArrow from "../../assets/icon-previous.svg";
 import Typing from "./Typing";
 import Bullets from "./Bullets";
 import {motion} from "motion/react";
+import { useTranslation } from "react-i18next";
 function Slider({ slides}) {
   const [active, setActive] = useState(0);
+  const{i18n} = useTranslation();
   console.log("Slider rendering");
   let intervalRef = useRef(null)
   const intervalTime = 5000;
@@ -67,18 +69,18 @@ function Slider({ slides}) {
           </div>
         }
       </div>
-      <div className=" w-full hidden h-full justify-center items-end sm:flex sm:justify-between sm:items-center gap-5 pb-5 px-5 absolute left-0 top-0 z-20">
+      <div className="w-full hidden h-full justify-center items-end sm:flex sm:justify-between sm:items-center gap-5 pb-5 px-5 absolute left-0 top-0 z-20">
         <button
           className="bg-white w-10 h-10 flex justify-center items-center rounded-full"
           onClick={()=>handleClick(handlePrev)}
         >
-          <img src={prevArrow} />
+          {i18n.language == 'en' ? <img src={prevArrow} /> : <img src={nextArrow} />}
         </button>
         <button
           className="bg-white w-10 h-10 flex justify-center items-center rounded-full"
           onClick={()=>handleClick(handleNext)}
         >
-          <img src={nextArrow} />
+          {i18n.language == 'en' ? <img src={nextArrow} /> : <img src={prevArrow} />}
         </button>
       </div>
       <div className='flex gap-5 absolute w-full bottom-5 left-0 justify-center z-40'>
