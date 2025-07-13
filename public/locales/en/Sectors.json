@@ -1,0 +1,158 @@
+{
+    "Sectors-Content":"We take immense pride in the machinery and equipment that distinguish Handy from other factories, showcasing our commitment to innovation, efficiency, and sustainability.",
+    "Machinery":"Machinery",
+    "Machinery-Heading-01":"Advanced Paper Finishing Equipment",
+    "Machinery-Content-01":"Our high-tech equipment produces premium-quality paper with finishes like coated, embossed, and textured paper, ensuring we meet diverse customer needs.",
+    "Machinery-Heading-02":"Energy-Efficient Paper Machines",
+    "Machinery-Content-02":"Designed to minimize energy consumption, these machines contribute to lower operating costs while benefiting the environment.",
+    "Machinery-Heading-03":"High-Speed Paper Machines",
+    "Machinery-Content-03":"These machines accelerate production, boosting capacity and reducing costs.",
+
+    "Our-Sectors":"Our Sectors",
+    "Handy-Paper-Content-01": "In the heart of New Borg El-Arab City, Alexandria, our first factory stands as a testament to innovation and heritage. Home to the iconic ‘Recard’ machine from 1989, this tissue paper mill was relocated to the facility, originally producing jumbo rolls with an impressive capacity of up to 15 tons/day.",
+    "Handy-Paper-Content-02": "In 2016, we introduced advanced virgin pulp machinery from Italy’s RECARD, boosting production to 80 tons/day. Following renovations, the factory embraced recycling by combining virgin pulp and waste paper, contributing to our sustainability efforts while continuing jumbo roll production.",
+    "Handy-Paper-Content-03": "This facility serves markets across KSA, Lebanon, Greece, Cyprus, Kuwait, Morocco, Kenya, and West Africa.",
+
+    "Handy-Paper-Process-Section-Heading":"Paper Making Process",
+    "Handy-Paper-Process-Section-Content":"The production of tissue paper involves several key steps:",
+
+    "Pulping":"Pulping",
+    "Raw-Material":"Raw Material",
+    "Raw-Material-Content":"Virgin wood pulp or recycled paper.",
+    "Pulping-Process":"Pulping Process",
+    "Pulping-Process-Content":"The raw material is processed into a fibrous slurry.",
+
+    "Refining":"Refining",
+    "Fiber-Modification":"Fiber Modification",
+    "Fiber-Modification-Content":"Adjusts fiber length and strength, influencing softness and absorbency.",
+
+    "Screening":"Screening",
+    "Impurity-Removal":"Impurity Removal",
+    "Impurity-Removal-Content":"The pulp is screened to remove dirt or knots.",
+
+    "Forming":"Forming",
+    "Sheet-Formation":"Sheet Formation",
+    "Sheet-Formation-Content":"The pulp is spread onto a moving mesh, forming a wet sheet.",
+
+    "Pressing":"Pressing",
+    "Water-Removal":"Water Removal",
+    "Water-Removal-Content":"The wet sheet is pressed to remove excess water.",
+
+    "Drying":"Drying",
+    "Moisture-Removal":"Moisture Removal",
+    "Moisture-Removal-Content":"The pressed sheet is dried by heated cylinders.",
+
+    "Creping":"Creping",
+    "Surface-Embossing":"Surface Embossing",
+    "Surface-Embossing-Content":"The dried paper is embossed to create a soft, textured surface.",
+
+    "Tissue Paper Mill Capacity":"Tissue Paper Mill Capacity",
+    "Employee in Handy Paper Mill":"Employee in Handy Paper Mill",
+    "Export Countries in Handy Paper Mill":"Export Countries in Handy Paper Mill",
+    "Tons / Year":"Tons / Year",
+    "Country":"Country",
+    "Employee":"Employee",
+
+    "Handy-Tissue-Products-Content-01": "In 2018, we took a bold step forward by establishing our second facility in 6th of October City. Equipped with cutting-edge South Korean technology and highly automated packaging systems, this plant reflects our commitment to innovation and efficiency.",
+    "Handy-Tissue-Products-Content-02": "This advanced facility specializes in producing a versatile range of tissue paper products tailored to meet diverse consumer needs,including facial tissues, toilet paper, kitchen towels, table napkins, handkerchiefs, and C-fold towels.",
+
+    "Transformation-Process-Heading-01":"The Transformation Process",
+    "Transformation-Process-Heading-02":"From Jumbo Rolls to Everyday Essentials",
+    "Transformation-Process-Content":"Using state-of-the-art converting machinery, our production process transforms jumbo rolls into high-quality tissue products through the following precise steps:",
+
+    "Unwinding":"Unwinding",
+    "Unwinding-Content":"Jumbo rolls are fed into machines with care to ensure seamless processing.",
+
+    "Embossing":"Embossing",
+    "Embossing-Content":"Patterns like ripples and diamonds are added to enhance texture, softness, and absorbency.",
+
+    "Perforation":"Perforation",
+    "Perforation-Content":"Clean, adjustable perforations allow easy tearing and versatile product lengths.",
+
+    "Folding":"Folding",
+    "Folding-Content":"Products are folded into uniform shapes, whether sheets, rolls, or interfolded packs.",
+
+    "Cutting":"Cutting",
+    "Cutting-Content":"Advanced cutters shape each item to precise dimensions for consistency.",
+
+    "Winding":"Winding",
+    "Winding-Content":"Clean, adjustable perforations allow easy tearing and versatile product lengths.",
+
+    "Packaging":"Packaging",
+    "Packaging-Content":"Finished products are carefully wrapped, ensuring quality while showcasing Handy's branding.",
+
+    "Palletizing":"Palletizing",
+    "Palletizing-Content":"Packaged items are efficiently stacked for optimal storage and transport.",
+
+    "Key Drivers of Excellence":"Key Drivers of Excellence",
+    "Handy-Tissue-Key-Excellence-Content-01":"Our plant thrives on the synergy of:",
+    "Handy-Tissue-Key-Excellence-Content-02":"With this facility, Handy Tissue Products continues to set new benchmarks in hygiene product manufacturing, blending cutting-edge technology with an unwavering commitment to quality.",
+
+    "Advanced-Machinery":"Advanced Machinery",
+    "Advanced-Machinery-Content":"Delivering precision and efficiency at every stage",
+
+    "High-Quality-Materials":"High-Quality Materials",
+    "High-Quality-Materials-Content":"Ensuring superior softness, strength, and absorbency",
+
+    "Expert-Operators":"Expert Operators",
+    "Expert-Operators-Content":"Skilled hands and sharp eyes maintain production standards",
+
+
+    "Robust-Quality-Checks":"Robust Quality Checks",
+    "Robust-Quality-Checks-Content":"Guaranteeing defect-free, top-tier products",
+
+    "Tissue Paper Converting Plant Capacity":"Tissue Paper Converting Plant Capacity",
+    "Employee in Converting Plant":"Employee in Converting Plant",
+    "Export Countries in Converting Plant":"Export Countries in Converting Plant",
+
+    "Handy-Wet-Wipes-Establised-Heading-01":"Established : 2018",
+    "Handy-Wet-Wipes-Establised-Content-01":"Since its inception, our wet wipes plant has been at the forefront of producing premium-quality products that meet both local and international standards. With a steadfast commitment to customer satisfaction, we take pride in the positive feedback we’ve received from consumers around the globe.",
+
+    "Handy-Wet-Wipes-Establised-Heading-02":"State-of-the-Art Production Facility",
+    "Handy-Wet-Wipes-Establised-Content-02":"Built to adhere to Good Manufacturing Practices (GMP), our facility maintains strict hygiene standards across production floors, laboratories, and warehouses. Equipped with a 40-roll capacity machine, it produces various wipe sizes with an impressive output of up to 3,000 cartons per day, ranking among the most productive in the Middle East.",
+
+    "Handy-Wet-Wipes-Establised-Heading-03":"Water and Chemical Systems",
+    "Handy-Wet-Wipes-Establised-Content-03":"An automated water purification system ensures water quality that meets European Pharmacopoeia and WHO standards.",
+
+    "Production-Process":"Production Process",
+    "Production-Process-Content":"Using state-of-the-art converting machinery, our production process transforms jumbo rolls into high-quality tissue products through the following precise steps",
+
+    "Non-Woven-Fabric-Production":"Non-Woven Fabric Production",
+    "Fiber-Preparation":"Fiber Preparation",
+    "Fiber-Preparation-Content":"Raw materials like wood pulp or polyester are processed into fibers.",
+
+    "Web-Formation":"Web Formation",
+    "Web-Formation-Content":"Fibers are transformed into a web using spun lace or air-laid techniques.",
+
+    "Roll-Formation":"Roll Formation",
+    "Roll-Formation-Content":"The web is rolled into master rolls.",
+
+    "Slitting-Rewinding":"Slitting and Rewinding",
+    "Slitting-Rewinding-Content":"Master rolls are cut into narrower rolls and rewound for processing.",
+
+    "Solution-Formulation":"Solution Formulation",
+    "Solution-Formulation-Content":"Ingredients like water, surfactants, and emollients are mixed to create the cleaning solution.",
+
+    "Impregnation":"Impregnation",
+    "Impregnation-Content":"Fabric is impregnated with the solution, ensuring precise saturation for performance.",
+
+    "Folding-Cutting":"Folding and Cutting",
+    "Folding-Cutting-Content":"The fabric is folded and cut into individual wipes or sheets.",
+
+    "Wet-Wipes-Packaging":"Packaging",
+    "Wet-Wipes-Packaging-Content":"Wipes are sealed in containers, pouches, or canisters to maintain quality.",
+
+    "Labelling-Secondary-Packaging":"Labelling and Secondary Packaging",
+    "Labelling-Secondary-Packaging-Content":"Labels with product details are applied, and wipes are packed into cartons for shipment.",
+
+    "Wet-Wipes-Key-Excellence-Content":"Our plant thrives on the synergy of:",
+    "Quality-Control":"Quality Control",
+    "Quality-Control-Content":"Ensures consistency and safety.",
+    "Hygiene":"Hygiene",
+    "Hygiene-Content":"Prevents contamination.",
+    "Regulatory-Compliance":"Regulatory Compliance",
+    "Regulatory-Compliance-Content":"Guarantees adherence to standards",
+    "Innovation":"Innovation",
+    "Innovation-Content":"Drives the creation of superior products."
+
+}

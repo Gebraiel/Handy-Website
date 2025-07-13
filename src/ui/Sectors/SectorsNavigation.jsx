@@ -6,7 +6,9 @@ import HandyPaperSector from './HandyPaperSector';
 import HandyTissueProductsSector from './HandyTissueProductsSector';
 import HandyWetWipes from './HandyWetWipes';
 import SectionTitle from '../SectionTitle';
+import { useTranslation } from 'react-i18next';
 export default function SectorsNavigation({links}) {
+  const {t:tSectors} = useTranslation("Sectors");
   const {sectorName} = useParams();
   const [active,setActive] = useState(0);
   const sectorsSection = useRef(null);
@@ -49,13 +51,13 @@ export default function SectorsNavigation({links}) {
   },[sectorName])
   return (
         <>
-        <SectionTitle className='my-[50px]' >Our Sectors</SectionTitle>
+        <SectionTitle className='my-[50px]' >{tSectors("Our-Sectors")}</SectionTitle>
         <Tabs links={links} active={active} ref={sectorsSection}>
           <HandyPaperSector />
           <HandyTissueProductsSector />
           <HandyWetWipes />
         </Tabs>
-        
+
         </>
   )
 }

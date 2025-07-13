@@ -8,6 +8,7 @@ import { getImagesFromBucket } from "../../services/sectors";
 import SwiperSlider from "./SwiperSlider";
 import FadeLeft from "../Animation/FadeLeft";
 import FadeIn from "../Animation/FadeIn";
+import { useTranslation } from "react-i18next";
 const parentVarient = {
   visible: {
     transition: {
@@ -24,6 +25,8 @@ const childrenVairent = {
   },
 };
 export default function HandyWetWipes() {
+  const{t:tCommon} = useTranslation("Common");
+  const{t:tSectors} = useTranslation("Sectors");
   let [sectorImages, setSectorImages] = useState([]);
   useEffect(() => {
     async function getImages() {
@@ -48,37 +51,28 @@ export default function HandyWetWipes() {
         </div>
         <div className="2xl:my-[50px] my-[50px]">
           <FadeIn>
-            <SectionTitle className="2xl:mb-5 !text-left">
-              Handy Wet Wipes
+            <SectionTitle className="2xl:mb-5 !text-start">
+              {tCommon("Wet Wipes")}
             </SectionTitle>
             <div className="space-y-3">
               <div>
-                <b>Established : 2018</b>
+                <b>{tSectors("Handy-Wet-Wipes-Establised-Heading-01")}</b>
                 <Paragraph size="md" className="text-justify m-auto">
-                  Since its inception, our wet wipes plant has been at the
-                  forefront of producing premium-quality products that meet both
-                  local and international standards. With a steadfast commitment
-                  to customer satisfaction, we take pride in the positive
-                  feedback we’ve received from consumers around the globe.
+                  {tSectors("Handy-Wet-Wipes-Establised-Content-01")}
                 </Paragraph>
               </div>
               <div>
-                <b>State-of-the-Art Production Facility</b>
+                <b>{tSectors("Handy-Wet-Wipes-Establised-Heading-02")}</b>
                 <Paragraph size="md" className="text-justify m-auto">
-                  Built to adhere to Good Manufacturing Practices (GMP), our
-                  facility maintains strict hygiene standards across production
-                  floors, laboratories, and warehouses. Equipped with a 40-roll
-                  capacity machine, it produces various wipe sizes with an
-                  impressive output of up to 3,000 cartons per day, ranking
-                  among the most productive in the Middle East.
+                  {tSectors("Handy-Wet-Wipes-Establised-Content-02")}
                 </Paragraph>
               </div>
               <div>
-                <b>Water and Chemical Systems</b>
+                <b>{tSectors("Handy-Wet-Wipes-Establised-Heading-03")}</b>
                 <Paragraph size="md" className="text-justify m-auto">
-                  An automated water purification system ensures water quality
-                  that meets European Pharmacopoeia and WHO standards.
+                  {tSectors("Handy-Wet-Wipes-Establised-Content-03")}
                 </Paragraph>
+
               </div>
             </div>
           </FadeIn>
@@ -88,11 +82,10 @@ export default function HandyWetWipes() {
       <Section className="bg-[#f1eeee]">
         <div className="2xl:my-[50px] my-[50px]">
           <FadeIn>
-            <SectionTitle className="2xl:mb-5">Production Process</SectionTitle>
+            <SectionTitle className="2xl:mb-5">{tSectors("Production-Process")}</SectionTitle>
             <Paragraph size="md" className="text-center">
-              Using state-of-the-art converting machinery, our production process
-              transforms jumbo rolls into high-quality tissue products through the
-              following precise steps
+              {tSectors("Production-Process-Content")}
+
             </Paragraph>
           </FadeIn>
           <motion.div
@@ -107,21 +100,21 @@ export default function HandyWetWipes() {
                 1
               </div>
               <h4 className="text-2xl font-bold my-5 text-primary">
-                Non-Woven Fabric Production
+                {tSectors("Non-Woven-Fabric-Production")}
               </h4>
               <Paragraph size="sm" className="text-center">
-                <b>Fiber Preparation</b>  
-                <p>Raw materials like wood pulp or
-                polyester are processed into fibers.</p>
+                <b>{tSectors("Fiber-Preparation")}</b>
+                <p>{tSectors("Fiber-Preparation-Content")}</p>
               </Paragraph>
               <Paragraph size="sm" className="text-center">
-                <b>Web Formation</b>
-                <p>Fibers are transformed into a web using
-                spun lace or air-laid techniques.</p>
+                <b>{tSectors("Web-Formation")}</b>
+                <p>{tSectors("Web-Formation-Content")}</p>
+
               </Paragraph>
               <Paragraph size="sm" className="text-center">
-                <b>Roll Formation</b>
-                <p>The web is rolled into master rolls.</p>
+                <b>{tSectors("Roll-Formation")}</b>
+                <p>{tSectors("Roll-Formation-Content")}</p>
+
               </Paragraph>
             </motion.div>
             <motion.div variants={childrenVairent} className={` text-center  `}>
@@ -129,11 +122,11 @@ export default function HandyWetWipes() {
                 2
               </div>
               <h4 className="text-2xl font-bold my-5 text-primary">
-                Slitting and Rewinding
+                {tSectors("Slitting-Rewinding")}
               </h4>
               <Paragraph size="sm" className="text-center">
-                Master rolls are cut into narrower rolls and rewound for
-                processing.
+                {tSectors("Slitting-Rewinding-Content")}
+
               </Paragraph>
             </motion.div>
             <motion.div variants={childrenVairent} className={` text-center `}>
@@ -141,11 +134,11 @@ export default function HandyWetWipes() {
                 3
               </div>
               <h4 className="text-2xl font-bold my-5 text-primary">
-                Solution Formulation
+                {tSectors("Solution-Formulation")}
               </h4>
               <Paragraph size="sm" className="text-center">
-                Ingredients like water, surfactants, and emollients are mixed to
-                create the cleaning solution.
+                {tSectors("Solution-Formulation-Content")}
+
               </Paragraph>
             </motion.div>
             <motion.div variants={childrenVairent} className={` text-center `}>
@@ -153,86 +146,90 @@ export default function HandyWetWipes() {
                 4
               </div>
               <h4 className="text-2xl font-bold my-5 text-primary">
-                Impregnation
+                {tSectors("Impregnation")}
               </h4>
               <Paragraph size="sm" className="text-center">
-                Fabric is impregnated with the solution, ensuring precise
-                saturation for performance.
+                {tSectors("Impregnation-Content")}
+
               </Paragraph>
+
             </motion.div>
             <motion.div variants={childrenVairent} className={` text-center `}>
               <div className="pb-5 border-b-2 border-secondary w-fit m-auto text-3xl text-[#b0cbd3] font-extrabold">
                 5
               </div>
               <h4 className="text-2xl font-bold my-5 text-primary">
-                Folding and Cutting
+                {tSectors("Folding-Cutting")}
               </h4>
-              <Paragraph size="sm" className="text-center group-[]:">
-                The fabric is folded and cut into individual wipes or sheets.
+              <Paragraph size="sm" className="text-center">
+                {tSectors("Folding-Cutting-Content")}
+
               </Paragraph>
+
             </motion.div>
             <motion.div variants={childrenVairent} className={` text-center `}>
               <div className="pb-5 border-b-2 border-secondary w-fit m-auto text-3xl text-[#b0cbd3] font-extrabold">
                 6
               </div>
               <h4 className="text-2xl font-bold my-5 text-primary">
-                Packaging
+                {tSectors("Wet-Wipes-Packaging")}
               </h4>
               <Paragraph size="sm" className="text-center">
-                Wipes are sealed in containers, pouches, or canisters to
-                maintain quality.
+                {tSectors("Wet-Wipes-Packaging-Content")}
+
               </Paragraph>
+
             </motion.div>
             <motion.div variants={childrenVairent} className={` text-center `}>
               <div className="pb-5 border-b-2 border-secondary w-fit m-auto text-3xl text-[#b0cbd3] font-extrabold">
                 7
               </div>
               <h4 className="text-2xl font-bold my-5 text-primary">
-                Labelling and Secondary Packaging
+                {tSectors("Labelling-Secondary-Packaging")}
               </h4>
               <Paragraph size="sm" className="text-center">
-                Labels with product details are applied, and wipes are packed
-                into cartons for shipment.
+                {tSectors("Labelling-Secondary-Packaging-Content")}
+
               </Paragraph>
+
             </motion.div>
           </motion.div>
-          
+
         </div>
         <div className="2xl:mb-[50px] mb-[25px]">
           <FadeIn>
-            <SectionTitle className="2xl:mb-5 !text-left">
-            Key Drivers of Excellence
+            <SectionTitle className="2xl:mb-5 !text-start">
+            {tSectors("Key Drivers of Excellence")}
           </SectionTitle>
-          <Paragraph size="md">Our plant thrives on the synergy of:</Paragraph>
+          <Paragraph size="md">{tSectors("Wet-Wipes-Key-Excellence-Content")}</Paragraph>
 
           </FadeIn>
           <ul className="list-disc pl-5">
             <FadeLeft>
               <li>
                 <Paragraph size="sm">
-                  <b>Quality Control</b> : Ensures consistency and safety.
+                  <b>{tSectors("Quality-Control")}</b> : {tSectors("Quality-Control-Content")}
                 </Paragraph>
               </li>
             </FadeLeft>
             <FadeLeft delay={0.1}>
               <li>
               <Paragraph size="sm">
-                <b>Hygiene</b> : Prevents contamination.
+                <b>{tSectors("Hygiene")}</b> : {tSectors("Hygiene-Content")}
               </Paragraph>
             </li>
             </FadeLeft>
             <FadeLeft delay={0.2}>
               <li>
               <Paragraph size="sm">
-                <b>Regulatory Compliance</b> : Guarantees adherence to standards
-                .
+                <b>{tSectors("Regulatory-Compliance")}</b> : {tSectors("Regulatory-Compliance-Content")}
               </Paragraph>
             </li>
             </FadeLeft>
             <FadeLeft delay={0.3}>
               <li>
               <Paragraph size="sm">
-                <b>Innovation</b> : Drives the creation of superior products.
+                <b>{tSectors("Innovation")}</b> : {tSectors("Innovation-Content")}
               </Paragraph>
             </li>
             </FadeLeft>

@@ -17,6 +17,7 @@ import { FaGlobeAmericas } from "react-icons/fa";
 import FadeLeft from '../Animation/FadeLeft';
 import FadeIn from '../Animation/FadeIn';
 import {AnimatePresence} from "motion/react"
+import { useTranslation } from 'react-i18next';
 
 const parentVarient = {
 
@@ -38,6 +39,9 @@ const childrenVairent={
 
 export default function HandyPaperSector() {
   let [sectorImages,setSectorImages] = useState([]);
+  const{t:tCommon}=useTranslation("Common");
+  const {t:tSectors} = useTranslation("Sectors");
+
   useEffect(()=>{
     async function getImages(){
       const images = await getImagesFromBucket('sectors','handy-paper');
@@ -47,8 +51,8 @@ export default function HandyPaperSector() {
   },[])
   return (
     <div>
-     <Section className="!py-0">  
-      
+     <Section className="!py-0">
+
         <div className='lg:block hidden'>
           <FadeLeft>
             <img src="/sectors/sector1.webp" alt="" />
@@ -63,28 +67,19 @@ export default function HandyPaperSector() {
         <div className=" m-auto 2xl:my-[50px] my-[25px]">
           <div>
             <FadeIn>
-              <SectionTitle className="2xl:mb-5 !max-w-[66ch] !mx-auto !text-left">
-              Handy Paper
-            </SectionTitle>
+              <SectionTitle className="2xl:mb-5 !max-w-[66ch] !mx-auto !text-start">
+                {tCommon("Handy Paper")}
+              </SectionTitle>
             <Paragraph size="md" className="text-justify m-auto">
-              In the heart of New Borg El-Arab City, Alexandria, our first
-              factory stands as a testament to innovation and heritage. Home to
-              the iconic ‘Recard’ machine from 1989, this tissue paper mill was
-              relocated to the facility, originally producing jumbo rolls with
-              an impressive capacity of up to 15 tons/day.
+              {tSectors("Handy-Paper-Content-01")}
             </Paragraph>
 
             <Paragraph size="md" className="text-justify m-auto my-3">
-              In 2016, we introduced advanced virgin pulp machinery from Italy’s
-              RECARD, boosting production to 80 tons/day. Following renovations,
-              the factory embraced recycling by combining virgin pulp and waste
-              paper, contributing to our sustainability efforts while continuing
-              jumbo roll production.
+              {tSectors("Handy-Paper-Content-02")}
+
             </Paragraph>
             <Paragraph size="lg" className="text-justify m-auto">
-              This facility serves markets across KSA, Lebanon, Greece, Cyprus,
-              Kuwait, Morocco, Kenya, and West
-              Africa.
+              {tSectors("Handy-Paper-Content-03")}
             </Paragraph>
             </FadeIn>
           </div>
@@ -99,14 +94,14 @@ export default function HandyPaperSector() {
             zoom={4}
             scrollWheelZoom={false}
             worldCopyJump={true}  // Prevents the map from repeating
-            noWrap={true} 
+            noWrap={true}
           >
              <TileLayer
   attribution='&copy; <a href="https://carto.com/">CARTO</a>'
   url="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png"
 />
             <Marker position={[33.854721, 35.862285]} icon={new Icon({iconUrl: markerIconPng, iconSize: [25, 41], iconAnchor: [12, 41]})}>
-  
+
             </Marker>
             <Marker position={[39.074208, 21.824312]}  icon={new Icon({iconUrl: markerIconPng, iconSize: [25, 41], iconAnchor: [12, 41]})}>
 
@@ -129,98 +124,103 @@ export default function HandyPaperSector() {
       <Section className="bg-[#f1eeee]">
       <div >
 
-         
+
           <FadeIn>
              <SectionTitle className='2xl:mb-5'>
-              Paper Making Process
+              {tSectors("Handy-Paper-Process-Section-Heading")}
             </SectionTitle>
             <Paragraph size="md" className='text-center'>
-              The production of tissue paper involves several key steps:
+              {tSectors("Handy-Paper-Process-Section-Content")}
             </Paragraph>
           </FadeIn>
           <motion.div variants={parentVarient} initial="hidden" whileInView="visible" viewport={{once:true}} className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-7 2xl:gap-10 gap-5 items-stretch 2xl:my-16 my-8">
-                
+
                 <motion.div variants={childrenVairent} className={`text-center `} >
                   <div className="pb-5 border-b-2 border-secondary w-fit m-auto text-3xl text-[#b0cbd3] font-extrabold">
                     1
                   </div>
-                  <h4 className="text-2xl font-bold my-5 text-primary">Pulping</h4>
+                  <h4 className="text-2xl font-bold my-5 text-primary">{tSectors("Pulping")}</h4>
                   <Paragraph size="sm" className="text-center">
-                    <b>Raw Material</b> 
-                    <p> Virgin wood pulp or recycled paper.</p>
+                    <b>{tSectors("Raw-Material")}</b>
+                    <p>{tSectors("Raw-Material-Content")}</p>
                   </Paragraph>
                   <Paragraph size="sm" className="text-center">
-                    <b>Pulping Process</b>  
-                    <p>The raw material is processed into
-                    a fibrous slurry.</p>
+                    <b>{tSectors("Pulping-Process")}</b>
+                    <p>{tSectors("Pulping-Process-Content")}</p>
+
                   </Paragraph>
                 </motion.div>
                 <motion.div variants={childrenVairent} className={` text-center  `} >
                   <div className="pb-5 border-b-2 border-secondary w-fit m-auto text-3xl text-[#b0cbd3] font-extrabold">
                     2
                   </div>
-                  <h4 className="text-2xl font-bold my-5 text-primary">Refining</h4>
+                  <h4 className="text-2xl font-bold my-5 text-primary">{tSectors("Refining")}</h4>
                   <Paragraph size="sm" className="text-center">
-                    <b>Fiber Modification</b>  
-                    <p>Adjusts fiber length and
-                    strength, influencing softness and absorbency.</p>
+                    <b>{tSectors("Fiber-Modification")}</b>
+                    <p>{tSectors("Fiber-Modification-Content")}</p>
+
                   </Paragraph>
                 </motion.div>
                 <motion.div variants={childrenVairent}  className={` text-center `}>
                   <div className="pb-5 border-b-2 border-secondary w-fit m-auto text-3xl text-[#b0cbd3] font-extrabold">
                    3
                   </div>
-                  <h4 className="text-2xl font-bold my-5 text-primary">Screening</h4>
+                  <h4 className="text-2xl font-bold my-5 text-primary">{tSectors("Screening")}</h4>
                   <Paragraph size="sm" className="text-center">
-                    <b>Impurity Removal</b>  
-                    <p>The pulp is screened to remove
-                    dirt or knots.</p>
+                    <b>{tSectors("Impurity-Removal")}</b>
+                    <p>{tSectors("Impurity-Removal-Content")}</p>
+
                   </Paragraph>
+
                 </motion.div>
                 <motion.div variants={childrenVairent}  className={` text-center `}>
                   <div className="pb-5 border-b-2 border-secondary w-fit m-auto text-3xl text-[#b0cbd3] font-extrabold">
                     4
                   </div>
-                  <h4 className="text-2xl font-bold my-5 text-primary">Forming</h4>
+                  <h4 className="text-2xl font-bold my-5 text-primary">{tSectors("Forming")}</h4>
                   <Paragraph size="sm" className="text-center">
-                  <b>Sheet Formation</b> 
-                  <p>The pulp is spread onto a moving
-                  mesh, forming a wet sheet.</p>
+                    <b>{tSectors("Sheet-Formation")}</b>
+                    <p>{tSectors("Sheet-Formation-Content")}</p>
+
                   </Paragraph>
+
                 </motion.div>
                 <motion.div variants={childrenVairent}  className={` text-center `}>
                   <div className="pb-5 border-b-2 border-secondary w-fit m-auto text-3xl text-[#b0cbd3] font-extrabold">
                     5
                   </div>
-                  <h4 className="text-2xl font-bold my-5 text-primary">Pressing</h4>
-                  <Paragraph size="sm" className="text-center group-[]:">
-                    <b>Water Removal</b>  
-                    <p>The wet sheet is pressed to remove
-                    excess water.</p>
+                  <h4 className="text-2xl font-bold my-5 text-primary">{tSectors("Pressing")}</h4>
+                  <Paragraph size="sm" className="text-center">
+                    <b>{tSectors("Water-Removal")}</b>
+                    <p>{tSectors("Water-Removal-Content")}</p>
+
                   </Paragraph>
+
                 </motion.div>
                 <motion.div variants={childrenVairent}  className={` text-center `}>
                   <div className="pb-5 border-b-2 border-secondary w-fit m-auto text-3xl text-[#b0cbd3] font-extrabold">
                     6
                   </div>
-                  <h4 className="text-2xl font-bold my-5 text-primary">Drying</h4>
+                  <h4 className="text-2xl font-bold my-5 text-primary">{tSectors("Drying")}</h4>
                   <Paragraph size="sm" className="text-center">
-                    <b>Moisture Removal</b>  
-                    <p>The pressed sheet is dried by
-                    heated cylinders.</p>
+                    <b>{tSectors("Moisture-Removal")}</b>
+                    <p>{tSectors("Moisture-Removal-Content")}</p>
+
                   </Paragraph>
+
+
                 </motion.div>
                 <motion.div variants={childrenVairent}  className={` text-center `}>
                   <div className="pb-5 border-b-2 border-secondary w-fit m-auto text-3xl text-[#b0cbd3] font-extrabold">
                     7
                   </div>
-                  <h4 className="text-2xl font-bold my-5 text-primary">Creping</h4>
+                  <h4 className="text-2xl font-bold my-5 text-primary">{tSectors("Creping")}</h4>
                   <Paragraph size="sm" className="text-center">
-                  <b>Surface Embossing</b>  
+                    <b>{tSectors("Surface-Embossing")}</b>
+                    <p>{tSectors("Surface-Embossing-Content")}</p>
 
-                  <p>The dried paper is embossed to
-                  create a soft, textured surface.</p>
                   </Paragraph>
+
                 </motion.div>
           </motion.div>
         </div>
@@ -229,37 +229,38 @@ export default function HandyPaperSector() {
         <div className="grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-3  lg:w-full">
           <FadeIn>
             <div className="p-5 bg-white shadow-md  text-center space-y-5 ">
-            <div className="flex flex-col items-center gap-2 justify-center text-sm"><img src="/tissue-roll.png" alt="" className="w-12" /> <b>Tissue Paper Mill Capacity</b></div>
+            <div className="flex flex-col items-center gap-2 justify-center text-sm"><img src="/tissue-roll.png" alt="" className="w-12" /> <b>{tSectors("Tissue Paper Mill Capacity")}</b></div>
             <Counter counter="25000"  />
 
             <Paragraph size="sm">
-              Tons / Year 
+              {tSectors("Tons / Year")}
             </Paragraph>
           </div>
           </FadeIn>
-          
+
           <FadeIn delay={0.1}>
             <div className="p-5 bg-white shadow-md  text-center space-y-5 ">
-            <div className="flex flex-col items-center gap-2 justify-center text-sm"><FaPeopleGroup  className="size-12" /> <b>Employee in Handy Paper Mill</b></div>
+            <div className="flex flex-col items-center gap-2 justify-center text-sm"><FaPeopleGroup  className="size-12" /> <b>{tSectors("Employee in Handy Paper Mill")}</b></div>
             <Counter counter="148" />
 
             <Paragraph size="sm">
-              Tons / Year 
+              {tSectors("Employee")}
             </Paragraph>
           </div>
           </FadeIn>
-         
+
           <FadeIn delay={0.2}>
             <div className="p-5 bg-white shadow-md  text-center space-y-5 ">
-            <div className="flex flex-col items-center gap-2 justify-center text-sm"><FaGlobeAmericas  className="size-12" /> <b>Export Countries in Handy Paper Mill</b></div>
+            <div className="flex flex-col items-center gap-2 justify-center text-sm"><FaGlobeAmericas  className="size-12" /> <b>{tSectors("Export Countries in Handy Paper Mill")}</b></div>
             <Counter counter="12" />
 
             <Paragraph size="sm">
-              Tons / Year 
+              {tSectors("Country")}
+
             </Paragraph>
           </div>
           </FadeIn>
-         
+
         </div>
       </Section>
       <Section type="fullscreen" className='overflow-x-hidden bg-[#f1eeee] px-5' >
