@@ -8,8 +8,10 @@ import Loader from '../ui/Loader'
 import Form from '../ui/Contact/Form'
 import OutletContext from '../context/OutletContext'
 import FadeIn from '../ui/Animation/FadeIn'
+import { useTranslation } from 'react-i18next'
 
 export default function Contact() {
+  const{t}=useTranslation("Common")
   console.log("Contact");
   const setRelative = useContext(OutletContext);
   const navigation = useNavigation();
@@ -24,12 +26,12 @@ export default function Contact() {
   return (
        <FadeIn>
          {/* <Banner image={'/Contact/banner.webp'} className='!bg-[55%]' />
-            
+
         */}
-         <Section>  
+         <Section>
             <SectionTitle >
-              Contact Us
-            </SectionTitle>    
+              {t("Contact Us")}
+            </SectionTitle>
             <div className='flex lg:flex-row flex-col justify-between gap-10'>
               <div className='lg:w-1/2'>
               <ContactSection />

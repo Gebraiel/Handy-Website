@@ -1,14 +1,10 @@
 import { Outlet } from "react-router-dom";
-import Header from "./Header";
 import Footer from "./Footer";
 import { getCategories } from "../services/categories";
 import { useLoaderData } from "react-router-dom";
 import CategoriesContext from "../context/CategoriesContext";
 import ScrollToTop from "./ScrollToTop";
-import { useMatches } from "react-router-dom";
 import {AnimatePresence} from "motion/react";
-import { useNavigation } from "react-router-dom";
-import { useState } from "react";
 import OutletContext from "../context/OutletContext";
 import { getProducts } from "../services/products";
 import HeaderWithRealive from "./HeaderWithRealive";
@@ -16,7 +12,7 @@ import { useTranslation } from "react-i18next";
 
 export default function AppLayout() {
   const {categories,products} = useLoaderData();
-  const{t}=useTranslation("Common");
+  const{t,i18n}=useTranslation("Common");
   const categoriesMenu = [
     {
       title:t("Jumbo Rolls"),

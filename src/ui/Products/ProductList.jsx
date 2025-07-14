@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from "react";
 import Product from "./Product";
 import JumboProductsList from "./JumboProductsList";
-import {motion} from "motion/react"
-import FadeIn from "../Animation/FadeIn";
 import FadeLeft from "../Animation/FadeLeft";
 export default function ProductList({ products, view, filter }) {
-  const categoryName = products[0]?.category?.name;
+  console.log(products)
+  const categoryName = products[0]?.category?.["name-en"];
   const [filteredProducts, setFilteredProducts] = useState(products);
   const isJumbo = categoryName.toLowerCase().includes("jumbo");
 
@@ -29,7 +28,7 @@ export default function ProductList({ products, view, filter }) {
       }
       setFilteredProducts(newProducts);
     }
-    
+
   },[filter]);
   if(isJumbo)
     return(
@@ -50,11 +49,11 @@ export default function ProductList({ products, view, filter }) {
 
               <Product
                 product={product}
-                
+
                 categoryName={categoryName}
                 view={view}
               />
-              
+
             </FadeLeft>
           ))
       }
