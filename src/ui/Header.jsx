@@ -54,7 +54,7 @@ export default function Header({menu,isAbsolute}) {
             </button>
 
             <ul
-              className={`absolute transition-all duration-300 ${show?'left-0':'-left-full'} top-full w-full bg-primary text-white z-50 overflow-y-auto transition-all duration-300`}
+              className={`absolute transition-all duration-300 ${show?'start-0':'-start-full'} top-full w-full bg-primary text-white z-50 overflow-y-auto transition-all duration-300`}
             >
               {
                 menu.map((item)=>
@@ -69,12 +69,8 @@ export default function Header({menu,isAbsolute}) {
 
                 )
               }
-              <li>
-                  <button><p className='flex gap-1'><img src="/Flags/ar.svg"/> AR</p></button>
-              </li>
-              <li>
-                  <button><p className='flex gap-1'><img src="/Flags/en.svg"/> EN</p></button>
-              </li>
+              <LanguageSwitcher menuLength={menu.length}/>
+
             </ul>
 
           </div>

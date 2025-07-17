@@ -3,7 +3,6 @@ import Product from "./Product";
 import JumboProductsList from "./JumboProductsList";
 import FadeLeft from "../Animation/FadeLeft";
 export default function ProductList({ products, view, filter }) {
-  console.log(products)
   const categoryName = products[0]?.category?.["name-en"];
   const [filteredProducts, setFilteredProducts] = useState(products);
   const isJumbo = categoryName.toLowerCase().includes("jumbo");
@@ -19,7 +18,6 @@ export default function ProductList({ products, view, filter }) {
           )
       }
       if(filter.package !='all'){
-
           newProducts=newProducts.filter(
             (product) => {
               return product.package.toLowerCase() == filter.package.toLowerCase()

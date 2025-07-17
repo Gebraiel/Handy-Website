@@ -14,21 +14,30 @@ import FadeLeft from "../ui/Animation/FadeLeft";
 import FadeRight from "../ui/Animation/FadeRight";
 import FadeIn from "../ui/Animation/FadeIn";
 import Loader from "../ui/Loader";
+import { useTranslation } from "react-i18next";
 
 export default function Product() {
   console.log("Product");
 
   const {
-    product: {
+    product,
+    products,
+  } = useLoaderData();
+  const{i18n,t} = useTranslation("Common")
+  const isArabic = i18n.language =='ar';
+
+  const localizedProduct = {...product,title:isArabic?product['title-ar']:product.title,details:isArabic ? product['details-ar'] : product.details,subtitle:isArabic ? product['subtitle-ar'] : product.subtitle};
+  const {
       id,
       title,
       image,
       details,
       subcategory,
-      category: { name: categoryName, id: categoryId },
-    },
-    products,
-  } = useLoaderData();
+      category,
+    } = localizedProduct;
+  const categoryName = isArabic ? category["name-ar"] : category["name-en"];
+  const categoryId = category.id;
+  console.log(categoryName,localizedProduct)
   const prevIndex = products.findIndex((product) => product.id == id) - 1;
   const nextIndex = products.findIndex((product) => product.id == id) + 1;
   const [showToast, setShowToast] = useState(false);
@@ -47,7 +56,7 @@ export default function Product() {
     };
   }, []);
 const navigation = useNavigation();
-  
+
   const isLoading = navigation.state === "loading";
 if (isLoading) return <Loader />;
   return (
@@ -58,18 +67,18 @@ if (isLoading) return <Loader />;
             to="/"
             className="hover:text-primary transition-colors duration-300"
           >
-            Home{" "}
+            {t("Home")}{" "}
           </Link>
           /{" "}
           <Link
             to="/products"
             className="hover:text-primary transition-colors duration-300"
           >
-            Products{" "}
+            {t("Products")}{" "}
           </Link>
-          /{" "}
-          
-          {subcategory ? 
+          {" "}
+
+          {subcategory ?
             <>
               <Link to={`/category/${categoryId}`}>
                 {categoryName}
@@ -82,7 +91,7 @@ if (isLoading) return <Loader />;
             </>
             :
             <Link className="text-primary" to={`/category/${categoryId}`}>
-              {categoryName}
+              / {categoryName}
             </Link>
           }
         </div>
@@ -124,7 +133,7 @@ if (isLoading) return <Loader />;
             </FadeRight>
             <FadeIn>
                 <button className="w-full button" onClick={copyToClipboard}>
-              Share
+              {t("Share")}
             </button>
             </FadeIn>
             <div className="flex justify-between items-center">
@@ -135,9 +144,10 @@ if (isLoading) return <Loader />;
                 disabled={prevIndex < 0}
               >
                 <span>
-                  <HiArrowSmallLeft />
+                  {isArabic ? <HiArrowSmallRight /> :<HiArrowSmallLeft />}
+
                 </span>
-                Previous Product
+                {t("Previous Product")}
               </button>
               </FadeLeft>
               <FadeRight>
@@ -146,9 +156,9 @@ if (isLoading) return <Loader />;
                 className="button flex gap-1 items-center"
                 disabled={nextIndex >= products.length}
               >
-                Next Product
+                {t("Next Product")}
                 <span>
-                  <HiArrowSmallRight />
+                  {isArabic ? <HiArrowSmallLeft /> : <HiArrowSmallRight />}
                 </span>
               </button>
               </FadeRight>

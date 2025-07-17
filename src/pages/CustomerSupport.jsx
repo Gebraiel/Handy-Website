@@ -6,11 +6,11 @@ import Paragraph from '../ui/Paragraph'
 import { useNavigation } from "react-router-dom"
 import Loader from '../ui/Loader'
 import FadeIn from '../ui/Animation/FadeIn'
+import { useTranslation } from 'react-i18next'
 
 export default function CustomerSupport() {
-      console.log("Customer Support");
-
-      const navigation = useNavigation();
+    const {t} = useTranslation("CustomerSupport");
+    const navigation = useNavigation();
     const isLoading = navigation.state === "loading";
     if (isLoading) return <Loader />;
   return (
@@ -19,67 +19,67 @@ export default function CustomerSupport() {
 
         <Section>
                 <SectionTitle>
-                Your Needs, Our Priority
+                {t("Title")}
                 </SectionTitle>
                 <ol className='space-y-3'>
                     <li className='space-y-2'>
-                        <b className='text-lg'>1. Product Information & Guidance</b>
+                        <b className='text-lg'>{t("Product-Information")}</b>
                         <Paragraph size="md" className='text-justify'>
-                            <ul className='list-disc pl-10'>
+                            <ul className='list-disc ps-10'>
                                 <li>
-                                    Get clear, detailed insights about our products, including ingredients, safe usage, and helpful tips.
+                                    {t("Product-Information-Content-01")}
                                 </li>
                                 <li>
-                                    Explore educational resources like demos, tutorials, and FAQs designed to make your experience seamless.
+                                    {t("Product-Information-Content-02")}
                                 </li>
                             </ul>
                         </Paragraph>
                     </li>
                     <li className='space-y-2'>
-                        <b className='text-lg'>2. Quick & Easy Complaint Resolution</b>
+                        <b className='text-lg'>{t("Quick-Easy")}</b>
                         <Paragraph size="md" className='text-justify'>
-                            <ul className='list-disc pl-10'>
+                            <ul className='list-disc ps-10'>
                                 <li>
-                                Hassle-free processes to address concerns swiftly.
+                                {t("Quick-Easy-Content-01")}
                                 </li>
                                 <li>
-                                Solutions that work for you: replacements, refunds, or personalized support.
+                                {t("Quick-Easy-Content-02")}
 
                                 </li>
                                 <li>
-                                Your feedback drives our improvements—always!
+                                {t("Quick-Easy-Content-03")}
 
                                 </li>
                             </ul>
                         </Paragraph>
                     </li>
                     <li className='space-y-2'>
-                        <b className='text-lg'>3. Stay Connected on Social Media:
+                        <b className='text-lg'>{t("Social-Media")}
                         </b>
                         <Paragraph size="md" className='text-justify'>
-                            <ul className='list-disc pl-10'>
+                            <ul className='list-disc ps-10'>
                                 <li>
-                                Engage with us directly through our social platforms.
+                                {t("Social-Media-Content-01")}
                                 </li>
                                 <li>
-                                Prompt responses to inquiries, thoughtful interactions, and updates on promotions and success stories.
-
+                                 {t("Social-Media-Content-02")}
                                 </li>
 
                             </ul>
                         </Paragraph>
                     </li>
                     <li className='space-y-2'>
-                        <b className='text-lg'>4. Exclusive Customer Rewards:
+                        <b className='text-lg'>
+                                 {t("Customer-Rewards")}
                         </b>
                         <Paragraph size="md" className='text-justify'>
-                            <ul className='list-disc pl-10'>
+                            <ul className='list-disc ps-10'>
                                 <li>
-                                Enjoy loyalty perks—special discounts, personalized offers, and free samples just for you.
+                                    {t("Customer-Rewards-Content-01")}
 
                                 </li>
                                 <li>
-                                Because our relationship with you matters most!
+                                    {t("Customer-Rewards-Content-02")}
                                 </li>
 
                             </ul>

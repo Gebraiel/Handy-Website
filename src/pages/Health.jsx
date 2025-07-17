@@ -6,10 +6,11 @@ import SectionTitle from '../ui/SectionTitle'
 import { useNavigation } from "react-router-dom"
 import Loader from '../ui/Loader'
 import FadeIn from '../ui/Animation/FadeIn'
+import { useTranslation } from 'react-i18next'
 
 export default function Health() {
     console.log("Health");
-
+    const {t} = useTranslation("Health");
     const navigation = useNavigation();
     const isLoading = navigation.state === "loading";
     if (isLoading) return <Loader />;
@@ -18,40 +19,42 @@ export default function Health() {
         <Banner image={'/Safety/banner.webp'} />
         <Section>
             <SectionTitle>
-                Health & Safety Measures
+                {t("Title")}
             </SectionTitle>
             <Paragraph size='lg' >
-            At Handy, we prioritize the health and safety of our team. Our commitment to a safe workplace includes
+            {t("Content-01")}
             </Paragraph>
             <ul className='list-disc pl-8 py-5 space-y-2' >
                 <li>
-                    <b>Routine Inspections : </b> Regular safety checks to spot and address potential risks.
+                    <b>{t("Routine Inspections")} : </b> {t("Routine Inspections Content")}
                 </li>
                 <li>
-                    <b>Emergency Preparedness : </b> Ongoing fire drills, evacuation plans, and first-aid training.
+                    <b>{t("Emergency Preparedness")} : </b> {t("Emergency Preparedness Content")}
+
                 </li>
                 <li>
-                    <b>Employee Training : </b> Comprehensive safety training for all staff.
+                    <b>{t("Employee Training")} : </b> {t("Employee Training Content")}
                 </li>
                 <li>
-                    <b>Personal Protective Equipment (PPE) : </b> Ensuring the use of necessary protective gear.
+                    <b>{t("Personal Protective Equipment (PPE)")} : </b> {t("Personal Protective Equipment (PPE) Content")}
                 </li>
                 <li>
-                    <b>Ergonomic Workstations : </b> Designed to prevent injuries and enhance comfort.
+                    <b>{t("Ergonomic Workstations")} : </b> {t("Ergonomic Workstations Content")}
+
                 </li>
                 <li>
-                    <b>Clean Environment : </b> Keeping a tidy, hazard-free workspace.
+                    <b>{t("Clean Environment")} : </b> {t("Clean Environment Content")}
+
                 </li>
                 <li>
-                    <b>Air Quality & Ventilation : </b> Maintaining optimal air quality for a healthier environment.
+                    <b>{t("Air Quality & Ventilation")} : </b> {t("Air Quality & Ventilation Content")}
                 </li>
             </ul>
             <Paragraph size='lg' className='text-center text-primary font-semibold'>
-                By combining proactive measures with continuous improvements, we ensure a safe, supportive workplace for all.
-
+                {t("Content-02")}
             </Paragraph>
         </Section>
     </FadeIn>
-    
+
   )
 }

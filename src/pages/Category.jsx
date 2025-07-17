@@ -19,27 +19,27 @@ export default function Category() {
   const {i18n,t} = useTranslation("Common")
   const [view, setView] = useState("list");
   const [packagesList, setPackagesList] = useState([]);
-  const[filter,setFilter] = useState({package:"all",subcategory:""});
+  const [filter,setFilter] = useState({package:"all",subcategory:""});
   const isArabic = i18n.language =='ar';
   const [searchParams] = useSearchParams();
   const {products,categoryId} = useLoaderData();
-  const localizedProducts = useMemo(()=>{
-    return products.map((product)=>{
-      return {...product,title:isArabic?product['title-ar']:product.title,details:isArabic ? product['details-ar'] : product.details,subtitle:isArabic ? product['subtitle-ar'] : product.subtitle,package:isArabic ? product['package-ar']:product.package}
-    });
-  },[products])
-
   const categories = useContext(CategoriesContext);
   const localizedCategories = categories.map((category)=>{
     return {...category,name:isArabic ? category['name-ar']:category['name-en']};
   })
   const category = localizedCategories.find((category)=>category.id == categoryId);
   const categoryName = category.name;
-
+  const localizedProducts = useMemo(()=>{
+    return products.map((product)=>{
+      return {...product,title:isArabic?product['title-ar']:product.title,details:isArabic ? product['details-ar'] : product.details,subtitle:isArabic ? product['subtitle-ar'] : product.subtitle,package:isArabic ? product['package-ar']:product.package}
+    });
+  },[products,i18n.language])
   useEffect(() => {
+    console.log("LocalizedProducts is re-rendered")
     let set = new Set();
     localizedProducts.map((product) => product.package && set.add(product.package));
     setPackagesList(Array.from(set));
+
     setFilter({package:'all',subcategory:searchParams.get('filter')});
   }, [localizedProducts]);
 
@@ -95,7 +95,7 @@ export default function Category() {
 
         <div>
           {products.length > 0 ? (
-              <ProductList products={products} view={view} filter={filter}/>
+              <ProductList products={localizedProducts} view={view} filter={filter}/>
             )
           : (
             <SectionTitle>No Products Found</SectionTitle>
