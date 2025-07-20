@@ -11,7 +11,7 @@ export default function ProductDifferentiationTab() {
       <div className='flex justify-center xl:justify-between items-start flex-wrap gap-y-5'>
       <div className='w-full xl:w-1/2'>
         <b className='text-xl'>{t("Product Differentiation")}</b>
-        <ul className='list-disc pl-7 pt-5 space-y-1'>
+        <ul className='list-disc ps-7 pt-5 space-y-1'>
           <FadeLeft delay={0}>
             <li className=''>
               <b>{t("Superior-Quality-Heading")}: </b>{t("Superior-Quality-Content")}

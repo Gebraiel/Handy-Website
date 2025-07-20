@@ -29,13 +29,13 @@ export default function LanguageSwitcher({menuLength}) {
     return (
         <>
             <FadeIn delay={menuLength *0.1}>
-                <li className="uppercase font-bold relative has-submenu text-xs">
-                <button onClick={()=>changeLanguage("ar")}><p className='flex gap-1'><img src="/Flags/ar.svg"/> AR</p></button>
-                </li>
+            <li className="uppercase font-bold relative has-submenu text-xs border border-l-0 border-r-0 p-5 xl:p-0 xl:border-0">
+                <button className='xl:w-auto w-full' onClick={()=>changeLanguage("ar")}><p className='flex gap-1'><img width={20} src="/Flags/ar.svg"/> AR</p></button>
+            </li>
             </FadeIn>
             <FadeIn delay={menuLength *0.1}>
             <li>
-                <li className="uppercase font-bold relative has-submenu text-xs">
+                <li className="uppercase font-bold relative has-submenu text-xs border border-l-0 border-r-0 p-5 xl:p-0 xl:border-0">
                     <button onClick={()=>changeLanguage("en")}><p className='flex gap-1'><img src="/Flags/en.svg"/> EN</p></button>
                 </li>
             </li>

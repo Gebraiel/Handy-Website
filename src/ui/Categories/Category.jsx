@@ -17,7 +17,7 @@ export default function Category({category}) {
         </FadeLeft>
       </div>
       <div className="w-full lg:w-1/2">
-        <FadeRight>
+        <div>
           <b className="text-2xl text-secondary capitalize"><Link to={getLocalizedPath(`/category/${category.id}`,currentLanguage)}>{
         i18n.language =="en" ? category['name-en'] : category['name-ar']
         }</Link></b>
@@ -29,7 +29,7 @@ export default function Category({category}) {
         <Link to={getLocalizedPath(`/category/${category.id}`,currentLanguage)} className="text-primary font-bold">
           {t("Learn More")}
         </Link>
-        </FadeRight>
+        </div>
       </div>
     </div>
   );

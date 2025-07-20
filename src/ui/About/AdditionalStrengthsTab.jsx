@@ -11,7 +11,7 @@ export default function AdditionalStrengthsTab() {
         <div className='flex justify-center xl:justify-between items-start flex-wrap gap-y-5'>
     <div className='w-full xl:w-1/2'>
       <b className='text-xl'>{t("Additional Strengths")}</b>
-      <ul className='list-disc pl-7 pt-5 space-y-3'>
+      <ul className='list-disc ps-7 pt-5 space-y-3'>
         <FadeLeft delay={0.1}>
           <li className=''>
             <b>{t("Price-Competitiveness-Heading")}: </b>{t("Price-Competitiveness-Content")}

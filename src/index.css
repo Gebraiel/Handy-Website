@@ -13,7 +13,7 @@
         @apply py-2 px-3 bg-primary text-white font-bold disabled:bg-[#ccc]
     }
 }
-body{
+body,#root{
     overflow-x: hidden;
 }
 
