@@ -15,6 +15,7 @@ import FadeRight from "../ui/Animation/FadeRight";
 import FadeIn from "../ui/Animation/FadeIn";
 import Loader from "../ui/Loader";
 import { useTranslation } from "react-i18next";
+import { getLocalizedPath } from "../services/localization";
 
 export default function Product() {
   console.log("Product");
@@ -42,6 +43,7 @@ export default function Product() {
   const nextIndex = products.findIndex((product) => product.id == id) + 1;
   const [showToast, setShowToast] = useState(false);
   const productTitle = title.split("<br>");
+  const currentLanguage = i18n.language
   function copyToClipboard() {
     navigator.clipboard.writeText(location.href);
     setShowToast(true);
@@ -64,14 +66,14 @@ if (isLoading) return <Loader />;
       <Section className="!py-[25px] ">
         <div className="text-[#ccc]  text-xs font-bold uppercase">
           <Link
-            to="/"
+            to={getLocalizedPath("/",currentLanguage)}
             className="hover:text-primary transition-colors duration-300"
           >
             {t("Home")}{" "}
           </Link>
           /{" "}
           <Link
-            to="/products"
+            to={getLocalizedPath("/products",currentLanguage)}
             className="hover:text-primary transition-colors duration-300"
           >
             {t("Products")}{" "}
@@ -80,17 +82,17 @@ if (isLoading) return <Loader />;
 
           {subcategory ?
             <>
-              <Link to={`/category/${categoryId}`}>
+              <Link to={getLocalizedPath(`/category/${categoryId}`,currentLanguage)}>
                 {categoryName}
               </Link>
               {" "}
               /{" "}
-              <Link  className="text-primary" to={`/category/${categoryId}?filter=${subcategory}`}>
+              <Link  className="text-primary" to={getLocalizedPath(`/category/${categoryId}?filter=${subcategory}`,currentLanguage)}>
                 {subcategory}
               </Link>
             </>
             :
-            <Link className="text-primary" to={`/category/${categoryId}`}>
+            <Link className="text-primary" to={getLocalizedPath(`/category/${categoryId}`,currentLanguage)}>
               / {categoryName}
             </Link>
           }
@@ -139,7 +141,7 @@ if (isLoading) return <Loader />;
             <div className="flex justify-between items-center">
               <FadeLeft>
                 <button
-                onClick={() => navigate(`/product/${products[prevIndex].id}`)}
+                onClick={() => navigate(getLocalizedPath(`/product/${products[prevIndex].id}`,currentLanguage))}
                 className={"button flex gap-1 items-center "}
                 disabled={prevIndex < 0}
               >
@@ -152,7 +154,7 @@ if (isLoading) return <Loader />;
               </FadeLeft>
               <FadeRight>
                 <button
-                onClick={() => navigate(`/product/${products[nextIndex].id}`)}
+                onClick={() => navigate(getLocalizedPath(`/product/${products[nextIndex].id}`,currentLanguage))}
                 className="button flex gap-1 items-center"
                 disabled={nextIndex >= products.length}
               >
@@ -168,7 +170,7 @@ if (isLoading) return <Loader />;
       </Section>
       <AnimatePresence>
         {showToast && (
-          <ToastSuccess message={"Product URL Copied To Clipboard"} />
+          <ToastSuccess message={t("Product URL Copied To Clipboard")} />
         )}
       </AnimatePresence>
     </FadeIn>

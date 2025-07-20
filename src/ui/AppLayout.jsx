@@ -9,10 +9,13 @@ import OutletContext from "../context/OutletContext";
 import { getProducts } from "../services/products";
 import HeaderWithRealive from "./HeaderWithRealive";
 import { useTranslation } from "react-i18next";
+import { useEffect } from "react";
+import { getLocalizedPath } from "../services/localization";
 
 export default function AppLayout() {
   const {categories,products} = useLoaderData();
   const{t,i18n}=useTranslation("Common");
+  const currentLanguage = i18n.language;
   const categoriesMenu = [
     {
       title:t("Jumbo Rolls"),
@@ -62,25 +65,32 @@ export default function AppLayout() {
 
   ]
   const otherLinks=[
-    {title:t("Health & Safety Measures"),link:"/health"},
-    {title:t("Customer Support"),link:"/support"},
-    {title:t("Our Branches"),link:"/branches"},
+    {title:t("Health & Safety Measures"),link:getLocalizedPath("/health",currentLanguage)},
+    {title:t("Customer Support"),link:getLocalizedPath("/support",currentLanguage)},
+    {title:t("Our Branches"),link:getLocalizedPath("/branches",currentLanguage)},
   ]
   const footerMenu = [
-    {title:t("Home"),link:"/"},
-    {title:t("About Us"),link:"/about"},
-    {title:t("Sectors"),link:"/sectors",hasSubMenu:true,submenu:[
-      {title:t("Handy Paper"),link:"/sectors/handy-paper"},
-      {title:t("Handy Tissue Products"),link:"/sectors/handy-tissue-products"},
-      {title:t("Wet Wipes"),link:"/sectors/handy-wet-wipes"},
+    {title:t("Home"),link:getLocalizedPath("/",currentLanguage)},
+    {title:t("About Us"),link:getLocalizedPath("/about",currentLanguage)},
+    {title:t("Sectors"),link:getLocalizedPath("/sectors",currentLanguage),hasSubMenu:true,submenu:[
+      {title:t("Handy Paper"),link:getLocalizedPath("/sectors/handy-paper",currentLanguage)},
+      {title:t("Handy Tissue Products"),link:getLocalizedPath("/sectors/handy-tissue-products",currentLanguage)},
+      {title:t("Wet Wipes"),link:getLocalizedPath("/sectors/handy-wet-wipes",currentLanguage)},
     ]},
     {
-      title:t("Products"),link:"/products",hasSubMenu:true,submenu:categoriesMenu
+      title:t("Products"),link:getLocalizedPath("/products",currentLanguage),hasSubMenu:true,submenu:categoriesMenu
     },
-    {title:t("Sustainability"),link:"/sustainability"},
-    {title:t("Media Center"),link:"/media-center"},
-    {title:t("Contact Us"),link:"/contact"},
+    {title:t("Sustainability"),link:getLocalizedPath("/sustainability",currentLanguage)},
+    {title:t("Media Center"),link:getLocalizedPath("/media-center",currentLanguage)},
+    {title:t("Contact Us"),link:getLocalizedPath("/contact",currentLanguage)},
   ]
+
+  useEffect(()=>{
+    document.documentElement.setAttribute("dir", i18n.language === "ar" ? "rtl" : "ltr");
+
+    document.documentElement.classList.remove("font-en", "font-ar");
+    document.documentElement.classList.add(i18n.language === "ar" ? "font-ar" : "font-en");
+  },[i18n.language])
   return (
     <CategoriesContext.Provider value={categories} >
       <ScrollToTop />

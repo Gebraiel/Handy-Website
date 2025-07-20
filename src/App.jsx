@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import AppLayout from "./ui/AppLayout";
 import Home from "./pages/Home";
@@ -19,67 +19,69 @@ import CustomerSupport from "./pages/CustomerSupport";
 import Health from "./pages/Health";
 import Branches from "./pages/Branches";
 import Error from "./pages/PageNotFound";
+import { useTranslation } from "react-i18next";
 // import {loader as categoriesLoader} from "./pages/Products";
 const router = createBrowserRouter([
   {
+    path:"/",
     element: <AppLayout />,
     loader: categoriesLoader,
     children: [
       {
-        path: "/",
+        path: "",
         element: <Home />,
       },
       {
-        path:"/contact",
+        path:"contact",
         element:<Contact />
       },{
-        path:"/products",
+        path:"products",
         element:<Products />,
         loader:fileLoader
       }
       ,{
-        path:"/about",
+        path:"about",
         element:<About />
       }
       ,{
-        path:"/contact",
+        path:"contact",
         element:<Contact />
       }
       ,{
-        path:"/media-center",
+        path:"media-center",
         element:<MediaCenter />
       }
       ,{
-        path:"/sectors/",
+        path:"sectors/",
         element:<Sectors />
       },{
-        path:"/sectors/:sectorName",
+        path:"sectors/:sectorName",
         element:<Sectors />
       }
       ,{
-        path:"/sustainability",
+        path:"sustainability",
         element:<Sustainability />
       }
       ,{
-        path:"/category/:categoryId",
+        path:"category/:categoryId",
         element:<Category />,
         loader:productsLoader
       },
       {
-        path:"/product/:productId",
+        path:"product/:productId",
         element:<Product />,
         loader:productLoader
       },
       {
-        path:"/support",
+        path:"support",
         element:<CustomerSupport />
       },
       {
-        path:"/health",
+        path:"health",
         element:<Health/>
       },
-      { 
-        path:"/branches",
+      {
+        path:"branches",
         element:<Branches/>
       },{
         path:"*",
@@ -87,9 +89,84 @@ const router = createBrowserRouter([
       }
     ],
   },
+  {
+    path:"/ar",
+    element: <LanguageWrapper> <AppLayout /> </LanguageWrapper>,
+    loader: categoriesLoader,
+    children: [
+      {
+        path: "",
+        element: <Home />,
+      },
+      {
+        path:"contact",
+        element:<Contact />
+      },
+      {
+        path:"products",
+        element:<Products />,
+        loader:fileLoader
+      },
+      {
+        path:"about",
+        element:<About />
+      },
+      {
+        path:"media-center",
+        element:<MediaCenter />
+      },
+      {
+        path:"sectors/",
+        element:<Sectors />
+      },
+      {
+        path:"sectors/:sectorName",
+        element:<Sectors />
+      },
+      {
+        path:"sustainability",
+        element:<Sustainability />
+      },
+      {
+        path:"category/:categoryId",
+        element:<Category />,
+        loader:productsLoader
+      },
+      {
+        path:"product/:productId",
+        element:<Product />,
+        loader:productLoader
+      },
+      {
+        path:"support",
+        element:<CustomerSupport />
+      },
+      {
+        path:"health",
+        element:<Health/>
+      },
+      {
+        path:"branches",
+        element:<Branches/>
+      },{
+        path:"*",
+        element:<Error />
+      }
+    ],
+  }
 ]);
 function App() {
   return <RouterProvider router={router} />;
 }
+function LanguageWrapper({children}){
+  const { i18n } = useTranslation();
 
+  useEffect(() => {
+    if (i18n.language !== "ar") {
+      i18n.changeLanguage("ar");
+    }
+  }, [i18n]);
+
+  return children;
+}
 export default App;

@@ -22,6 +22,7 @@ import FadeDown from "../ui/Animation/FadeDown";
 import FadeLeft from "../ui/Animation/FadeLeft";
 import { useTranslation } from "react-i18next";
 import '../utils/i18n';
+import { getLocalizedPath } from "../services/localization";
 
 
 const sustainabilityLength = 14;
@@ -36,67 +37,68 @@ const sustainabilityImagesArray = Array.from(
 
 export default function Home() {
   console.log("Home");
-  const { t } = useTranslation(['Home',"Common"]); // نفس الـ namespace
-
+  const { t ,i18n,ready} = useTranslation(['Home',"Common"]); // نفس الـ namespace
+  const currentLanguage = i18n.language;
   const navigation = useNavigation();
-      const isLoading = navigation.state === "loading";
-      if (isLoading) return <Loader />;
+  const isLoading = navigation.state === "loading";
+  if (isLoading || !ready) return <Loader />;
+  const slides=[
+    {
+      image:{
+        desktop:"/banner/slider-1.webp",
+        mobile:"banner/slider-1-mobile.webp"
+      },
+      content:{
+        heading:t("heading1", { ns: 'Home' }),
+        subtitle:t("subtitle1", { ns: 'Home' })
+      }
+    },
+    {
+      image:{
+        desktop:"/banner/slider-2.webp",
+        mobile:"/banner/slider-2-mobile.webp"
+      },
+      content:{
+        heading:t("heading2", { ns: 'Home' }),
+        subtitle:t("subtitle2", { ns: 'Home' })
+      }
+    },
+    {
+      image:{
+        desktop:"/banner/slider-3.webp",
+        mobile:"/banner/slider-3-mobile.webp"
+      },
+      content:{
+        heading:t("heading3", { ns: 'Home' }),
+        subtitle:t('subtitle3', { ns: 'Home' })
+      }
+    },{
+      image:{
+        desktop:"/banner/slider-4.webp",
+        mobile:"banner/slider-4-mobile.webp"
+      },
+      content:{
+        heading:t("heading4", { ns: 'Home' }),
+        subtitle:""
+      }
+    }
+    ,{
+      image:{
+        desktop:"/banner/slider-5.webp",
+        mobile:"/banner/slider-5-mobile.webp"
+      },
+      content:{
+        heading:t("heading5", { ns: 'Home' }),
+        subtitle:""
+      }
+    }
+  ]
   return (
     <FadeIn>
 
       <Section  type="fullscreen">
         <Slider
-          slides={[
-            {
-              image:{
-                desktop:"/banner/slider-1.webp",
-                mobile:"banner/slider-1-mobile.webp"
-              },
-              content:{
-                heading:t("heading1", { ns: 'Home' }),
-                subtitle:t("subtitle1", { ns: 'Home' })
-              }
-            },
-            {
-              image:{
-                desktop:"/banner/slider-2.webp",
-                mobile:"/banner/slider-2-mobile.webp"
-              },
-              content:{
-                heading:t("heading2", { ns: 'Home' }),
-                subtitle:t("subtitle2", { ns: 'Home' })
-              }
-            },
-            {
-              image:{
-                desktop:"/banner/slider-3.webp",
-                mobile:"/banner/slider-3-mobile.webp"
-              },
-              content:{
-                heading:t("heading3", { ns: 'Home' }),
-                subtitle:t('subtitle3', { ns: 'Home' })
-              }
-            },{
-              image:{
-                desktop:"/banner/slider-4.webp",
-                mobile:"banner/slider-4-mobile.webp"
-              },
-              content:{
-                heading:t("heading4", { ns: 'Home' }),
-                subtitle:""
-              }
-            }
-            ,{
-              image:{
-                desktop:"/banner/slider-5.webp",
-                mobile:"/banner/slider-5-mobile.webp"
-              },
-              content:{
-                heading:t("heading5", { ns: 'Home' }),
-                subtitle:""
-              }
-            }
-          ]}
+          slides={slides}
         />
       </Section>
         <Section className="relative">
@@ -133,7 +135,7 @@ export default function Home() {
         <FadeDown>
           <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
           <div className="w-full bg-white">
-            <Link to="/sectors/handy-paper" className="relative w-full group">
+            <Link to={getLocalizedPath("/sectors/handy-paper",currentLanguage)} className="relative w-full group">
               <p className="absolute right-5 bottom-5 text-8xl font-bold text-white opacity-50 transition-all group-hover:opacity-100 group-hover:-translate-y-2">
                 01
               </p>
@@ -141,16 +143,16 @@ export default function Home() {
             </Link>
 
             <div className="p-3">
-              <Link to="/sectors/handy-paper"><b className="text-2xl text-primary">{t("Handy Paper",{ns:"Common"})}</b></Link>
+              <Link to={getLocalizedPath("/sectors/handy-paper",currentLanguage)}><b className="text-2xl text-primary">{t("Handy Paper",{ns:"Common"})}</b></Link>
               <Paragraph className="mt-2">
                 {t("Sectors-Content-01",{ns:"Home"})}
               </Paragraph>
-              <Link className="text-primary font-bold" to="/sectors/handy-paper">{t("Learn More",{ns:"Common"})}</Link>
+              <Link className="text-primary font-bold" to={getLocalizedPath("/sectors/handy-paper",currentLanguage)}>{t("Learn More",{ns:"Common"})}</Link>
 
             </div>
           </div>
           <div className="w-full bg-white">
-            <Link to="/sectors/handy-tissue-products" className="relative w-full group">
+            <Link to={getLocalizedPath("/sectors/handy-tissue-products",currentLanguage)} className="relative w-full group">
               <p className="absolute right-5 bottom-5 text-8xl font-bold text-white opacity-50 transition-all group-hover:opacity-100 group-hover:-translate-y-2">
                 02
               </p>
@@ -158,16 +160,16 @@ export default function Home() {
             </Link>
 
             <div className="p-3">
-              <Link to="/sectors/handy-tissue-products"><b className="text-2xl text-primary">{t("Handy Tissue Products",{ns:"Common"})}</b></Link>
+              <Link to={getLocalizedPath("/sectors/handy-tissue-products",currentLanguage)}><b className="text-2xl text-primary">{t("Handy Tissue Products",{ns:"Common"})}</b></Link>
               <Paragraph className="mt-2 text-md">
                  {t("Sectors-Content-02",{ns:"Home"})}
               </Paragraph>
-              <Link className="text-primary font-bold" to="/sectors/handy-tissue-products">{t("Learn More",{ns:"Common"})}</Link>
+              <Link className="text-primary font-bold" to={getLocalizedPath("/sectors/handy-tissue-products",currentLanguage)}>{t("Learn More",{ns:"Common"})}</Link>
 
             </div>
           </div>
           <div className="w-full bg-white">
-            <Link to="/sectors/handy-wet-wipes" className="relative w-full group">
+            <Link to={getLocalizedPath("/sectors/handy-wet-wipes",currentLanguage)} className="relative w-full group">
               <p className="absolute right-5 bottom-5 text-8xl font-bold text-white opacity-50 transition-all group-hover:opacity-100 group-hover:-translate-y-2">
                 03
               </p>
@@ -175,11 +177,11 @@ export default function Home() {
             </Link>
 
             <div className="p-3 ">
-              <Link to="/sectors/handy-wet-wipes"><b className="text-2xl text-primary">{t("Wet Wipes",{ns:"Common"})}</b></Link>
+              <Link to={getLocalizedPath("/sectors/handy-wet-wipes",currentLanguage)}><b className="text-2xl text-primary">{t("Wet Wipes",{ns:"Common"})}</b></Link>
               <Paragraph className="mt-2 text-md">
                  {t("Sectors-Content-03",{ns:"Home"})}
               </Paragraph>
-              <Link className="text-primary font-bold" to="/sectors/handy-wet-wipes">{t("Learn More",{ns:"Common"})}</Link>
+              <Link className="text-primary font-bold" to={getLocalizedPath("/sectors/handy-wet-wipes",currentLanguage)}>{t("Learn More",{ns:"Common"})}</Link>
             </div>
           </div>
         </div>

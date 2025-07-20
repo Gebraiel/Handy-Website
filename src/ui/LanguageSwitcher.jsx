@@ -1,21 +1,30 @@
 import React from 'react'
 import FadeIn from './Animation/FadeIn'
 import { useTranslation } from 'react-i18next';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 export default function LanguageSwitcher({menuLength}) {
     const { i18n } = useTranslation();
+    const navigate = useNavigate();
+    const location = useLocation()
     function changeLanguage(lang){
-        const currentLanguage = i18n.language;
-        if(currentLanguage != lang){
-            i18n.changeLanguage(lang);
-            document.dir = lang == 'ar' ? "rtl":"ltr";
-            // document.documentElement.classList.toggle('font-ar', i18n.language === 'ar');
-            if(lang == 'ar' ) {
-                document.documentElement.classList.add('font-ar') ;
-            }else{
-                document.documentElement.classList.remove('font-ar')
+        const path = location.pathname;
+        const segments = path.split("/");
+        if (lang === "ar") {
+            // لو مش بالفعل عربي، ضيف "ar"
+            if (segments[1] !== "ar") {
+                navigate(`/ar${path}`);
+            }
+            } else {
+            // لو بتحوّل للإنجليزي، احذف "ar" من الـ path
+            if (segments[1] === "ar") {
+                const newPath = `/${segments.slice(2).join("/")}`;
+                navigate(newPath || "/");
             }
         }
+        i18n.changeLanguage(lang);
+
+
     }
     return (
         <>

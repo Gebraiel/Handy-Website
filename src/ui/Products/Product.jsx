@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import JumboProduct from "./JumboProduct";
 import { useTranslation } from "react-i18next";
+import { getLocalizedPath } from "../../services/localization";
 
 export default function Product({product,view,categoryName}) {
   const {t,i18n} = useTranslation("Common");
@@ -12,6 +13,7 @@ export default function Product({product,view,categoryName}) {
   console.log(localizedProduct);
   const title = localizedProduct.title.split('<br>').join("");
   console.log(title);
+  const currentLanguage = i18n.language;
   if(isJumbo)
       return <JumboProduct product={localizedProduct} view={view}/>
   return (
@@ -27,7 +29,7 @@ export default function Product({product,view,categoryName}) {
         <div className={`w-full  ${view == "list" ? " pl-5 lg:w-1/4" : ""}`}>
               {
                   localizedProduct.image ?
-                  <Link to={`/product/${localizedProduct.id}`}><img className="m-auto" src={localizedProduct.image} alt="Product Image" /></Link>
+                  <Link to={getLocalizedPath(`/product/${localizedProduct.id}`,currentLanguage)}><img className="m-auto" src={localizedProduct.image} alt="Product Image" /></Link>
                   :
                   <div className="bg-white w-full aspect-square"></div>
               }
@@ -39,7 +41,7 @@ export default function Product({product,view,categoryName}) {
         } justify-between p-5 flex-grow w-full`}
       >
         <div>
-          <h1 className="text-primary text-xl font-bold"><Link to={`/product/${localizedProduct.id}`}>{title}</Link></h1>
+          <h1 className="text-primary text-xl font-bold"><Link to={getLocalizedPath(`/product/${localizedProduct.id}`,currentLanguage)}>{title}</Link></h1>
           {isJumbo ? (
             <ul className="list-disc pl-5 mt-5">
               {
@@ -54,7 +56,7 @@ export default function Product({product,view,categoryName}) {
         </div>
         <div className="mt-5">
             <Link
-            to={`/product/${localizedProduct.id}`}
+            to={getLocalizedPath(`/product/${localizedProduct.id}`,currentLanguage)}
             className="button"
             >
             {t("Details")}

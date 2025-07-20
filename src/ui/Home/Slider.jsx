@@ -1,11 +1,10 @@
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import nextArrow from "../../assets/icon-next.svg";
 import prevArrow from "../../assets/icon-previous.svg";
 import Typing from "./Typing";
 import Bullets from "./Bullets";
-import {motion} from "motion/react";
 import { useTranslation } from "react-i18next";
-function Slider({ slides}) {
+function Slider({slides}) {
   const [active, setActive] = useState(0);
   const{i18n} = useTranslation();
   console.log("Slider rendering");
@@ -62,7 +61,7 @@ function Slider({ slides}) {
         {
           slides[active].content &&
           <div className="opacity-0 animate-fadeUp w-[90%]" key={active}>
-            <Typing word={slides[active].content.subtitle}/>
+            <Typing word={slides[active].content.subtitle} key={i18n.language}/>
             <h1 className={`text-4xl lg:text-5xl font-bold xl:text-6xl`}>
               {slides[active].content.heading}
             </h1>

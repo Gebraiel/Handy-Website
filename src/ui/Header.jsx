@@ -9,13 +9,16 @@ import SubMenu from "./SubMenu";
 import FadeIn from "./Animation/FadeIn";
 import { useTranslation } from "react-i18next";
 import LanguageSwitcher from "./LanguageSwitcher";
+import { getLocalizedPath } from "../services/localization";
+// import i18n from "src/utils/i18n";
 
 export default function Header({menu,isAbsolute}) {
+  const {i18n} = useTranslation()
   const [show, setShow] = useState(false);
   const [isSticky, setIsSticky] = useState(false);
   const headerRef = useRef(null); // Reference for the header element
   const headerHeight = useRef(0); // نحتفظ بيه مرة واحدة
-
+  const currentLanguage = i18n.language;
   const headerClasses = isAbsolute ? "absolute  text-white":"relative bg-primary text-white";
   useEffect(() => {
     if (headerRef.current) {
@@ -43,7 +46,7 @@ export default function Header({menu,isAbsolute}) {
     >
       <div className="relative">
         <div className="container  sm:w-[90%] flex items-center justify-between m-auto p-5">
-          <Link to="/" className="max-w-40">
+          <Link to={getLocalizedPath("/",currentLanguage)} className="max-w-40">
             <FadeIn delay={0.3}>
               <img src={Logo} alt="Logo" />
             </FadeIn>
@@ -62,7 +65,7 @@ export default function Header({menu,isAbsolute}) {
                     <SubMenu item={item} closeHeader={()=>setShow(false)}/>
                     :
                   <li className=" border border-l-0 border-r-0  bg-primary uppercase font-bold " >
-                      <NavLink to={item.link} onClick={()=>setShow(false)} className={`flex gap-1 p-5 items-center w-full text-white `} >
+                      <NavLink to={getLocalizedPath(item.link,currentLanguage)} onClick={()=>setShow(false)} className={`flex gap-1 p-5 items-center w-full text-white `} >
                         {item.title}
                       </NavLink>
                   </li>
@@ -79,7 +82,7 @@ export default function Header({menu,isAbsolute}) {
               {menu.map((item,index)=>
                 <FadeIn delay={0.1 * index}>
                   <li className="uppercase font-bold relative has-submenu text-xs" key={index}>
-                  <NavLink to={`${item.link? item.link : '/'}`} className={({ isActive }) => `${item.hasSubMenu ? 'flex gap-1 items-center ' : ""} ${isActive ? (isSticky || !isAbsolute ? 'text-secondary' : 'text-primary') : 'text-white'} `
+                  <NavLink to={getLocalizedPath(`${item.link? item.link : '/'}`,currentLanguage)} className={({ isActive }) => `${item.hasSubMenu ? 'flex gap-1 items-center ' : ""} ${isActive ? (isSticky || !isAbsolute ? 'text-secondary' : 'text-primary') : 'text-white'} `
 
                   }>
                         {item.title}
@@ -94,7 +97,7 @@ export default function Header({menu,isAbsolute}) {
                           item.submenu.map((child,index)=>
                             <li className="border-b-2 p-4 bg-primary relative has-submenu" key={index}>
 
-                              <Link to={child.link} className="flex gap-1 items-center">
+                              <Link to={getLocalizedPath(child.link,currentLanguage)} className="flex gap-1 items-center">
                                 {child.title}
                                 { child.hasSubMenu && <FaCaretRight /> }
 
@@ -107,7 +110,7 @@ export default function Header({menu,isAbsolute}) {
                                     child.submenu.map((e,index)=>
                                       <li className="border-b-2 p-4 bg-primary" key={index}>
 
-                                        <Link to={e.link}>{e.title}</Link>
+                                        <Link to={getLocalizedPath(e.link,currentLanguage)}>{e.title}</Link>
 
                                       </li>
 
