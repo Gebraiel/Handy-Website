@@ -65,7 +65,7 @@ export default function Header({menu,isAbsolute}) {
                     <SubMenu item={item} closeHeader={()=>setShow(false)}/>
                     :
                   <li className=" border border-l-0 border-r-0  bg-primary uppercase font-bold " >
-                      <NavLink to={getLocalizedPath(item.link,currentLanguage)} onClick={()=>setShow(false)} className={`flex gap-1 p-5 items-center w-full text-white `} >
+                      <NavLink to={item.link} end={item.hasSubMenu ? false : true} onClick={()=>setShow(false)} className={`flex gap-1 p-5 items-center w-full text-white `} >
                         {item.title}
                       </NavLink>
                   </li>
@@ -82,7 +82,7 @@ export default function Header({menu,isAbsolute}) {
               {menu.map((item,index)=>
                 <FadeIn delay={0.1 * index}>
                   <li className="uppercase font-bold relative has-submenu text-xs" key={index}>
-                  <NavLink to={getLocalizedPath(`${item.link? item.link : '/'}`,currentLanguage)} className={({ isActive }) => `${item.hasSubMenu ? 'flex gap-1 items-center ' : ""} ${isActive ? (isSticky || !isAbsolute ? 'text-secondary' : 'text-primary') : 'text-white'} `
+                  <NavLink to={item.link} end={item.hasSubMenu ? false : true} className={({ isActive }) => `${item.hasSubMenu ? 'flex gap-1 items-center ' : ""} ${isActive ? (isSticky || !isAbsolute ? 'text-secondary' : 'text-primary') : 'text-white'} `
 
                   }>
                         {item.title}
@@ -97,7 +97,7 @@ export default function Header({menu,isAbsolute}) {
                           item.submenu.map((child,index)=>
                             <li className="border-b-2 p-4 bg-primary relative has-submenu" key={index}>
 
-                              <Link to={getLocalizedPath(child.link,currentLanguage)} className="flex gap-1 items-center">
+                              <Link to={child.link}  className="flex gap-1 items-center">
                                 {child.title}
                                 { child.hasSubMenu && <FaCaretRight /> }
 
@@ -110,7 +110,7 @@ export default function Header({menu,isAbsolute}) {
                                     child.submenu.map((e,index)=>
                                       <li className="border-b-2 p-4 bg-primary" key={index}>
 
-                                        <Link to={getLocalizedPath(e.link,currentLanguage)}>{e.title}</Link>
+                                        <Link to={e.link}>{e.title}</Link>
 
                                       </li>
 

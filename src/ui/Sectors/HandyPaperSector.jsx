@@ -16,7 +16,6 @@ import { FaPeopleGroup } from "react-icons/fa6";
 import { FaGlobeAmericas } from "react-icons/fa";
 import FadeLeft from '../Animation/FadeLeft';
 import FadeIn from '../Animation/FadeIn';
-import {AnimatePresence} from "motion/react"
 import { useTranslation } from 'react-i18next';
 
 const parentVarient = {
@@ -39,7 +38,7 @@ const childrenVairent={
 
 export default function HandyPaperSector() {
   let [sectorImages,setSectorImages] = useState([]);
-  const{t:tCommon}=useTranslation("Common");
+  const{t:tCommon,i18n}=useTranslation("Common");
   const {t:tSectors} = useTranslation("Sectors");
 
   useEffect(()=>{
@@ -268,7 +267,7 @@ export default function HandyPaperSector() {
           sectorImages.length>0
           &&
           // <GallerySlider images={sectorImages} noOfCols={3}/>
-          <SwiperSlider images={sectorImages}/>
+          <SwiperSlider key={i18n.language} images={sectorImages}/>
         }
       </Section>
       </div>

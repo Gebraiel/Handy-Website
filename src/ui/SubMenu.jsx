@@ -36,7 +36,7 @@ export default function SubMenu({item,closeHeader}) {
                                         {
                                             showSubmenu &&
                                             <motion.ul className='h-0 opacity-0' initial={{height:0,opacity:0}} animate={{height:"auto",opacity:1}} exit={{height:0,opacity:0}}>
-                                                {child.submenu.map((grandChild)=> <li className='px-4 my-4 w-full'><Link className="block w-full" to={getLocalizedPath(grandChild.link,currentLanguage)} onClick={closeHeader}>{grandChild.title}</Link></li>)}
+                                                {child.submenu.map((grandChild)=> <li className='px-4 my-4 w-full'><Link className="block w-full" to={grandChild.link} onClick={closeHeader}>{grandChild.title}</Link></li>)}
                                             </motion.ul>
                                         }
                                     </AnimatePresence>
@@ -44,7 +44,7 @@ export default function SubMenu({item,closeHeader}) {
                                 </li>
                                 :
                                 <li className="w-full border-y py-4 px-8">
-                                    <Link className="block w-full" to={getLocalizedPath(child.link,currentLanguage)} onClick={closeHeader}>
+                                    <Link className="block w-full" to={child.link} onClick={closeHeader}>
                                         {child.title}
                                     </Link>
 

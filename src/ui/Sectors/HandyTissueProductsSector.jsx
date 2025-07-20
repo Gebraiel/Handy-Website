@@ -31,7 +31,7 @@ const childrenVairent={
 
 export default function HandyTissueProductsSector() {
    let [sectorImages,setSectorImages] = useState([]);
-   const{t:tCommon}=useTranslation("Common");
+   const{t:tCommon,i18n}=useTranslation("Common");
    const{t:tSectors}=useTranslation("Sectors");
    useEffect(()=>{
      async function getImages(){
@@ -281,7 +281,7 @@ export default function HandyTissueProductsSector() {
           </div>
       </Section>
       <Section type="fullscreen" className="bg-[#f1eeee]  px-5">
-        {sectorImages&&<SwiperSlider images={sectorImages}/>}
+        {sectorImages&&<SwiperSlider key={i18n.language} images={sectorImages}/>}
       </Section>
     </div>
   );

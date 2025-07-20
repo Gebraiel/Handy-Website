@@ -19,46 +19,46 @@ export default function AppLayout() {
   const categoriesMenu = [
     {
       title:t("Jumbo Rolls"),
-      link:"/category/2"
+      link:getLocalizedPath("/category/2",currentLanguage)
     },
     {
       title:t("Facial Tissues"),
-      link:"/category/1"
+      link:getLocalizedPath("/category/1",currentLanguage)
     },
     {
       title:t("Wet Wipes"),
-      link:"/category/5",
+      link:getLocalizedPath("/category/5",currentLanguage),
       hasSubMenu:true,
       submenu:[
         {
           title:"BABY CARE",
-          link:"/category/5?filter=BABY CARE"
+          link:getLocalizedPath("/category/5?filter=BABY CARE",currentLanguage)
         },
         {
           title:"MAKEUP REMOVING",
-          link:"/category/5?filter=MAKEUP REMOVING"
+          link:getLocalizedPath("/category/5?filter=MAKEUP REMOVING",currentLanguage)
         },
         {
           title:"GERM DEFENCE",
-          link:"/category/5?filter=GERM DEFENCE"
+          link:getLocalizedPath("/category/5?filter=GERM DEFENCE",currentLanguage)
         },
         {
           title:"ALL-PURPOSE USE",
-          link:"/category/5?filter=ALL-PURPOSE USE"
+          link:getLocalizedPath("/category/5?filter=ALL-PURPOSE USE",currentLanguage)
         },
         {
           title:"PREMIUM REFRESHMENT",
-          link:"/category/5?filter=PREMIUM REFRESHMENT"
+          link:getLocalizedPath("/category/5?filter=PREMIUM REFRESHMENT",currentLanguage)
         },
       ]
     },
     {
       title:t("Toilet Tissues"),
-      link:"/category/4"
+      link:getLocalizedPath("/category/4",currentLanguage)
     },
     {
       title:t("Home Care"),
-      link:"/category/3"
+      link:getLocalizedPath("/category/3",currentLanguage)
     }
 
 
