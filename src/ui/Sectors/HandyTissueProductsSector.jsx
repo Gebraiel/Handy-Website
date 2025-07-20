@@ -203,7 +203,7 @@ export default function HandyTissueProductsSector() {
           <Paragraph size="md">{tSectors("Handy-Tissue-Key-Excellence-Content-01")}</Paragraph>
 
           </FadeIn>
-          <ul className="list-disc pl-5">
+          <ul className="list-disc ps-5">
             <FadeLeft>
             <li>
               <Paragraph size="sm">

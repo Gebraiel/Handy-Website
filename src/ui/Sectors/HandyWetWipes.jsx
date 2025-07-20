@@ -204,7 +204,7 @@ export default function HandyWetWipes() {
           <Paragraph size="md">{tSectors("Wet-Wipes-Key-Excellence-Content")}</Paragraph>
 
           </FadeIn>
-          <ul className="list-disc pl-5">
+          <ul className="list-disc ps-5">
             <FadeLeft>
               <li>
                 <Paragraph size="sm">
