@@ -19,7 +19,7 @@ export default function Header({menu,isAbsolute}) {
   const headerRef = useRef(null); // Reference for the header element
   const headerHeight = useRef(0); // نحتفظ بيه مرة واحدة
   const currentLanguage = i18n.language;
-  const headerClasses = isAbsolute ? "absolute  text-white":"relative bg-primary text-white";
+  const headerClasses = isAbsolute ? "absolute text-white":"relative bg-primary text-white";
   useEffect(() => {
     if (headerRef.current) {
       headerHeight.current = headerRef.current.offsetHeight;
@@ -40,7 +40,7 @@ export default function Header({menu,isAbsolute}) {
 
       className={`transition-all duration-300 left-0 top-0 w-screen z-50  text-white ${!isAbsolute || isSticky || show ? "bg-primary bg-contain bg-[url('/pattern.png')]" : ""} ${
         isSticky
-          ? "sm:fixed sm:animate-fadeDown z-[51]"
+          ? "fixed animate-fadeDown z-[51]"
           : headerClasses
       }  ` }
     >
@@ -56,8 +56,9 @@ export default function Header({menu,isAbsolute}) {
               { !show ? <GiHamburgerMenu className="text-2xl" /> : <IoCloseSharp className="text-2xl" />}
             </button>
 
-            <ul
-              className={`absolute transition-all duration-300 ${show?'start-0':'-start-full'} top-full w-full bg-primary text-white z-50 overflow-y-auto transition-all duration-300`}
+           <div className={`max-h-[80vh] absolute overflow-scroll transition-all duration-300 ${show?'start-0':'-start-full'} top-full w-full bg-primary text-white z-50 transition-all duration-300`}>
+             <ul
+              className={`overflow-scroll`}
             >
               {
                 menu.map((item)=>
@@ -75,6 +76,7 @@ export default function Header({menu,isAbsolute}) {
               <LanguageSwitcher menuLength={menu.length}/>
 
             </ul>
+           </div>
 
           </div>
           <div className="hidden xl:block ">
