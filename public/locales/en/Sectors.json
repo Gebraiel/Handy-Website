@@ -5,11 +5,11 @@
     "Machinery-Content-01":"Our high-tech equipment produces premium-quality paper with finishes like coated, embossed, and textured paper, ensuring we meet diverse customer needs.",
     "Machinery-Heading-02":"Energy-Efficient Paper Machines",
     "Machinery-Content-02":"Designed to minimize energy consumption, these machines contribute to lower operating costs while benefiting the environment.",
-    "Machinery-Heading-03":"High-Speed Paper Machines",
-    "Machinery-Content-03":"These machines accelerate production, boosting capacity and reducing costs.",
+    "Machinery-Heading-03":"Advanced paper technology",
+    "Machinery-Content-03":"Our high-tech equipments produce premium-quality paper in different sizes, shapes and forms, ensuring we meet diverse customer needs.",
 
     "Our-Sectors":"Our Sectors",
-    "Handy-Paper-Content-01": "In the heart of New Borg El-Arab City, Alexandria, our first factory stands as a testament to innovation and heritage. Home to the iconic ‘Recard’ machine from 1989, this tissue paper mill was relocated to the facility, originally producing jumbo rolls with an impressive capacity of up to 15 tons/day.",
+    "Handy-Paper-Content-01": "In the heart of New Borg El-Arab City, Alexandria, our first factory stands as a testament to innovation and heritage. Home to the iconic ‘RECARD’ machine from 1989, this tissue paper mill was relocated to the facility, originally producing jumbo rolls with an impressive capacity of up to 15 tons/day.",
     "Handy-Paper-Content-02": "In 2016, we introduced advanced virgin pulp machinery from Italy’s RECARD, boosting production to 80 tons/day. Following renovations, the factory embraced recycling by combining virgin pulp and waste paper, contributing to our sustainability efforts while continuing jumbo roll production.",
     "Handy-Paper-Content-03": "This facility serves markets across KSA, Lebanon, Greece, Cyprus, Kuwait, Morocco, Kenya, and West Africa.",
 
@@ -64,7 +64,7 @@
     "Unwinding-Content":"Jumbo rolls are fed into machines with care to ensure seamless processing.",
 
     "Embossing":"Embossing",
-    "Embossing-Content":"Patterns like ripples and diamonds are added to enhance texture, softness, and absorbency.",
+    "Embossing-Content":"Patterns like ripples and decorations are added to enhance texture, softness, and absorbency.",
 
     "Perforation":"Perforation",
     "Perforation-Content":"Clean, adjustable perforations allow easy tearing and versatile product lengths.",
@@ -115,29 +115,22 @@
     "Handy-Wet-Wipes-Establised-Content-03":"An automated water purification system ensures water quality that meets European Pharmacopoeia and WHO standards.",
 
     "Production-Process":"Production Process",
-    "Production-Process-Content":"Using state-of-the-art converting machinery, our production process transforms jumbo rolls into high-quality tissue products through the following precise steps",
+    "Production-Process-Content":"Using state-of-the-art converting machinery, our production process transforms Non-woven rolls into high quality wipes products through the following precise steps",
 
-    "Non-Woven-Fabric-Production":"Non-Woven Fabric Production",
-    "Fiber-Preparation":"Fiber Preparation",
-    "Fiber-Preparation-Content":"Raw materials like wood pulp or polyester are processed into fibers.",
+    "Non-Woven-Fabric-Production":"Non-woven fabric unwinding",
+    "Non-Woven-Fabric-Production-Content":"Non-woven rolls are fed into machine for automatic unwinding.",
 
-    "Web-Formation":"Web Formation",
-    "Web-Formation-Content":"Fibers are transformed into a web using spun lace or air-laid techniques.",
-
-    "Roll-Formation":"Roll Formation",
-    "Roll-Formation-Content":"The web is rolled into master rolls.",
-
-    "Slitting-Rewinding":"Slitting and Rewinding",
-    "Slitting-Rewinding-Content":"Master rolls are cut into narrower rolls and rewound for processing.",
+    "Non-Woven-Folding":"Non-woven folding",
+    "Non-Woven-Folding-Content":"Non-woven is folded in uniform shapes suitable for packaging.",
 
     "Solution-Formulation":"Solution Formulation",
-    "Solution-Formulation-Content":"Ingredients like water, surfactants, and emollients are mixed to create the cleaning solution.",
+    "Solution-Formulation-Content":"Ingredients like water previously purified, surfactants, and emollients are mixed to create the lotion.",
 
-    "Impregnation":"Impregnation",
+    "Impregnation":"Lotion injection",
     "Impregnation-Content":"Fabric is impregnated with the solution, ensuring precise saturation for performance.",
 
-    "Folding-Cutting":"Folding and Cutting",
-    "Folding-Cutting-Content":"The fabric is folded and cut into individual wipes or sheets.",
+    "Folding-Cutting":"Cutting",
+    "Folding-Cutting-Content":"The fabric is cut into individual wipes or sheets.",
 
     "Wet-Wipes-Packaging":"Packaging",
     "Wet-Wipes-Packaging-Content":"Wipes are sealed in containers, pouches, or canisters to maintain quality.",

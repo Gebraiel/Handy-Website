@@ -44,7 +44,7 @@ export default function Footer({mainLinks,otherLinks}) {
         </div>
         <div className="space-y-10">
           <div>
-            <h5 className="text-secondary font-bold text-xl">{tCommon("HANDY TISSUE MILL")}
+            <h5 className="text-secondary font-bold text-xl">{tCommon("HANDY TISSUE MILL").toUpperCase()}
             </h5>
             <ul className="space-y-5 mt-5">
               <li className="flex flex-col sm:flex-row items-center justify-start gap-5">
@@ -72,7 +72,7 @@ export default function Footer({mainLinks,otherLinks}) {
 
         </div>
         <div>
-            <h5 className="text-secondary font-bold text-xl">{tCommon("HANDY CONVERTING PLANT")}
+            <h5 className="text-secondary font-bold text-xl">{tCommon("HANDY CONVERTING PLANT").toUpperCase()}
             </h5>
             <ul className="space-y-5 mt-5">
               <li className="flex flex-col sm:flex-row items-center justify-start gap-5">

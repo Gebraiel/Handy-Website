@@ -4,6 +4,7 @@ import Category from "./Category";
 
 export default function ProductCategories() {
   const categories = useContext(CategoriesContext);
+  console.log(categories);
   return (
     <div className="space-y-5 ">
 
@@ -13,4 +14,3 @@ export default function ProductCategories() {
     </div>
   );
 }
-

@@ -14,15 +14,20 @@ export default function AdditionalStrengthsTab() {
       <ul className='list-disc ps-7 pt-5 space-y-3'>
         <FadeLeft delay={0.1}>
           <li className=''>
-            <b>{t("Price-Competitiveness-Heading")}: </b>{t("Price-Competitiveness-Content")}
+            <b>{t("Advanced-Laboratories-Heading")}: </b>{t("Advanced-Laboratories-Content")}
           </li>
         </FadeLeft>
         <FadeLeft delay={0.2}>
+          <li className=''>
+            <b>{t("Price-Competitiveness-Heading")}: </b>{t("Price-Competitiveness-Content")}
+          </li>
+        </FadeLeft>
+        <FadeLeft delay={0.3}>
         <li className=''>
           <b>{t("Reliable-Supply-Chain-Heading")}: </b>{t("Reliable-Supply-Chain-Content")}
         </li>
         </FadeLeft>
-        <FadeLeft delay={0.3}>
+        <FadeLeft delay={0.4}>
         <li className=''>
           <b>{t("Exceptional-Customer-Service-Heading")}: </b>{t("Exceptional-Customer-Service-Content")}
 

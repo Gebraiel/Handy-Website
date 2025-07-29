@@ -46,7 +46,7 @@ export default function Home() {
     {
       image:{
         desktop:"/banner/slider-1.webp",
-        mobile:"banner/slider-1-mobile.webp"
+        mobile:"/banner/slider-1-mobile.webp"
       },
       content:{
         heading:t("heading1", { ns: 'Home' }),
@@ -75,7 +75,7 @@ export default function Home() {
     },{
       image:{
         desktop:"/banner/slider-4.webp",
-        mobile:"banner/slider-4-mobile.webp"
+        mobile:"/banner/slider-4-mobile.webp"
       },
       content:{
         heading:t("heading4", { ns: 'Home' }),

@@ -103,29 +103,20 @@ export default function HandyWetWipes() {
                 {tSectors("Non-Woven-Fabric-Production")}
               </h4>
               <Paragraph size="sm" className="text-center">
-                <b>{tSectors("Fiber-Preparation")}</b>
-                <p>{tSectors("Fiber-Preparation-Content")}</p>
-              </Paragraph>
-              <Paragraph size="sm" className="text-center">
-                <b>{tSectors("Web-Formation")}</b>
-                <p>{tSectors("Web-Formation-Content")}</p>
+                {tSectors("Non-Woven-Fabric-Production-Content")}
 
               </Paragraph>
-              <Paragraph size="sm" className="text-center">
-                <b>{tSectors("Roll-Formation")}</b>
-                <p>{tSectors("Roll-Formation-Content")}</p>
 
-              </Paragraph>
             </motion.div>
             <motion.div variants={childrenVairent} className={` text-center  `}>
               <div className="pb-5 border-b-2 border-secondary w-fit m-auto text-3xl text-[#b0cbd3] font-extrabold">
                 2
               </div>
               <h4 className="text-2xl font-bold my-5 text-primary">
-                {tSectors("Slitting-Rewinding")}
+                {tSectors("Non-Woven-Folding")}
               </h4>
               <Paragraph size="sm" className="text-center">
-                {tSectors("Slitting-Rewinding-Content")}
+                {tSectors("Non-Woven-Folding-Content")}
 
               </Paragraph>
             </motion.div>

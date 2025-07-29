@@ -5,6 +5,7 @@ import FadeLeft from "../Animation/FadeLeft";
 import FadeRight from "../Animation/FadeRight";
 import { useTranslation } from "react-i18next";
 import { getLocalizedPath } from "../../services/localization";
+import FadeIn from "../Animation/FadeIn";
 
 export default function Category({category}) {
   const {t,i18n} = useTranslation("Common");
@@ -12,12 +13,12 @@ export default function Category({category}) {
   return (
     <div className="flex flex-col lg:flex-row lg:odd:flex-row lg:even:flex-row-reverse  justify-between items-center gap-5 ">
       <div className="max-w-[350px] m-auto">
-        <FadeLeft  className="mix-blend-multiply">
+        <FadeIn  className="mix-blend-multiply">
           <Link to={getLocalizedPath(`/category/${category.id}`,currentLanguage)}><img src={category.image}alt="Category Image" /></Link>
-        </FadeLeft>
+        </FadeIn>
       </div>
       <div className="w-full lg:w-1/2">
-        <div>
+        <FadeIn>
           <b className="text-2xl text-secondary capitalize"><Link to={getLocalizedPath(`/category/${category.id}`,currentLanguage)}>{
         i18n.language =="en" ? category['name-en'] : category['name-ar']
         }</Link></b>
@@ -29,7 +30,7 @@ export default function Category({category}) {
         <Link to={getLocalizedPath(`/category/${category.id}`,currentLanguage)} className="text-primary font-bold">
           {t("Learn More")}
         </Link>
-        </div>
+        </FadeIn>
       </div>
     </div>
   );

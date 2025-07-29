@@ -10,6 +10,7 @@ import FadeIn from "./Animation/FadeIn";
 import { useTranslation } from "react-i18next";
 import LanguageSwitcher from "./LanguageSwitcher";
 import { getLocalizedPath } from "../services/localization";
+import { FaCaretLeft } from "react-icons/fa";
 // import i18n from "src/utils/i18n";
 
 export default function Header({menu,isAbsolute}) {
@@ -101,13 +102,13 @@ export default function Header({menu,isAbsolute}) {
 
                               <Link to={child.link}  className="flex gap-1 items-center">
                                 {child.title}
-                                { child.hasSubMenu && <FaCaretRight /> }
+                                { child.hasSubMenu ?  currentLanguage =='ar' ? <FaCaretLeft /> :<FaCaretRight /> : <></>}
 
                               </Link>
                               {
                                 //Second Level Submenu
                                 child.hasSubMenu &&
-                                <ul className="text-white w-52 absolute left-full top-0 opacity-0 hidden submenu">
+                                <ul className="text-white w-52 absolute start-full top-0 opacity-0 hidden submenu">
                                   {
                                     child.submenu.map((e,index)=>
                                       <li className="border-b-2 p-4 bg-primary" key={index}>

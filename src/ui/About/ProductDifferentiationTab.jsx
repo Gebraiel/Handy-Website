@@ -37,12 +37,7 @@ export default function ProductDifferentiationTab() {
             <b>{t("Specialized-Products-Heading")}: </b> {t("Specialized-Products-Content")}
           </li>
           </FadeLeft>
-          <FadeLeft delay={0.4}>
-            <li className=''>
-            <b>{t("Natural-Ingredients-Heading")}: </b> {t("Natural-Ingredients-Content")}
-
-          </li>
-          </FadeLeft>
+          
         </ul>
       </div>
       <div className=''>

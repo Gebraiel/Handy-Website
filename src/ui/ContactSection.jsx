@@ -18,7 +18,7 @@ export default function ContactSection() {
         <div className="">
         <div className="flex relative gap-3 items-center text-xl text-primary font-semibold border-b-2 border-[#ececec] pb-5 before:content-[''] before:w-14 before:h-1 before:bg-[rgba(9,33,109,0.7)] before:absolute before:start-0 before:-bottom-1 before:-translate-y-1/2">
           <FaMapMarkedAlt className="text-3xl text-[rgba(9,33,109,0.7)]" />{" "}
-          {t("HANDY TISSUE MILL")}
+          {t("HANDY TISSUE MILL").toUpperCase()}
         </div>
         <ul className="py-8 space-y-5">
           <li className="flex items-center gap-5 text-primary">
@@ -55,7 +55,7 @@ export default function ContactSection() {
         <div className="">
         <div className="flex relative gap-3 items-center text-xl text-primary font-semibold border-b-2  border-[#ececec] pb-5 before:content-[''] before:w-14 before:h-1 before:bg-[rgba(9,33,109,0.7)] before:absolute before:start-0 before:-bottom-1 before:-translate-y-1/2">
           <FaMapMarkedAlt className="text-3xl text-[rgba(9,33,109,0.7)]" />{" "}
-          {t("HANDY CONVERTING PLANT")}
+          {t("HANDY CONVERTING PLANT").toUpperCase()}
         </div>
         <ul className="py-8 space-y-5">
           <li className="flex items-center gap-5 text-primary">

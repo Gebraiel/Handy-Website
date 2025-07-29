@@ -9,11 +9,12 @@ export async function getCategories(){
         throw new Error('Error While getting categories');
     }
     const customOrder = ['jumbo rolls', 'facial tissues','toilet tissues', 'home care','wet wipes']
-
+    console.log(categories)
     const sortedData = categories.sort((a, b) => {
-        return customOrder.indexOf(a.name) - customOrder.indexOf(b.name)
-      })
+        console.log(a,b);
+        return customOrder.indexOf(a['name-en']) - customOrder.indexOf(b['name-en'])
+    })
 
-
+    console.log("Sorted Categories",sortedData);
     return sortedData;
 }
