@@ -36,7 +36,7 @@ export default function LanguageSwitcher({menuLength}) {
             <FadeIn delay={menuLength *0.1}>
             <li>
                 <li className="uppercase font-bold relative has-submenu text-xs border border-l-0 border-r-0 p-5 xl:p-0 xl:border-0">
-                    <button className='xl:w-auto w-full' onClick={()=>changeLanguage("en")}><p className='flex gap-1'><img src="/Flags/en.svg"/> EN</p></button>
+                    <button className='xl:w-auto w-full' onClick={()=>changeLanguage("en")}><p className='flex gap-1'><img width={20} src="/Flags/en.svg"/> EN</p></button>
                 </li>
             </li>
             </FadeIn>
