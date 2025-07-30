@@ -38,7 +38,7 @@ export default function Header({menu,isAbsolute}) {
   return (
     <header
       ref={headerRef}
-
+      dir="ltr"
       className={`transition-all duration-300 left-0 top-0 w-screen z-50  text-white ${!isAbsolute || isSticky || show ? "bg-primary bg-contain bg-[url('/pattern.png')]" : ""} ${
         isSticky
           ? "fixed animate-fadeDown z-[51]"
@@ -57,7 +57,7 @@ export default function Header({menu,isAbsolute}) {
               { !show ? <GiHamburgerMenu className="text-2xl" /> : <IoCloseSharp className="text-2xl" />}
             </button>
 
-           <div className={`max-h-[80vh] absolute overflow-scroll transition-all duration-300 ${show?'start-0':'-start-full'} top-full w-full bg-primary text-white z-50 transition-all duration-300`}>
+           <div className={`max-h-[80vh] absolute overflow-scroll transition-all duration-300 ${show?'left-0':'left-full'} top-full w-full bg-primary text-white z-50 transition-all duration-300`}>
              <ul
               className={`overflow-scroll`}
             >

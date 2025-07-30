@@ -16,7 +16,7 @@ import FadeRight from "../ui/Animation/FadeRight";
 import { useParams } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 export default function Sectors() {
-  const{t:tCommon} = useTranslation("Common");
+  const{t:tCommon,i18n} = useTranslation("Common");
   const{t:tSectors} = useTranslation("Sectors");
   console.log("Sectors");
   const {sectorName} = useParams();
@@ -39,7 +39,7 @@ export default function Sectors() {
             <SectionTitle className="!mb-0">{tCommon("Sectors")}</SectionTitle>
           </FadeLeft>
           <FadeRight>
-            <Paragraph size="md" className="text-start py-5 max-w-[66ch]">
+            <Paragraph size="md" className={`${i18n.language != 'ar' ? "text-start" : "text-justify" } py-5 max-w-[66ch]`}>
              {tSectors("Sectors-Content")}
             </Paragraph>
           </FadeRight>
