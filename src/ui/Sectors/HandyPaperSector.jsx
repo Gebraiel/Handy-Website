@@ -240,7 +240,7 @@ export default function HandyPaperSector() {
           <FadeIn delay={0.1}>
             <div className="p-5 bg-white shadow-md  text-center space-y-5 ">
             <div className="flex flex-col items-center gap-2 justify-center text-sm"><FaPeopleGroup  className="size-12" /> <b>{tSectors("Employee in Handy Paper Mill")}</b></div>
-            <Counter counter="148" />
+            <Counter counter="150" />
 
             <Paragraph size="sm">
               {tSectors("Employee")}

@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import Logo from "/Logo.png";
-import { FaEnvelopeOpen } from "react-icons/fa";
+import { FaEnvelopeOpen, FaPhone, FaPhoneAlt } from "react-icons/fa";
 import Paragraph from "./Paragraph";
 import { FaLocationDot } from "react-icons/fa6";
 import { FaTty } from "react-icons/fa6";
@@ -9,9 +9,10 @@ import { IoLogoWhatsapp } from "react-icons/io";
 import { useTranslation } from "react-i18next";
 
 export default function Footer({mainLinks,otherLinks}) {
-  const {t:tFooter} = useTranslation("Footer");
+  const {t:tFooter,i18n} = useTranslation("Footer");
   const {t:tCommon} = useTranslation("Common");
   const year = new Date().getFullYear();
+  const isArabic = i18n.language === 'ar';
   console.log("FOOTER")
   return (
     <footer className="bg-primary text-white bg-[length:60%] bg-[url('/pattern.png')]">
@@ -63,9 +64,21 @@ export default function Footer({mainLinks,otherLinks}) {
                   </Paragraph>
               </li>
               <li className="flex flex-col sm:flex-row items-center justify-start gap-5">
-                <FaFax className="w-[24px] text-3xl" />
-                <Paragraph className="text-center sm:text-start font-medium"><a dir="ltr" href="tel:+2 03 4626164">+2 03 4626164</a></Paragraph>
+                {isArabic ? <FaPhone className="w-[24px] text-3xl" />:<FaPhoneAlt className="w-[24px] text-3xl" /> }
+                <Paragraph className="text-center sm:text-start font-medium"><a dir="ltr" href="tel:+201223990783">+2 01223990783</a></Paragraph>
               </li>
+               <li className="flex flex-col sm:flex-row items-center justify-start gap-5 ">
+                <IoLogoWhatsapp className="w-[24px] text-2xl" />
+                <Paragraph className="text-center sm:text-start font-medium flex flex-col">
+                  <a dir="ltr" href="https://wa.me/+201223990783" target="_blank">+2 01223990783</a>
+                </Paragraph>
+              </li>
+
+              <li className="flex flex-col sm:flex-row items-center justify-start gap-5">
+                <FaFax className="w-[24px] text-3xl" />
+                <Paragraph className="text-center sm:text-start font-medium"><a dir="ltr" href="tel:+2034626164">+2 03 4626164</a></Paragraph>
+              </li>
+
             </ul>
           </div>
 
@@ -88,6 +101,12 @@ export default function Footer({mainLinks,otherLinks}) {
                   <Paragraph className="text-center sm:text-start font-medium flex flex-col">
                     <a dir="ltr" href="tel:+2 02 38333156">+2 02 38333156</a>
                   </Paragraph>
+              </li>
+              <li className="flex flex-col sm:flex-row items-center justify-start gap-5 ">
+                {isArabic ? <FaPhone className="w-[24px] text-2xl" />:<FaPhoneAlt className="w-[24px] text-2xl" /> }
+                <Paragraph className="text-center sm:text-start font-medium flex flex-col">
+                  <a dir="ltr" href="tel:+201286644171">+2 01286644171</a>
+                </Paragraph>
               </li>
               <li className="flex flex-col sm:flex-row items-center justify-start gap-5 ">
                 <IoLogoWhatsapp className="w-[24px] text-2xl" />

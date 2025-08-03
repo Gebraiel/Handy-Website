@@ -1,8 +1,7 @@
-import { FaMapMarkedAlt } from "react-icons/fa";
+import { FaMapMarkedAlt,FaPhone, FaPhoneAlt  } from "react-icons/fa";
 import { FaMapMarkerAlt } from "react-icons/fa";
 import { FaEnvelopeOpen } from "react-icons/fa";
 import { FaTty } from "react-icons/fa6";
-import { FaPhone } from "react-icons/fa6";
 import { FaFax } from "react-icons/fa";
 import { IoLogoWhatsapp } from "react-icons/io";
 
@@ -11,7 +10,9 @@ import FadeLeft from "./Animation/FadeLeft";
 import { useTranslation } from "react-i18next";
 
 export default function ContactSection() {
-  const {t} = useTranslation("Common")
+  const {t,i18n} = useTranslation("Common")
+  const isArabic = i18n.language === 'ar';
+  console.log(isArabic)
   return (
     <div className="flex justify-between flex-wrap gap-16 flex-col md:flex-row  m-auto">
       <FadeLeft>
@@ -41,8 +42,14 @@ export default function ContactSection() {
             </Paragraph>
           </li>
           <li className="flex items-center gap-5 text-primary">
-            <FaPhone className="w-[24px] text-2xl" />
-            <Paragraph className="font-medium"><a dir="ltr" href="tel:+2 0122390783">+2 0122390783</a></Paragraph>
+            {isArabic ? <FaPhone className="w-[24px] text-2xl faphone" />:<FaPhoneAlt className="w-[24px] text-2xl faphoneAlt" /> }
+            <Paragraph className="font-medium"><a dir="ltr" href="tel:+201223990783">+2 01223990783</a></Paragraph>
+          </li>
+          <li className="flex items-center gap-5 text-primary">
+            <IoLogoWhatsapp className="w-[24px] text-2xl" />
+            <Paragraph className="font-medium flex flex-col">
+              <a dir="ltr" href="https://wa.me/+201223990783" target="_blank">+2 01223990783</a>
+            </Paragraph>
           </li>
           <li className="flex items-center gap-5 text-primary">
             <FaFax className="w-[24px] text-2xl" />
@@ -78,12 +85,17 @@ export default function ContactSection() {
             </Paragraph>
           </li>
           <li className="flex items-center gap-5 text-primary">
+            {isArabic ? <FaPhone className="w-[24px] text-2xl faphone" />:<FaPhoneAlt className="w-[24px] text-2xl faphoneAlt" /> }
+            <Paragraph className="font-medium flex flex-col">
+              <a dir="ltr" href="tel:+201286644171">+2 01286644171</a>
+            </Paragraph>
+          </li>
+          <li className="flex items-center gap-5 text-primary">
             <IoLogoWhatsapp className="w-[24px] text-2xl" />
             <Paragraph className="font-medium flex flex-col">
               <a dir="ltr" href="https://wa.me/+201286644171" target="_blank">+2 01286644171</a>
             </Paragraph>
           </li>
-
           <li className="flex items-center gap-5 text-primary">
             <FaFax className="w-[24px] text-2xl" />
             <Paragraph className="font-medium"><a dir="ltr" href="tel:+20238333157">+2 02 38333157</a></Paragraph>

@@ -9,7 +9,7 @@ function Slider({slides}) {
   const{i18n} = useTranslation();
   console.log("Slider rendering");
   let intervalRef = useRef(null)
-  const intervalTime = 5000;
+  const intervalTime = 7000;
   function handleClick(fn){
     startInterval();
     fn();

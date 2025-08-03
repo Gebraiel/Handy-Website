@@ -6,6 +6,10 @@ export default function Timeline() {
   const{t}=useTranslation("About");
     const stages=[
         {
+            details:t("History-00"),
+            date:"1978"
+        },
+        {
             details:t("History-01"),
             date:"1989"
         },

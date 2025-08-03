@@ -15,8 +15,8 @@ export default function JumboProductsList({products,view}) {
               {t("Virgin Pulp")}
             </button>
 
-            <button className={`flex-grow text-2xl font-bold  bg-white text-primary shadow-md p-5 ${filter == "Economy" ?"border-t-2" : ""}`} onClick={()=> setFilter("Economy")}>
-              {t("Economy")}
+            <button className={`flex-grow text-2xl font-bold  bg-white text-primary shadow-md p-5 ${filter == "Recycled" ?"border-t-2" : ""}`} onClick={()=> setFilter("Recycled")}>
+              {t("Recycled")}
             </button>
 
       </div>

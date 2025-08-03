@@ -86,7 +86,7 @@ export default function HandyTissueProductsSector() {
               {tSectors("Transformation-Process-Content")}
             </Paragraph>
           </FadeIn>
-           <motion.div variants={parentVarient} initial="hidden" whileInView="visible" viewport={{once:true}} className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-8 2xl:gap-10 gap-5 items-stretch 2xl:my-16 my-8">
+           <motion.div variants={parentVarient} initial="hidden" whileInView="visible" viewport={{once:true}} className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 2xl:gap-10 gap-5 items-stretch 2xl:my-16 my-8">
 
                 <motion.div variants={childrenVairent} className={`text-center `} >
                   <div className="pb-5 border-b-2 border-secondary w-fit m-auto text-3xl text-[#b0cbd3] font-extrabold">
@@ -118,15 +118,15 @@ export default function HandyTissueProductsSector() {
                     3
                   </div>
                    <h4 className="text-2xl font-bold my-5 text-primary">
-                      {tSectors("Perforation")}
+                      {tSectors("Cutting-folding")}
                     </h4>
                     <Paragraph size="sm" className="text-center">
-                      {tSectors("Perforation-Content")}
+                      {tSectors("Cutting-folding-Content")}
 
                     </Paragraph>
 
                 </motion.div>
-                <motion.div variants={childrenVairent}  className={` text-center `}>
+                {/* <motion.div variants={childrenVairent}  className={` text-center `}>
                     <div className="pb-5 border-b-2 border-secondary w-fit m-auto text-3xl text-[#b0cbd3] font-extrabold">
                       4
                     </div>
@@ -138,8 +138,8 @@ export default function HandyTissueProductsSector() {
 
                     </Paragraph>
 
-                </motion.div>
-                <motion.div variants={childrenVairent}  className={` text-center `}>
+                </motion.div> */}
+                {/* <motion.div variants={childrenVairent}  className={` text-center `}>
                     <div className="pb-5 border-b-2 border-secondary w-fit m-auto text-3xl text-[#b0cbd3] font-extrabold">
                       5
                     </div>
@@ -150,12 +150,10 @@ export default function HandyTissueProductsSector() {
                       {tSectors("Cutting-Content")}
 
                     </Paragraph>
-
-
-                </motion.div>
-                <motion.div variants={childrenVairent}  className={` text-center `}>
+                </motion.div> */}
+                {/* <motion.div variants={childrenVairent}  className={` text-center `}>
                     <div className="pb-5 border-b-2 border-secondary w-fit m-auto text-3xl text-[#b0cbd3] font-extrabold">
-                      6
+                      4
                     </div>
                     <h4 className="text-2xl font-bold my-5 text-primary">
                       {tSectors("Winding")}
@@ -165,10 +163,10 @@ export default function HandyTissueProductsSector() {
 
                     </Paragraph>
 
-                </motion.div>
+                </motion.div> */}
                 <motion.div variants={childrenVairent}  className={` text-center `}>
                   <div className="pb-5 border-b-2 border-secondary w-fit m-auto text-3xl text-[#b0cbd3] font-extrabold">
-                    7
+                    4
                   </div>
                   <h4 className="text-2xl font-bold my-5 text-primary">
                       {tSectors("Packaging")}
@@ -181,7 +179,7 @@ export default function HandyTissueProductsSector() {
                 </motion.div>
                 <motion.div variants={childrenVairent}  className={` text-center `}>
                   <div className="pb-5 border-b-2 border-secondary w-fit m-auto text-3xl text-[#b0cbd3] font-extrabold">
-                    8
+                    5
                   </div>
                    <h4 className="text-2xl font-bold my-5 text-primary">
                       {tSectors("Palletizing")}
@@ -260,7 +258,7 @@ export default function HandyTissueProductsSector() {
                           <div className="p-5 bg-white shadow-md text-center  space-y-5 ">
             <div className="flex flex-col items-center gap-2 justify-center text-sm"><FaPeopleGroup  className="size-12" /> <b>{tSectors("Employee in Converting Plant")}</b></div>
 
-              <Counter counter="112" />
+              <Counter counter="150" />
               <Paragraph size="sm">
                 {tSectors("Employee")}
               </Paragraph>
