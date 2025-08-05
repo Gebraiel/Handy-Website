@@ -40,9 +40,9 @@
    "Applications":"Applications : ",
    "Applications-Content":"Facial tissue, Toilet tissue, Napkin tissue, and Kitchen tissue",
    "Roll-Width":"Roll width : ",
-   "Virgin-Roll-Width":"up to 2850 mm",
+   "Roll-Width-Content":"up to 2850 mm",
    "Basis-Weight":"Basis weight : ",
-   "Virgin-Basis-Weight":"from 13 – 35 g/m2",
+   "Basis-Weight-Content":"from 13 – 35 g/m2",
    "Number-Plies":"No. of plies : ",
-   "Virgin-Number-Plies":"1 – 4 ply."
+   "Number-Plies-Content":"1 – 4 ply."
 }
