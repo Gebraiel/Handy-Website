@@ -33,8 +33,15 @@
    "Next Product" :"المنتج التالي",
    "Previous Product" : "المنتج السابق",
    "Share" : "مشاركة",
-   "Virgin Pulp":"لبّ الخشب النقي",
-   "Recycled":"الورق الخام المعاد تدويره",
-   "Product URL Copied To Clipboard":"تم نسخ رابط المنتج"
-
+   "Virgin Pulp":"الورق الخام البكر",
+   "Recycled Paper":"الورق الخام المعاد تدويره",
+   "Product URL Copied To Clipboard":"تم نسخ رابط المنتج",
+   "Applications":"الاستخدامات : ",
+   "Applications-Content":"ورق لمناديل الوجه، ورق التواليت، ورق فوط السفرة (المحارم)، ورق فوط المطابخ",
+   "Roll-Width":"عرض الرول : ",
+   "Roll-Width-Content":"حتى 2850 مم بحد أقصى",
+   "Basis-Weight":"الوزن الأساسي : ",
+   "Basis-Weight-Content":"13 – 35 جرام/متر مربع",
+   "Number-Plies":"عدد الطبقات : ",
+   "Number-Plies-Content":"1 – 4 طبقة"
 }
