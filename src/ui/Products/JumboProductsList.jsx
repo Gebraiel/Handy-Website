@@ -27,7 +27,7 @@ export default function JumboProductsList({products,view}) {
   console.log(t(filter))
   return (
     <>
-      {/* <div className="flex flex-col md:flex-row gap-10 mb-10">
+      <div className="flex flex-col md:flex-row gap-10 mb-10">
 
             <button className={`flex-grow text-center text-2xl font-bold bg-white text-primary shadow-md p-5 ${filter == "Virgin Pulp" ?"border-t-2" : ""}`} onClick={()=>setFilter("Virgin Pulp")}>
               {t("Virgin Pulp")}
@@ -37,7 +37,7 @@ export default function JumboProductsList({products,view}) {
               {t("Recycled Paper")}
             </button>
 
-      </div> */}
+      </div>
       <div
       // className={`${
       //   view == "list"
