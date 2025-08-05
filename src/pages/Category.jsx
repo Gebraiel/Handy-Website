@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useMemo, useState } from "react";
-import { useLoaderData, useNavigation } from "react-router-dom";
+import { useLoaderData, useNavigation, useParams } from "react-router-dom";
 import Section from "../ui/Section";
 import Loader from "../ui/Loader";
 import Banner from "../ui/Banner";
@@ -23,6 +23,7 @@ export default function Category() {
   const isArabic = i18n.language =='ar';
   const [searchParams] = useSearchParams();
   const {products,categoryId} = useLoaderData();
+
   const categories = useContext(CategoriesContext);
   const localizedCategories = categories.map((category)=>{
     return {...category,name:isArabic ? category['name-ar']:category['name-en']};
@@ -57,11 +58,13 @@ export default function Category() {
         <SectionTitle className="text-primary font-bold text-center capitalize">
           {categoryName || "Products"}
         </SectionTitle>
+
         <div className="flex justify-center flex-wrap items-center mb-5">
           <CategoryNavigation id={categoryId} />
         </div>
-        {
 
+        {
+              categoryId != 2 &&
               <div className="flex justify-end mb-5 gap-5">
 
                 <select
