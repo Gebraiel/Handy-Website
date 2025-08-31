@@ -9,7 +9,7 @@ export default function SingleBlog() {
     id: 1,
     title: "Getting Started with React",
     description: "Learn the basics of React and start building awesome applications. This comprehensive guide covers everything from component creation to state management. Discover how to structure your projects, implement hooks, and create reusable components that will streamline your development process...",
-    image: "/public/categories/jumbo.jpg",
+    image: "/categories/jumbo.jpg",
 
   }
 
