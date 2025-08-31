@@ -9,21 +9,21 @@ export const blogs = [
     id: 1,
     title: "Getting Started with React",
     description: "Learn the basics of React and start building awesome applications. This comprehensive guide covers everything from component creation to state management. Discover how to structure your projects, implement hooks, and create reusable components that will streamline your development process...",
-    image: "/public/categories/jumbo.jpg",
+    image: "/categories/jumbo.jpg",
     link: `/media-center/${1}` // Update the link format
   },
   {
     id: 2,
     title: "Modern Web Development",
     description: "Explore modern web development techniques and best practices in 2025. Deep dive into responsive design, progressive web apps, and performance optimization. Learn about the latest tools, frameworks, and methodologies that professional developers use to create scalable and maintainable web applications...",
-    image: "/public/categories/jumbo.jpg",
+    image: "/categories/jumbo.jpg",
     link: `/media-center/${1}` // Update the link format
   },
   {
     id: 3,
     title: "React Hooks",
     description: "Discover the power of React Hooks and how to use them effectively in your applications. Master useState, useEffect, useContext, and custom hooks. Learn advanced patterns for state management, side effects, and component lifecycle. Real-world examples and practical use cases included...",
-    image: "/public/categories/jumbo.jpg",
+    image: "/categories/jumbo.jpg",
     link: `/media-center/${1}` // Update the link format
   }
 ];
@@ -33,14 +33,14 @@ export const galleryItems = [
     id: 1,
     title: "Company Event 2025",
     description: "Annual gathering showcasing our latest innovations and achievements. Join us for an immersive experience featuring product demonstrations, interactive sessions, and networking opportunities with industry leaders. This year's event highlighted groundbreaking advancements in sustainable technology, artificial intelligence integration, and smart manufacturing solutions. Attendees had the unique opportunity to engage with our expert team, participate in hands-on workshops, and witness live demonstrations of our cutting-edge products. The event also featured keynote speeches from industry pioneers, discussing future trends and technological developments that are shaping our industry. Through collaborative discussions and strategic partnerships formed during the event, we continue to push the boundaries of innovation and excellence in our field.",
-    image: "/public/categories/jumbo.jpg",
+    image: "/categories/jumbo.jpg",
     link: `/gallery/${1}`
   },
   {
     id: 2,
     title: "Product Launch",
     description: "Witness the unveiling of our groundbreaking products that set new industry standards. Experience firsthand the future of technology and innovation through our latest releases. Our revolutionary product line combines cutting-edge engineering with sustainable practices, demonstrating our commitment to both technological advancement and environmental responsibility. The launch event featured comprehensive demonstrations of product capabilities, technical specifications, and real-world applications. Industry experts and early adopters praised the innovative features, exceptional quality, and forward-thinking design of our new releases. These products represent a significant milestone in our journey towards creating solutions that not only meet but exceed market expectations.",
-    image: "/public/categories/jumbo.jpg",
+    image: "/categories/jumbo.jpg",
     link: `/gallery/${1}`
   },
 ];
@@ -57,7 +57,7 @@ export default function MediaCenter() {
   return (
     <>
       {/* Hero sec */}
-<section className="relative h-[500px] bg-cover bg-center" style={{ backgroundImage: `url('/public/Banners/sustainability.webp')` }}>
+<section className="relative h-[500px] bg-cover bg-center" style={{ backgroundImage: `url('/Banners/sustainability.webp')` }}>
         <div className="absolute inset-0 flex items-center justify-start lg:ps-[110px] ps-4">
           <h1 className="text-5xl font-bold text-white">
             News From Us
