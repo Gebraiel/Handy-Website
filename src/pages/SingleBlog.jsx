@@ -9,14 +9,14 @@ export default function SingleBlog() {
     id: 1,
     title: "Getting Started with React",
     description: "Learn the basics of React and start building awesome applications. This comprehensive guide covers everything from component creation to state management. Discover how to structure your projects, implement hooks, and create reusable components that will streamline your development process...",
-    image: "public/School Visit/School10.webp",
+    image: "/public/categories/jumbo.jpg",
 
   }
 
   return (
     <>
 
-    <section className="relative h-[500px] bg-cover bg-center" style={{ backgroundImage: `url('../../public/Banners/sustainability.webp')` }}>
+    <section className="relative h-[500px] bg-cover bg-center" style={{ backgroundImage: `url('/public/Banners/sustainability.webp')` }}>
         <div className="absolute inset-0 flex items-center justify-start lg:ps-[110px] ps-4">
           <h1 className="text-5xl font-bold text-white">
            {blog?.title}

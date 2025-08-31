@@ -35,7 +35,7 @@ const lightBoxImages = Array.from(
   return (
     <>
        <FadeIn>
-      <section className="relative h-[500px] bg-cover bg-center" style={{ backgroundImage: `url('../../public/Banners/sustainability.webp')` }}>
+      <section className="relative h-[500px] bg-cover bg-center" style={{ backgroundImage: `url('/public/Banners/sustainability.webp')` }}>
         <div className="absolute inset-0 flex items-center justify-start lg:ps-[110px] ps-4">
           <h1 className="text-5xl font-bold text-white">
            {blog?.title}
