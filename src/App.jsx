@@ -20,6 +20,8 @@ import Health from "./pages/Health";
 import Branches from "./pages/Branches";
 import Error from "./pages/PageNotFound";
 import { useTranslation } from "react-i18next";
+import SingleBlog from "./pages/SingleBlog";
+import MediaGallery from "./pages/MediaGallery";
 // import {loader as categoriesLoader} from "./pages/Products";
 const router = createBrowserRouter([
   {
@@ -51,7 +53,17 @@ const router = createBrowserRouter([
         path:"media-center",
         element:<MediaCenter />
       }
-      ,{
+      ,
+      {
+        path: "media-center/1",
+        element: <SingleBlog />,
+      },
+      {
+        path: "gallery/1",
+        element: <MediaGallery />,
+      },
+
+      {
         path:"sectors/",
         element:<Sectors />
       },{
@@ -115,6 +127,10 @@ const router = createBrowserRouter([
         path:"media-center",
         element:<MediaCenter />
       },
+      {
+  path: "media-center/1",
+  element: <SingleBlog />
+},
       {
         path:"sectors/",
         element:<Sectors />
