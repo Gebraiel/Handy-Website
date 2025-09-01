@@ -17,7 +17,7 @@ export default function SingleBlog() {
     <>
 
     <section className="relative h-[500px] bg-cover bg-center" style={{ backgroundImage: `url('/Banners/sustainability.webp')` }}>
-        <div className="absolute inset-0 flex items-center justify-start lg:ps-[110px] ps-4">
+        <div className="absolute inset-0 flex items-center justify-center">
           <h1 className="text-5xl font-bold text-white">
            {blog?.title}
           </h1>

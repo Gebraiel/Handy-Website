@@ -58,7 +58,7 @@ export default function MediaCenter() {
     <>
       {/* Hero sec */}
 <section className="relative h-[500px] bg-cover bg-center" style={{ backgroundImage: `url('/Banners/sustainability.webp')` }}>
-        <div className="absolute inset-0 flex items-center justify-start lg:ps-[110px] ps-4">
+        <div className="absolute inset-0 flex items-center justify-center">
           <h1 className="text-5xl font-bold text-white">
             News From Us
           </h1>
@@ -73,14 +73,18 @@ export default function MediaCenter() {
           <Link 
     to={blog.link}
     key={blog.id} 
-    className="block bg-white rounded-lg overflow-hidden"
+    className="block bg-white rounded-lg overflow-hidden relative group"
   >
     <div>
-      <img 
+    <div className='relative group'>
+        <img 
         src={blog.image} 
         alt={blog.title}
         className="w-full rounded-lg object-cover"
       />
+    <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"/>
+    </div>
+
       <div className="py-4">
         <h2 className="text-2xl font-bold mb-4 text-gray-800">
           {blog.title}
@@ -117,7 +121,7 @@ export default function MediaCenter() {
                   <img 
                     src={item.image} 
                     alt={item.title}
-                    className="w-full h-[400px] object-cover transition-transform duration-500 group-hover:scale-110"
+                    className="w-full h-[400px] object-cover"
                   />
                   <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"/>
                 </div>
