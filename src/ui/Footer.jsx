@@ -13,7 +13,6 @@ export default function Footer({mainLinks,otherLinks}) {
   const {t:tCommon} = useTranslation("Common");
   const year = new Date().getFullYear();
   const isArabic = i18n.language === 'ar';
-  console.log("FOOTER")
   return (
     <footer className="bg-primary text-white bg-[length:60%] bg-[url('/pattern.png')]">
       <div className="container w-[80%] border-t-0 py-24 m-auto grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-4 gap-5 p-5">

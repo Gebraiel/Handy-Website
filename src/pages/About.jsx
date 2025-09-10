@@ -1,4 +1,3 @@
-import React, { useEffect } from "react";
 import SectionTitle from "../ui/SectionTitle";
 import Banner from "../ui/Banner";
 import Section from "../ui/Section";
@@ -11,13 +10,11 @@ import Loader from "../ui/Loader";
 import Timeline from "../ui/About/Timeline";
 import BrandDifferentiationTab from "../ui/About/BrandDifferentiationTab";
 import Accordion from "../ui/Home/Accordion";
-import handy from "../assets/handy.webp";
 import FadeIn from "../ui/Animation/FadeIn";
 import FadeLeft from "../ui/Animation/FadeLeft";
 import { useTranslation } from "react-i18next";
 
 export default function About() {
-  console.log("About");
   const navigation = useNavigation();
   const {t:tCommon} = useTranslation("Common")
   const {t:tAbout} = useTranslation("About")

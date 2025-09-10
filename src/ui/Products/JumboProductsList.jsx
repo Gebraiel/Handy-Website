@@ -1,42 +1,37 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 import JumboProduct from "./JumboProduct";
 import FadeLeft from "../Animation/FadeLeft";
-import { useTranslation } from "react-i18next";
+import { useParams, useSearchParams } from "react-router-dom/dist";
+import { getCategory, getSubcategories } from "../../services/categories";
 
 export default function JumboProductsList({products,view}) {
   const {i18n,t} = useTranslation("Common");
-  const [filter,setFilter] = useState("Virgin Pulp");
-  const productDetails = [
-    {
-      heading:t("Applications"),
-      paragraph:t("Applications-Content")
-    },
-    {
-      heading:t("Roll-Width"),
-      paragraph:t("Roll-Width-Content")
-    },
-    {
-      heading:t("Basis-Weight"),
-      paragraph:t("Basis-Weight-Content")
-    },
-    {
-      heading:t("Number-Plies"),
-      paragraph:t("Number-Plies-Content")
-    },
-  ]
-  console.log(t(filter))
+  const [filter,setFilter] = useState("");
+  const [subcategories,setSubCategoies] = useState([]);
+  const [searchParams]= useSearchParams();
+  const searchParamsValue = searchParams.get("filter");
+
+  const {categoryId} = useParams();
+  const [productDetails,setDetails] = useState()
+  useEffect(()=>{
+    console.log("Component is rendered")
+    async function getSubCategories(){
+      const {category} = await getCategory(i18n.language,categoryId);
+      setSubCategoies(category.subcategories);
+      setDetails(category.text_2)
+      setFilter(searchParamsValue ||subCategoires[0].title)
+    }
+    getSubCategories();
+
+  },[])
+
   return (
     <>
       <div className="flex flex-col md:flex-row gap-10 mb-10">
-
-            <button className={`flex-grow text-center text-2xl font-bold bg-white text-primary shadow-md p-5 ${filter == "Virgin Pulp" ?"border-t-2" : ""}`} onClick={()=>setFilter("Virgin Pulp")}>
-              {t("Virgin Pulp")}
-            </button>
-
-            <button className={`flex-grow text-2xl font-bold  bg-white text-primary shadow-md p-5 ${filter == "Recycled Paper" ?"border-t-2" : ""}`} onClick={()=> setFilter("Recycled Paper")}>
-              {t("Recycled Paper")}
-            </button>
-
+            {subcategories.length > 0 && subcategories.map((subcategory)=> <button className={`flex-grow text-center text-2xl font-bold bg-white text-primary shadow-md p-5 ${filter.toLowerCase() === subcategory.title.toLowerCase() ?"border-t-2" : ""}`} onClick={()=>setFilter(subcategory.title)}>
+              {subcategory.title}
+            </button>)}
       </div>
       <div
       // className={`${
@@ -52,17 +47,12 @@ export default function JumboProductsList({products,view}) {
               <JumboProduct product={product} view={view} />
             </FadeLeft>
           ))} */}
-          <ul className="list-disc list-inside">
-            {
-              productDetails.map((detail)=>
-                  <li key={detail.heading}>
-                    <b>{detail.heading}</b>
-
-                    <span>{detail.paragraph}</span>
-                  </li>
-              )
-            }
-          </ul>
+          {products.length > 0 ? products.filter((product) => product.subcategory?.title.toLowerCase() == filter.toLowerCase())
+          .map((product,index) => (
+            <FadeLeft key={product.id} delay={index*0.01}>
+              <JumboProduct product={product} view={view} />
+            </FadeLeft>
+          )) : <div dangerouslySetInnerHTML={{__html:productDetails}}/>}
       </div>
     </>
   );

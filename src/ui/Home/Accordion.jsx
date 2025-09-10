@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { FaPlusCircle } from "react-icons/fa";
 import { FaCircleMinus } from "react-icons/fa6";
-import Paragraph from "../Paragraph";
 import {motion,AnimatePresence} from "framer-motion";
 
 export default function Accordion({ accordion ,open}) {
@@ -20,7 +19,7 @@ export default function Accordion({ accordion ,open}) {
       </div>
       <AnimatePresence>
        {
-         isOpen && 
+         isOpen &&
          <motion.p
            key="content"
            layout
@@ -31,9 +30,9 @@ export default function Accordion({ accordion ,open}) {
 
            className={`text-sm overflow-hidden `}
          >
-           
-           {content}     
-           
+
+           {content}
+
          </motion.p>
        }
       </AnimatePresence>

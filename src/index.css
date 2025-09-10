@@ -23,10 +23,13 @@ button:focus-visible,a:focus-visible,select:focus-visible,input:focus-visible,te
 }
 
 @media(min-width:1280px){
-
     .has-submenu:hover > .submenu{
         display: block;
         opacity: 1;
         animation: fadeUp 0.5s ease forwards;
     }
+}
+.product-details ul{
+    list-style-type: disc;
+    list-style-position: inside;
 }

@@ -6,7 +6,6 @@ export default function Features({ features }) {
   const [cols, setCols] = useState(features.length);
   useEffect(() => {
     const handleResize = () => {
-      console.log(window.innerWidth);
       setCols(window.innerWidth <= 991 ? 1 : features.length);
     };
     window.addEventListener("resize", handleResize);

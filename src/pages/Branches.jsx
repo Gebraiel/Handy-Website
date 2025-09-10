@@ -1,4 +1,3 @@
-import React from "react";
 import Banner from "../ui/Banner";
 import Section from "../ui/Section";
 import SectionTitle from "../ui/SectionTitle";
@@ -9,7 +8,6 @@ import FadeIn from "../ui/Animation/FadeIn";
 import { useTranslation } from "react-i18next";
 
 export default function Branches() {
-  console.log("Branches");
     const {t} = useTranslation("Branches")
   const navigation = useNavigation();
 const isLoading = navigation.state === "loading";

@@ -20,11 +20,11 @@ export default function Category({category}) {
       <div className="w-full lg:w-1/2">
         <FadeIn>
           <b className="text-2xl text-secondary capitalize"><Link to={getLocalizedPath(`/category/${category.id}`,currentLanguage)}>{
-        i18n.language =="en" ? category['name-en'] : category['name-ar']
+          category.title
         }</Link></b>
         <Paragraph className="my-5">
         {
-          i18n.language =="en" ? category['description-en'] : category['description-ar']
+          category.text
         }
         </Paragraph>
         <Link to={getLocalizedPath(`/category/${category.id}`,currentLanguage)} className="text-primary font-bold">

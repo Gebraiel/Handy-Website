@@ -1,21 +1,31 @@
-import React from 'react'
+import {useState} from "react";
 import { useForm } from 'react-hook-form'
 import SectionTitle from '../SectionTitle';
 import Paragraph from '../Paragraph';
 import FadeRight from '../Animation/FadeRight';
 import { useTranslation } from 'react-i18next';
+import { sendEmail } from '../../services/contact';
+import { FiLoader } from "react-icons/fi";
 
 export default function Form() {
-    const{t} = useTranslation("Form")
-    const {register,watch,handleSubmit,formState: { errors }} = useForm();
-    function submitForm(data){
+    const{t} = useTranslation("Form");
+    const[formError,setError] = useState("");
+    const[successMessage,setSuccessMessage] = useState("");
+    const {register,watch,reset,handleSubmit,formState: { errors,isSubmitting }} = useForm();
+    async function submitForm(data){
+        const {message,error} = await sendEmail(data);
+        if(error){
+            setError(message);
+        }else{
+            setSuccessMessage(message);
+            reset()
+        }
     }
 
-    const inqueryType = watch("inqueryType");
+    const inqueryType = watch("inquery_type");
     const sector = watch("sector");
 
     const subjectValue = inqueryType&&sector ?`${sector}-${inqueryType}`:'';
-
     const inputClasses = 'border border-[#ccc] py-2 px-3 focus:outline-primary w-full mt-2 disabled:bg-[#ccc]';
     return (
         <FadeRight>
@@ -25,13 +35,13 @@ export default function Form() {
                 <div className='flex sm:flex-row flex-col gap-5 '>
                     <div className='flex flex-col w-full'>
                         <label>{t("First Name")}</label>
-                        <input className={inputClasses} type="text" {...register('firsName',{required:t("This input is required")}) }/>
-                        {errors.firsName && <Paragraph size="sm" className='text-secondary italic my-3'>{errors.firsName.message}</Paragraph>}
+                        <input className={inputClasses} type="text" {...register('name',{required:t("This input is required")}) }/>
+                        {errors.name && <Paragraph size="sm" className='text-secondary italic my-3'>{errors.name.message}</Paragraph>}
                     </div>
                     <div className='flex flex-col w-full'>
                         <label>{t("Last Name")}</label>
-                        <input className={inputClasses} type="text" {...register('lastName',{required:t("This input is required")})} />
-                        {errors.lastName && <Paragraph size="sm" className='text-secondary italic my-3'>{errors.lastName.message}</Paragraph>}
+                        <input className={inputClasses} type="text" {...register('last_name',{required:t("This input is required")})} />
+                        {errors.last_name && <Paragraph size="sm" className='text-secondary italic my-3'>{errors.last_name.message}</Paragraph>}
                     </div>
                 </div>
                 <div className='w-full'>
@@ -53,12 +63,13 @@ export default function Form() {
                 <div className='w-full'>
                     <label>{t("Phone Number")}</label>
                     <input className={inputClasses} {...register('phone',{required:t("This input is required")})} type="text"/>
-                    {errors.email && <Paragraph size="sm" className='text-secondary italic my-3'>{errors.email.message}</Paragraph>}
+                    {errors.phone && <Paragraph size="sm" className='text-secondary italic my-3'>{errors.phone.message}</Paragraph>}
 
                 </div>
                 <div>
                     <label htmlFor="">{t("Sector")}</label>
                     <select {...register('sector',{required:t("This input is required")})} className={inputClasses}>
+                        <option></option>
                         <option>
                             {t("Handy Paper")}
                         </option>
@@ -74,33 +85,33 @@ export default function Form() {
                 </div>
                 <div>
                     <label htmlFor="">{t("Inquery Type")}</label>
-                    <select {...register('inqueryType',{required:t("This input is required")})} className={inputClasses}>
-                        <option>
-                            {t("General Inquiry")}
-
+                    <select {...register('inquery_type',{required:t("This input is required")})} className={inputClasses}>
+                        <option></option>
+                        <option value="General Inquery">
+                            {t("General Inquery")}
                         </option>
-                        <option>
+                        <option value="Domestic Sales">
                             {t("Domestic Sales")}
                         </option>
-                        <option>
+                        <option value="International Sales">
                             {t("International Sales")}
                         </option>
-                        <option>
+                        <option value="Procurement">
                             {t("Procurement")}
                         </option>
-                        <option>
+                        <option value="Customer Complaint">
                             {t("Customer Complaint")}
                         </option>
-                        <option>
+                        <option value="Careers">
                             {t("Careers")}
                         </option>
                     </select>
-                    {errors.inqueryType && <Paragraph size="sm" className='text-secondary italic my-3'>{errors.inqueryType.message}</Paragraph>}
+                    {errors.inquery_type && <Paragraph size="sm" className='text-secondary italic my-3'>{errors.inquery_type.message}</Paragraph>}
 
                 </div>
                 <div>
                     <label>{t("Subject")}</label>
-                    <input type='text' disabled value={subjectValue} {...register('subject')} className={`${inputClasses}`}/>
+                    <input type='text' readOnly value={subjectValue} {...register('subject')} className={`${inputClasses} bg-[#ccc]`}/>
                     {errors.subject && <Paragraph size="sm" className='text-secondary italic my-3'>{errors.subject.message}</Paragraph>}
 
                 </div>
@@ -110,7 +121,9 @@ export default function Form() {
                     {errors.message && <Paragraph size="sm" className='text-secondary italic my-3'>{errors.message.message}</Paragraph>}
 
                 </div>
-                <button type='submit' className='border border-[#ccc] px-8 text-primary font-semibold hover:text-white hover:bg-primary transition-colors duration-300 py-3 block '>{t("Submit")}</button>
+                {formError && <Paragraph size="sm" className='text-secondary italic my-3'>{formError}</Paragraph>}
+                {successMessage && <Paragraph size="sm" className='text-green-500 my-3'>{successMessage}</Paragraph>}
+                <button type='submit' disabled={isSubmitting} className='border border-[#ccc] px-8 text-primary font-semibold hover:text-white hover:bg-primary transition-colors duration-300 py-3 block disabled-bg-[#ccc]'> {isSubmitting ? <span className="animate-spin" ><FiLoader /></span> : t("Submit") }</button>
             </div>
         </form>
         </FadeRight>

@@ -12,7 +12,6 @@ import { useTranslation } from "react-i18next";
 export default function ContactSection() {
   const {t,i18n} = useTranslation("Common")
   const isArabic = i18n.language === 'ar';
-  console.log(isArabic)
   return (
     <div className="flex justify-between flex-wrap gap-16 flex-col md:flex-row  m-auto">
       <FadeLeft>

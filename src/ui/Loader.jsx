@@ -1,6 +1,5 @@
 import { motion } from "motion/react"
 export default function Loader() {
-  console.log("Loader is rendered");
     const dotVariants = {
         pulse: {
             scale: [1, 1.5, 1],
@@ -21,9 +20,8 @@ export default function Loader() {
                 <motion.div className="size-5 rounded-full bg-[#09216D] will-change-transform" variants={dotVariants} />
                 <motion.div className="size-5 rounded-full bg-[#09216D] will-change-transform" variants={dotVariants} />
                 <motion.div className="size-5 rounded-full bg-[#09216D] will-change-transform" variants={dotVariants} />
-                
+
             </motion.div>
        </div>
     )
 }
-

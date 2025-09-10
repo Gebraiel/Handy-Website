@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import Section from "../ui/Section";
 import SectionTitle from "../ui/SectionTitle";
 import Banner from "../ui/Banner";
@@ -25,7 +25,6 @@ const lightBoxImages = Array.from(
 
 export default function Sustainability() {
   const{t}=useTranslation("Sustainability");
-    console.log("Sustainability");
     function closeLightbox(){
         setActive(-1);
       }

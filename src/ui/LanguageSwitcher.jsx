@@ -28,18 +28,17 @@ export default function LanguageSwitcher({menuLength}) {
     }
     return (
         <>
-            <FadeIn delay={menuLength *0.1}>
+
             <li className="uppercase font-bold relative has-submenu text-xs border border-l-0 border-r-0 p-5 xl:p-0 xl:border-0">
-                <button className='xl:w-auto w-full' onClick={()=>changeLanguage("ar")}><p className='flex gap-1'><img width={20} src="/Flags/ar.svg"/> AR</p></button>
+                <FadeIn delay={menuLength *0.1}>
+                    <button className='xl:w-auto w-full' onClick={()=>changeLanguage("ar")}><p className='flex gap-1'><img width={20} src="/Flags/ar.svg"/> AR</p></button>
+                </FadeIn>
             </li>
-            </FadeIn>
-            <FadeIn delay={menuLength *0.1}>
-            <li>
-                <li className="uppercase font-bold relative has-submenu text-xs border border-l-0 border-r-0 p-5 xl:p-0 xl:border-0">
-                    <button className='xl:w-auto w-full' onClick={()=>changeLanguage("en")}><p className='flex gap-1'><img width={20} src="/Flags/en.svg"/> EN</p></button>
-                </li>
+            <li className="uppercase font-bold relative has-submenu text-xs border border-l-0 border-r-0 p-5 xl:p-0 xl:border-0">
+                <FadeIn delay={menuLength *0.1}>
+                        <button className='xl:w-auto w-full' onClick={()=>changeLanguage("en")}><p className='flex gap-1'><img width={20} src="/Flags/en.svg"/> EN</p></button>
+                </FadeIn>
             </li>
-            </FadeIn>
         </>
     )
 }

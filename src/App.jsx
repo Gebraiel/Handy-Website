@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import { RouterProvider, createBrowserRouter, useRevalidator } from "react-router-dom";
 import AppLayout from "./ui/AppLayout";
 import Home from "./pages/Home";
 import Contact from "./pages/Contact";
@@ -12,171 +12,114 @@ import Category from "./pages/Category";
 import {loader as productsLoader} from './pages/Category';
 import {loader as productLoader} from './pages/Product';
 import {loader as categoriesLoader} from './ui/AppLayout';
-import {loader as fileLoader} from './pages/Products';
+import {loader as mediaLoader} from './pages/MediaCenter';
+import {loader as singleBlogLoader} from './pages/SingleBlog';
+import {loader as singleGalleryLoader} from './pages/MediaGallery';
 
 import Product from "./pages/Product";
 import CustomerSupport from "./pages/CustomerSupport";
 import Health from "./pages/Health";
 import Branches from "./pages/Branches";
-import Error from "./pages/PageNotFound";
+import Error from "./pages/ErrorPage";
 import { useTranslation } from "react-i18next";
 import SingleBlog from "./pages/SingleBlog";
 import MediaGallery from "./pages/MediaGallery";
 // import {loader as categoriesLoader} from "./pages/Products";
-const router = createBrowserRouter([
+
+function App() {
+  const routerChildren = [
+      {
+        path: "",
+        element: <Home />,
+      },
+      {
+        path:"contact",
+        element:<Contact />
+      },{
+        path:"products",
+        element:<Products />,
+
+      }
+      ,{
+        path:"about",
+        element:<About />
+      }
+      ,{
+        path:"contact",
+        element:<Contact />
+      }
+      ,{
+        path:"media-center",
+        element:<MediaCenter />,
+        loader:mediaLoader
+      }
+      ,
+      {
+        path: "media-center/blogs/:id",
+        element: <SingleBlog />,
+        loader: singleBlogLoader
+      },
+      {
+        path: "media-center/gallery/:id",
+        element: <MediaGallery />,
+        loader:singleGalleryLoader
+      },
+
+      {
+        path:"sectors/",
+        element:<Sectors />,
+      },{
+        path:"sectors/:sectorName",
+        element:<Sectors />
+      }
+      ,{
+        path:"sustainability",
+        element:<Sustainability />
+      }
+      ,{
+        path:"category/:categoryId",
+        element:<Category />,
+        loader:productsLoader
+      },
+      {
+        path:"product/:productId",
+        element:<Product />,
+        loader:productLoader
+      },
+      {
+        path:"support",
+        element:<CustomerSupport />
+      },
+      {
+        path:"health",
+        element:<Health/>
+      },
+      {
+        path:"branches",
+        element:<Branches/>
+      },{
+        path:"*",
+        element:<Error error={{code:"404!",message:"Page Not Found"}}/>
+      }
+    ]
+    const router = createBrowserRouter([
   {
     path:"/",
     element: <AppLayout />,
     loader: categoriesLoader,
-    children: [
-      {
-        path: "",
-        element: <Home />,
-      },
-      {
-        path:"contact",
-        element:<Contact />
-      },{
-        path:"products",
-        element:<Products />,
-        loader:fileLoader
-      }
-      ,{
-        path:"about",
-        element:<About />
-      }
-      ,{
-        path:"contact",
-        element:<Contact />
-      }
-      ,{
-        path:"media-center",
-        element:<MediaCenter />
-      }
-      ,
-      {
-        path: "media-center/1",
-        element: <SingleBlog />,
-      },
-      {
-        path: "gallery/1",
-        element: <MediaGallery />,
-      },
-
-      {
-        path:"sectors/",
-        element:<Sectors />
-      },{
-        path:"sectors/:sectorName",
-        element:<Sectors />
-      }
-      ,{
-        path:"sustainability",
-        element:<Sustainability />
-      }
-      ,{
-        path:"category/:categoryId",
-        element:<Category />,
-        loader:productsLoader
-      },
-      {
-        path:"product/:productId",
-        element:<Product />,
-        loader:productLoader
-      },
-      {
-        path:"support",
-        element:<CustomerSupport />
-      },
-      {
-        path:"health",
-        element:<Health/>
-      },
-      {
-        path:"branches",
-        element:<Branches/>
-      },{
-        path:"*",
-        element:<Error />
-      }
-    ],
+    children: routerChildren,
   },
   {
-    path:"/ar",
+    path:"/:lang",
     element: <LanguageWrapper> <AppLayout /> </LanguageWrapper>,
     loader: categoriesLoader,
-    children: [
-      {
-        path: "",
-        element: <Home />,
-      },
-      {
-        path:"contact",
-        element:<Contact />
-      },
-      {
-        path:"products",
-        element:<Products />,
-        loader:fileLoader
-      },
-      {
-        path:"about",
-        element:<About />
-      },
-      {
-        path:"media-center",
-        element:<MediaCenter />
-      },
-      {
-  path: "media-center/1",
-  element: <SingleBlog />
-},
-      {
-        path:"sectors/",
-        element:<Sectors />
-      },
-      {
-        path:"sectors/:sectorName",
-        element:<Sectors />
-      },
-      {
-        path:"sustainability",
-        element:<Sustainability />
-      },
-      {
-        path:"category/:categoryId",
-        element:<Category />,
-        loader:productsLoader
-      },
-      {
-        path:"product/:productId",
-        element:<Product />,
-        loader:productLoader
-      },
-      {
-        path:"support",
-        element:<CustomerSupport />
-      },
-      {
-        path:"health",
-        element:<Health/>
-      },
-      {
-        path:"branches",
-        element:<Branches/>
-      },{
-        path:"*",
-        element:<Error />
-      }
-    ],
+    children: routerChildren,
   }
 ]);
-function App() {
   return <RouterProvider router={router} />;
 }
 function LanguageWrapper({children}){
   const { i18n } = useTranslation();
-
   useEffect(() => {
     if (i18n.language !== "ar") {
       i18n.changeLanguage("ar");

@@ -3,7 +3,6 @@ import Section from '../ui/Section'
 import SectionTitle from '../ui/SectionTitle'
 import ProductCategories from '../ui/Categories/ProductCategories'
 import Banner from '../ui/Banner'
-import { getCatalog } from '../services/products'
 import { useNavigation,useLoaderData } from 'react-router-dom'
 import FadeIn from '../ui/Animation/FadeIn'
 import Loader from '../ui/Loader'
@@ -40,14 +39,10 @@ export default function Products() {
         </SectionTitle>
         <ProductCategories />
          <div className="text-center mt-10">
-            <button onClick={downloadFile} className="button">{tCommon("Download Catalog")}</button>
+            <a href='files/Product%20Catalog.pdf' download="Product Catalog" className="button">{tCommon("Download Catalog")}</a>
           </div>
       </Section>
     </FadeIn>
 
   )
-}
-export async function loader(){
-  const file = await getCatalog();
-  return file;
 }

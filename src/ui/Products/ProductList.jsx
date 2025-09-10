@@ -1,12 +1,13 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Product from "./Product";
 import JumboProductsList from "./JumboProductsList";
 import FadeLeft from "../Animation/FadeLeft";
-export default function ProductList({ products, view, filter }) {
-  const categoryName = products[0]?.category?.["name-en"];
+import SectionTitle from "../SectionTitle";
+import { useTranslation } from "react-i18next";
+export default function ProductList({ products,categoryName, view, filter }) {
+  const {t} = useTranslation("Common")
   const [filteredProducts, setFilteredProducts] = useState(products);
-  const isJumbo = categoryName.toLowerCase().includes("jumbo");
-
+  const isJumbo = categoryName?.toLowerCase().includes("jumbo");
   useEffect(() => {
     if(filter.package == 'all' && filter.subcategory == ""){
       setFilteredProducts(products);
@@ -14,13 +15,13 @@ export default function ProductList({ products, view, filter }) {
       let newProducts = products;
       if(filter.subcategory){
           newProducts=newProducts.filter(
-            (product) => product.subcategory?.toLowerCase().trim() == filter.subcategory.toLowerCase()
+            (product) => product.subcategory?.title.toLowerCase().trim() == filter.subcategory.toLowerCase()
           )
       }
       if(filter.package !='all'){
           newProducts=newProducts.filter(
             (product) => {
-              return product.package.toLowerCase() == filter.package.toLowerCase()
+              return product.package?.toLowerCase() == filter.package.toLowerCase()
             }
           )
       }
@@ -32,30 +33,30 @@ export default function ProductList({ products, view, filter }) {
     return(
       <JumboProductsList products={products} view={view}/>
     )
-  return (
-      <div
-      className={`${
-        view == "list"
-          ? "space-y-5"
-          : "grid gap-5 grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
-      }`}
-    >
-      {
-        filteredProducts.map((product, index) => (
-            <FadeLeft delay={index*0.01} key={product.id}
->
+  return(
 
-              <Product
-                product={product}
+      products.length > 0 ?
+        <div className={`${
+            view == "list"
+              ? "space-y-5"
+              : "grid gap-5 grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
+          }`}>
+          {
+            filteredProducts.map((product, index) => (
+                <FadeLeft delay={index*0.01} key={product.id}>
+                    <Product
+                      product={product}
 
-                categoryName={categoryName}
-                view={view}
-              />
+                      categoryName={categoryName}
+                      view={view}
+                    />
+                  </FadeLeft>
+                ))
+          }
+        </div>
 
-            </FadeLeft>
-          ))
-      }
-    </div>
+      : <SectionTitle>{t("No Products Found")}</SectionTitle>
 
-  );
+
+  )
 }

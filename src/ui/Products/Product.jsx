@@ -1,4 +1,3 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import JumboProduct from "./JumboProduct";
 import { useTranslation } from "react-i18next";
@@ -6,16 +5,9 @@ import { getLocalizedPath } from "../../services/localization";
 
 export default function Product({product,view,categoryName}) {
   const {t,i18n} = useTranslation("Common");
-  const isJumbo = categoryName.toLowerCase().includes("jumbo");
-  const isArabic = i18n.language =='ar';
-
-  const localizedProduct = {...product,title:isArabic?product['title-ar']:product.title,details:isArabic ? product['details-ar'] : product.details,subtitle:isArabic ? product['subtitle-ar'] : product.subtitle};
-  console.log(localizedProduct);
-  const title = localizedProduct.title.split('<br>').join("");
-  console.log(title);
+  const title = product.title;
   const currentLanguage = i18n.language;
-  if(isJumbo)
-      return <JumboProduct product={localizedProduct} view={view}/>
+
   return (
     <div
       className={`${
@@ -26,14 +18,14 @@ export default function Product({product,view,categoryName}) {
 
     >
 
-        <div className={`w-full  ${view == "list" ? " pl-5 lg:w-1/4" : ""}`}>
-              {
-                  localizedProduct.image ?
-                  <Link to={getLocalizedPath(`/product/${localizedProduct.id}`,currentLanguage)}><img className="m-auto" src={localizedProduct.image} alt="Product Image" /></Link>
-                  :
-                  <div className="bg-white w-full aspect-square"></div>
-              }
-        </div>
+      <div className={`w-full  ${view == "list" ? " pl-5 lg:w-1/4" : ""}`}>
+            {
+                product.image ?
+                <Link to={getLocalizedPath(`/product/${product.id}`,currentLanguage)}><img className="m-auto" src={product.image} alt="Product Image" /></Link>
+                :
+                <div className="bg-white w-full aspect-square"></div>
+            }
+      </div>
 
       <div
         className={`flex flex-col ${
@@ -41,22 +33,14 @@ export default function Product({product,view,categoryName}) {
         } justify-between p-5 flex-grow w-full`}
       >
         <div>
-          <h1 className="text-primary text-xl font-bold"><Link to={getLocalizedPath(`/product/${localizedProduct.id}`,currentLanguage)}>{title}</Link></h1>
-          {isJumbo ? (
-            <ul className="list-disc pl-5 mt-5">
-              {
-                localizedProduct.details.split(",").map((item, index) => (
-                  <li key={index}>{item}</li>
-                ))
-              }
-            </ul>
-          ) : (
-            <p>{localizedProduct.subtitle}</p>
-          )}
+          <h1 className="text-primary text-xl font-bold"><Link to={getLocalizedPath(`/product/${product.id}`,currentLanguage)}>{title}</Link></h1>
+
+          <p>{product.sub_title}</p>
+
         </div>
         <div className="mt-5">
             <Link
-            to={getLocalizedPath(`/product/${localizedProduct.id}`,currentLanguage)}
+            to={getLocalizedPath(`/product/${product.id}`,currentLanguage)}
             className="button"
             >
             {t("Details")}

@@ -1,10 +1,8 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Section from "../Section";
 import Paragraph from "../Paragraph";
 import SectionTitle from "../SectionTitle";
-import GallerySlider from "./GallerySlider";
-import {motion} from 'motion/react';
-import { getImagesFromBucket } from "../../services/sectors";
+import { getSectorImages } from "../../services/sectors";
 import SwiperSlider from "./SwiperSlider";
 import Counter from "../Counter";
 import { FaPeopleGroup } from "react-icons/fa6";
@@ -12,6 +10,7 @@ import { FaGlobeAmericas } from "react-icons/fa";
 import FadeLeft from "../Animation/FadeLeft";
 import FadeIn from "../Animation/FadeIn";
 import { useTranslation } from "react-i18next";
+import {motion} from "motion/react"
 const parentVarient = {
 
   visible:{
@@ -35,7 +34,7 @@ export default function HandyTissueProductsSector() {
    const{t:tSectors}=useTranslation("Sectors");
    useEffect(()=>{
      async function getImages(){
-       const images = await getImagesFromBucket('sectors','Handy Tissue');
+       const images = await getSectorImages('Handy Tissue Products');
        setSectorImages(images);
      }
      getImages()
@@ -278,8 +277,8 @@ export default function HandyTissueProductsSector() {
             </FadeIn>
           </div>
       </Section>
-      <Section type="fullscreen" className="bg-[#f1eeee]  px-5">
-        {sectorImages&&<SwiperSlider key={i18n.language} images={sectorImages}/>}
+      <Section type="fullscreen" className="px-5">
+        {sectorImages && <SwiperSlider key={i18n.language} images={sectorImages}/>}
       </Section>
     </div>
   );

@@ -1,7 +1,7 @@
-import React, { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useLoaderData, useNavigation } from "react-router-dom";
 import Section from "../ui/Section";
-import { getCategoryProducts, getProduct } from "../services/products";
+import {  getProduct } from "../services/products";
 import Paragraph from "../ui/Paragraph";
 import ToastSuccess from "../ui/ToastSuccess";
 import { AnimatePresence } from "motion/react";
@@ -16,33 +16,31 @@ import FadeIn from "../ui/Animation/FadeIn";
 import Loader from "../ui/Loader";
 import { useTranslation } from "react-i18next";
 import { getLocalizedPath } from "../services/localization";
+import Error from "./ErrorPage";
 
 export default function Product() {
-  console.log("Product");
-
   const {
-    product,
-    products,
+    product,error
   } = useLoaderData();
   const{i18n,t} = useTranslation("Common")
   const isArabic = i18n.language =='ar';
-
-  const localizedProduct = {...product,title:isArabic?product['title-ar']:product.title,details:isArabic ? product['details-ar'] : product.details,subtitle:isArabic ? product['subtitle-ar'] : product.subtitle};
-  const {
-      id,
-      title,
-      image,
-      details,
-      subcategory,
-      category,
-    } = localizedProduct;
-  const categoryName = isArabic ? category["name-ar"] : category["name-en"];
-  const categoryId = category.id;
-  console.log(categoryName,localizedProduct)
-  const prevIndex = products.findIndex((product) => product.id == id) - 1;
-  const nextIndex = products.findIndex((product) => product.id == id) + 1;
+  const {title,image,text,number_of_pieces,category,sub_category,prev_id,next_id} = product;
+  const {id:categoryId,title:categoryName} = category;
+  // const localizedProduct = {...product,title:isArabic?product['title-ar']:product.title,details:isArabic ? product['details-ar'] : product.details,subtitle:isArabic ? product['subtitle-ar'] : product.subtitle};
+  // const {
+  //     id,
+  //     title,
+  //     image,
+  //     details,
+  //     subcategory,
+  //     category,
+  //   } = localizedProduct;
+  // const categoryName = isArabic ? category["name-ar"] : category["name-en"];
+  // const categoryId = category.id;
+  // const prevIndex = products.findIndex((product) => product.id == id) - 1;
+  // const nextIndex = products.findIndex((product) => product.id == id) + 1;
   const [showToast, setShowToast] = useState(false);
-  const productTitle = title.split("<br>");
+  // const productTitle = title.split("<br>");
   const currentLanguage = i18n.language
   function copyToClipboard() {
     navigator.clipboard.writeText(location.href);
@@ -60,7 +58,8 @@ export default function Product() {
 const navigation = useNavigation();
 
   const isLoading = navigation.state === "loading";
-if (isLoading) return <Loader />;
+  if (isLoading) return <Loader />;
+  if(error) return <Error error={{code:error.code,message:error.message}}/>
   return (
     <FadeIn>
       <Section className="!py-[25px] ">
@@ -80,15 +79,15 @@ if (isLoading) return <Loader />;
           </Link>
           {" "}
 
-          {subcategory ?
+          {sub_category ?
             <>
               <Link to={getLocalizedPath(`/category/${categoryId}`,currentLanguage)}>
                 {categoryName}
               </Link>
               {" "}
               /{" "}
-              <Link  className="text-primary" to={getLocalizedPath(`/category/${categoryId}?filter=${subcategory}`,currentLanguage)}>
-                {subcategory}
+              <Link  className="text-primary" to={getLocalizedPath(`/category/${categoryId}?filter=${sub_category.title}`,currentLanguage)}>
+                {sub_category.title}
               </Link>
             </>
             :
@@ -109,17 +108,17 @@ if (isLoading) return <Loader />;
             <FadeRight>
                 <div>
               <h2 className="text-primary text-xl lg:text-3xl font-bold">
-                {title.includes("<br>") ? (
+                <>
+                  <span>{title}</span>
+                  {
+                  number_of_pieces &&
                   <>
-                    <span>{productTitle[0]}</span>
                     <br />
-                    <span>{productTitle[1]}</span>
+                    <span>{number_of_pieces}</span>
                   </>
-                ) : (
-                  <>
-                    <span>{title}</span>
-                  </>
-                )}
+                  }
+                </>
+
               </h2>
               <Paragraph className="text-secondary font-semibold" size="lg">
                 {categoryName}
@@ -127,11 +126,7 @@ if (isLoading) return <Loader />;
             </div>
             </FadeRight>
             <FadeRight>
-                <ul className="list-disc pl-5">
-              {details.split("|").map((item, index) => (
-                <li key={index}>{item}</li>
-              ))}
-            </ul>
+                <div className="product-details" dangerouslySetInnerHTML={{__html: text}}/>
             </FadeRight>
             <FadeIn>
                 <button className="w-full button" onClick={copyToClipboard}>
@@ -141,9 +136,9 @@ if (isLoading) return <Loader />;
             <div className="flex justify-between items-center">
               <FadeLeft>
                 <button
-                onClick={() => navigate(getLocalizedPath(`/product/${products[prevIndex].id}`,currentLanguage))}
+                onClick={() => navigate(getLocalizedPath(`/product/${prev_id}`,currentLanguage))}
                 className={"button flex gap-1 items-center "}
-                disabled={prevIndex < 0}
+                disabled={prev_id == null}
               >
                 <span>
                   {isArabic ? <HiArrowSmallRight /> :<HiArrowSmallLeft />}
@@ -154,9 +149,9 @@ if (isLoading) return <Loader />;
               </FadeLeft>
               <FadeRight>
                 <button
-                onClick={() => navigate(getLocalizedPath(`/product/${products[nextIndex].id}`,currentLanguage))}
+                onClick={() => navigate(getLocalizedPath(`/product/${next_id}`,currentLanguage))}
                 className="button flex gap-1 items-center"
-                disabled={nextIndex >= products.length}
+                disabled={next_id==null}
               >
                 {t("Next Product")}
                 <span>
@@ -179,10 +174,10 @@ if (isLoading) return <Loader />;
 
 export async function loader({ params }) {
   const { productId } = params;
-  const product = (await getProduct(Number(productId)))[0];
-  console.log(product);
-  const subcategory = product.subcategory
-  const products = await getCategoryProducts(product.category.id,subcategory);
-  console.log(products)
-  return { product, products };
+  const lang = params.lang || "en";
+  const {product,error} = await getProduct(lang,Number(productId));
+  // const subcategory = product.subcategory
+  // const products = await getCategoryProducts(product.category.id,subcategory);
+
+  return { product,error};
 }

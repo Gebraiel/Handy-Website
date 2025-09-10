@@ -1,4 +1,3 @@
-import React from 'react'
 import { useEffect, useState } from 'react'
 import Section from '../Section'
 import Paragraph from '../Paragraph'
@@ -8,8 +7,7 @@ import SectionTitle from '../SectionTitle';
 import markerIconPng from "leaflet/dist/images/marker-icon.png"
 import {Icon} from 'leaflet'
 import { motion } from "motion/react"
-import GallerySlider from './GallerySlider';
-import { getImagesFromBucket } from '../../services/sectors';
+import { getSectorImages } from '../../services/sectors';
 import SwiperSlider from './SwiperSlider';
 import Counter from "../Counter";
 import { FaPeopleGroup } from "react-icons/fa6";
@@ -17,9 +15,7 @@ import { FaGlobeAmericas } from "react-icons/fa";
 import FadeLeft from '../Animation/FadeLeft';
 import FadeIn from '../Animation/FadeIn';
 import { useTranslation } from 'react-i18next';
-
 const parentVarient = {
-
   visible:{
     transition:{
       staggerChildren:0.3
@@ -43,7 +39,8 @@ export default function HandyPaperSector() {
 
   useEffect(()=>{
     async function getImages(){
-      const images = await getImagesFromBucket('sectors','handy-paper');
+      const images = await getSectorImages('Handy Paper');
+      console.log(images)
       setSectorImages(images);
     }
     getImages()
@@ -262,13 +259,8 @@ export default function HandyPaperSector() {
 
         </div>
       </Section>
-      <Section type="fullscreen" className='overflow-x-hidden bg-[#f1eeee] px-5' >
-        {
-          sectorImages.length>0
-          &&
-          // <GallerySlider images={sectorImages} noOfCols={3}/>
-          <SwiperSlider key={i18n.language} images={sectorImages}/>
-        }
+      <Section type="fullscreen" className="px-5">
+              {sectorImages && <SwiperSlider key={i18n.language} images={sectorImages}/>}
       </Section>
       </div>
   )

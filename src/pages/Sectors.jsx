@@ -1,4 +1,3 @@
-import React, { useEffect, useRef } from "react";
 import Banner from "../ui/Banner";
 import SectionTitle from "../ui/SectionTitle";
 import Section from "../ui/Section";
@@ -9,24 +8,19 @@ import Features from "../ui/Home/Features";
 import { FaTools } from "react-icons/fa";
 import SectorsNavigation from "../ui/Sectors/SectorsNavigation";
 import Loader from "../ui/Loader";
-import { useNavigation } from "react-router-dom";
+import { useLoaderData, useNavigation } from "react-router-dom";
 import FadeIn from "../ui/Animation/FadeIn";
 import FadeLeft from "../ui/Animation/FadeLeft";
 import FadeRight from "../ui/Animation/FadeRight";
-import { useParams } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import { getSectors } from "../services/sectors";
+import Error from "./ErrorPage";
 export default function Sectors() {
   const{t:tCommon,i18n} = useTranslation("Common");
   const{t:tSectors} = useTranslation("Sectors");
-  console.log("Sectors");
-  const {sectorName} = useParams();
-  console.log(sectorName);
-
   const navigation = useNavigation();
   const isLoading = navigation.state === "loading";
-
   if (isLoading) return <Loader />;
-
   return (
     <FadeIn>
       <Banner
@@ -71,8 +65,6 @@ export default function Sectors() {
         />
       </Section>
       <SectorsNavigation links={[tCommon("Handy Paper") ,tCommon("Handy Tissue Products"),tCommon("Wet Wipes")]} />
-
-
     </FadeIn>
   );
 }

@@ -1,5 +1,4 @@
-import React, { useContext, useEffect } from 'react'
-import Banner from '../ui/Banner'
+import { useContext, useEffect } from 'react'
 import SectionTitle from '../ui/SectionTitle'
 import Section from '../ui/Section'
 import ContactSection from '../ui/ContactSection'
@@ -12,7 +11,6 @@ import { useTranslation } from 'react-i18next'
 
 export default function Contact() {
   const{t}=useTranslation("Common")
-  console.log("Contact");
   const setRelative = useContext(OutletContext);
   const navigation = useNavigation();
   useEffect(()=>{

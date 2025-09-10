@@ -25,7 +25,6 @@ i18n
     interpolation: {
       escapeValue: false // react already safes from xss
     },
-    debug: true, // <<<<<< ضيف دي
   });
 
   export default i18n;

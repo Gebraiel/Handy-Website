@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Gallery from "../Sustainability/Gallery";
-import {AnimatePresence} from "motion/react"; 
+import {AnimatePresence} from "motion/react";
 import Lightbox from "../Lightbox";
 export default function Certificates() {
   const [active,setActive] = useState(-1);
@@ -9,29 +9,6 @@ export default function Certificates() {
     setActive(-1);
   }
   return (
-    // <div className="flex flex-col md:flex-row justify-center gap-5">
-    //   <div className="">
-    //     <img
-    //       className="border shadow-lg w-[350px] m-auto"
-    //       src="/certificates/certificates1.webp"
-    //       alt=""
-    //     />
-    //   </div>
-    //   <div className="">
-    //     <img
-    //       className="border shadow-lg w-[350px] m-auto"
-    //       src="/certificates/certificates2.webp"
-    //       alt=""
-    //     />
-    //   </div>
-    //   <div className="">
-    //     <img
-    //       className="border shadow-lg w-[350px] m-auto"
-    //       src="/certificates/certificates3.webp"
-    //       alt=""
-    //     />
-    //   </div>
-    // </div>
     <>
         <Gallery handleClick={setActive} images={certificates}/>
         <AnimatePresence>

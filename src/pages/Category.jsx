@@ -1,5 +1,5 @@
-import React, { useContext, useEffect, useMemo, useState } from "react";
-import { useLoaderData, useNavigation, useParams } from "react-router-dom";
+import { useContext, useEffect, useState } from "react";
+import { useLoaderData, useNavigation } from "react-router-dom";
 import Section from "../ui/Section";
 import Loader from "../ui/Loader";
 import Banner from "../ui/Banner";
@@ -15,42 +15,42 @@ import FadeIn from "../ui/Animation/FadeIn";
 import { useTranslation } from "react-i18next";
 
 export default function Category() {
-  console.log("Category");
   const {i18n,t} = useTranslation("Common")
   const [view, setView] = useState("list");
   const [packagesList, setPackagesList] = useState([]);
   const [filter,setFilter] = useState({package:"all",subcategory:""});
   const isArabic = i18n.language =='ar';
   const [searchParams] = useSearchParams();
-  const {products,categoryId} = useLoaderData();
-
+  const {products,error,categoryId} = useLoaderData();
   const categories = useContext(CategoriesContext);
-  const localizedCategories = categories.map((category)=>{
-    return {...category,name:isArabic ? category['name-ar']:category['name-en']};
-  })
-  const category = localizedCategories.find((category)=>category.id == categoryId);
-  const categoryName = category.name;
-  const localizedProducts = useMemo(()=>{
-    return products.map((product)=>{
-      return {...product,title:isArabic?product['title-ar']:product.title,details:isArabic ? product['details-ar'] : product.details,subtitle:isArabic ? product['subtitle-ar'] : product.subtitle,package:isArabic ? product['package-ar']:product.package}
-    });
-  },[products,i18n.language])
+  // const localizedCategories = categories.map((category)=>{
+  //   return {...category,name:isArabic ? category['name-ar']:category['name-en']};
+  // })
+  // const category = localizedCategories.find((category)=>category.id == categoryId);
+  const category = categories.find((category)=>category.id == categoryId);
+  const categoryName = category.title;
+  // const localizedProducts = useMemo(()=>{
+  //   return products.map((product)=>{
+  //     return {...product,title:isArabic?product['title-ar']:product.title,details:isArabic ? product['details-ar'] : product.details,subtitle:isArabic ? product['subtitle-ar'] : product.subtitle,package:isArabic ? product['package-ar']:product.package}
+  //   });
+  // },[products,i18n.language])
   useEffect(() => {
-    console.log("LocalizedProducts is re-rendered")
     let set = new Set();
-    localizedProducts.map((product) => product.package && set.add(product.package));
+    // localizedProducts.map((product) => product.package && set.add(product.package));
+    products.map((product) => product.package && set.add(product.package));
     setPackagesList(Array.from(set));
-
     setFilter({package:'all',subcategory:searchParams.get('filter')});
-  }, [localizedProducts]);
+  // }, [localizedProducts]);
+  },[products]);
 
   const navigation = useNavigation();
   const isLoading = navigation.state === "loading";
   if (isLoading) return <Loader />;
+  if(error)return <Error error={{code:error.code,message:error.message}}/>
   return (
     <FadeIn>
       <Banner
-        image={category.banner ? category.banner : "/banner/slider-1.png"}
+        image={category.cover ? category.cover : "/banner/slider-1.png"}
         className="flex justify-center items-center bg-[55%] sm:bg-cover"
       />
 
@@ -64,7 +64,7 @@ export default function Category() {
         </div>
 
         {
-              categoryId != 2 &&
+              // categoryId != 2 &&
               <div className="flex justify-end mb-5 gap-5">
 
                 <select
@@ -97,12 +97,8 @@ export default function Category() {
 
 
         <div>
-          {products.length > 0 ? (
-              <ProductList products={localizedProducts} view={view} filter={filter}/>
-            )
-          : (
-            <SectionTitle>No Products Found</SectionTitle>
-          )}
+              <ProductList products={products} categoryName={categoryName} view={view} filter={filter}/>
+
         </div>
 
 
@@ -114,7 +110,7 @@ export default function Category() {
 
 export async function loader({ params }) {
   const { categoryId } = params;
-  const products = await getCategoryProducts(Number(categoryId));
-  console.log(products);
-  return {products,categoryId};
+  const lang = params.lang || "en";
+  const {products,error} = await getCategoryProducts(lang,Number(categoryId));
+  return {products,error,categoryId};
 }

@@ -1,8 +1,6 @@
 import AboutSection from "../ui/Home/AboutSection";
 import Features from "../ui/Home/Features";
 import Section from "../ui/Section";
-
-import ContactSection from "../ui/ContactSection";
 import Slider from "../ui/Home/Slider";
 import HandyBackground from "../ui/Home/HandyBackground";
 import Certificates from "../ui/Home/Certificates";
@@ -15,7 +13,6 @@ import { FaMedal } from "react-icons/fa6";
 import { FaThumbsUp } from "react-icons/fa";
 import { RiLeafFill } from "react-icons/ri";
 import { FaGlobe } from "react-icons/fa";
-import React from "react";
 import Loader from "../ui/Loader";
 import FadeIn from "../ui/Animation/FadeIn";
 import FadeDown from "../ui/Animation/FadeDown";
@@ -36,7 +33,6 @@ const sustainabilityImagesArray = Array.from(
 
 
 export default function Home() {
-  console.log("Home");
   const { t ,i18n,ready} = useTranslation(['Home',"Common"]); // نفس الـ namespace
   const currentLanguage = i18n.language;
   const navigation = useNavigation();

@@ -1,10 +1,9 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Section from "../Section";
 import Paragraph from "../Paragraph";
 import SectionTitle from "../SectionTitle";
-import GallerySlider from "./GallerySlider";
 import { motion } from "motion/react";
-import { getImagesFromBucket } from "../../services/sectors";
+import { getSectorImages } from "../../services/sectors";
 import SwiperSlider from "./SwiperSlider";
 import FadeLeft from "../Animation/FadeLeft";
 import FadeIn from "../Animation/FadeIn";
@@ -25,12 +24,12 @@ const childrenVairent = {
   },
 };
 export default function HandyWetWipes() {
-  const{t:tCommon} = useTranslation("Common");
+  const{t:tCommon,i18n} = useTranslation("Common");
   const{t:tSectors} = useTranslation("Sectors");
   let [sectorImages, setSectorImages] = useState([]);
   useEffect(() => {
     async function getImages() {
-      const images = await getImagesFromBucket("sectors", "Wet Wipes");
+      const images = await getSectorImages("Wet Wipes");
       setSectorImages(images);
     }
     getImages();
@@ -228,7 +227,7 @@ export default function HandyWetWipes() {
         </div>
       </Section>
       <Section type="fullscreen" className="bg-[#f1eeee] px-5">
-        {sectorImages && <SwiperSlider images={sectorImages}/>}
+        {sectorImages && <SwiperSlider key={i18n.language} images={sectorImages}/>}
       </Section>
     </div>
   );

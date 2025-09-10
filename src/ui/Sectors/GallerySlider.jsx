@@ -1,5 +1,5 @@
-import React, { useEffect, useMemo, useRef, useState } from 'react'
-import { AnimatePresence, motion } from "motion/react"
+import { useEffect, useState } from 'react'
+import { AnimatePresence } from "motion/react"
 import SliderLightbox from '../Lightbox';
 import { HiArrowSmallRight } from "react-icons/hi2";
 import { HiArrowSmallLeft } from "react-icons/hi2";
@@ -10,7 +10,7 @@ export default function Slider({images,noOfCols}) {
   const [active,setActive] = useState(-1);
 
   const size=images.length;
-  
+
   const [noOfNext,setNoOfNext] = useState(size - cols);
   const [noOfPrev,setNoOfPrev] = useState(0);
   const [widthOfCol,setWidthOfCol] = useState( (window.innerWidth - 20) / cols);
@@ -19,7 +19,7 @@ export default function Slider({images,noOfCols}) {
     const newCols = window.innerWidth <= 500 ? 1 : window.innerWidth <= 720 ? 2 : noOfCols;
     setCols(newCols);
     setWidthOfCol((window.innerWidth - 20) / newCols); // Recalculate column width
-    
+
   };
   function closeLightbox(){
     setActive(-1);
@@ -42,8 +42,6 @@ export default function Slider({images,noOfCols}) {
     },[])
 
   useEffect(()=>{
-    console.log(size);
-    console.log(images);
     setNoOfNext(size-cols);
   },[cols,images])
   return (
@@ -55,11 +53,11 @@ export default function Slider({images,noOfCols}) {
           <button disabled={noOfPrev == 0} className='py-3  text-primary text-2xl disabled:text-[#ccc] ' onClick={handlePrev}><HiArrowSmallLeft/></button>
           <button disabled={noOfNext == 0} className='py-3  text-primary text-2xl disabled:text-[#ccc] ' onClick={handleNext}><HiArrowSmallRight/></button>
         </div>
-           
+
         <AnimatePresence>
             {active >=0 &&  <SliderLightbox images={images} active={active} closeLightbox={closeLightbox}/>}
         </AnimatePresence>
-    
+
     </>
   )
 }

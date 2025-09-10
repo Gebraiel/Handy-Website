@@ -1,4 +1,3 @@
-import React from 'react'
 import Banner from '../ui/Banner'
 import Paragraph from '../ui/Paragraph'
 import Section from '../ui/Section'
@@ -9,7 +8,6 @@ import FadeIn from '../ui/Animation/FadeIn'
 import { useTranslation } from 'react-i18next'
 
 export default function Health() {
-    console.log("Health");
     const {t} = useTranslation("Health");
     const navigation = useNavigation();
     const isLoading = navigation.state === "loading";

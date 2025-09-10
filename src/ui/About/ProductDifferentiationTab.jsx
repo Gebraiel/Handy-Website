@@ -1,4 +1,3 @@
-import React from 'react'
 import Section from '../Section'
 import FadeLeft from '../Animation/FadeLeft'
 import FadeRight from '../Animation/FadeRight'
@@ -37,7 +36,7 @@ export default function ProductDifferentiationTab() {
             <b>{t("Specialized-Products-Heading")}: </b> {t("Specialized-Products-Content")}
           </li>
           </FadeLeft>
-          
+
         </ul>
       </div>
       <div className=''>
