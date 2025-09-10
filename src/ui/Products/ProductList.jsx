@@ -4,10 +4,14 @@ import JumboProductsList from "./JumboProductsList";
 import FadeLeft from "../Animation/FadeLeft";
 import SectionTitle from "../SectionTitle";
 import { useTranslation } from "react-i18next";
+import { useParams } from "react-router-dom/dist";
 export default function ProductList({ products,categoryName, view, filter }) {
   const {t} = useTranslation("Common")
   const [filteredProducts, setFilteredProducts] = useState(products);
-  const isJumbo = categoryName?.toLowerCase().includes("jumbo");
+  const {categoryId} = useParams();
+  console.log(categoryId)
+  const isJumbo = categoryId == 1; // Jumbo Category Id
+  console.log(isJumbo)
   useEffect(() => {
     if(filter.package == 'all' && filter.subcategory == ""){
       setFilteredProducts(products);
@@ -15,7 +19,7 @@ export default function ProductList({ products,categoryName, view, filter }) {
       let newProducts = products;
       if(filter.subcategory){
           newProducts=newProducts.filter(
-            (product) => product.subcategory?.title.toLowerCase().trim() == filter.subcategory.toLowerCase()
+            (product) => product.subcategory?.id == filter.subcategory
           )
       }
       if(filter.package !='all'){

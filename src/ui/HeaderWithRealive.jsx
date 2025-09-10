@@ -11,7 +11,7 @@ const categories = useContext(CategoriesContext);
 const currentLanguage = i18n.language;
 const categoriesMenu = categories.map((category)=>{
   const submenu = category.subcategories.length>0 ? category.subcategories.map((subcategory)=>{
-    const submenuItem = {title:subcategory.title,link:getLocalizedPath(`/category/${category.id}?filter=${subcategory.title.toUpperCase()}`,i18n.language)}
+    const submenuItem = {title:subcategory.title,link:getLocalizedPath(`/category/${category.id}?filter=${subcategory.id}`,i18n.language)}
     return submenuItem;
   }) : []
   const menuItem = {title:category.title,link:getLocalizedPath(`/category/${category.id}`,i18n.language),hasSubMenu:category.subcategories.length>0,submenu};

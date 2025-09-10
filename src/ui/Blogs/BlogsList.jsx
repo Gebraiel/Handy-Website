@@ -3,18 +3,18 @@ import Section from "../Section";
 import { Link } from "react-router-dom/dist";
 import Pagination from "../Pagination";
 import Loading from "../Loading";
+import { getLocalizedPath } from "../../services/localization";
 
 export default function BlogsList({error}) {
-  const {t} = useTranslation("Common")
+  const {t,i18n} = useTranslation("Common")
   if(error) return <h1>Something Went Wrong Please Referesh The Page</h1>
   return (
     <Section>
         <Pagination url={"media-center/blogs"} render={(blogs,loading)=>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-
             {loading ? <div className="col-span-full"><Loading /></div>: blogs.map((blog) => (
               <Link
-                to={`/media-center/blogs/${blog.id}`}
+                to={getLocalizedPath(`/media-center/blogs/${blog.id}`,i18n.language)}
                 key={blog.id}
                 className="block bg-white rounded-lg overflow-hidden"
               >
@@ -39,7 +39,6 @@ export default function BlogsList({error}) {
             ))}
         </div>
         }>
-
         </Pagination>
     </Section>
   );

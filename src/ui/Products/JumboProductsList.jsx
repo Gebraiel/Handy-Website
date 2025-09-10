@@ -17,9 +17,11 @@ export default function JumboProductsList({products,view}) {
   useEffect(()=>{
     async function getSubCategories(){
       const {category} = await getCategory(i18n.language,categoryId);
+      console.log(category)
+
       setSubCategoies(category.subcategories);
       setDetails(category.text_2)
-      setFilter(searchParamsValue ||subCategoires[0].title)
+      setFilter(searchParamsValue || category.subcategories[0].id)
     }
     getSubCategories();
 
@@ -28,7 +30,7 @@ export default function JumboProductsList({products,view}) {
   return (
     <>
       <div className="flex flex-col md:flex-row gap-10 mb-10">
-            {subcategories.length > 0 && subcategories.map((subcategory)=> <button className={`flex-grow text-center text-2xl font-bold bg-white text-primary shadow-md p-5 ${filter.toLowerCase() === subcategory.title.toLowerCase() ?"border-t-2" : ""}`} onClick={()=>setFilter(subcategory.title)}>
+            {subcategories.length > 0 && subcategories.map((subcategory)=> <button className={`flex-grow text-center text-2xl font-bold bg-white text-primary shadow-md p-5 ${filter == subcategory.id ?"border-t-2" : ""}`} onClick={()=>setFilter(subcategory.id)}>
               {subcategory.title}
             </button>)}
       </div>

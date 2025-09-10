@@ -1,15 +1,20 @@
 import React from 'react'
 import FadeIn from './Animation/FadeIn'
 import { useTranslation } from 'react-i18next';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate, useSearchParams } from 'react-router-dom';
 
 export default function LanguageSwitcher({menuLength}) {
     const { i18n } = useTranslation();
     const navigate = useNavigate();
-    const location = useLocation()
+    const location = useLocation();
+    const [searchParams] = useSearchParams();
+    const searchParamsValue = searchParams.get("filter");
     function changeLanguage(lang){
-        const path = location.pathname;
+        let path = location.pathname;
+        if(searchParamsValue)
+            path += `?filter=${searchParamsValue}`
         const segments = path.split("/");
+        console.log(path);
         if (lang === "ar") {
             // لو مش بالفعل عربي، ضيف "ar"
             if (segments[1] !== "ar") {

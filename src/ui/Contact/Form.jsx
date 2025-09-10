@@ -87,22 +87,22 @@ export default function Form() {
                     <label htmlFor="">{t("Inquery Type")}</label>
                     <select {...register('inquery_type',{required:t("This input is required")})} className={inputClasses}>
                         <option></option>
-                        <option value="General Inquery">
+                        <option value={t("General Inquery")}>
                             {t("General Inquery")}
                         </option>
-                        <option value="Domestic Sales">
+                        <option value={t("Domestic Sales")}>
                             {t("Domestic Sales")}
                         </option>
-                        <option value="International Sales">
+                        <option value={t("International Sales")}>
                             {t("International Sales")}
                         </option>
-                        <option value="Procurement">
+                        <option value={t("Procurement")}>
                             {t("Procurement")}
                         </option>
-                        <option value="Customer Complaint">
+                        <option value={t("Customer Complaint")}>
                             {t("Customer Complaint")}
                         </option>
-                        <option value="Careers">
+                        <option value={t("Careers")}>
                             {t("Careers")}
                         </option>
                     </select>
