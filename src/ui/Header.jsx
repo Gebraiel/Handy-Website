@@ -58,7 +58,7 @@ export default function Header({menu,isAbsolute}) {
               { !show ? <GiHamburgerMenu className="text-2xl" /> : <IoCloseSharp className="text-2xl" />}
             </button>
 
-           <div className={`max-h-[80vh] absolute overflow-scroll transition-all duration-300 ${show?'left-0':'left-full'} top-full w-full bg-primary text-white z-50 transition-all duration-300`}>
+           <div className={`max-h-[80vh] absolute overflow-scroll transition-all duration-300 ${show?'left-0':'-left-full'} top-full w-full bg-primary text-white z-50 transition-all duration-300`}>
              <ul
               className={`overflow-scroll`}
             >
@@ -135,6 +135,7 @@ export default function Header({menu,isAbsolute}) {
               <LanguageSwitcher menuLength={menu.length}/>
             </ul>
           </div>
+
         </div>
       </div>
     </header>
