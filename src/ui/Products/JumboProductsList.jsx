@@ -15,7 +15,6 @@ export default function JumboProductsList({products,view}) {
   const {categoryId} = useParams();
   const [productDetails,setDetails] = useState()
   useEffect(()=>{
-    console.log("Component is rendered")
     async function getSubCategories(){
       const {category} = await getCategory(i18n.language,categoryId);
       setSubCategoies(category.subcategories);

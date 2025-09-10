@@ -40,7 +40,6 @@ export default function HandyPaperSector() {
   useEffect(()=>{
     async function getImages(){
       const images = await getSectorImages('Handy Paper');
-      console.log(images)
       setSectorImages(images);
     }
     getImages()

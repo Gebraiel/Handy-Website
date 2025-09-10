@@ -13,7 +13,6 @@ function Pagination({url,render}) {
   useEffect(() => {
     async function getPage(){
         setLoading(true);
-        console.log(i18n.language)
         const res = await api.get(`${url}?page=${currentPage}`,{headers:{lang:i18n.language}});
 
         const {data:{data:{data:renderedData,pagination:{total,per_page}}}} = res;

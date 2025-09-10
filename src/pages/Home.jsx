@@ -213,8 +213,8 @@ export default function Home() {
         </FadeIn>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-[repeat(14,1fr)] gap-5 mt-10 m-auto">
           {sustainabilityImagesArray.map((e,index) => (
-            <FadeIn delay={index*0.1}>
-              <img src={e} key={index} />
+            <FadeIn delay={index*0.1}  key={index}>
+              <img src={e} />
             </FadeIn>
           ))}
         </div>

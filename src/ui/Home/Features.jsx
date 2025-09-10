@@ -19,9 +19,9 @@ export default function Features({ features }) {
     >
       {features.map((feature, index) => {
         return (
-          <FadeIn delay={0.1*index}>
+          <FadeIn delay={0.1*index} key={index}>
             <div
-              key={index}
+
               className={`bg-contain bg-[url('/pattern.png')] h-full text-center py-8 px-9 bg-gray transition-all duration-300  border-4 border-[#e06c61]`}
             >
               <div className="pb-2 border-b-2 border-secondary w-fit m-auto text-3xl">

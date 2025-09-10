@@ -10,9 +10,7 @@ export default function MediaCenter() {
   const {t,i18n} = useTranslation("Common");
   const {gallery,media_center_cover,galleryError} = useLoaderData();
   const navigation = useNavigation();
-  console.log(media_center_cover)
   const isLoading = navigation.state === "loading";
-  console.log(i18n.language)
   if (isLoading) return <Loader />;
   return (
     <>
@@ -22,13 +20,6 @@ export default function MediaCenter() {
             {t("News From Us")}
           </h1>
       </Banner>
-      {/* <section className="relative h-[500px] bg-cover bg-center" style={{ backgroundImage: {media_center_cover} }}>
-        <div className="absolute inset-0 flex items-center justify-start lg:ps-[110px] ps-4">
-          <h1 className="text-5xl font-bold text-white">
-            {t("News From Us")}
-          </h1>
-        </div>
-      </section> */}
     <BlogsList />
     <MediaGallery gallery={gallery} error={galleryError}/>
     </>

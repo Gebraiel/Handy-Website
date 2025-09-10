@@ -36,7 +36,6 @@ export async function getCategory(lang,id){
 export async function getSubcategories(lang,categoryId){
     const data = await api.get(`category/${categoryId}`,{headers:{lang}});
     const {data:{data:{data:{category:{subcategories}}}}} = data;
-    console.log(subcategories)
     return subcategories;
 
 }

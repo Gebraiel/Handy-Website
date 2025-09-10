@@ -18,7 +18,6 @@ export default function MediaGallery() {
   const galleryImages = gallery.images?.map((image)=>{
     return image.image
   })
-  console.log(media_center_cover);
   const isLoading = navigation.state === "loading";
   const [active,setActive] = useState(-1);
   function closeLightbox(){

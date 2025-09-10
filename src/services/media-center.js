@@ -47,7 +47,6 @@ export async function getSingleGallery(lang,id){
         const data = await api.get(`media-center/gallery/${id}`,{headers:{lang}});
         if(data.data.status && data.data.code === 200){
             const {data:{data:{data:gallery,media_center_cover}}} = data
-            console.log(media_center_cover);
             return {gallery,media_center_cover,error:null};
         }else{
             return {gallery:null,media_center_cover:null,error:{code:data.code,message:"There is something wrong please try again later"}}
