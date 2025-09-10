@@ -1,4 +1,3 @@
-import supabase from "./supabase";
 import { api } from "../config/axios";
 
 export async function getCategories(lang){

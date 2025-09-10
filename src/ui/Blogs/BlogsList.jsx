@@ -14,7 +14,7 @@ export default function BlogsList({error}) {
 
             {loading ? <div className="col-span-full"><Loading /></div>: blogs.map((blog) => (
               <Link
-                to={`blogs/${blog.id}`}
+                to={`/media-center/blogs/${blog.id}`}
                 key={blog.id}
                 className="block bg-white rounded-lg overflow-hidden"
               >

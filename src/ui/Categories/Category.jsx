@@ -24,7 +24,7 @@ export default function Category({category}) {
         }</Link></b>
         <Paragraph className="my-5">
         {
-          category.text
+          <span dangerouslySetInnerHTML={{__html:category.text}}/>
         }
         </Paragraph>
         <Link to={getLocalizedPath(`/category/${category.id}`,currentLanguage)} className="text-primary font-bold">
