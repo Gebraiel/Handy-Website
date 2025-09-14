@@ -11,18 +11,18 @@ export default function ToastSuccess({ message }) {
       }}
       animate="to"
       exit="exit"
-      className="toast md:top-[50px] top-[20px] md:w-fit w-full right-0 text-center  p-5 bg-green-500 text-white md:rounded-l-md rounded-md z-50 fixed 
-                [--x-from:0] 
-                [--y-from:-100%] 
-                [--x-to:0] 
-                [--y-to:0] 
-                [--x-exit:0] 
+      className="toast md:top-[50px] top-[20px] md:w-fit w-full right-0 text-center  p-5 bg-green-500 text-white md:rounded-l-md rounded-md z-[100] fixed
+                [--x-from:0]
+                [--y-from:-100%]
+                [--x-to:0]
+                [--y-to:0]
+                [--x-exit:0]
                 [--y-exit:-100%]
-                md:[--x-from:100%] 
-                md:[--y-from:0] 
-                md:[--x-to:0] 
-                md:[--y-to:0] 
-                md:[--x-exit:100%] 
+                md:[--x-from:100%]
+                md:[--y-from:0]
+                md:[--x-to:0]
+                md:[--y-to:0]
+                md:[--x-exit:100%]
                 md:[--y-exit:0]
         "
     >
