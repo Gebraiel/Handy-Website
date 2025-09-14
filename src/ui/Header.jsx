@@ -97,12 +97,12 @@ export default function Header({menu,isAbsolute}) {
                       //First Level Submenu
 
                       item.hasSubMenu &&
-                      <ul className=" text-white w-52 pt-5 absolute left-0 top-full submenu  opacity-0 hidden">
+                      <ul className=" text-white w-52 pt-5 absolute left-0 top-[50%] submenu  opacity-0 hidden">
                           {
                             item.submenu.map((child,index)=>
                               <li className="border-b-2 p-4 bg-primary relative has-submenu" key={index}>
 
-                                <Link to={child.link}  className="flex gap-1 items-center">
+                                <Link to={child.link}  className="flex gap-1 items-center capitalize">
                                   {child.title}
                                   { child.hasSubMenu ?  <FaCaretRight /> : <></>}
 
@@ -113,7 +113,7 @@ export default function Header({menu,isAbsolute}) {
                                   <ul className="text-white w-52 absolute start-full top-0 opacity-0 hidden submenu">
                                     {
                                       child.submenu.map((e,index)=>
-                                        <li className="border-b-2 p-4 bg-primary" key={index}>
+                                        <li className="border-b-2 p-4 bg-primary capitalize" key={index}>
 
                                           <Link to={e.link}>{e.title}</Link>
 

@@ -47,7 +47,7 @@ function GrandChildItem({child,closeHeader}){
     return (
     <li className=" border-y py-4 px-8 ">
         <button className='w-full' onClick={()=>setShowSubmenu(!showSubmenu)}>
-            <p className="flex gap-1 items-center" >
+            <p className="flex gap-1 items-center capitalize" >
                 {child.title}
                 <FaCaretRight/>
             </p>
@@ -60,7 +60,6 @@ function GrandChildItem({child,closeHeader}){
                 </motion.ul>
             }
         </AnimatePresence>
-
     </li>
     )
 }
