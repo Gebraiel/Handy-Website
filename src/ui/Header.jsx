@@ -21,7 +21,7 @@ export default function Header({menu,isAbsolute}) {
   const headerHeight = useRef(0); // نحتفظ بيه مرة واحدة
   const currentLanguage = i18n.language;
   const headerClasses = isAbsolute ? "absolute text-white":"relative bg-primary text-white";
-
+  const isArabic = currentLanguage ==='ar';
   useEffect(() => {
     if (headerRef.current) {
       headerHeight.current = headerRef.current.offsetHeight;
@@ -58,7 +58,7 @@ export default function Header({menu,isAbsolute}) {
               { !show ? <GiHamburgerMenu className="text-2xl" /> : <IoCloseSharp className="text-2xl" />}
             </button>
 
-           <div className={`max-h-[80vh] absolute overflow-scroll transition-all duration-300 ${show?'left-0':'-left-full'} top-full w-full bg-primary text-white z-50 transition-all duration-300`}>
+           <div className={`max-h-[80vh] absolute overflow-scroll transition-all duration-300 ${show ? isArabic ? "right-0": "left-0" :isArabic ? "-right-full":"-left-full"} top-full w-full bg-primary text-white z-50 transition-all duration-300`}>
              <ul
               className={`overflow-scroll`}
             >
