@@ -5,7 +5,7 @@ import { getLocalizedPath } from "../../services/localization";
 
 export default function Product({product,view,categoryName}) {
   const {t,i18n} = useTranslation("Common");
-  const title = product.title;
+  const title = product.title + product.number_of_pieces;
   const currentLanguage = i18n.language;
 
   return (
