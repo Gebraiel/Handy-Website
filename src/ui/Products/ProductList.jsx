@@ -9,9 +9,7 @@ export default function ProductList({ products,categoryName, view, filter }) {
   const {t} = useTranslation("Common")
   const [filteredProducts, setFilteredProducts] = useState(products);
   const {categoryId} = useParams();
-  console.log(categoryId)
   const isJumbo = categoryId == 1; // Jumbo Category Id
-  console.log(isJumbo)
   useEffect(() => {
     if(filter.package == 'all' && filter.subcategory == ""){
       setFilteredProducts(products);

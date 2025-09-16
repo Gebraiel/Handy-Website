@@ -12,7 +12,6 @@ export default function LanguageSwitcher({ menuLength }) {
     let path = location.pathname;
     if (searchParamsValue) path += `?filter=${searchParamsValue}`;
     const segments = path.split("/");
-    console.log(path);
     if (lang === "ar") {
       if (segments[1] !== "ar") {
         navigate(`/ar${path}`);

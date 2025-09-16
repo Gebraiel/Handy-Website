@@ -17,7 +17,6 @@ export default function JumboProductsList({ products, view }) {
   useEffect(() => {
     async function getSubCategories() {
       const { category } = await getCategory(i18n.language, categoryId);
-      console.log(category);
 
       setSubCategoies(category.subcategories);
       setDetails(category.text_2);
