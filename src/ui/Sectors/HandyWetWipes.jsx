@@ -24,8 +24,8 @@ const childrenVairent = {
   },
 };
 export default function HandyWetWipes() {
-  const{t:tCommon,i18n} = useTranslation("Common");
-  const{t:tSectors} = useTranslation("Sectors");
+  const { t: tCommon, i18n } = useTranslation("Common");
+  const { t: tSectors } = useTranslation("Sectors");
   let [sectorImages, setSectorImages] = useState([]);
   useEffect(() => {
     async function getImages() {
@@ -71,7 +71,6 @@ export default function HandyWetWipes() {
                 <Paragraph size="md" className="text-justify m-auto">
                   {tSectors("Handy-Wet-Wipes-Establised-Content-03")}
                 </Paragraph>
-
               </div>
             </div>
           </FadeIn>
@@ -81,10 +80,11 @@ export default function HandyWetWipes() {
       <Section className="bg-[#f1eeee]">
         <div className="2xl:my-[50px] my-[50px]">
           <FadeIn>
-            <SectionTitle className="2xl:mb-5">{tSectors("Production-Process")}</SectionTitle>
+            <SectionTitle className="2xl:mb-5">
+              {tSectors("Production-Process")}
+            </SectionTitle>
             <Paragraph size="md" className="text-center">
               {tSectors("Production-Process-Content")}
-
             </Paragraph>
           </FadeIn>
           <motion.div
@@ -103,9 +103,7 @@ export default function HandyWetWipes() {
               </h4>
               <Paragraph size="sm" className="text-center">
                 {tSectors("Non-Woven-Fabric-Production-Content")}
-
               </Paragraph>
-
             </motion.div>
             <motion.div variants={childrenVairent} className={` text-center  `}>
               <div className="pb-5 border-b-2 border-secondary w-fit m-auto text-3xl text-[#b0cbd3] font-extrabold">
@@ -116,7 +114,6 @@ export default function HandyWetWipes() {
               </h4>
               <Paragraph size="sm" className="text-center">
                 {tSectors("Non-Woven-Folding-Content")}
-
               </Paragraph>
             </motion.div>
             <motion.div variants={childrenVairent} className={` text-center `}>
@@ -128,7 +125,6 @@ export default function HandyWetWipes() {
               </h4>
               <Paragraph size="sm" className="text-center">
                 {tSectors("Solution-Formulation-Content")}
-
               </Paragraph>
             </motion.div>
             <motion.div variants={childrenVairent} className={` text-center `}>
@@ -140,9 +136,7 @@ export default function HandyWetWipes() {
               </h4>
               <Paragraph size="sm" className="text-center">
                 {tSectors("Impregnation-Content")}
-
               </Paragraph>
-
             </motion.div>
             <motion.div variants={childrenVairent} className={` text-center `}>
               <div className="pb-5 border-b-2 border-secondary w-fit m-auto text-3xl text-[#b0cbd3] font-extrabold">
@@ -153,9 +147,7 @@ export default function HandyWetWipes() {
               </h4>
               <Paragraph size="sm" className="text-center">
                 {tSectors("Folding-Cutting-Content")}
-
               </Paragraph>
-
             </motion.div>
             <motion.div variants={childrenVairent} className={` text-center `}>
               <div className="pb-5 border-b-2 border-secondary w-fit m-auto text-3xl text-[#b0cbd3] font-extrabold">
@@ -166,9 +158,7 @@ export default function HandyWetWipes() {
               </h4>
               <Paragraph size="sm" className="text-center">
                 {tSectors("Wet-Wipes-Packaging-Content")}
-
               </Paragraph>
-
             </motion.div>
             <motion.div variants={childrenVairent} className={` text-center `}>
               <div className="pb-5 border-b-2 border-secondary w-fit m-auto text-3xl text-[#b0cbd3] font-extrabold">
@@ -179,55 +169,58 @@ export default function HandyWetWipes() {
               </h4>
               <Paragraph size="sm" className="text-center">
                 {tSectors("Labelling-Secondary-Packaging-Content")}
-
               </Paragraph>
-
             </motion.div>
           </motion.div>
-
         </div>
         <div className="2xl:mb-[50px] mb-[25px]">
           <FadeIn>
             <SectionTitle className="2xl:mb-5 !text-start">
-            {tSectors("Key Drivers of Excellence")}
-          </SectionTitle>
-          <Paragraph size="md">{tSectors("Wet-Wipes-Key-Excellence-Content")}</Paragraph>
-
+              {tSectors("Key Drivers of Excellence")}
+            </SectionTitle>
+            <Paragraph size="md">
+              {tSectors("Wet-Wipes-Key-Excellence-Content")}
+            </Paragraph>
           </FadeIn>
           <ul className="list-disc ps-5">
             <FadeLeft>
               <li>
                 <Paragraph size="sm">
-                  <b>{tSectors("Quality-Control")}</b> : {tSectors("Quality-Control-Content")}
+                  <b>{tSectors("Quality-Control")}</b> :{" "}
+                  {tSectors("Quality-Control-Content")}
                 </Paragraph>
               </li>
             </FadeLeft>
             <FadeLeft delay={0.1}>
               <li>
-              <Paragraph size="sm">
-                <b>{tSectors("Hygiene")}</b> : {tSectors("Hygiene-Content")}
-              </Paragraph>
-            </li>
+                <Paragraph size="sm">
+                  <b>{tSectors("Hygiene")}</b> : {tSectors("Hygiene-Content")}
+                </Paragraph>
+              </li>
             </FadeLeft>
             <FadeLeft delay={0.2}>
               <li>
-              <Paragraph size="sm">
-                <b>{tSectors("Regulatory-Compliance")}</b> : {tSectors("Regulatory-Compliance-Content")}
-              </Paragraph>
-            </li>
+                <Paragraph size="sm">
+                  <b>{tSectors("Regulatory-Compliance")}</b> :{" "}
+                  {tSectors("Regulatory-Compliance-Content")}
+                </Paragraph>
+              </li>
             </FadeLeft>
             <FadeLeft delay={0.3}>
               <li>
-              <Paragraph size="sm">
-                <b>{tSectors("Innovation")}</b> : {tSectors("Innovation-Content")}
-              </Paragraph>
-            </li>
+                <Paragraph size="sm">
+                  <b>{tSectors("Innovation")}</b> :{" "}
+                  {tSectors("Innovation-Content")}
+                </Paragraph>
+              </li>
             </FadeLeft>
           </ul>
         </div>
       </Section>
       <Section type="fullscreen" className="bg-[#f1eeee] px-5">
-        {sectorImages && <SwiperSlider key={i18n.language} images={sectorImages}/>}
+        {sectorImages && (
+          <SwiperSlider key={i18n.language} images={sectorImages} />
+        )}
       </Section>
     </div>
   );

@@ -3,25 +3,25 @@ import Logo from "/Logo.png";
 import { NavLink, Link } from "react-router-dom";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoCloseSharp } from "react-icons/io5";
-import { FaCaretDown,FaCaretRight } from "react-icons/fa6";
+import { FaCaretDown, FaCaretRight } from "react-icons/fa6";
 
 import SubMenu from "./SubMenu";
 import FadeIn from "./Animation/FadeIn";
 import { useTranslation } from "react-i18next";
 import LanguageSwitcher from "./LanguageSwitcher";
 import { getLocalizedPath } from "../services/localization";
-import { FaCaretLeft } from "react-icons/fa";
-// import i18n from "src/utils/i18n";
 
-export default function Header({menu,isAbsolute}) {
-  const {i18n} = useTranslation()
+export default function Header({ menu, isAbsolute }) {
+  const { i18n } = useTranslation();
   const [show, setShow] = useState(false);
   const [isSticky, setIsSticky] = useState(false);
   const headerRef = useRef(null); // Reference for the header element
   const headerHeight = useRef(0); // نحتفظ بيه مرة واحدة
   const currentLanguage = i18n.language;
-  const headerClasses = isAbsolute ? "absolute text-white":"relative bg-primary text-white";
-  const isArabic = currentLanguage ==='ar';
+  const headerClasses = isAbsolute
+    ? "absolute text-white"
+    : "relative bg-primary text-white";
+  const isArabic = currentLanguage === "ar";
   useEffect(() => {
     if (headerRef.current) {
       headerHeight.current = headerRef.current.offsetHeight;
@@ -40,102 +40,137 @@ export default function Header({menu,isAbsolute}) {
     <header
       ref={headerRef}
       dir="ltr"
-      className={`transition-all duration-300 left-0 top-0 w-screen z-50  text-white ${!isAbsolute || isSticky || show ? "bg-primary bg-contain bg-[url('/pattern.png')]" : ""} ${
-        isSticky
-          ? "fixed animate-fadeDown z-[51]"
-          : headerClasses
-      }  ` }
+      className={`transition-all duration-300 left-0 top-0 w-screen z-50  text-white ${
+        !isAbsolute || isSticky || show
+          ? "bg-primary bg-contain bg-[url('/pattern.png')]"
+          : ""
+      } ${isSticky ? "fixed animate-fadeDown z-[51]" : headerClasses}  `}
     >
       <div className="relative">
         <div className="container  sm:w-[90%] flex items-center justify-between m-auto p-5">
-          <Link to={getLocalizedPath("/",currentLanguage)} className="max-w-40">
+          <Link
+            to={getLocalizedPath("/", currentLanguage)}
+            className="max-w-40"
+          >
             <FadeIn delay={0.3}>
               <img src={Logo} alt="Logo" />
             </FadeIn>
           </Link>
           <div className="xl:hidden">
             <button onClick={() => setShow(!show)}>
-              { !show ? <GiHamburgerMenu className="text-2xl" /> : <IoCloseSharp className="text-2xl" />}
+              {!show ? (
+                <GiHamburgerMenu className="text-2xl" />
+              ) : (
+                <IoCloseSharp className="text-2xl" />
+              )}
             </button>
 
-           <div className={`max-h-[80vh] absolute overflow-scroll transition-all duration-300 ${show ? isArabic ? "right-0": "left-0" :isArabic ? "-right-full":"-left-full"} top-full w-full bg-primary text-white z-50 transition-all duration-300`}>
-             <ul
-              className={`overflow-scroll`}
+            <div
+              className={`max-h-[80vh] absolute overflow-scroll transition-all duration-300 ${
+                show
+                  ? isArabic
+                    ? "right-0"
+                    : "left-0"
+                  : isArabic
+                  ? "-right-full"
+                  : "-left-full"
+              } top-full w-full bg-primary text-white z-50 transition-all duration-300`}
             >
-              {
-                menu.map((item,index)=>
-                  item.hasSubMenu ?
-                    <SubMenu key={index} item={item} closeHeader={()=>setShow(false)}/>
-                    :
-                  <li className=" border border-l-0 border-r-0  bg-primary uppercase font-bold " key={index}>
-                      <NavLink  to={item.link} end={item.hasSubMenu ? false : true} onClick={()=>setShow(false)} className={`flex gap-1 p-5 items-center w-full text-white `} >
+              <ul className={`overflow-scroll`}>
+                {menu.map((item, index) =>
+                  item.hasSubMenu ? (
+                    <SubMenu
+                      key={index}
+                      item={item}
+                      closeHeader={() => setShow(false)}
+                    />
+                  ) : (
+                    <li
+                      className=" border border-l-0 border-r-0  bg-primary uppercase font-bold "
+                      key={index}
+                    >
+                      <NavLink
+                        to={item.link}
+                        end={item.hasSubMenu ? false : true}
+                        onClick={() => setShow(false)}
+                        className={`flex gap-1 p-5 items-center w-full text-white `}
+                      >
                         {item.title}
                       </NavLink>
-                  </li>
-
-                )
-              }
-              <LanguageSwitcher menuLength={menu.length}/>
-
-            </ul>
-           </div>
-
+                    </li>
+                  )
+                )}
+                <LanguageSwitcher menuLength={menu.length} />
+              </ul>
+            </div>
           </div>
           <div className="hidden xl:block ">
             <ul className="flex gap-10 ">
-              {menu.map((item,index)=>
-
-                  <li className="uppercase font-bold relative  text-xs " key={index}>
-                  <FadeIn delay={0.1 * index} className="has-submenu" >
-                    <NavLink to={item.link} end={item.hasSubMenu ? false : true} className={({ isActive }) => `${item.hasSubMenu ? 'flex gap-1 items-center ' : ""} ${isActive ? (isSticky || !isAbsolute ? 'text-secondary' : 'text-primary') : 'text-white'} `
-                    }>
-                          {item.title}
-                        { item.hasSubMenu && <FaCaretDown /> }
-
+              {menu.map((item, index) => (
+                <li
+                  className="uppercase font-bold relative  text-xs "
+                  key={index}
+                >
+                  <FadeIn delay={0.1 * index} className="has-submenu">
+                    <NavLink
+                      to={item.link}
+                      end={item.hasSubMenu ? false : true}
+                      className={({ isActive }) =>
+                        `${item.hasSubMenu ? "flex gap-1 items-center " : ""} ${
+                          isActive
+                            ? isSticky || !isAbsolute
+                              ? "text-secondary"
+                              : "text-primary"
+                            : "text-white"
+                        } `
+                      }
+                    >
+                      {item.title}
+                      {item.hasSubMenu && <FaCaretDown />}
                     </NavLink>
                     {
                       //First Level Submenu
 
-                      item.hasSubMenu &&
-                      <ul className=" text-white w-52 pt-5 absolute left-0 top-[50%] submenu  opacity-0 hidden">
-                          {
-                            item.submenu.map((child,index)=>
-                              <li className="border-b-2 p-4 bg-primary relative has-submenu" key={index}>
-
-                                <Link to={child.link}  className="flex gap-1 items-center capitalize">
-                                  {child.title}
-                                  { child.hasSubMenu ?  <FaCaretRight /> : <></>}
-
-                                </Link>
-                                {
-                                  //Second Level Submenu
-                                  child.hasSubMenu &&
+                      item.hasSubMenu && (
+                        <ul className=" text-white w-52 pt-5 absolute left-0 top-[50%] submenu  opacity-0 hidden">
+                          {item.submenu.map((child, index) => (
+                            <li
+                              className="border-b-2 p-4 bg-primary relative has-submenu"
+                              key={index}
+                            >
+                              <Link
+                                to={child.link}
+                                className="flex gap-1 items-center capitalize"
+                              >
+                                {child.title}
+                                {child.hasSubMenu ? <FaCaretRight /> : <></>}
+                              </Link>
+                              {
+                                //Second Level Submenu
+                                child.hasSubMenu && (
                                   <ul className="text-white w-52 absolute start-full top-0 opacity-0 hidden submenu">
-                                    {
-                                      child.submenu.map((e,index)=>
-                                        <li className="border-b-2 p-4 bg-primary capitalize" key={index}>
-
-                                          <Link to={e.link}>{e.title}</Link>
-
-                                        </li>
-
-                                      )
-                                    }
+                                    {child.submenu.map((e, index) => (
+                                      <li
+                                        className="border-b-2 p-4 bg-primary capitalize"
+                                        key={index}
+                                      >
+                                        <Link to={e.link}>{e.title}</Link>
+                                      </li>
+                                    ))}
                                   </ul>
-                                }
-                              </li>
-
-                            )
-                          }
+                                )
+                              }
+                            </li>
+                          ))}
                         </ul>
+                      )
                     }
                   </FadeIn>
                 </li>
-              )}
-              <LanguageSwitcher menuLength={menu.length}/>
+              ))}
+              <LanguageSwitcher menuLength={menu.length} />
             </ul>
           </div>
-
         </div>
       </div>
     </header>

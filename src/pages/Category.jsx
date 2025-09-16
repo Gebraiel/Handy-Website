@@ -15,38 +15,29 @@ import FadeIn from "../ui/Animation/FadeIn";
 import { useTranslation } from "react-i18next";
 
 export default function Category() {
-  const {i18n,t} = useTranslation("Common")
+  const { t } = useTranslation("Common");
   const [view, setView] = useState("list");
   const [packagesList, setPackagesList] = useState([]);
-  const [filter,setFilter] = useState({package:"all",subcategory:""});
-  const isArabic = i18n.language =='ar';
+  const [filter, setFilter] = useState({ package: "all", subcategory: "" });
   const [searchParams] = useSearchParams();
-  const {products,error,categoryId} = useLoaderData();
+  const { products, error, categoryId } = useLoaderData();
   const categories = useContext(CategoriesContext);
-  // const localizedCategories = categories.map((category)=>{
-  //   return {...category,name:isArabic ? category['name-ar']:category['name-en']};
-  // })
-  // const category = localizedCategories.find((category)=>category.id == categoryId);
-  const category = categories.find((category)=>category.id == categoryId);
+
+  const category = categories.find((category) => category.id == categoryId);
   const categoryName = category.title;
-  // const localizedProducts = useMemo(()=>{
-  //   return products.map((product)=>{
-  //     return {...product,title:isArabic?product['title-ar']:product.title,details:isArabic ? product['details-ar'] : product.details,subtitle:isArabic ? product['subtitle-ar'] : product.subtitle,package:isArabic ? product['package-ar']:product.package}
-  //   });
-  // },[products,i18n.language])
+
   useEffect(() => {
     let set = new Set();
-    // localizedProducts.map((product) => product.package && set.add(product.package));
     products.map((product) => product.package && set.add(product.package));
     setPackagesList(Array.from(set));
-    setFilter({package:'all',subcategory:searchParams.get('filter')});
-  // }, [localizedProducts]);
-  },[products]);
+    setFilter({ package: "all", subcategory: searchParams.get("filter") });
+  }, [products]);
 
   const navigation = useNavigation();
   const isLoading = navigation.state === "loading";
   if (isLoading) return <Loader />;
-  if(error)return <Error error={{code:error.code,message:error.message}}/>
+  if (error)
+    return <Error error={{ code: error.code, message: error.message }} />;
   return (
     <FadeIn>
       <Banner
@@ -64,46 +55,48 @@ export default function Category() {
         </div>
 
         {
-              // categoryId != 2 &&
-              <div className="flex justify-end mb-5 gap-5">
-
-                <select
-                  defaultValue="all"
-                  className="border-b py-3 focus:outline-none sm:w-fit w-full"
-                  onChange={(e) => setFilter({...filter,package:e.target.value})}
-                >
-                  <option value="all">{t("All Packages")}</option>
-                  {packagesList.map((item, index) => (
-                    <option key={index}> {item} </option>
-                  ))}
-                </select>
-                <div className="hidden md:flex gap-2 text-3xl">
-                    <button
-                      className={`${view == "list" ? "text-primary font-bold" : ""}`}
-                      onClick={() => setView("list")}
-                    >
-                      <CiBoxList />
-                    </button>
-                    <button
-                      className={`${view == "gallery" ? "text-primary font-bold" : ""}`}
-                      onClick={() => setView("gallery")}
-                    >
-                      <RiGalleryView2 />
-                    </button>
-                  </div>
-              </div>
-
+          // categoryId != 2 &&
+          <div className="flex justify-end mb-5 gap-5">
+            <select
+              defaultValue="all"
+              className="border-b py-3 focus:outline-none sm:w-fit w-full"
+              onChange={(e) =>
+                setFilter({ ...filter, package: e.target.value })
+              }
+            >
+              <option value="all">{t("All Packages")}</option>
+              {packagesList.map((item, index) => (
+                <option key={index}> {item} </option>
+              ))}
+            </select>
+            <div className="hidden md:flex gap-2 text-3xl">
+              <button
+                className={`${view == "list" ? "text-primary font-bold" : ""}`}
+                onClick={() => setView("list")}
+              >
+                <CiBoxList />
+              </button>
+              <button
+                className={`${
+                  view == "gallery" ? "text-primary font-bold" : ""
+                }`}
+                onClick={() => setView("gallery")}
+              >
+                <RiGalleryView2 />
+              </button>
+            </div>
+          </div>
         }
 
-
         <div>
-              <ProductList products={products} categoryName={categoryName} view={view} filter={filter}/>
-
+          <ProductList
+            products={products}
+            categoryName={categoryName}
+            view={view}
+            filter={filter}
+          />
         </div>
-
-
       </Section>
-
     </FadeIn>
   );
 }
@@ -111,6 +104,9 @@ export default function Category() {
 export async function loader({ params }) {
   const { categoryId } = params;
   const lang = params.lang || "en";
-  const {products,error} = await getCategoryProducts(lang,Number(categoryId));
-  return {products,error,categoryId};
+  const { products, error } = await getCategoryProducts(
+    lang,
+    Number(categoryId)
+  );
+  return { products, error, categoryId };
 }

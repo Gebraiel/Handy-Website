@@ -8,13 +8,11 @@ import Features from "../ui/Home/Features";
 import { FaTools } from "react-icons/fa";
 import SectorsNavigation from "../ui/Sectors/SectorsNavigation";
 import Loader from "../ui/Loader";
-import { useLoaderData, useNavigation } from "react-router-dom";
+import {  useNavigation } from "react-router-dom";
 import FadeIn from "../ui/Animation/FadeIn";
 import FadeLeft from "../ui/Animation/FadeLeft";
 import FadeRight from "../ui/Animation/FadeRight";
 import { useTranslation } from "react-i18next";
-import { getSectors } from "../services/sectors";
-import Error from "./ErrorPage";
 export default function Sectors() {
   const{t:tCommon,i18n} = useTranslation("Common");
   const{t:tSectors} = useTranslation("Sectors");
