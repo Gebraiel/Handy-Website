@@ -2,7 +2,7 @@ import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
 import Backend from 'i18next-http-backend';
 import LanguageDetector from 'i18next-browser-languagedetector';
-import {resources} from "../../public/locales/index"
+import resources from "../../public/locales/index"
 
 i18n
   .use(Backend)
