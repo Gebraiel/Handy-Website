@@ -18,20 +18,26 @@ export default function Form() {
     handleSubmit,
     formState: { errors, isSubmitting },
   } = useForm();
-  async function submitForm(data) {
-    const { message, error } = await sendEmail(data);
-    if (error) {
-      setError(message);
-    } else {
-      setSuccessMessage(message);
-      reset();
-    }
-  }
 
   const inqueryType = watch("inquery_type");
   const sector = watch("sector");
 
   const subjectValue = inqueryType && sector ? `${sector}-${inqueryType}` : "";
+
+  async function submitForm(data) {
+    const postData = {...data,subject:subjectValue};
+    const { message, error } = await sendEmail(postData);
+    if (error) {
+      setError(message);
+    } else {
+      setSuccessMessage(t("Success-Message"));
+      setTimeout(()=>setSuccessMessage(""),3000);
+      reset();
+    }
+  }
+
+
+
   const inputClasses =
     "border border-[#ccc] py-2 px-3 focus:outline-primary w-full mt-2 disabled:bg-[#ccc]";
   return (
@@ -147,8 +153,8 @@ export default function Form() {
               className={inputClasses}
             >
               <option></option>
-              <option value={t("General Inquery")}>
-                {t("General Inquery")}
+              <option value={t("General Inquiry")}>
+                {t("General Inquiry")}
               </option>
               <option value={t("Domestic Sales")}>{t("Domestic Sales")}</option>
               <option value={t("International Sales")}>
@@ -202,7 +208,7 @@ export default function Form() {
           )}
           {successMessage && (
             <Paragraph size="sm" className="text-green-500 my-3">
-              {successMessage}
+              {!formError && successMessage}
             </Paragraph>
           )}
           <button

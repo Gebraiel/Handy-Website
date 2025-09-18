@@ -10,7 +10,7 @@
     "Handy Tissue Products":"منتجات مناديل هاندي",
     "Wet Wipes":"المناديل المبللة",
     "Inquery Type":"نوع الاستفسار",
-    "General Inquery":"استفسار عام",
+    "General Inquiry":"استفسار عام",
     "Domestic Sales":"مبيعات محلية",
     "International Sales":"مبيعات دولية",
     "Procurement":"المشتريات",
@@ -20,5 +20,7 @@
     "Message":"رسالة",
     "Submit":"ارسال",
     "This input is required":"هذا الحقل مطلوب",
-    "This email isn't valid":"الايميل غير صالح"
+    "This email isn't valid":"الايميل غير صالح",
+    "Success-Message":"لقد تم ارسال رسالتك بنجاح"
+
 }

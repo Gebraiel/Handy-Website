@@ -107,8 +107,7 @@ function App() {
       path: "/:lang",
       element: (
         <LanguageWrapper>
-          {" "}
-          <AppLayout />{" "}
+          <AppLayout />
         </LanguageWrapper>
       ),
       loader: categoriesLoader,

@@ -1,1 +1,25 @@
-{"Contact Form":"Contact Form","First Name":"First Name","Last Name":"Last Name","Company Details":"Company Details","Email":"Email","Phone Number":"Phone Number","Sector":"Sector","Handy Paper":"Handy Paper","Handy Tissue Products":"Handy Tissue Products","Wet Wipes":"Wet Wipes","Inquery Type":"Inquery Type","General Inquery":"General Inquery","Domestic Sales":"Domestic Sales","International Sales":"International Sales","Procurement":"Procurement","Customer Complaint":"Customer Complaint","Careers":"Careers","Subject":"Subject","Message":"Message","Submit":"Submit","This input is required":"This input is required","This email isn't valid":"This email isn't valid"}
+{
+  "Contact Form": "Contact Form",
+  "First Name": "First Name",
+  "Last Name": "Last Name",
+  "Company Details": "Company Details",
+  "Email": "Email",
+  "Phone Number": "Phone Number",
+  "Sector": "Sector",
+  "Handy Paper": "Handy Paper",
+  "Handy Tissue Products": "Handy Tissue Products",
+  "Wet Wipes": "Wet Wipes",
+  "Inquery Type": "Inquery Type",
+  "General Inquiry": "General Inquiry",
+  "Domestic Sales": "Domestic Sales",
+  "International Sales": "International Sales",
+  "Procurement": "Procurement",
+  "Customer Complaint": "Customer Complaint",
+  "Careers": "Careers",
+  "Subject": "Subject",
+  "Message": "Message",
+  "Submit": "Submit",
+  "This input is required": "This input is required",
+  "This email isn't valid": "This email isn't valid",
+  "Success-Message":"Your message has been sent successfully!"
+}
